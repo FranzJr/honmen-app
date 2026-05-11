@@ -356,6 +356,19 @@ body {
   line-height: 1.85; margin-top: 8px; max-width: 580px;
 }
 
+/* ── Question figure image ── */
+.q-img-wrap {
+  padding: 8px 20px 4px;
+  text-align: center;
+}
+.q-img {
+  max-width: 100%; max-height: 260px;
+  border-radius: 10px;
+  border: 1px solid var(--bd);
+  background: var(--c2);
+  object-fit: contain;
+}
+
 /* ── TRUE / FALSE (Japanese ○×) ── */
 .tf-grid {
   display: grid; grid-template-columns: 1fr 1fr;

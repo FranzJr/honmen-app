@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark" data-size="md" data-gray="off" data-contrast="normal" data-quick="off">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="description" content="Simulador del examen teórico 外免切替 para latinos en Japón. 50 preguntas, trilingüe, modo oscuro, explicaciones culturales.">
+  <meta name="theme-color" content="#007CA2">
+  <title>免許 · Zenware Knowledge Test</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ── TOPBAR ── -->
+  <header class="topbar" role="banner">
+    <div>
+      <div class="brand-name">外免切替 知識確認</div>
+      <div class="brand-sub">Gaimen Kirikae · Knowledge Test · Post Oct 2025</div>
+    </div>
+    <div class="topbar-r">
+      <div class="spill">
+        <span class="v" id="qCur">1</span>/<span id="qTot">50</span>
+      </div>
+      <div class="spill ok">✓ <span class="v" id="lOk">0</span></div>
+      <div class="spill no">✗ <span class="v" id="lNo">0</span></div>
+      <button class="btn-gear" onclick="openDrawer()" aria-label="Settings" aria-haspopup="dialog">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="3"/>
+          <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- ── QUICKBAR: language + objective ── -->
+  <div class="quickbar" role="navigation" aria-label="Language and goal">
+    <div class="lang-pill" role="group" aria-label="Language selection">
+      <button class="lbtn"    id="bEN" onclick="setLang('en')" aria-pressed="false">EN</button>
+      <button class="lbtn on" id="bES" onclick="setLang('es')" aria-pressed="true">ES</button>
+      <button class="lbtn"    id="bJP" onclick="setLang('jp')" aria-pressed="false">日本語</button>
+    </div>
+    <div class="objective" id="obj" aria-live="polite">
+      Meta: <strong>45 correctas</strong>
+    </div>
+  </div>
+
+  <!-- ── PROGRESS ── -->
+  <div class="prog-wrap" aria-label="Exam progress">
+    <div class="prog-meta">
+      <span class="prog-label" id="progLbl" aria-live="polite">Pregunta 1 de 50</span>
+      <span class="prog-msg"   id="progMsg" aria-live="polite">¡Vamos! 🎯</span>
+    </div>
+    <div class="prog-track"
+         role="progressbar"
+         aria-valuemin="0"
+         aria-valuemax="50"
+         aria-valuenow="0"
+         aria-label="Progreso del examen">
+      <div class="prog-fill" id="prog" style="width: 0%"></div>
+    </div>
+  </div>
+
+  <!-- ── QUESTION CARD ── -->
+  <main class="card" id="card" role="main">
+
+    <div class="cat-strip">
+      <span class="cat-badge" id="catBadge" aria-label="Category">—</span>
+      <span class="src-tag"   id="srcTag"></span>
+    </div>
+
+    <div class="q-body">
+      <!-- English -->
+      <div class="lb" id="bkEN" lang="en">
+        <span class="lang-tag t-en">🇬🇧 English</span>
+        <div class="q-text" id="qEN"></div>
+      </div>
+
+      <!-- Spanish -->
+      <div class="lb on" id="bkES" lang="es">
+        <span class="lang-tag t-es">🇪🇸 Español</span>
+        <div class="q-text" id="qES"></div>
+      </div>
+
+      <!-- Japanese -->
+      <div class="lb" id="bkJP" lang="ja">
+        <span class="lang-tag t-jp">🇯🇵 日本語</span>
+        <div class="q-text" id="qJPk"></div>
+        <div class="q-kana"  id="qJPh"></div>
+      </div>
+    </div>
+
+    <!-- Figure image (shown only when question has imgUrl) -->
+    <div class="q-img-wrap" id="qImgWrap" style="display:none">
+      <img id="qImg" src="" alt="Figura de la pregunta" class="q-img">
+    </div>
+
+    <!-- ○ × Answer buttons -->
+    <div class="tf-grid" role="group" aria-label="Answer options">
+      <button class="tf-btn" id="bT" onclick="answer(true)"  aria-label="True / Verdadero / 正しい">
+        <span class="jp-mark" id="markT" aria-hidden="true">○</span>
+        <span id="lblT">Verdadero</span>
+      </button>
+      <button class="tf-btn" id="bF" onclick="answer(false)" aria-label="False / Falso / 間違い">
+        <span class="jp-mark" id="markF" aria-hidden="true">×</span>
+        <span id="lblF">Falso</span>
+      </button>
+    </div>
+
+    <!-- Feedback -->
+    <div class="feedback" id="fb" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="fb-top">
+        <span id="fbIcon"    aria-hidden="true"></span>
+        <span id="fbVerdict"></span>
+      </div>
+      <div class="fb-correct-pill" id="fbPill" role="status"></div>
+      <div class="fb-exp"          id="fbExp"></div>
+
+      <!-- Culture note (ES only) -->
+      <div class="fb-culture" id="fbCulture" aria-label="Cultural context">
+        <div class="fb-culture-hd">
+          🇯🇵 <span id="fbCultureHd">En Japón...</span>
+        </div>
+        <div id="fbCultureTxt"></div>
+      </div>
+
+      <!-- JP term -->
+      <div class="fb-jpterm" id="fbJpterm" aria-label="Key Japanese term">
+        <div class="fb-culture-hd">
+          📖 <span id="fbtermHd">Término clave</span>
+        </div>
+        <div class="fb-jpterm-row">
+          <span class="fb-jpterm-kanji"  id="fbtermKanji"  lang="ja"></span>
+          <span class="fb-jpterm-romaji" id="fbtermRomaji"></span>
+        </div>
+        <div class="fb-jpterm-meaning" id="fbtermMeaning"></div>
+      </div>
+    </div>
+
+    <button class="btn-next" id="btnNext" onclick="next()">Continuar →</button>
+
+  </main>
+
+  <!-- ── SCORE SCREEN ── -->
+  <section class="score-wrap" id="scoreWrap" aria-label="Final results" aria-live="polite">
+    <div class="sc-card">
+      <div class="sc-eye" id="scEyebrow">外免切替 知識確認 · Examen Completo</div>
+      <div class="sc-num" id="scNum">—</div>
+      <div class="sc-sub" id="scSub">de 50 · Apruebas con 45/50 (90%)</div>
+
+      <div class="sc-stats" role="list">
+        <div class="stat" role="listitem">
+          <div class="stat-n c" id="stC">—</div>
+          <div class="stat-l"   id="stCL">Correctas</div>
+        </div>
+        <div class="stat" role="listitem">
+          <div class="stat-n w" id="stW">—</div>
+          <div class="stat-l"   id="stWL">Incorrectas</div>
+        </div>
+        <div class="stat" role="listitem">
+          <div class="stat-n p" id="stP">—</div>
+          <div class="stat-l"   id="stPL">Puntaje</div>
+        </div>
+      </div>
+
+      <div class="verdict" id="verdict" role="status"></div>
+      <button class="btn-restart" id="btnRestart" onclick="restart()">↺ Nuevo Examen</button>
+    </div>
+
+    <div class="review" id="rev" aria-label="Questions to review"></div>
+  </section>
+
+  <!-- ── SETTINGS DRAWER ── -->
+  <div class="overlay" id="overlay" onclick="closeDrawer(event)" role="dialog" aria-modal="true" aria-label="Accessibility settings">
+    <div class="drawer" id="drawer">
+      <div class="drw-handle" aria-hidden="true"></div>
+      <div class="drw-title">⚙️ Configuración</div>
+
+      <div class="drw-sec">
+        <div class="drw-lbl" id="dlTheme">Tema de color</div>
+        <div class="drw-row" role="group" aria-labelledby="dlTheme">
+          <button class="sbtn" id="tAuto"  onclick="setTheme('auto')"  aria-pressed="false">🌗 Auto</button>
+          <button class="sbtn" id="tLight" onclick="setTheme('light')" aria-pressed="false">☀️ Claro</button>
+          <button class="sbtn on" id="tDark" onclick="setTheme('dark')" aria-pressed="true">🌙 Oscuro</button>
+        </div>
+      </div>
+
+      <div class="drw-sec">
+        <div class="drw-lbl" id="dlFont">Tamaño de texto</div>
+        <div class="drw-row" role="group" aria-labelledby="dlFont">
+          <button class="sbtn"    id="fSm" onclick="setSize('sm')" aria-pressed="false">A− Pequeño</button>
+          <button class="sbtn on" id="fMd" onclick="setSize('md')" aria-pressed="true">A Normal</button>
+          <button class="sbtn"    id="fLg" onclick="setSize('lg')" aria-pressed="false">A+ Grande</button>
+        </div>
+      </div>
+
+      <div class="drw-sec">
+        <div class="drw-lbl" id="dlVisual">Filtros visuales</div>
+        <div class="drw-row" role="group" aria-labelledby="dlVisual">
+          <button class="sbtn" id="grayBtn" onclick="toggleGray()" aria-pressed="false">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 2v20"/></svg>
+            Escala de grises
+          </button>
+          <button class="sbtn" id="contBtn" onclick="toggleContrast()" aria-pressed="false">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20A10 10 0 0 0 12 2zm0 18V4a8 8 0 0 1 0 16z"/></svg>
+            Alto contraste
+          </button>
+        </div>
+      </div>
+
+      <div class="drw-sec">
+        <div class="drw-lbl" id="dlMode">Modo de estudio</div>
+        <div class="quick-toggle" onclick="toggleQuick()" role="switch" aria-checked="false" tabindex="0"
+             onkeydown="if(event.key==='Enter'||event.key===' ')toggleQuick()">
+          <div class="qt-left">
+            <div class="qt-name" id="dlQuickName">⚡ Modo Rápido</div>
+            <div class="qt-desc" id="dlQuickDesc">Una mano, sin distracciones, respuesta rápida</div>
+          </div>
+          <div class="qt-switch" id="qtSwitch" aria-hidden="true"></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── SCRIPTS ── -->
+  <script src="questions.js"></script>
+  <script src="app.js"></script>
+
+</body>
+</html>

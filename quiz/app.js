@@ -147,6 +147,8 @@ const DOM = {
   qES:        () => $('qES'),
   qJPk:       () => $('qJPk'),
   qJPh:       () => $('qJPh'),
+  qImgWrap:   () => $('qImgWrap'),
+  qImg:       () => $('qImg'),
   // answer buttons
   bT:         () => $('bT'),
   bF:         () => $('bF'),
@@ -401,6 +403,15 @@ function renderQuestion() {
   DOM.qES().textContent  = q.es;
   DOM.qJPk().textContent = q.jpk;
   DOM.qJPh().textContent = q.jph;
+
+  // figure image
+  const imgWrap = DOM.qImgWrap();
+  if (q.imgUrl) {
+    DOM.qImg().src = q.imgUrl;
+    imgWrap.style.display = '';
+  } else {
+    imgWrap.style.display = 'none';
+  }
 
   // reset answer buttons
   const t = DOM.bT(), f = DOM.bF();

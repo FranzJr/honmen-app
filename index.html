@@ -1,231 +1,1221 @@
 <!DOCTYPE html>
-<html lang="es" data-theme="dark" data-size="md" data-gray="off" data-contrast="normal" data-quick="off">
+<html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-  <meta name="description" content="Simulador del examen teórico 外免切替 para latinos en Japón. 50 preguntas, trilingüe, modo oscuro, explicaciones culturales.">
-  <meta name="theme-color" content="#007CA2">
-  <title>免許 · Zenware Knowledge Test</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <!-- SEO principal: Facil Japón como marca paraguas; licencia como primera vertical -->
+  <title>Cambio de licencia de conducir en Japón para latinos | Facil Japón</title>
+  <meta name="description" content="Guía y app gratis para estudiar el examen de cambio de licencia de conducir en Japón. Explicaciones en español, preguntas tipo examen, 外免切替 y japonés contextual para latinos." />
+  <meta name="keywords" content="licencia de conducir en Japón, cambio de licencia en Japón, licencia japonesa, 外免切替, gaimen kirikae, examen licencia Japón, latinos en Japón, pase de conducción en Japón, Facil Japón" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <link rel="canonical" href="https://faciljapon.com/es/licencia-conducir-japon" />
+  <link rel="alternate" hreflang="es" href="https://faciljapon.com/es/licencia-conducir-japon" />
+  <link rel="alternate" hreflang="en" href="https://faciljapon.com/en/japan-driving-license-conversion" />
+  <link rel="alternate" hreflang="ja" href="https://faciljapon.com/ja/gaimen-kirikae" />
+  <link rel="alternate" hreflang="x-default" href="https://faciljapon.com/es/licencia-conducir-japon" />
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="styles.css">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Cambio de licencia de conducir en Japón para latinos | Facil Japón" />
+  <meta property="og:description" content="Estudia gratis para el examen de cambio de licencia japonesa con preguntas tipo examen, explicación latina y japonés contextual." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://faciljapon.com/es/licencia-conducir-japon" />
+  <meta property="og:locale" content="es_ES" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <style>
+    :root {
+      --bg: #061016;
+      --bg-2: #0f1720;
+      --panel: rgba(15, 23, 32, 0.78);
+      --panel-2: rgba(255,255,255,0.045);
+      --primary: #007CA2;
+      --cyan: #5FA6C0;
+      --soft-blue: #71AEC4;
+      --steel: #76899E;
+      --light-blue-gray: #95C2D3;
+      --neutral: #A8B5C2;
+      --text: #F5F7FA;
+      --muted: #A8B5C2;
+      --success: #42E88B;
+      --danger: #FF6688;
+      --warning: #F4B24B;
+      --border: rgba(149, 194, 211, 0.22);
+      --shadow: 0 24px 80px rgba(0, 124, 162, 0.18);
+      --radius: 24px;
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Inter, Manrope, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(0,124,162,0.32), transparent 32rem),
+        radial-gradient(circle at 88% 12%, rgba(95,166,192,0.22), transparent 30rem),
+        linear-gradient(180deg, #04090d 0%, var(--bg) 45%, #050b10 100%);
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+      background-size: 64px 64px;
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,.6), transparent 70%);
+      z-index: -1;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(18px);
+      background: rgba(4, 9, 13, 0.72);
+      border-bottom: 1px solid rgba(149, 194, 211, 0.12);
+    }
+
+    .nav-inner {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      font-size: 1.45rem;
+    }
+
+    .brand-mark {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle at 35% 35%, transparent 0 23%, #71AEC4 24% 36%, transparent 37%),
+        conic-gradient(from 210deg, #007CA2, #5FA6C0, #95C2D3, #007CA2);
+      box-shadow: 0 0 0 1px rgba(255,255,255,.12), 0 12px 30px rgba(0,124,162,.3);
+    }
+
+    .brand span span { color: var(--cyan); }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      color: #D9E2EA;
+      font-size: 0.92rem;
+      font-weight: 650;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .lang-select,
+    .btn,
+    input,
+    select,
+    textarea {
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.055);
+      color: var(--text);
+      border-radius: 999px;
+      min-height: 44px;
+      padding: 0 18px;
+      font-weight: 750;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      border-radius: 16px;
+      min-height: 52px;
+      font-weight: 600;
+      outline: none;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      border-color: rgba(95,166,192,.85);
+      box-shadow: 0 0 0 4px rgba(95,166,192,.12);
+    }
+
+    textarea {
+      min-height: 92px;
+      padding-top: 14px;
+      resize: vertical;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: linear-gradient(135deg, var(--primary), var(--cyan));
+      border: 0;
+      box-shadow: 0 14px 40px rgba(0,124,162,0.28);
+      transition: transform .2s ease, filter .2s ease, box-shadow .2s ease;
+      cursor: pointer;
+      min-height: 48px;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.08);
+      box-shadow: 0 18px 54px rgba(0,124,162,0.38);
+    }
+
+    .btn.secondary {
+      background: rgba(255,255,255,0.045);
+      border: 1px solid var(--border);
+      box-shadow: none;
+    }
+
+    .hero { padding: 86px 0 42px; }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.03fr .97fr;
+      align-items: center;
+      gap: 64px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid rgba(95,166,192,.35);
+      color: var(--soft-blue);
+      padding: 8px 13px;
+      border-radius: 999px;
+      background: rgba(95,166,192,.08);
+      font-size: .78rem;
+      font-weight: 850;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+    }
+
+    h1, h2, h3 {
+      font-family: Manrope, Inter, system-ui, sans-serif;
+      letter-spacing: -0.055em;
+      line-height: 1.03;
+      margin: 0;
+    }
+
+    h1 {
+      font-size: clamp(2.65rem, 6.7vw, 6rem);
+      margin-top: 24px;
+    }
+
+    .gradient-text {
+      color: var(--cyan);
+      background: linear-gradient(90deg, var(--cyan), var(--soft-blue));
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero p {
+      color: #C9D3DD;
+      font-size: 1.15rem;
+      line-height: 1.75;
+      margin: 26px 0 28px;
+      max-width: 660px;
+    }
+
+    .hero-list, .check-list {
+      display: grid;
+      gap: 12px;
+      margin: 0 0 34px;
+      padding: 0;
+      list-style: none;
+      color: #DCE7EF;
+      font-weight: 600;
+    }
+
+    .hero-list li, .check-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .check {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      display: inline-grid;
+      place-items: center;
+      color: var(--success);
+      border: 1px solid rgba(66,232,139,.45);
+      background: rgba(66,232,139,.08);
+      font-size: .78rem;
+      flex: 0 0 auto;
+      margin-top: 2px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 26px;
+    }
+
+    .microcopy {
+      color: var(--muted);
+      font-size: .86rem;
+      line-height: 1.5;
+      margin-top: 10px;
+    }
+
+    .social-proof {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      color: var(--muted);
+      font-size: .92rem;
+    }
+
+    .avatars { display: flex; }
+    .avatar {
+      width: 36px;
+      height: 36px;
+      margin-left: -9px;
+      border-radius: 50%;
+      border: 2px solid #081016;
+      background: linear-gradient(135deg, #95C2D3, #76899E);
+      display: grid;
+      place-items: center;
+      font-size: .8rem;
+      font-weight: 900;
+    }
+    .avatar:first-child { margin-left: 0; }
+
+    .stars { color: #F5C84C; letter-spacing: .08em; }
+
+    .phones {
+      position: relative;
+      min-height: 680px;
+      display: grid;
+      place-items: center;
+    }
+
+    .phone {
+      width: 310px;
+      height: 640px;
+      border-radius: 42px;
+      padding: 16px;
+      background: #05080c;
+      border: 1px solid rgba(255,255,255,.18);
+      box-shadow: 0 40px 100px rgba(0,0,0,.65), 0 0 0 8px rgba(255,255,255,.035);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .phone.secondary-phone {
+      position: absolute;
+      right: 0;
+      top: 60px;
+      transform: rotate(4deg) scale(.82);
+      opacity: .82;
+      filter: saturate(.9);
+    }
+
+    .phone.main-phone { transform: rotate(-3deg); z-index: 2; }
+
+    .phone-screen {
+      height: 100%;
+      border-radius: 30px;
+      background: linear-gradient(180deg, #0b1219, #020405);
+      border: 1px solid rgba(149,194,211,.2);
+      padding: 20px 18px;
+      overflow: hidden;
+    }
+
+    .phone-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 800;
+      font-size: .8rem;
+      color: #E6EEF5;
+      margin-bottom: 22px;
+    }
+
+    .pill-row { display: flex; gap: 8px; flex-wrap: wrap; }
+    .pill {
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(149,194,211,.22);
+      color: #DDE6EE;
+      font-size: .78rem;
+      font-weight: 850;
+    }
+    .pill.active { background: rgba(95,166,192,.23); color: var(--soft-blue); }
+
+    .progress {
+      height: 8px;
+      background: rgba(255,255,255,.08);
+      border-radius: 999px;
+      margin: 16px 0 26px;
+      overflow: hidden;
+    }
+    .progress span {
+      display: block;
+      height: 100%;
+      width: 62%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, var(--primary), var(--light-blue-gray));
+    }
+
+    .question-card {
+      border: 1px solid var(--border);
+      background: rgba(0,0,0,.38);
+      border-radius: 22px;
+      padding: 18px;
+    }
+
+    .tag-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      align-items: center;
+      margin-bottom: 20px;
+      color: var(--soft-blue);
+      font-weight: 850;
+      font-size: .76rem;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+
+    .question-text {
+      font-size: 1.12rem;
+      line-height: 1.65;
+      color: #F3F7FA;
+      margin: 0 0 24px;
+    }
+
+    .answer-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .answer-btn {
+      min-height: 82px;
+      border-radius: 16px;
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.18);
+      color: #F4F8FB;
+      font-weight: 950;
+      letter-spacing: .03em;
+      display: grid;
+      place-items: center;
+      gap: 2px;
+    }
+    .answer-btn small { color: var(--muted); font-weight: 750; }
+    .answer-btn.true { border-color: rgba(66,232,139,.45); color: var(--success); }
+    .answer-btn.false { border-color: rgba(255,102,136,.38); color: var(--danger); }
+
+    .term-card {
+      margin-top: 14px;
+      border-radius: 16px;
+      background: rgba(95,166,192,.08);
+      border: 1px solid rgba(95,166,192,.18);
+      padding: 12px;
+      color: var(--light-blue-gray);
+      font-size: .78rem;
+      line-height: 1.45;
+    }
+
+    .stats-strip { margin-top: -10px; position: relative; z-index: 5; }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      border: 1px solid var(--border);
+      background: var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .stat {
+      background: rgba(15,23,32,.85);
+      padding: 30px 22px;
+      text-align: center;
+    }
+    .stat strong {
+      display: block;
+      font-size: 2.15rem;
+      color: var(--soft-blue);
+      margin-bottom: 5px;
+    }
+    .stat span { color: var(--muted); font-weight: 650; }
+
+    section { padding: 88px 0; }
+
+    .section-head {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 46px;
+    }
+
+    .section-head h2 {
+      font-size: clamp(2rem, 4vw, 3.8rem);
+      margin-top: 15px;
+    }
+
+    .section-head p {
+      color: var(--muted);
+      font-size: 1.05rem;
+      line-height: 1.7;
+      margin: 18px auto 0;
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 14px;
+    }
+
+    .step, .feature, .testimonial, .info-card, .faq-item, .lead-card {
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.025));
+      padding: 24px;
+      box-shadow: 0 16px 40px rgba(0,0,0,.18);
+    }
+
+    .step { position: relative; min-height: 230px; }
+
+    .step-number {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--primary), var(--cyan));
+      font-weight: 900;
+      margin-bottom: 18px;
+    }
+
+    .step h3, .feature h3, .faq-item h3 {
+      letter-spacing: -0.02em;
+      font-size: 1.02rem;
+      line-height: 1.25;
+      margin-bottom: 12px;
+    }
+
+    .step p, .feature p, .testimonial p, .info-card p, .faq-item p {
+      color: #C9D3DD;
+      line-height: 1.6;
+      margin: 0;
+      font-size: .94rem;
+    }
+
+    .notice {
+      margin-top: 22px;
+      padding: 20px 24px;
+      border-radius: 18px;
+      background: rgba(95,166,192,.1);
+      border: 1px solid rgba(95,166,192,.25);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      color: #DCE7EF;
+    }
+
+    .features-grid, .faq-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .feature-icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: rgba(95,166,192,.1);
+      border: 1px solid rgba(95,166,192,.25);
+      color: var(--soft-blue);
+      font-size: 1.35rem;
+      margin-bottom: 18px;
+    }
+
+    .app-flow {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      align-items: start;
+    }
+
+    .mini-phone {
+      border: 1px solid rgba(255,255,255,.16);
+      border-radius: 28px;
+      background: #05080c;
+      padding: 10px;
+      box-shadow: 0 20px 50px rgba(0,0,0,.35);
+      min-height: 330px;
+    }
+
+    .mini-screen {
+      border-radius: 22px;
+      background: #101820;
+      height: 250px;
+      padding: 20px 16px;
+      display: grid;
+      align-content: center;
+      gap: 12px;
+    }
+
+    .mini-option {
+      border: 1px solid rgba(149,194,211,.22);
+      border-radius: 12px;
+      padding: 12px;
+      font-weight: 800;
+      color: #DCE7EF;
+      background: rgba(255,255,255,.04);
+    }
+    .mini-option.active { background: rgba(95,166,192,.2); color: var(--soft-blue); }
+
+    .flow-item h3 { margin-top: 18px; font-size: 1.02rem; }
+    .flow-item p { color: var(--muted); line-height: 1.55; }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 52px;
+      align-items: center;
+    }
+
+    .phone-cluster { position: relative; min-height: 470px; }
+    .phone-cluster .phone { position: absolute; transform: scale(.66); transform-origin: center; }
+    .phone-cluster .phone:nth-child(1) { left: -20px; top: 20px; opacity: .7; }
+    .phone-cluster .phone:nth-child(2) { left: 110px; top: -35px; z-index: 2; }
+    .phone-cluster .phone:nth-child(3) { right: -35px; top: 25px; opacity: .7; transform: scale(.66) rotate(5deg); }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .testimonial .stars { margin-bottom: 14px; }
+    .person {
+      margin-top: 22px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    .partners {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 14px;
+      margin-top: 34px;
+      color: var(--muted);
+      text-align: center;
+      font-weight: 800;
+    }
+    .partner {
+      border: 1px solid rgba(149,194,211,.14);
+      border-radius: 16px;
+      padding: 18px 10px;
+      background: rgba(255,255,255,.03);
+    }
+
+    .lead-section { padding-top: 40px; }
+    .lead-grid {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 28px;
+      align-items: start;
+    }
+
+    .lead-card {
+      background:
+        radial-gradient(circle at 14% 10%, rgba(95,166,192,.18), transparent 18rem),
+        linear-gradient(180deg, rgba(255,255,255,.075), rgba(255,255,255,.025));
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .form-field { display: grid; gap: 8px; }
+    .form-field.full { grid-column: 1 / -1; }
+    .form-field label {
+      color: #DCE7EF;
+      font-size: .9rem;
+      font-weight: 750;
+    }
+
+    .consent {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      color: var(--muted);
+      font-size: .86rem;
+      line-height: 1.5;
+      margin: 16px 0;
+    }
+    .consent input { width: auto; min-height: auto; margin-top: 4px; }
+
+    .form-message {
+      display: none;
+      margin-top: 14px;
+      padding: 12px 14px;
+      border-radius: 14px;
+      background: rgba(66,232,139,.1);
+      color: var(--success);
+      border: 1px solid rgba(66,232,139,.24);
+      font-weight: 700;
+    }
+
+    .final-cta { padding: 70px 0; }
+
+    .cta-box {
+      border-radius: 28px;
+      padding: 44px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 30px;
+      background:
+        radial-gradient(circle at 15% 20%, rgba(255,255,255,.14), transparent 18rem),
+        linear-gradient(135deg, rgba(0,124,162,.86), rgba(95,166,192,.72));
+      box-shadow: var(--shadow);
+    }
+    .cta-box h2 { font-size: clamp(2rem, 4vw, 3.7rem); }
+    .cta-box p { color: rgba(255,255,255,.86); font-size: 1.05rem; line-height: 1.6; margin: 14px 0 0; }
+    .cta-box .btn { background: rgba(255,255,255,.94); color: #063241; }
+
+    footer {
+      border-top: 1px solid rgba(149,194,211,.12);
+      padding: 46px 0 30px;
+      color: var(--muted);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.3fr repeat(3, 1fr);
+      gap: 32px;
+    }
+    .footer-grid h4 { color: var(--text); margin: 0 0 14px; }
+    .footer-grid a { display: block; margin: 9px 0; color: var(--muted); }
+
+    .mobile-menu { display: none; }
+
+    @media (max-width: 980px) {
+      .nav-links { display: none; }
+      .mobile-menu { display: inline-flex; }
+      .hero-grid, .two-col, .cta-box, .lead-grid { grid-template-columns: 1fr; }
+      .phones { min-height: 620px; }
+      .phone.secondary-phone { right: 4%; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .process-grid { grid-template-columns: repeat(2, 1fr); }
+      .features-grid, .testimonials-grid, .app-flow, .faq-grid { grid-template-columns: 1fr 1fr; }
+      .partners { grid-template-columns: repeat(2, 1fr); }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 640px) {
+      .container { width: min(100% - 28px, var(--max)); }
+      .hero { padding-top: 54px; }
+      .nav-inner { min-height: 68px; }
+      .brand { font-size: 1.18rem; }
+      .nav-actions .btn, .lang-select { display: none; }
+      .mobile-menu { display: inline-flex; }
+      .hero-actions .btn { width: 100%; }
+      .phones { min-height: 560px; }
+      .phone { width: 276px; height: 570px; }
+      .phone.secondary-phone { display: none; }
+      .phone.main-phone { transform: none; }
+      .stats-grid, .features-grid, .testimonials-grid, .app-flow, .process-grid, .footer-grid, .faq-grid, .form-grid { grid-template-columns: 1fr; }
+      section { padding: 64px 0; }
+      .notice { flex-direction: column; align-items: flex-start; }
+      .phone-cluster { min-height: 380px; }
+      .phone-cluster .phone:nth-child(1), .phone-cluster .phone:nth-child(3) { display: none; }
+      .phone-cluster .phone:nth-child(2) { left: 50%; transform: translateX(-50%) scale(.58); top: -90px; }
+      .cta-box { padding: 32px 24px; }
+      .partners { grid-template-columns: 1fr; }
+    }
+  </style>
+
+  <!-- Structured data: JSON-LD recomendado por Google para ayudar a entender el contenido -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "name": "Facil Japón",
+        "url": "https://faciljapon.com",
+        "brand": { "@type": "Brand", "name": "Facil Japón" }
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "Facil Japón - Licencia de conducir en Japón",
+        "applicationCategory": "EducationalApplication",
+        "operatingSystem": "Web, iOS, Android",
+        "description": "App para estudiar el examen de cambio de licencia de conducir en Japón con explicaciones en español para latinos.",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "JPY" }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "¿Qué es 外免切替 o Gaimen Kirikae?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Es el proceso para cambiar una licencia de conducir extranjera por una licencia japonesa. Puede incluir revisión de documentos, examen teórico y examen práctico según el país y la prefectura." }
+          },
+          {
+            "@type": "Question",
+            "name": "¿La app sirve para estudiar en español?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Sí. La app está pensada para latinos en Japón e incluye preguntas tipo examen, explicación en español y vocabulario japonés contextual." }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Cuántas respuestas correctas necesito para aprobar?",
+            "acceptedAnswer": { "@type": "Answer", "text": "La app entrena con una meta del 90%, equivalente a 45 respuestas correctas de 50 en el simulador." }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
-
-  <!-- ── TOPBAR ── -->
-  <header class="topbar" role="banner">
-    <div>
-      <div class="brand-name">外免切替 知識確認</div>
-      <div class="brand-sub">Gaimen Kirikae · Knowledge Test · Post Oct 2025</div>
-    </div>
-    <div class="topbar-r">
-      <div class="spill">
-        <span class="v" id="qCur">1</span>/<span id="qTot">50</span>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#top" aria-label="Facil Japón">
+        <span class="brand-mark"></span>
+        <span>facil<span>japón</span></span>
+      </a>
+      <nav class="nav-links" aria-label="Navegación principal">
+        <a href="#proceso">Proceso</a>
+        <a href="#funciones">Funciones</a>
+        <a href="#app">App</a>
+        <a href="#faq">Preguntas</a>
+        <a href="#lead-form">Comenzar</a>
+      </nav>
+      <div class="nav-actions">
+        <select class="lang-select" aria-label="Idioma">
+          <option>🇪🇸 ES</option>
+          <option>🇬🇧 EN</option>
+          <option>🇯🇵 日本語</option>
+        </select>
+        <a class="btn js-cta" href="#lead-form">Comenzar ahora</a>
+        <button class="btn secondary mobile-menu" aria-label="Abrir menú">☰</button>
       </div>
-      <div class="spill ok">✓ <span class="v" id="lOk">0</span></div>
-      <div class="spill no">✗ <span class="v" id="lNo">0</span></div>
-      <button class="btn-gear" onclick="openDrawer()" aria-label="Settings" aria-haspopup="dialog">
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <circle cx="12" cy="12" r="3"/>
-          <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
-        </svg>
-      </button>
     </div>
   </header>
 
-  <!-- ── QUICKBAR: language + objective ── -->
-  <div class="quickbar" role="navigation" aria-label="Language and goal">
-    <div class="lang-pill" role="group" aria-label="Language selection">
-      <button class="lbtn"    id="bEN" onclick="setLang('en')" aria-pressed="false">EN</button>
-      <button class="lbtn on" id="bES" onclick="setLang('es')" aria-pressed="true">ES</button>
-      <button class="lbtn"    id="bJP" onclick="setLang('jp')" aria-pressed="false">日本語</button>
-    </div>
-    <div class="objective" id="obj" aria-live="polite">
-      Meta: <strong>45 correctas</strong>
-    </div>
-  </div>
-
-  <!-- ── PROGRESS ── -->
-  <div class="prog-wrap" aria-label="Exam progress">
-    <div class="prog-meta">
-      <span class="prog-label" id="progLbl" aria-live="polite">Pregunta 1 de 50</span>
-      <span class="prog-msg"   id="progMsg" aria-live="polite">¡Vamos! 🎯</span>
-    </div>
-    <div class="prog-track"
-         role="progressbar"
-         aria-valuemin="0"
-         aria-valuemax="50"
-         aria-valuenow="0"
-         aria-label="Progreso del examen">
-      <div class="prog-fill" id="prog" style="width: 0%"></div>
-    </div>
-  </div>
-
-  <!-- ── QUESTION CARD ── -->
-  <main class="card" id="card" role="main">
-
-    <div class="cat-strip">
-      <span class="cat-badge" id="catBadge" aria-label="Category">—</span>
-      <span class="src-tag"   id="srcTag"></span>
-    </div>
-
-    <div class="q-body">
-      <!-- English -->
-      <div class="lb" id="bkEN" lang="en">
-        <span class="lang-tag t-en">🇬🇧 English</span>
-        <div class="q-text" id="qEN"></div>
-      </div>
-
-      <!-- Spanish -->
-      <div class="lb on" id="bkES" lang="es">
-        <span class="lang-tag t-es">🇪🇸 Español</span>
-        <div class="q-text" id="qES"></div>
-      </div>
-
-      <!-- Japanese -->
-      <div class="lb" id="bkJP" lang="ja">
-        <span class="lang-tag t-jp">🇯🇵 日本語</span>
-        <div class="q-text" id="qJPk"></div>
-        <div class="q-kana"  id="qJPh"></div>
-      </div>
-    </div>
-
-    <!-- ○ × Answer buttons -->
-    <div class="tf-grid" role="group" aria-label="Answer options">
-      <button class="tf-btn" id="bT" onclick="answer(true)"  aria-label="True / Verdadero / 正しい">
-        <span class="jp-mark" id="markT" aria-hidden="true">○</span>
-        <span id="lblT">Verdadero</span>
-      </button>
-      <button class="tf-btn" id="bF" onclick="answer(false)" aria-label="False / Falso / 間違い">
-        <span class="jp-mark" id="markF" aria-hidden="true">×</span>
-        <span id="lblF">Falso</span>
-      </button>
-    </div>
-
-    <!-- Feedback -->
-    <div class="feedback" id="fb" role="alert" aria-live="assertive" aria-atomic="true">
-      <div class="fb-top">
-        <span id="fbIcon"    aria-hidden="true"></span>
-        <span id="fbVerdict"></span>
-      </div>
-      <div class="fb-correct-pill" id="fbPill" role="status"></div>
-      <div class="fb-exp"          id="fbExp"></div>
-
-      <!-- Culture note (ES only) -->
-      <div class="fb-culture" id="fbCulture" aria-label="Cultural context">
-        <div class="fb-culture-hd">
-          🇯🇵 <span id="fbCultureHd">En Japón...</span>
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Facil Japón · trámites y vida en Japón para latinos 🇯🇵</div>
+          <h1>Cambio de licencia de conducir en Japón <span class="gradient-text">sin perderte.</span></h1>
+          <p>Empieza gratis con el módulo de licencia japonesa. Te explicamos el proceso de 外免切替, los documentos, el examen teórico y las preguntas tipo examen en español claro.</p>
+          <ul class="hero-list">
+            <li><span class="check">✓</span> Guía paso a paso para cambiar tu licencia extranjera a japonesa.</li>
+            <li><span class="check">✓</span> Simulador gratis con preguntas tipo examen verdadero/falso.</li>
+            <li><span class="check">✓</span> Explicaciones en español, japonés contextual, kanji, romaji y audio opcional.</li>
+            <li><span class="check">✓</span> Pensado para latinos que viven, trabajan o recién llegan a Japón.</li>
+          </ul>
+          <div class="hero-actions">
+            <a class="btn js-cta" href="#lead-form">Estudiar gratis ahora →</a>
+            <a class="btn secondary" href="#proceso">Ver el proceso</a>
+          </div>
+          <p class="microcopy">Solo deja tus datos básicos. Luego entras directo al simulador gratis.</p>
+          <div class="social-proof">
+            <div class="avatars" aria-hidden="true">
+              <span class="avatar">C</span><span class="avatar">M</span><span class="avatar">J</span><span class="avatar">A</span>
+            </div>
+            <div><span class="stars">★★★★★</span><br/>Hecho para personas que no quieren pensar de más: entender, practicar y avanzar.</div>
+          </div>
         </div>
-        <div id="fbCultureTxt"></div>
-      </div>
 
-      <!-- JP term -->
-      <div class="fb-jpterm" id="fbJpterm" aria-label="Key Japanese term">
-        <div class="fb-culture-hd">
-          📖 <span id="fbtermHd">Término clave</span>
+        <div class="phones" aria-label="Vista previa de la app">
+          <div class="phone main-phone">
+            <div class="phone-screen">
+              <div class="phone-top"><span>10:24</span><span>5G 100%</span></div>
+              <div class="pill-row">
+                <span class="pill active">ES</span><span class="pill">EN</span><span class="pill">日本語</span><span class="pill">27/50</span>
+              </div>
+              <div class="progress"><span></span></div>
+              <div class="question-card">
+                <div class="tag-row"><span>HIGHWAY / 高速道路</span><span>道路交通法</span></div>
+                <p class="question-text">La velocidad máxima en autopista para un automóvil de pasajeros sin señal especial es 100 km/h.</p>
+                <div class="answer-grid">
+                  <button class="answer-btn true">○ VERDADERO<small>True</small></button>
+                  <button class="answer-btn false">× FALSO<small>False</small></button>
+                </div>
+                <div class="term-card">
+                  <strong>最高速度</strong>（さいこうそくど）<br/>Saikō sokudo · velocidad máxima 🔊
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="phone secondary-phone">
+            <div class="phone-screen">
+              <div class="phone-top"><span>Exam complete</span><span>✓</span></div>
+              <div class="question-card" style="text-align:center; padding:34px 18px;">
+                <div style="font-weight:900; color:var(--muted); letter-spacing:.08em;">外免切替 知識確認</div>
+                <div style="font-size:4.2rem; font-weight:950; color:var(--cyan); margin:24px 0 8px;">50/50</div>
+                <div style="color:var(--muted);">Meta: 45 correctas</div>
+                <div class="pill-row" style="justify-content:center; margin-top:24px;">
+                  <span class="pill">50 correctas</span><span class="pill">0 errores</span>
+                </div>
+                <div class="term-card" style="color:var(--success); margin-top:26px;">○ ¡Perfecto! Sin errores.</div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="fb-jpterm-row">
-          <span class="fb-jpterm-kanji"  id="fbtermKanji"  lang="ja"></span>
-          <span class="fb-jpterm-romaji" id="fbtermRomaji"></span>
-        </div>
-        <div class="fb-jpterm-meaning" id="fbtermMeaning"></div>
+      </div>
+    </section>
+
+    <div class="stats-strip">
+      <div class="container stats-grid">
+        <div class="stat"><strong>+5,000</strong><span>Latinos a quienes queremos ayudar</span></div>
+        <div class="stat"><strong>90%</strong><span>Meta de aprobación del simulador</span></div>
+        <div class="stat"><strong>1,500+</strong><span>Preguntas para practicar</span></div>
+        <div class="stat"><strong>Gratis</strong><span>Acceso inicial al quiz</span></div>
       </div>
     </div>
 
-    <button class="btn-next" id="btnNext" onclick="next()">Continuar →</button>
+    <section id="proceso">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Todo el proceso explicado</div>
+          <h2>Cómo cambiar tu licencia extranjera a japonesa</h2>
+          <p>外免切替, también conocido como Gaimen Kirikae, es el proceso para convertir una licencia de conducir extranjera en licencia japonesa. Facil Japón empieza con este trámite porque a muchos latinos nos cuesta entender por dónde comenzar.</p>
+        </div>
+        <div class="process-grid">
+          <article class="step"><div class="step-number">1</div><h3>Verifica elegibilidad</h3><p>Confirma si tu licencia extranjera es válida y si cumples el tiempo de residencia requerido.</p></article>
+          <article class="step"><div class="step-number">2</div><h3>Reúne documentos</h3><p>Licencia, pasaporte, residencia, traducción oficial, foto y formularios de tu prefectura.</p></article>
+          <article class="step"><div class="step-number">3</div><h3>Reserva tu cita</h3><p>Agenda en el centro de licencias y evita llegar sin saber qué te van a pedir.</p></article>
+          <article class="step"><div class="step-number">4</div><h3>Presenta documentos</h3><p>El centro revisa tu historial y confirma si puedes continuar con el cambio.</p></article>
+          <article class="step"><div class="step-number">5</div><h3>Estudia el examen</h3><p>Practica con preguntas tipo verdadero/falso, como en el examen real.</p></article>
+          <article class="step"><div class="step-number">6</div><h3>Examen práctico</h3><p>En algunos casos deberás presentar una prueba de manejo en circuito.</p></article>
+          <article class="step"><div class="step-number">7</div><h3>Recibe tu licencia</h3><p>Si apruebas, recibes tu licencia japonesa y puedes conducir con tranquilidad.</p></article>
+        </div>
+        <div class="notice">
+          <strong>Importante:</strong>
+          <span>Los requisitos varían por prefectura. Usa esta guía para orientarte y verifica siempre la información oficial local.</span>
+          <a class="btn secondary js-cta" href="#lead-form">Quiero estudiar gratis</a>
+        </div>
+      </div>
+    </section>
 
+    <section id="funciones">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Diseñada para latinos, pensada para Japón</div>
+          <h2>Todo lo que necesitas para estudiar sin confundirte</h2>
+          <p>Aplicamos una regla simple de UX: no hacerte pensar de más. La app te muestra el siguiente paso, la pregunta actual y lo que debes practicar.</p>
+        </div>
+        <div class="features-grid">
+          <article class="feature"><div class="feature-icon">📋</div><h3>Preguntas tipo examen</h3><p>Banco de preguntas basado en el formato de cambio de licencia de conducir en Japón.</p></article>
+          <article class="feature"><div class="feature-icon">💬</div><h3>Explicaciones latinas</h3><p>No solo te decimos la respuesta. Te explicamos la lógica japonesa de forma práctica.</p></article>
+          <article class="feature"><div class="feature-icon">あ</div><h3>Japonés contextual</h3><p>Aprende kanji, hiragana, romaji y términos clave usados en señales y reglas.</p></article>
+          <article class="feature"><div class="feature-icon">⚡</div><h3>Modo rápido</h3><p>Estudia con una mano en tren, descansos o momentos cortos del día.</p></article>
+          <article class="feature"><div class="feature-icon">📈</div><h3>Progreso inteligente</h3><p>Precisión, meta de aprobación, errores frecuentes y probabilidad de aprobar.</p></article>
+          <article class="feature"><div class="feature-icon">🌏</div><h3>Facil Japón crece contigo</h3><p>Hoy licencia. Luego otros procesos: banco, salud, vivienda, trámites y vida diaria.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="app">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Cómo funciona la app</div>
+          <h2>Estudiar nunca fue tan fácil</h2>
+        </div>
+        <div class="app-flow">
+          <article class="flow-item"><div class="mini-phone"><div class="mini-screen"><div class="mini-option active">🇪🇸 Español</div><div class="mini-option">🇬🇧 English</div><div class="mini-option">日本語</div></div></div><h3>1. Selecciona tu idioma</h3><p>Estudia en español, inglés o japonés.</p></article>
+          <article class="flow-item"><div class="mini-phone"><div class="mini-screen"><div class="mini-option active">🚗 Señales</div><div class="mini-option">🅿️ Estacionamiento</div><div class="mini-option">🚶 Peatones</div></div></div><h3>2. Elige categoría</h3><p>Refuerza los temas que más necesitas.</p></article>
+          <article class="flow-item"><div class="mini-phone"><div class="mini-screen"><p class="question-text" style="font-size:.95rem;">Pregunta tipo examen real.</p><div class="answer-grid"><button class="answer-btn true">○</button><button class="answer-btn false">×</button></div></div></div><h3>3. Responde</h3><p>Entrena con ○ verdadero y × falso como en Japón.</p></article>
+          <article class="flow-item"><div class="mini-phone"><div class="mini-screen"><div class="term-card">○ Correcto<br/>En Japón esta regla existe porque...</div><div class="mini-option active">Siguiente</div></div></div><h3>4. Aprende y mejora</h3><p>Recibe explicación clara y repasa tus errores.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container two-col">
+        <div class="phone-cluster" aria-hidden="true">
+          <div class="phone"><div class="phone-screen"><div class="term-card">Repaso de errores<br/>12 preguntas</div></div></div>
+          <div class="phone"><div class="phone-screen"><div class="question-card"><div class="tag-row"><span>Peatones</span><span>歩行者</span></div><p class="question-text">Los peatones siempre tienen prioridad al cruzar.</p><div class="answer-grid"><button class="answer-btn true">○</button><button class="answer-btn false">×</button></div></div></div></div>
+          <div class="phone"><div class="phone-screen"><div class="term-card">Precisión actual<br/><strong style="font-size:3rem;color:var(--cyan);">82%</strong><br/>Necesitas 90%</div></div></div>
+        </div>
+        <div>
+          <div class="eyebrow">Preparación completa</div>
+          <h2>Tu examen no necesita sentirse imposible</h2>
+          <ul class="check-list">
+            <li><span class="check">✓</span> Más de 1,000 preguntas tipo examen.</li>
+            <li><span class="check">✓</span> Explicación después de cada respuesta.</li>
+            <li><span class="check">✓</span> Repaso automático de preguntas falladas.</li>
+            <li><span class="check">✓</span> Estadísticas para saber si estás listo.</li>
+            <li><span class="check">✓</span> Funciona para estudiar en casa, tren o descansos.</li>
+          </ul>
+          <a class="btn js-cta" href="#lead-form">Entrar al simulador gratis →</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Preguntas frecuentes</div>
+          <h2>Lo que más buscan los latinos sobre licencia japonesa</h2>
+          <p>Contenido útil para SEO y para responder dudas antes de pedir datos.</p>
+        </div>
+        <div class="faq-grid">
+          <article class="faq-item"><h3>¿Qué es 外免切替?</h3><p>Es el proceso para cambiar una licencia de conducir extranjera por una licencia japonesa. También se conoce como Gaimen Kirikae.</p></article>
+          <article class="faq-item"><h3>¿El examen está en español?</h3><p>Depende de la prefectura. La app te prepara en español para entender las reglas y entrenar preguntas tipo examen.</p></article>
+          <article class="faq-item"><h3>¿Cuántas correctas necesito?</h3><p>El simulador entrena con meta de 45/50, equivalente al 90%, para que tengas margen de seguridad.</p></article>
+          <article class="faq-item"><h3>¿Sirve para colombianos, peruanos o mexicanos?</h3><p>Sí. Está pensado para latinos en Japón, aunque cada país y prefectura puede tener requisitos específicos.</p></article>
+          <article class="faq-item"><h3>¿Necesito examen práctico?</h3><p>En muchos casos sí. Esta primera versión se enfoca en entender el proceso y preparar el examen teórico.</p></article>
+          <article class="faq-item"><h3>¿Facil Japón será solo licencia?</h3><p>No. La licencia es el primer proceso. La visión es explicar en español trámites y vida diaria en Japón.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="testimonios">
+      <div class="container">
+        <div class="section-head">
+          <h2>Miles de latinos ya buscan hacer Japón más fácil</h2>
+          <p>Historias de personas que necesitaban una explicación simple para enfrentar procesos japoneses sin sentirse solas.</p>
+        </div>
+        <div class="testimonials-grid">
+          <article class="testimonial"><div class="stars">★★★★★</div><p>“Las explicaciones en español me ayudaron a entender las reglas japonesas sin frustrarme.”</p><div class="person"><span class="avatar">C</span><span>Carlos M.<br/>Osaka, Japón</span></div></article>
+          <article class="testimonial"><div class="stars">★★★★★</div><p>“El modo rápido me sirvió para estudiar en el tren. La app se siente muy clara.”</p><div class="person"><span class="avatar">M</span><span>María G.<br/>Tokyo, Japón</span></div></article>
+          <article class="testimonial"><div class="stars">★★★★★</div><p>“Lo mejor es el japonés contextual. Ahora entiendo mejor las señales.”</p><div class="person"><span class="avatar">J</span><span>Juan P.<br/>Nagoya, Japón</span></div></article>
+        </div>
+        <div class="partners" aria-label="Comunidades recomendadas">
+          <div class="partner">Latinos en Japón</div>
+          <div class="partner">Facil Japón</div>
+          <div class="partner">Gaimen Kirikae</div>
+          <div class="partner">Licencia japonesa</div>
+          <div class="partner">Vida en Japón</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="lead-section" id="lead-form">
+      <div class="container lead-grid">
+        <div>
+          <div class="eyebrow">Acceso gratis al simulador</div>
+          <h2>Déjanos tus datos y empieza a estudiar</h2>
+          <p style="color:var(--muted); line-height:1.7; font-size:1.05rem;">Con estos datos podremos avisarte cuando agreguemos más guías de Facil Japón: banco, salud, vivienda, trámites, escuela, impuestos y otros procesos útiles para latinos en Japón.</p>
+          <ul class="check-list" style="margin-top:24px;">
+            <li><span class="check">✓</span> Acceso inmediato al quiz gratis.</li>
+            <li><span class="check">✓</span> Te contactaremos solo con contenido útil relacionado con Japón.</li>
+            <li><span class="check">✓</span> Puedes empezar aunque todavía no tengas cita en el centro de licencias.</li>
+          </ul>
+        </div>
+
+        <form class="lead-card" id="leadCaptureForm">
+          <div class="form-grid">
+            <div class="form-field">
+              <label for="name">Nombre</label>
+              <input id="name" name="name" autocomplete="name" placeholder="Tu nombre" required />
+            </div>
+            <div class="form-field">
+              <label for="email">Correo</label>
+              <input id="email" name="email" type="email" autocomplete="email" placeholder="tu@email.com" required />
+            </div>
+            <div class="form-field">
+              <label for="country">País de licencia</label>
+              <select id="country" name="country" required>
+                <option value="">Selecciona...</option>
+                <option>Colombia</option>
+                <option>Perú</option>
+                <option>México</option>
+                <option>Brasil</option>
+                <option>Chile</option>
+                <option>Argentina</option>
+                <option>Otro</option>
+              </select>
+            </div>
+            <div class="form-field">
+              <label for="prefecture">Prefectura en Japón</label>
+              <input id="prefecture" name="prefecture" placeholder="Ej: Aichi, Tokyo, Osaka" />
+            </div>
+            <div class="form-field full">
+              <label for="stage">¿En qué etapa estás?</label>
+              <select id="stage" name="stage">
+                <option>Solo estoy investigando</option>
+                <option>Ya tengo licencia extranjera y quiero cambiarla</option>
+                <option>Ya tengo cita en el centro de licencias</option>
+                <option>Ya presenté y quiero estudiar mejor</option>
+              </select>
+            </div>
+            <div class="form-field full">
+              <label for="need">¿Qué otro proceso de Japón te gustaría que Facil Japón explique?</label>
+              <textarea id="need" name="need" placeholder="Ej: banco, seguro de salud, guardería, vivienda, visa, impuestos..."></textarea>
+            </div>
+          </div>
+
+          <label class="consent">
+            <input type="checkbox" name="consent" required />
+            <span>Acepto que Facil Japón guarde mis datos para darme acceso al simulador y enviarme información útil sobre procesos en Japón. No compartiremos tu información con terceros.</span>
+          </label>
+
+          <input type="hidden" name="source" value="facil-japon-licencia-landing" />
+          <input type="hidden" name="product" value="licencia-conducir-japon" />
+          <button class="btn" type="submit" style="width:100%;">Entrar al quiz gratis →</button>
+          <div class="form-message" id="formMessage">Datos guardados. Te llevamos al simulador...</div>
+        </form>
+      </div>
+    </section>
+
+    <section class="final-cta" id="cta">
+      <div class="container">
+        <div class="cta-box">
+          <div>
+            <h2>Facil Japón empieza con tu licencia japonesa</h2>
+            <p>Hoy estudias para el examen. Mañana podrás entender otros procesos de Japón sin perderte entre formularios, kanji y requisitos.</p>
+          </div>
+          <a class="btn js-cta" href="#lead-form">Quiero estudiar gratis 🚀</a>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <!-- ── SCORE SCREEN ── -->
-  <section class="score-wrap" id="scoreWrap" aria-label="Final results" aria-live="polite">
-    <div class="sc-card">
-      <div class="sc-eye" id="scEyebrow">外免切替 知識確認 · Examen Completo</div>
-      <div class="sc-num" id="scNum">—</div>
-      <div class="sc-sub" id="scSub">de 50 · Apruebas con 45/50 (90%)</div>
-
-      <div class="sc-stats" role="list">
-        <div class="stat" role="listitem">
-          <div class="stat-n c" id="stC">—</div>
-          <div class="stat-l"   id="stCL">Correctas</div>
-        </div>
-        <div class="stat" role="listitem">
-          <div class="stat-n w" id="stW">—</div>
-          <div class="stat-l"   id="stWL">Incorrectas</div>
-        </div>
-        <div class="stat" role="listitem">
-          <div class="stat-n p" id="stP">—</div>
-          <div class="stat-l"   id="stPL">Puntaje</div>
-        </div>
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <a class="brand" href="#top"><span class="brand-mark"></span><span>facil<span>japón</span></span></a>
+        <p style="line-height:1.7; max-width:360px;">Procesos japoneses explicados en español, paso a paso. Empezamos con el cambio de licencia de conducir en Japón.</p>
       </div>
-
-      <div class="verdict" id="verdict" role="status"></div>
-      <button class="btn-restart" id="btnRestart" onclick="restart()">↺ Nuevo Examen</button>
+      <div><h4>Enlaces</h4><a href="#proceso">Proceso</a><a href="#funciones">Funciones</a><a href="#faq">Preguntas frecuentes</a></div>
+      <div><h4>Futuras guías</h4><a href="#">Banco en Japón</a><a href="#">Seguro de salud</a><a href="#">Vivienda y trámites</a></div>
+      <div><h4>Contacto</h4><a href="mailto:soporte@faciljapon.com">soporte@faciljapon.com</a><a href="#">Instagram</a><a href="#">TikTok</a></div>
     </div>
+  </footer>
 
-    <div class="review" id="rev" aria-label="Questions to review"></div>
-  </section>
+  <script>
+    // Endpoint recomendado: Supabase Edge Function, Firebase Function, Airtable webhook,
+    // Formspree, Make/Zapier webhook o Google Apps Script Web App.
+    const LEAD_ENDPOINT = "https://script.google.com/macros/s/AKfycbyKebbb6peIQMHAo8zoUZYfvRqaTad70bq81Rd3e2aNZUzdLZVh8xNnYPRFkp5aWiXl/exec"; // Ej: "https://tu-endpoint.com/api/leads"
+    const QUIZ_URL = "/quiz/index.html";
 
-  <!-- ── SETTINGS DRAWER ── -->
-  <div class="overlay" id="overlay" onclick="closeDrawer(event)" role="dialog" aria-modal="true" aria-label="Accessibility settings">
-    <div class="drawer" id="drawer">
-      <div class="drw-handle" aria-hidden="true"></div>
-      <div class="drw-title">⚙️ Configuración</div>
+    const menuButton = document.querySelector('.mobile-menu');
+    const navLinks = document.querySelector('.nav-links');
 
-      <div class="drw-sec">
-        <div class="drw-lbl" id="dlTheme">Tema de color</div>
-        <div class="drw-row" role="group" aria-labelledby="dlTheme">
-          <button class="sbtn" id="tAuto"  onclick="setTheme('auto')"  aria-pressed="false">🌗 Auto</button>
-          <button class="sbtn" id="tLight" onclick="setTheme('light')" aria-pressed="false">☀️ Claro</button>
-          <button class="sbtn on" id="tDark" onclick="setTheme('dark')" aria-pressed="true">🌙 Oscuro</button>
-        </div>
-      </div>
+    if (menuButton) {
+      menuButton.addEventListener('click', () => {
+        const isOpen = navLinks.style.display === 'flex';
+        navLinks.style.display = isOpen ? 'none' : 'flex';
+        navLinks.style.position = 'absolute';
+        navLinks.style.top = '68px';
+        navLinks.style.left = '14px';
+        navLinks.style.right = '14px';
+        navLinks.style.flexDirection = 'column';
+        navLinks.style.alignItems = 'stretch';
+        navLinks.style.padding = '18px';
+        navLinks.style.borderRadius = '18px';
+        navLinks.style.background = 'rgba(4, 9, 13, 0.96)';
+        navLinks.style.border = '1px solid rgba(149,194,211,.18)';
+      });
+    }
 
-      <div class="drw-sec">
-        <div class="drw-lbl" id="dlFont">Tamaño de texto</div>
-        <div class="drw-row" role="group" aria-labelledby="dlFont">
-          <button class="sbtn"    id="fSm" onclick="setSize('sm')" aria-pressed="false">A− Pequeño</button>
-          <button class="sbtn on" id="fMd" onclick="setSize('md')" aria-pressed="true">A Normal</button>
-          <button class="sbtn"    id="fLg" onclick="setSize('lg')" aria-pressed="false">A+ Grande</button>
-        </div>
-      </div>
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener('click', () => {
+        if (window.innerWidth <= 980 && navLinks) navLinks.style.display = 'none';
+      });
+    });
 
-      <div class="drw-sec">
-        <div class="drw-lbl" id="dlVisual">Filtros visuales</div>
-        <div class="drw-row" role="group" aria-labelledby="dlVisual">
-          <button class="sbtn" id="grayBtn" onclick="toggleGray()" aria-pressed="false">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 2v20"/></svg>
-            Escala de grises
-          </button>
-          <button class="sbtn" id="contBtn" onclick="toggleContrast()" aria-pressed="false">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20A10 10 0 0 0 12 2zm0 18V4a8 8 0 0 1 0 16z"/></svg>
-            Alto contraste
-          </button>
-        </div>
-      </div>
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.animate([
+            { opacity: 0, transform: 'translateY(24px)' },
+            { opacity: 1, transform: 'translateY(0)' }
+          ], { duration: 650, easing: 'cubic-bezier(.2,.8,.2,1)', fill: 'both' });
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
 
-      <div class="drw-sec">
-        <div class="drw-lbl" id="dlMode">Modo de estudio</div>
-        <div class="quick-toggle" onclick="toggleQuick()" role="switch" aria-checked="false" tabindex="0"
-             onkeydown="if(event.key==='Enter'||event.key===' ')toggleQuick()">
-          <div class="qt-left">
-            <div class="qt-name" id="dlQuickName">⚡ Modo Rápido</div>
-            <div class="qt-desc" id="dlQuickDesc">Una mano, sin distracciones, respuesta rápida</div>
-          </div>
-          <div class="qt-switch" id="qtSwitch" aria-hidden="true"></div>
-        </div>
-      </div>
+    document.querySelectorAll('.step, .feature, .testimonial, .flow-item, .stat, .faq-item').forEach(el => observer.observe(el));
 
-    </div>
-  </div>
+    document.querySelectorAll('.js-cta').forEach(link => {
+      link.addEventListener('click', () => {
+        const firstInput = document.querySelector('#lead-form input[name="name"]');
+        setTimeout(() => firstInput && firstInput.focus({ preventScroll: true }), 650);
+      });
+    });
 
-  <!-- ── SCRIPTS ── -->
-  <script src="questions.js"></script>
-  <script src="app.js"></script>
+    const form = document.getElementById('leadCaptureForm');
+    const formMessage = document.getElementById('formMessage');
 
+    if (form) {
+      form.addEventListener('submit', async (event) => {
+        event.preventDefault();
+
+        const formData = new FormData(form);
+        const lead = Object.fromEntries(formData.entries());
+        lead.createdAt = new Date().toISOString();
+        lead.page = window.location.pathname;
+        lead.utm = window.location.search;
+        lead.userAgent = navigator.userAgent;
+
+        const previousLeads = JSON.parse(localStorage.getItem('facilJaponLeads') || '[]');
+        previousLeads.push(lead);
+        localStorage.setItem('facilJaponLeads', JSON.stringify(previousLeads));
+
+        if (LEAD_ENDPOINT) {
+          try {
+            await fetch(LEAD_ENDPOINT, {
+              method: 'POST',
+              mode: "no-cors",
+              body: JSON.stringify(lead)
+            });
+          } catch (error) {
+            console.warn('Lead endpoint failed. Lead preserved locally.', error);
+          }
+        }
+
+        formMessage.style.display = 'block';
+        const query = new URLSearchParams({ source: 'facil-japon', product: 'licencia' });
+        setTimeout(() => {
+          window.location.href = `${QUIZ_URL}?${query.toString()}`;
+        }, 700);
+      });
+    }
+  </script>
 </body>
 </html>
