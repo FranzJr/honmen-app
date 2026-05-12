@@ -360,18 +360,67 @@ function updateProgressLabels() {
 }
 
 // ═══════════════════════════════════════════════════════════════
+// SESSION PERSISTENCE
+// ═══════════════════════════════════════════════════════════════
+const SESSION_KEY = 'honmen_quiz_session';
+
+function saveSession() {
+  try {
+    const data = {
+      v:         1,
+      questions: state.questions,
+      current:   state.current,
+      score:     state.score,
+      history:   state.history.map((h, i) => ({
+        qIdx: state.questions.indexOf(h.q),
+        val:  h.val,
+        ok:   h.ok,
+      })),
+    };
+    localStorage.setItem(SESSION_KEY, JSON.stringify(data));
+  } catch (e) { /* quota exceeded or private mode — ignore */ }
+}
+
+function clearSession() {
+  try { localStorage.removeItem(SESSION_KEY); } catch (e) {}
+}
+
+function loadSession() {
+  try {
+    const raw = localStorage.getItem(SESSION_KEY);
+    if (!raw) return false;
+    const data = JSON.parse(raw);
+    if (data.v !== 1 || !Array.isArray(data.questions) || !data.questions.length) return false;
+    state.questions = data.questions;
+    state.current   = data.current   || 0;
+    state.score     = data.score     || 0;
+    state.answered  = false;
+    state.history   = (data.history || []).map(h => ({
+      q:   state.questions[h.qIdx],
+      val: h.val,
+      ok:  h.ok,
+    }));
+    return true;
+  } catch (e) { return false; }
+}
+
+// ═══════════════════════════════════════════════════════════════
 // QUIZ — INIT & RENDER
 // ═══════════════════════════════════════════════════════════════
 function init() {
-  state.questions = shuffle(QUESTIONS).slice(0, state.examSize);
-  state.current   = 0;
-  state.score     = 0;
-  state.history   = [];
-  state.answered  = false;
+  const resumed = loadSession();
+  if (!resumed) {
+    state.questions = shuffle(QUESTIONS).slice(0, state.examSize);
+    state.current   = 0;
+    state.score     = 0;
+    state.history   = [];
+    state.answered  = false;
+  }
 
+  const wrongCount = state.history.filter(h => !h.ok).length;
   DOM.qTot().textContent  = state.questions.length;
-  DOM.lOk().textContent   = '0';
-  DOM.lNo().textContent   = '0';
+  DOM.lOk().textContent   = state.score;
+  DOM.lNo().textContent   = wrongCount;
 
   DOM.scoreWrap().classList.remove('on');
   DOM.card().style.display = '';
@@ -525,6 +574,8 @@ function next() {
     return;
   }
 
+  saveSession();
+
   // re-trigger animation
   const card = DOM.card();
   card.style.animation = 'none';
@@ -567,6 +618,7 @@ function showScore() {
   verdict.className   = `verdict ${score >= 45 ? 'v-pass' : 'v-fail'}`;
   verdict.textContent = fmt(tpl, { s: score, p: pct });
 
+  clearSession();
   buildReview();
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
@@ -608,6 +660,7 @@ function buildReview() {
 // RESTART
 // ═══════════════════════════════════════════════════════════════
 function restart() {
+  clearSession();
   DOM.rev().innerHTML = '';
   init();
   window.scrollTo({ top: 0, behavior: 'smooth' });
