@@ -183,7 +183,7 @@ body {
   border-radius: var(--rpill);
   font-size: var(--fxs);
   font-weight: 700;
-  color: var(--tx3);
+  color: var(--tx2);
 }
 .spill .v { color: var(--tx); }
 .spill.ok .v { color: var(--ok); }
@@ -222,7 +222,7 @@ body {
   border: none; background: transparent; cursor: pointer;
   font-family: var(--f); font-size: var(--fxs); font-weight: 700;
   letter-spacing: .06em; text-transform: uppercase;
-  color: var(--tx3); border-radius: var(--rpill);
+  color: var(--tx2); border-radius: var(--rpill);
   transition: all .18s;
   min-height: var(--touch);
   display: flex; align-items: center;
@@ -232,7 +232,7 @@ body {
 
 .objective {
   font-size: var(--fxs); font-weight: 700;
-  color: var(--tx3);
+  color: var(--tx2);
   background: var(--bg2);
   border: 1px solid var(--bdr);
   border-radius: var(--rpill);
