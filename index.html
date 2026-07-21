@@ -9,6 +9,9 @@
   <meta name="description" content="Guía y app gratis para estudiar el examen de cambio de licencia de conducir en Japón. Explicaciones en español, preguntas tipo examen, 外免切替 y japonés contextual para latinos." />
   <meta name="keywords" content="licencia de conducir en Japón, cambio de licencia en Japón, licencia japonesa, 外免切替, gaimen kirikae, examen licencia Japón, latinos en Japón, pase de conducción en Japón, Facil Japón" />
   <meta name="robots" content="index, follow, max-image-preview:large" />
+  <script>
+    (function(){var s=localStorage.getItem('fj_theme'),d=window.matchMedia('(prefers-color-scheme: dark)').matches;document.documentElement.dataset.theme=s||(d?'dark':'light');})();
+  </script>
   <link rel="canonical" href="https://faciljapon.com/es/licencia-conducir-japon" />
   <link rel="alternate" hreflang="es" href="https://faciljapon.com/es/licencia-conducir-japon" />
   <link rel="alternate" hreflang="en" href="https://faciljapon.com/en/japan-driving-license-conversion" />
@@ -33,38 +36,112 @@
 
   <style>
     :root {
-      --bg: #061016;
-      --bg-2: #0f1720;
-      --panel: rgba(15, 23, 32, 0.78);
-      --panel-2: rgba(255,255,255,0.045);
+      /* Brand — fixed across themes */
       --primary: #007CA2;
       --cyan: #5FA6C0;
       --soft-blue: #71AEC4;
       --steel: #76899E;
       --light-blue-gray: #95C2D3;
       --neutral: #A8B5C2;
-      --text: #F5F7FA;
-      --muted: #A8B5C2;
       --success: #42E88B;
       --danger: #FF6688;
       --warning: #F4B24B;
-      --border: rgba(149, 194, 211, 0.22);
       --shadow: 0 24px 80px rgba(0, 124, 162, 0.18);
       --radius: 24px;
       --max: 1180px;
+      /* Dark mode defaults */
+      --bg: #061016;
+      --bg-2: #0f1720;
+      --text: #F5F7FA;
+      --muted: #A8B5C2;
+      --border: rgba(149,194,211,0.22);
+      --border-subtle: rgba(149,194,211,0.12);
+      --border-mid: rgba(149,194,211,.22);
+      --nav-bg: rgba(4,9,13,0.72);
+      --nav-text: #D9E2EA;
+      --input-bg: rgba(255,255,255,0.055);
+      --secondary-bg: rgba(255,255,255,0.045);
+      --body-text: #C9D3DD;
+      --body-text-2: #DCE7EF;
+      --card-top: rgba(255,255,255,.07);
+      --card-bot: rgba(255,255,255,.025);
+      --stat-bg: rgba(15,23,32,.85);
+      --surface-0: rgba(255,255,255,.03);
+      --surface-1: rgba(255,255,255,.04);
+      --surface-2: rgba(255,255,255,.06);
+      --surface-3: rgba(255,255,255,.08);
+      --pill-text: #DDE6EE;
+      --avatar-border: #081016;
+      --qcard-bg: rgba(0,0,0,.38);
+      --answer-btn-bg: rgba(255,255,255,.04);
+      --answer-btn-border: rgba(255,255,255,.18);
+      --notice-bg: rgba(95,166,192,.1);
+      --notice-border: rgba(95,166,192,.25);
+      --notice-text: #DCE7EF;
+      --form-label: #DCE7EF;
+      --partner-bg: rgba(255,255,255,.03);
+      --grid-line: rgba(255,255,255,0.025);
+      --body-gradient:
+        radial-gradient(circle at top left, rgba(0,124,162,0.32), transparent 32rem),
+        radial-gradient(circle at 88% 12%, rgba(95,166,192,0.22), transparent 30rem),
+        linear-gradient(180deg, #04090d 0%, var(--bg) 45%, #050b10 100%);
+    }
+
+    [data-theme="light"] {
+      --bg: #EDF3F8;
+      --bg-2: #FFFFFF;
+      --text: #0D1825;
+      --muted: #5A7080;
+      --border: rgba(0,100,140,0.18);
+      --border-subtle: rgba(0,100,140,0.1);
+      --border-mid: rgba(0,100,140,.16);
+      --nav-bg: rgba(248,252,255,0.92);
+      --nav-text: #1A3042;
+      --input-bg: rgba(0,0,0,0.05);
+      --secondary-bg: rgba(0,0,0,0.05);
+      --body-text: #2A3D50;
+      --body-text-2: #1E3044;
+      --card-top: rgba(255,255,255,.92);
+      --card-bot: rgba(255,255,255,.72);
+      --stat-bg: rgba(255,255,255,.92);
+      --surface-0: rgba(0,0,0,.025);
+      --surface-1: rgba(0,0,0,.03);
+      --surface-2: rgba(0,0,0,.045);
+      --surface-3: rgba(0,0,0,.06);
+      --pill-text: #1A3042;
+      --avatar-border: #FFFFFF;
+      --qcard-bg: rgba(255,255,255,.8);
+      --answer-btn-bg: rgba(0,0,0,.03);
+      --answer-btn-border: rgba(0,100,140,.18);
+      --notice-bg: rgba(0,124,162,.06);
+      --notice-border: rgba(0,124,162,.2);
+      --notice-text: #0D3248;
+      --form-label: #1E3044;
+      --partner-bg: rgba(0,0,0,.025);
+      --grid-line: rgba(0,100,140,0.04);
+      --body-gradient:
+        radial-gradient(circle at top left, rgba(0,124,162,0.10), transparent 32rem),
+        radial-gradient(circle at 88% 12%, rgba(95,166,192,0.08), transparent 30rem),
+        linear-gradient(180deg, #E8F2F8 0%, var(--bg) 45%, #EDF3F8 100%);
     }
 
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
 
+    body, .nav, .step, .feature, .testimonial, .stat, .lead-card, .faq-item, footer {
+      transition: background .25s ease, color .25s ease, border-color .25s ease;
+    }
+
+    .theme-toggle {
+      width: 44px; min-width: 44px; padding: 0;
+      font-size: 1.1rem; flex-shrink: 0;
+    }
+
     body {
       margin: 0;
       font-family: Inter, Manrope, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       color: var(--text);
-      background:
-        radial-gradient(circle at top left, rgba(0,124,162,0.32), transparent 32rem),
-        radial-gradient(circle at 88% 12%, rgba(95,166,192,0.22), transparent 30rem),
-        linear-gradient(180deg, #04090d 0%, var(--bg) 45%, #050b10 100%);
+      background: var(--body-gradient);
       overflow-x: hidden;
     }
 
@@ -74,8 +151,8 @@
       inset: 0;
       pointer-events: none;
       background-image:
-        linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+        linear-gradient(var(--grid-line) 1px, transparent 1px),
+        linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
       background-size: 64px 64px;
       mask-image: linear-gradient(to bottom, rgba(0,0,0,.6), transparent 70%);
       z-index: -1;
@@ -93,8 +170,8 @@
       top: 0;
       z-index: 50;
       backdrop-filter: blur(18px);
-      background: rgba(4, 9, 13, 0.72);
-      border-bottom: 1px solid rgba(149, 194, 211, 0.12);
+      background: var(--nav-bg);
+      border-bottom: 1px solid var(--border-subtle);
     }
 
     .nav-inner {
@@ -130,7 +207,7 @@
       display: flex;
       align-items: center;
       gap: 28px;
-      color: #D9E2EA;
+      color: var(--nav-text);
       font-size: 0.92rem;
       font-weight: 650;
     }
@@ -147,7 +224,7 @@
     select,
     textarea {
       border: 1px solid var(--border);
-      background: rgba(255,255,255,0.055);
+      background: var(--input-bg);
       color: var(--text);
       border-radius: 999px;
       min-height: 44px;
@@ -194,7 +271,7 @@
     }
 
     .btn.secondary {
-      background: rgba(255,255,255,0.045);
+      background: var(--secondary-bg);
       border: 1px solid var(--border);
       box-shadow: none;
     }
@@ -244,7 +321,7 @@
     }
 
     .hero p {
-      color: #C9D3DD;
+      color: var(--body-text);
       font-size: 1.15rem;
       line-height: 1.75;
       margin: 26px 0 28px;
@@ -257,7 +334,7 @@
       margin: 0 0 34px;
       padding: 0;
       list-style: none;
-      color: #DCE7EF;
+      color: var(--body-text-2);
       font-weight: 600;
     }
 
@@ -309,7 +386,7 @@
       height: 36px;
       margin-left: -9px;
       border-radius: 50%;
-      border: 2px solid #081016;
+      border: 2px solid var(--avatar-border);
       background: linear-gradient(135deg, #95C2D3, #76899E);
       display: grid;
       place-items: center;
@@ -373,9 +450,9 @@
     .pill {
       padding: 7px 12px;
       border-radius: 999px;
-      background: rgba(255,255,255,.06);
-      border: 1px solid rgba(149,194,211,.22);
-      color: #DDE6EE;
+      background: var(--surface-2);
+      border: 1px solid var(--border-mid);
+      color: var(--pill-text);
       font-size: .78rem;
       font-weight: 850;
     }
@@ -398,7 +475,7 @@
 
     .question-card {
       border: 1px solid var(--border);
-      background: rgba(0,0,0,.38);
+      background: var(--qcard-bg);
       border-radius: 22px;
       padding: 18px;
     }
@@ -432,9 +509,9 @@
     .answer-btn {
       min-height: 82px;
       border-radius: 16px;
-      background: rgba(255,255,255,.04);
-      border: 1px solid rgba(255,255,255,.18);
-      color: #F4F8FB;
+      background: var(--answer-btn-bg);
+      border: 1px solid var(--answer-btn-border);
+      color: var(--pill-text);
       font-weight: 950;
       letter-spacing: .03em;
       display: grid;
@@ -470,7 +547,7 @@
     }
 
     .stat {
-      background: rgba(15,23,32,.85);
+      background: var(--stat-bg);
       padding: 30px 22px;
       text-align: center;
     }
@@ -511,7 +588,7 @@
     .step, .feature, .testimonial, .info-card, .faq-item, .lead-card {
       border: 1px solid var(--border);
       border-radius: 22px;
-      background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.025));
+      background: linear-gradient(180deg, var(--card-top), var(--card-bot));
       padding: 24px;
       box-shadow: 0 16px 40px rgba(0,0,0,.18);
     }
@@ -537,7 +614,7 @@
     }
 
     .step p, .feature p, .testimonial p, .info-card p, .faq-item p {
-      color: #C9D3DD;
+      color: var(--body-text);
       line-height: 1.6;
       margin: 0;
       font-size: .94rem;
@@ -547,13 +624,13 @@
       margin-top: 22px;
       padding: 20px 24px;
       border-radius: 18px;
-      background: rgba(95,166,192,.1);
-      border: 1px solid rgba(95,166,192,.25);
+      background: var(--notice-bg);
+      border: 1px solid var(--notice-border);
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 20px;
-      color: #DCE7EF;
+      color: var(--notice-text);
     }
 
     .features-grid, .faq-grid {
@@ -602,12 +679,12 @@
     }
 
     .mini-option {
-      border: 1px solid rgba(149,194,211,.22);
+      border: 1px solid var(--border-mid);
       border-radius: 12px;
       padding: 12px;
       font-weight: 800;
-      color: #DCE7EF;
-      background: rgba(255,255,255,.04);
+      color: var(--pill-text);
+      background: var(--surface-1);
     }
     .mini-option.active { background: rgba(95,166,192,.2); color: var(--soft-blue); }
 
@@ -653,10 +730,10 @@
       font-weight: 800;
     }
     .partner {
-      border: 1px solid rgba(149,194,211,.14);
+      border: 1px solid var(--border-subtle);
       border-radius: 16px;
       padding: 18px 10px;
-      background: rgba(255,255,255,.03);
+      background: var(--partner-bg);
     }
 
     .lead-section { padding-top: 40px; }
@@ -670,7 +747,7 @@
     .lead-card {
       background:
         radial-gradient(circle at 14% 10%, rgba(95,166,192,.18), transparent 18rem),
-        linear-gradient(180deg, rgba(255,255,255,.075), rgba(255,255,255,.025));
+        linear-gradient(180deg, var(--card-top), var(--card-bot));
     }
 
     .form-grid {
@@ -682,7 +759,7 @@
     .form-field { display: grid; gap: 8px; }
     .form-field.full { grid-column: 1 / -1; }
     .form-field label {
-      color: #DCE7EF;
+      color: var(--form-label);
       font-size: .9rem;
       font-weight: 750;
     }
@@ -728,7 +805,7 @@
     .cta-box .btn { background: rgba(255,255,255,.94); color: #063241; }
 
     footer {
-      border-top: 1px solid rgba(149,194,211,.12);
+      border-top: 1px solid var(--border-subtle);
       padding: 46px 0 30px;
       color: var(--muted);
     }
@@ -761,8 +838,9 @@
       .hero { padding-top: 54px; }
       .nav-inner { min-height: 68px; }
       .brand { font-size: 1.18rem; }
-      .nav-actions .btn, .lang-select { display: none; }
+      .nav-actions .btn:not(.mobile-menu):not(.theme-toggle):not(.js-cta-mobile-hide) { display: none; }
       .mobile-menu { display: inline-flex; }
+      .lang-select { font-size: .78rem; padding: 0 8px; min-height: 38px; }
       .hero-actions .btn { width: 100%; }
       .phones { min-height: 560px; }
       .phone { width: 276px; height: 570px; }
@@ -836,18 +914,21 @@
         <span>facil<span>japón</span></span>
       </a>
       <nav class="nav-links" aria-label="Navegación principal">
-        <a href="#proceso">Proceso</a>
-        <a href="#funciones">Funciones</a>
-        <a href="#app">App</a>
-        <a href="#faq">Preguntas</a>
-        <a href="#lead-form">Comenzar</a>
+        <a href="#proceso" data-i18n="nav.proceso">Proceso</a>
+        <a href="#funciones" data-i18n="nav.funciones">Funciones</a>
+        <a href="#app" data-i18n="nav.app">App</a>
+        <a href="#faq" data-i18n="nav.faq">Preguntas</a>
+        <a href="#lead-form" data-i18n="nav.start">Comenzar</a>
       </nav>
       <div class="nav-actions">
-        <select class="lang-select" aria-label="Idioma">
-          <option>🇪🇸 ES</option>
-          <option>🇬🇧 EN</option>
-          <option>🇯🇵 日本語</option>
+        <select class="lang-select" id="langSelect" aria-label="Idioma" onchange="setLang(this.value)">
+          <option value="es">🇪🇸 ES</option>
+          <option value="en">🇬🇧 EN</option>
+          <option value="jp">🇯🇵 JP</option>
+          <option value="pt">🇧🇷 PT</option>
+          <option value="tl">🇵🇭 TL</option>
         </select>
+        <button class="btn secondary theme-toggle" id="themeToggle" aria-label="Cambiar tema" title="Cambiar tema claro/oscuro">☀️</button>
         <a class="btn js-cta" href="#lead-form">Comenzar ahora</a>
         <button class="btn secondary mobile-menu" aria-label="Abrir menú">☰</button>
       </div>
@@ -858,25 +939,25 @@
     <section class="hero">
       <div class="container hero-grid">
         <div>
-          <div class="eyebrow">Facil Japón · trámites y vida en Japón para latinos 🇯🇵</div>
-          <h1>Cambio de licencia de conducir en Japón <span class="gradient-text">sin perderte.</span></h1>
-          <p>Empieza gratis con el módulo de licencia japonesa. Te explicamos el proceso de 外免切替, los documentos, el examen teórico y las preguntas tipo examen en español claro.</p>
+          <div class="eyebrow" data-i18n="hero.eyebrow">Facil Japón · trámites y vida en Japón para latinos 🇯🇵</div>
+          <h1 data-i18n-html="hero.h1">Cambio de licencia de conducir en Japón <span class="gradient-text">sin perderte.</span></h1>
+          <p data-i18n="hero.p">Empieza gratis con el módulo de licencia japonesa. Te explicamos el proceso de 外免切替, los documentos, el examen teórico y las preguntas tipo examen en español claro.</p>
           <ul class="hero-list">
-            <li><span class="check">✓</span> Guía paso a paso para cambiar tu licencia extranjera a japonesa.</li>
-            <li><span class="check">✓</span> Simulador gratis con preguntas tipo examen verdadero/falso.</li>
-            <li><span class="check">✓</span> Explicaciones en español, japonés contextual, kanji, romaji y audio opcional.</li>
-            <li><span class="check">✓</span> Pensado para latinos que viven, trabajan o recién llegan a Japón.</li>
+            <li><span class="check">✓</span> <span data-i18n="hero.li1">Guía paso a paso para cambiar tu licencia extranjera a japonesa.</span></li>
+            <li><span class="check">✓</span> <span data-i18n="hero.li2">Simulador gratis con preguntas tipo examen verdadero/falso.</span></li>
+            <li><span class="check">✓</span> <span data-i18n="hero.li3">Explicaciones en español, japonés contextual, kanji, romaji y audio opcional.</span></li>
+            <li><span class="check">✓</span> <span data-i18n="hero.li4">Pensado para latinos que viven, trabajan o recién llegan a Japón.</span></li>
           </ul>
           <div class="hero-actions">
-            <a class="btn js-cta" href="#lead-form">Estudiar gratis ahora →</a>
-            <a class="btn secondary" href="#proceso">Ver el proceso</a>
+            <a class="btn js-cta" href="#lead-form" data-i18n="hero.cta1">Estudiar gratis ahora →</a>
+            <a class="btn secondary" href="#proceso" data-i18n="hero.cta2">Ver el proceso</a>
           </div>
-          <p class="microcopy">Solo deja tus datos básicos. Luego entras directo al simulador gratis.</p>
+          <p class="microcopy" data-i18n="hero.microcopy">Solo deja tus datos básicos. Luego entras directo al simulador gratis.</p>
           <div class="social-proof">
             <div class="avatars" aria-hidden="true">
               <span class="avatar">C</span><span class="avatar">M</span><span class="avatar">J</span><span class="avatar">A</span>
             </div>
-            <div><span class="stars">★★★★★</span><br/>Hecho para personas que no quieren pensar de más: entender, practicar y avanzar.</div>
+            <div><span class="stars">★★★★★</span><br/><span data-i18n="hero.social">Hecho para personas que no quieren pensar de más: entender, practicar y avanzar.</span></div>
           </div>
         </div>
 
@@ -922,33 +1003,33 @@
 
     <div class="stats-strip">
       <div class="container stats-grid">
-        <div class="stat"><strong>+5,000</strong><span>Latinos a quienes queremos ayudar</span></div>
-        <div class="stat"><strong>90%</strong><span>Meta de aprobación del simulador</span></div>
-        <div class="stat"><strong>1,500+</strong><span>Preguntas para practicar</span></div>
-        <div class="stat"><strong>Gratis</strong><span>Acceso inicial al quiz</span></div>
+        <div class="stat"><strong>+5,000</strong><span data-i18n="stat1">Latinos a quienes queremos ayudar</span></div>
+        <div class="stat"><strong>90%</strong><span data-i18n="stat2">Meta de aprobación del simulador</span></div>
+        <div class="stat"><strong>1,500+</strong><span data-i18n="stat3">Preguntas para practicar</span></div>
+        <div class="stat"><strong data-i18n="stat4.val">Gratis</strong><span data-i18n="stat4">Acceso inicial al quiz</span></div>
       </div>
     </div>
 
     <section id="proceso">
       <div class="container">
         <div class="section-head">
-          <div class="eyebrow">Todo el proceso explicado</div>
-          <h2>Cómo cambiar tu licencia extranjera a japonesa</h2>
-          <p>外免切替, también conocido como Gaimen Kirikae, es el proceso para convertir una licencia de conducir extranjera en licencia japonesa. Facil Japón empieza con este trámite porque a muchos latinos nos cuesta entender por dónde comenzar.</p>
+          <div class="eyebrow" data-i18n="proceso.eyebrow">Todo el proceso explicado</div>
+          <h2 data-i18n="proceso.h2">Cómo cambiar tu licencia extranjera a japonesa</h2>
+          <p data-i18n="proceso.p">外免切替, también conocido como Gaimen Kirikae, es el proceso para convertir una licencia de conducir extranjera en licencia japonesa.</p>
         </div>
         <div class="process-grid">
-          <article class="step"><div class="step-number">1</div><h3>Verifica elegibilidad</h3><p>Confirma si tu licencia extranjera es válida y si cumples el tiempo de residencia requerido.</p></article>
-          <article class="step"><div class="step-number">2</div><h3>Reúne documentos</h3><p>Licencia, pasaporte, residencia, traducción oficial, foto y formularios de tu prefectura.</p></article>
-          <article class="step"><div class="step-number">3</div><h3>Reserva tu cita</h3><p>Agenda en el centro de licencias y evita llegar sin saber qué te van a pedir.</p></article>
-          <article class="step"><div class="step-number">4</div><h3>Presenta documentos</h3><p>El centro revisa tu historial y confirma si puedes continuar con el cambio.</p></article>
-          <article class="step"><div class="step-number">5</div><h3>Estudia el examen</h3><p>Practica con preguntas tipo verdadero/falso, como en el examen real.</p></article>
-          <article class="step"><div class="step-number">6</div><h3>Examen práctico</h3><p>En algunos casos deberás presentar una prueba de manejo en circuito.</p></article>
-          <article class="step"><div class="step-number">7</div><h3>Recibe tu licencia</h3><p>Si apruebas, recibes tu licencia japonesa y puedes conducir con tranquilidad.</p></article>
+          <article class="step"><div class="step-number">1</div><h3 data-i18n="step1.h3">Verifica elegibilidad</h3><p data-i18n="step1.p">Confirma si tu licencia extranjera es válida y si cumples el tiempo de residencia requerido.</p></article>
+          <article class="step"><div class="step-number">2</div><h3 data-i18n="step2.h3">Reúne documentos</h3><p data-i18n="step2.p">Licencia, pasaporte, residencia, traducción oficial, foto y formularios de tu prefectura.</p></article>
+          <article class="step"><div class="step-number">3</div><h3 data-i18n="step3.h3">Reserva tu cita</h3><p data-i18n="step3.p">Agenda en el centro de licencias y evita llegar sin saber qué te van a pedir.</p></article>
+          <article class="step"><div class="step-number">4</div><h3 data-i18n="step4.h3">Presenta documentos</h3><p data-i18n="step4.p">El centro revisa tu historial y confirma si puedes continuar con el cambio.</p></article>
+          <article class="step"><div class="step-number">5</div><h3 data-i18n="step5.h3">Estudia el examen</h3><p data-i18n="step5.p">Practica con preguntas tipo verdadero/falso, como en el examen real.</p></article>
+          <article class="step"><div class="step-number">6</div><h3 data-i18n="step6.h3">Examen práctico</h3><p data-i18n="step6.p">En algunos casos deberás presentar una prueba de manejo en circuito.</p></article>
+          <article class="step"><div class="step-number">7</div><h3 data-i18n="step7.h3">Recibe tu licencia</h3><p data-i18n="step7.p">Si apruebas, recibes tu licencia japonesa y puedes conducir con tranquilidad.</p></article>
         </div>
         <div class="notice">
-          <strong>Importante:</strong>
-          <span>Los requisitos varían por prefectura. Usa esta guía para orientarte y verifica siempre la información oficial local.</span>
-          <a class="btn secondary js-cta" href="#lead-form">Quiero estudiar gratis</a>
+          <strong data-i18n="notice.label">Importante:</strong>
+          <span data-i18n="notice">Los requisitos varían por prefectura. Usa esta guía para orientarte y verifica siempre la información oficial local.</span>
+          <a class="btn secondary js-cta" href="#lead-form" data-i18n="notice.cta">Quiero estudiar gratis</a>
         </div>
       </div>
     </section>
@@ -956,17 +1037,17 @@
     <section id="funciones">
       <div class="container">
         <div class="section-head">
-          <div class="eyebrow">Diseñada para latinos, pensada para Japón</div>
-          <h2>Todo lo que necesitas para estudiar sin confundirte</h2>
-          <p>Aplicamos una regla simple de UX: no hacerte pensar de más. La app te muestra el siguiente paso, la pregunta actual y lo que debes practicar.</p>
+          <div class="eyebrow" data-i18n="func.eyebrow">Diseñada para latinos, pensada para Japón</div>
+          <h2 data-i18n="func.h2">Todo lo que necesitas para estudiar sin confundirte</h2>
+          <p data-i18n="func.p">Aplicamos una regla simple de UX: no hacerte pensar de más.</p>
         </div>
         <div class="features-grid">
-          <article class="feature"><div class="feature-icon">📋</div><h3>Preguntas tipo examen</h3><p>Banco de preguntas basado en el formato de cambio de licencia de conducir en Japón.</p></article>
-          <article class="feature"><div class="feature-icon">💬</div><h3>Explicaciones latinas</h3><p>No solo te decimos la respuesta. Te explicamos la lógica japonesa de forma práctica.</p></article>
-          <article class="feature"><div class="feature-icon">あ</div><h3>Japonés contextual</h3><p>Aprende kanji, hiragana, romaji y términos clave usados en señales y reglas.</p></article>
-          <article class="feature"><div class="feature-icon">⚡</div><h3>Modo rápido</h3><p>Estudia con una mano en tren, descansos o momentos cortos del día.</p></article>
-          <article class="feature"><div class="feature-icon">📈</div><h3>Progreso inteligente</h3><p>Precisión, meta de aprobación, errores frecuentes y probabilidad de aprobar.</p></article>
-          <article class="feature"><div class="feature-icon">🌏</div><h3>Facil Japón crece contigo</h3><p>Hoy licencia. Luego otros procesos: banco, salud, vivienda, trámites y vida diaria.</p></article>
+          <article class="feature"><div class="feature-icon">📋</div><h3 data-i18n="f1.h3">Preguntas tipo examen</h3><p data-i18n="f1.p">Banco de preguntas basado en el formato de cambio de licencia de conducir en Japón.</p></article>
+          <article class="feature"><div class="feature-icon">💬</div><h3 data-i18n="f2.h3">Explicaciones latinas</h3><p data-i18n="f2.p">No solo te decimos la respuesta. Te explicamos la lógica japonesa de forma práctica.</p></article>
+          <article class="feature"><div class="feature-icon">あ</div><h3 data-i18n="f3.h3">Japonés contextual</h3><p data-i18n="f3.p">Aprende kanji, hiragana, romaji y términos clave usados en señales y reglas.</p></article>
+          <article class="feature"><div class="feature-icon">⚡</div><h3 data-i18n="f4.h3">Modo rápido</h3><p data-i18n="f4.p">Estudia con una mano en tren, descansos o momentos cortos del día.</p></article>
+          <article class="feature"><div class="feature-icon">📈</div><h3 data-i18n="f5.h3">Progreso inteligente</h3><p data-i18n="f5.p">Precisión, meta de aprobación, errores frecuentes y probabilidad de aprobar.</p></article>
+          <article class="feature"><div class="feature-icon">🌏</div><h3 data-i18n="f6.h3">Facil Japón crece contigo</h3><p data-i18n="f6.p">Hoy licencia. Luego otros procesos: banco, salud, vivienda, trámites y vida diaria.</p></article>
         </div>
       </div>
     </section>
@@ -974,14 +1055,14 @@
     <section id="app">
       <div class="container">
         <div class="section-head">
-          <div class="eyebrow">Cómo funciona la app</div>
-          <h2>Estudiar nunca fue tan fácil</h2>
+          <div class="eyebrow" data-i18n="app.eyebrow">Cómo funciona la app</div>
+          <h2 data-i18n="app.h2">Estudiar nunca fue tan fácil</h2>
         </div>
         <div class="app-flow">
-          <article class="flow-item"><div class="mini-phone"><div class="mini-screen"><div class="mini-option active">🇪🇸 Español</div><div class="mini-option">🇬🇧 English</div><div class="mini-option">日本語</div></div></div><h3>1. Selecciona tu idioma</h3><p>Estudia en español, inglés o japonés.</p></article>
-          <article class="flow-item"><div class="mini-phone"><div class="mini-screen"><div class="mini-option active">🚗 Señales</div><div class="mini-option">🅿️ Estacionamiento</div><div class="mini-option">🚶 Peatones</div></div></div><h3>2. Elige categoría</h3><p>Refuerza los temas que más necesitas.</p></article>
-          <article class="flow-item"><div class="mini-phone"><div class="mini-screen"><p class="question-text" style="font-size:.95rem;">Pregunta tipo examen real.</p><div class="answer-grid"><button class="answer-btn true">○</button><button class="answer-btn false">×</button></div></div></div><h3>3. Responde</h3><p>Entrena con ○ verdadero y × falso como en Japón.</p></article>
-          <article class="flow-item"><div class="mini-phone"><div class="mini-screen"><div class="term-card">○ Correcto<br/>En Japón esta regla existe porque...</div><div class="mini-option active">Siguiente</div></div></div><h3>4. Aprende y mejora</h3><p>Recibe explicación clara y repasa tus errores.</p></article>
+          <article class="flow-item"><div class="mini-phone"><div class="mini-screen"><div class="mini-option active">🇪🇸 Español</div><div class="mini-option">🇬🇧 English</div><div class="mini-option">日本語</div></div></div><h3 data-i18n="flow1.h3">1. Selecciona tu idioma</h3><p data-i18n="flow1.p">Estudia en español, inglés o japonés.</p></article>
+          <article class="flow-item"><div class="mini-phone"><div class="mini-screen"><div class="mini-option active">🚗 Señales</div><div class="mini-option">🅿️ Estacionamiento</div><div class="mini-option">🚶 Peatones</div></div></div><h3 data-i18n="flow2.h3">2. Elige categoría</h3><p data-i18n="flow2.p">Refuerza los temas que más necesitas.</p></article>
+          <article class="flow-item"><div class="mini-phone"><div class="mini-screen"><p class="question-text" style="font-size:.95rem;">Pregunta tipo examen real.</p><div class="answer-grid"><button class="answer-btn true">○</button><button class="answer-btn false">×</button></div></div></div><h3 data-i18n="flow3.h3">3. Responde</h3><p data-i18n="flow3.p">Entrena con ○ verdadero y × falso como en Japón.</p></article>
+          <article class="flow-item"><div class="mini-phone"><div class="mini-screen"><div class="term-card">○ Correcto<br/>En Japón esta regla existe porque...</div><div class="mini-option active">Siguiente</div></div></div><h3 data-i18n="flow4.h3">4. Aprende y mejora</h3><p data-i18n="flow4.p">Recibe explicación clara y repasa tus errores.</p></article>
         </div>
       </div>
     </section>
@@ -994,16 +1075,16 @@
           <div class="phone"><div class="phone-screen"><div class="term-card">Precisión actual<br/><strong style="font-size:3rem;color:var(--cyan);">82%</strong><br/>Necesitas 90%</div></div></div>
         </div>
         <div>
-          <div class="eyebrow">Preparación completa</div>
-          <h2>Tu examen no necesita sentirse imposible</h2>
+          <div class="eyebrow" data-i18n="prep.eyebrow">Preparación completa</div>
+          <h2 data-i18n="prep.h2">Tu examen no necesita sentirse imposible</h2>
           <ul class="check-list">
-            <li><span class="check">✓</span> Más de 1,000 preguntas tipo examen.</li>
-            <li><span class="check">✓</span> Explicación después de cada respuesta.</li>
-            <li><span class="check">✓</span> Repaso automático de preguntas falladas.</li>
-            <li><span class="check">✓</span> Estadísticas para saber si estás listo.</li>
-            <li><span class="check">✓</span> Funciona para estudiar en casa, tren o descansos.</li>
+            <li><span class="check">✓</span> <span data-i18n="prep.li1">Más de 1,000 preguntas tipo examen.</span></li>
+            <li><span class="check">✓</span> <span data-i18n="prep.li2">Explicación después de cada respuesta.</span></li>
+            <li><span class="check">✓</span> <span data-i18n="prep.li3">Repaso automático de preguntas falladas.</span></li>
+            <li><span class="check">✓</span> <span data-i18n="prep.li4">Estadísticas para saber si estás listo.</span></li>
+            <li><span class="check">✓</span> <span data-i18n="prep.li5">Funciona para estudiar en casa, tren o descansos.</span></li>
           </ul>
-          <a class="btn js-cta" href="#lead-form">Entrar al simulador gratis →</a>
+          <a class="btn js-cta" href="#lead-form" data-i18n="prep.cta">Entrar al simulador gratis →</a>
         </div>
       </div>
     </section>
@@ -1011,17 +1092,17 @@
     <section id="faq">
       <div class="container">
         <div class="section-head">
-          <div class="eyebrow">Preguntas frecuentes</div>
-          <h2>Lo que más buscan los latinos sobre licencia japonesa</h2>
-          <p>Contenido útil para SEO y para responder dudas antes de pedir datos.</p>
+          <div class="eyebrow" data-i18n="faq.eyebrow">Preguntas frecuentes</div>
+          <h2 data-i18n="faq.h2">Lo que más buscan los latinos sobre licencia japonesa</h2>
+          <p data-i18n="faq.p">Contenido útil para responder dudas antes de pedir datos.</p>
         </div>
         <div class="faq-grid">
-          <article class="faq-item"><h3>¿Qué es 外免切替?</h3><p>Es el proceso para cambiar una licencia de conducir extranjera por una licencia japonesa. También se conoce como Gaimen Kirikae.</p></article>
-          <article class="faq-item"><h3>¿El examen está en español?</h3><p>Depende de la prefectura. La app te prepara en español para entender las reglas y entrenar preguntas tipo examen.</p></article>
-          <article class="faq-item"><h3>¿Cuántas correctas necesito?</h3><p>El simulador entrena con meta de 45/50, equivalente al 90%, para que tengas margen de seguridad.</p></article>
-          <article class="faq-item"><h3>¿Sirve para colombianos, peruanos o mexicanos?</h3><p>Sí. Está pensado para latinos en Japón, aunque cada país y prefectura puede tener requisitos específicos.</p></article>
-          <article class="faq-item"><h3>¿Necesito examen práctico?</h3><p>En muchos casos sí. Esta primera versión se enfoca en entender el proceso y preparar el examen teórico.</p></article>
-          <article class="faq-item"><h3>¿Facil Japón será solo licencia?</h3><p>No. La licencia es el primer proceso. La visión es explicar en español trámites y vida diaria en Japón.</p></article>
+          <article class="faq-item"><h3 data-i18n="faq1.h3">¿Qué es 外免切替?</h3><p data-i18n="faq1.p">Es el proceso para cambiar una licencia de conducir extranjera por una licencia japonesa. También se conoce como Gaimen Kirikae.</p></article>
+          <article class="faq-item"><h3 data-i18n="faq2.h3">¿El examen está en español?</h3><p data-i18n="faq2.p">Depende de la prefectura. La app te prepara en español para entender las reglas y entrenar preguntas tipo examen.</p></article>
+          <article class="faq-item"><h3 data-i18n="faq3.h3">¿Cuántas correctas necesito?</h3><p data-i18n="faq3.p">El simulador entrena con meta de 45/50, equivalente al 90%, para que tengas margen de seguridad.</p></article>
+          <article class="faq-item"><h3 data-i18n="faq4.h3">¿Sirve para colombianos, peruanos o mexicanos?</h3><p data-i18n="faq4.p">Sí. Está pensado para latinos en Japón, aunque cada país y prefectura puede tener requisitos específicos.</p></article>
+          <article class="faq-item"><h3 data-i18n="faq5.h3">¿Necesito examen práctico?</h3><p data-i18n="faq5.p">En muchos casos sí. Esta primera versión se enfoca en entender el proceso y preparar el examen teórico.</p></article>
+          <article class="faq-item"><h3 data-i18n="faq6.h3">¿Facil Japón será solo licencia?</h3><p data-i18n="faq6.p">No. La licencia es el primer proceso. La visión es explicar en español trámites y vida diaria en Japón.</p></article>
         </div>
       </div>
     </section>
@@ -1029,8 +1110,8 @@
     <section id="testimonios">
       <div class="container">
         <div class="section-head">
-          <h2>Miles de latinos ya buscan hacer Japón más fácil</h2>
-          <p>Historias de personas que necesitaban una explicación simple para enfrentar procesos japoneses sin sentirse solas.</p>
+          <h2 data-i18n="test.h2">Miles de latinos ya buscan hacer Japón más fácil</h2>
+          <p data-i18n="test.p">Historias de personas que necesitaban una explicación simple para enfrentar procesos japoneses sin sentirse solas.</p>
         </div>
         <div class="testimonials-grid">
           <article class="testimonial"><div class="stars">★★★★★</div><p>“Las explicaciones en español me ayudaron a entender las reglas japonesas sin frustrarme.”</p><div class="person"><span class="avatar">C</span><span>Carlos M.<br/>Osaka, Japón</span></div></article>
@@ -1050,66 +1131,66 @@
     <section class="lead-section" id="lead-form">
       <div class="container lead-grid">
         <div>
-          <div class="eyebrow">Acceso gratis al simulador</div>
-          <h2>Déjanos tus datos y empieza a estudiar</h2>
-          <p style="color:var(--muted); line-height:1.7; font-size:1.05rem;">Con estos datos podremos avisarte cuando agreguemos más guías de Facil Japón: banco, salud, vivienda, trámites, escuela, impuestos y otros procesos útiles para latinos en Japón.</p>
+          <div class="eyebrow" data-i18n="lead.eyebrow">Acceso gratis al simulador</div>
+          <h2 data-i18n="lead.h2">Déjanos tus datos y empieza a estudiar</h2>
+          <p style="color:var(--muted); line-height:1.7; font-size:1.05rem;" data-i18n="lead.p">Con estos datos podremos avisarte cuando agreguemos más guías de Facil Japón.</p>
           <ul class="check-list" style="margin-top:24px;">
-            <li><span class="check">✓</span> Acceso inmediato al quiz gratis.</li>
-            <li><span class="check">✓</span> Te contactaremos solo con contenido útil relacionado con Japón.</li>
-            <li><span class="check">✓</span> Puedes empezar aunque todavía no tengas cita en el centro de licencias.</li>
+            <li><span class="check">✓</span> <span data-i18n="lead.li1">Acceso inmediato al quiz gratis.</span></li>
+            <li><span class="check">✓</span> <span data-i18n="lead.li2">Te contactaremos solo con contenido útil relacionado con Japón.</span></li>
+            <li><span class="check">✓</span> <span data-i18n="lead.li3">Puedes empezar aunque todavía no tengas cita en el centro de licencias.</span></li>
           </ul>
         </div>
 
         <form class="lead-card" id="leadCaptureForm">
           <div class="form-grid">
             <div class="form-field">
-              <label for="name">Nombre</label>
-              <input id="name" name="name" autocomplete="name" placeholder="Tu nombre" required />
+              <label for="name" data-i18n="form.name">Nombre</label>
+              <input id="name" name="name" autocomplete="name" placeholder="Tu nombre" data-i18n-ph="form.name.ph" required />
             </div>
             <div class="form-field">
-              <label for="email">Correo</label>
+              <label for="email" data-i18n="form.email">Correo</label>
               <input id="email" name="email" type="email" autocomplete="email" placeholder="tu@email.com" required />
             </div>
             <div class="form-field">
-              <label for="country">País de licencia</label>
+              <label for="country" data-i18n="form.country">País de licencia</label>
               <select id="country" name="country" required>
-                <option value="">Selecciona...</option>
+                <option value="" data-i18n-opt="form.country.ph">Selecciona...</option>
                 <option>Colombia</option>
                 <option>Perú</option>
                 <option>México</option>
                 <option>Brasil</option>
                 <option>Chile</option>
                 <option>Argentina</option>
-                <option>Otro</option>
+                <option data-i18n-opt="form.other">Otro</option>
               </select>
             </div>
             <div class="form-field">
-              <label for="prefecture">Prefectura en Japón</label>
-              <input id="prefecture" name="prefecture" placeholder="Ej: Aichi, Tokyo, Osaka" />
+              <label for="prefecture" data-i18n="form.prefecture">Prefectura en Japón</label>
+              <input id="prefecture" name="prefecture" placeholder="Ej: Aichi, Tokyo, Osaka" data-i18n-ph="form.prefecture.ph" />
             </div>
             <div class="form-field full">
-              <label for="stage">¿En qué etapa estás?</label>
+              <label for="stage" data-i18n="form.stage">¿En qué etapa estás?</label>
               <select id="stage" name="stage">
-                <option>Solo estoy investigando</option>
-                <option>Ya tengo licencia extranjera y quiero cambiarla</option>
-                <option>Ya tengo cita en el centro de licencias</option>
-                <option>Ya presenté y quiero estudiar mejor</option>
+                <option data-i18n-opt="stage1">Solo estoy investigando</option>
+                <option data-i18n-opt="stage2">Ya tengo licencia extranjera y quiero cambiarla</option>
+                <option data-i18n-opt="stage3">Ya tengo cita en el centro de licencias</option>
+                <option data-i18n-opt="stage4">Ya presenté y quiero estudiar mejor</option>
               </select>
             </div>
             <div class="form-field full">
-              <label for="need">¿Qué otro proceso de Japón te gustaría que Facil Japón explique?</label>
-              <textarea id="need" name="need" placeholder="Ej: banco, seguro de salud, guardería, vivienda, visa, impuestos..."></textarea>
+              <label for="need" data-i18n="form.need">¿Qué otro proceso de Japón te gustaría que Facil Japón explique?</label>
+              <textarea id="need" name="need" placeholder="Ej: banco, seguro de salud, guardería, vivienda, visa, impuestos..." data-i18n-ph="form.need.ph"></textarea>
             </div>
           </div>
 
           <label class="consent">
             <input type="checkbox" name="consent" required />
-            <span>Acepto que Facil Japón guarde mis datos para darme acceso al simulador y enviarme información útil sobre procesos en Japón. No compartiremos tu información con terceros.</span>
+            <span data-i18n="form.consent">Acepto que Facil Japón guarde mis datos para darme acceso al simulador y enviarme información útil sobre procesos en Japón.</span>
           </label>
 
           <input type="hidden" name="source" value="facil-japon-licencia-landing" />
           <input type="hidden" name="product" value="licencia-conducir-japon" />
-          <button class="btn" type="submit" style="width:100%;">Entrar al quiz gratis →</button>
+          <button class="btn" type="submit" style="width:100%;" data-i18n="form.submit">Entrar al quiz gratis →</button>
           <div class="form-message" id="formMessage">Datos guardados. Te llevamos al simulador...</div>
         </form>
       </div>
@@ -1119,10 +1200,10 @@
       <div class="container">
         <div class="cta-box">
           <div>
-            <h2>Facil Japón empieza con tu licencia japonesa</h2>
-            <p>Hoy estudias para el examen. Mañana podrás entender otros procesos de Japón sin perderte entre formularios, kanji y requisitos.</p>
+            <h2 data-i18n="cta.h2">Facil Japón empieza con tu licencia japonesa</h2>
+            <p data-i18n="cta.p">Hoy estudias para el examen. Mañana podrás entender otros procesos de Japón sin perderte entre formularios, kanji y requisitos.</p>
           </div>
-          <a class="btn js-cta" href="#lead-form">Quiero estudiar gratis 🚀</a>
+          <a class="btn js-cta" href="#lead-form" data-i18n="cta.btn">Quiero estudiar gratis 🚀</a>
         </div>
       </div>
     </section>
@@ -1141,8 +1222,327 @@
   </footer>
 
   <script>
-    // Endpoint recomendado: Supabase Edge Function, Firebase Function, Airtable webhook,
-    // Formspree, Make/Zapier webhook o Google Apps Script Web App.
+    // ── I18N ───────────────────────────────────────────────────
+    const I18N = {
+      es: {
+        'nav.proceso':'Proceso','nav.funciones':'Funciones','nav.app':'App','nav.faq':'Preguntas','nav.start':'Comenzar',
+        'hero.eyebrow':'Facil Japón · trámites y vida en Japón para latinos 🇯🇵',
+        'hero.h1':'Cambio de licencia de conducir en Japón <span class="gradient-text">sin perderte.</span>',
+        'hero.p':'Empieza gratis con el módulo de licencia japonesa. Te explicamos el proceso de 外免切替, los documentos, el examen teórico y las preguntas tipo examen en español claro.',
+        'hero.li1':'Guía paso a paso para cambiar tu licencia extranjera a japonesa.',
+        'hero.li2':'Simulador gratis con preguntas tipo examen verdadero/falso.',
+        'hero.li3':'Explicaciones en español, japonés contextual, kanji, romaji y audio opcional.',
+        'hero.li4':'Pensado para latinos que viven, trabajan o recién llegan a Japón.',
+        'hero.cta1':'Estudiar gratis ahora →','hero.cta2':'Ver el proceso',
+        'hero.microcopy':'Solo deja tus datos básicos. Luego entras directo al simulador gratis.',
+        'hero.social':'Hecho para personas que no quieren pensar de más: entender, practicar y avanzar.',
+        'stat1':'Latinos a quienes queremos ayudar','stat2':'Meta de aprobación del simulador',
+        'stat3':'Preguntas para practicar','stat4':'Acceso inicial al quiz','stat4.val':'Gratis',
+        'proceso.eyebrow':'Todo el proceso explicado','proceso.h2':'Cómo cambiar tu licencia extranjera a japonesa',
+        'proceso.p':'外免切替 (Gaimen Kirikae) es el proceso para convertir una licencia de conducir extranjera en licencia japonesa.',
+        'step1.h3':'Verifica elegibilidad','step1.p':'Confirma si tu licencia extranjera es válida y si cumples el tiempo de residencia requerido.',
+        'step2.h3':'Reúne documentos','step2.p':'Licencia, pasaporte, residencia, traducción oficial, foto y formularios de tu prefectura.',
+        'step3.h3':'Reserva tu cita','step3.p':'Agenda en el centro de licencias y evita llegar sin saber qué te van a pedir.',
+        'step4.h3':'Presenta documentos','step4.p':'El centro revisa tu historial y confirma si puedes continuar con el cambio.',
+        'step5.h3':'Estudia el examen','step5.p':'Practica con preguntas tipo verdadero/falso, como en el examen real.',
+        'step6.h3':'Examen práctico','step6.p':'En algunos casos deberás presentar una prueba de manejo en circuito.',
+        'step7.h3':'Recibe tu licencia','step7.p':'Si apruebas, recibes tu licencia japonesa y puedes conducir con tranquilidad.',
+        'notice.label':'Importante:','notice':'Los requisitos varían por prefectura. Usa esta guía para orientarte y verifica siempre la información oficial local.','notice.cta':'Quiero estudiar gratis',
+        'func.eyebrow':'Diseñada para latinos, pensada para Japón','func.h2':'Todo lo que necesitas para estudiar sin confundirte','func.p':'Aplicamos una regla simple de UX: no hacerte pensar de más.',
+        'f1.h3':'Preguntas tipo examen','f1.p':'Banco de preguntas basado en el formato de cambio de licencia de conducir en Japón.',
+        'f2.h3':'Explicaciones latinas','f2.p':'No solo te decimos la respuesta. Te explicamos la lógica japonesa de forma práctica.',
+        'f3.h3':'Japonés contextual','f3.p':'Aprende kanji, hiragana, romaji y términos clave usados en señales y reglas.',
+        'f4.h3':'Modo rápido','f4.p':'Estudia con una mano en tren, descansos o momentos cortos del día.',
+        'f5.h3':'Progreso inteligente','f5.p':'Precisión, meta de aprobación, errores frecuentes y probabilidad de aprobar.',
+        'f6.h3':'Facil Japón crece contigo','f6.p':'Hoy licencia. Luego otros procesos: banco, salud, vivienda, trámites y vida diaria.',
+        'app.eyebrow':'Cómo funciona la app','app.h2':'Estudiar nunca fue tan fácil',
+        'flow1.h3':'1. Selecciona tu idioma','flow1.p':'Estudia en español, inglés o japonés.',
+        'flow2.h3':'2. Elige categoría','flow2.p':'Refuerza los temas que más necesitas.',
+        'flow3.h3':'3. Responde','flow3.p':'Entrena con ○ verdadero y × falso como en Japón.',
+        'flow4.h3':'4. Aprende y mejora','flow4.p':'Recibe explicación clara y repasa tus errores.',
+        'prep.eyebrow':'Preparación completa','prep.h2':'Tu examen no necesita sentirse imposible',
+        'prep.li1':'Más de 1,000 preguntas tipo examen.','prep.li2':'Explicación después de cada respuesta.',
+        'prep.li3':'Repaso automático de preguntas falladas.','prep.li4':'Estadísticas para saber si estás listo.',
+        'prep.li5':'Funciona para estudiar en casa, tren o descansos.','prep.cta':'Entrar al simulador gratis →',
+        'faq.eyebrow':'Preguntas frecuentes','faq.h2':'Lo que más buscan los latinos sobre licencia japonesa','faq.p':'Respuestas a las dudas más frecuentes.',
+        'faq1.h3':'¿Qué es 外免切替?','faq1.p':'Es el proceso para cambiar una licencia de conducir extranjera por una japonesa, también conocido como Gaimen Kirikae.',
+        'faq2.h3':'¿El examen está en español?','faq2.p':'Depende de la prefectura. La app te prepara en español para entender las reglas y entrenar preguntas tipo examen.',
+        'faq3.h3':'¿Cuántas correctas necesito?','faq3.p':'El simulador entrena con meta de 45/50 (90%) para que tengas margen de seguridad.',
+        'faq4.h3':'¿Sirve para colombianos, peruanos o mexicanos?','faq4.p':'Sí. Está pensado para latinos en Japón, aunque cada país y prefectura puede tener requisitos específicos.',
+        'faq5.h3':'¿Necesito examen práctico?','faq5.p':'En muchos casos sí. Esta versión se enfoca en preparar el examen teórico.',
+        'faq6.h3':'¿Facil Japón será solo licencia?','faq6.p':'No. La licencia es el primer proceso. La visión es explicar trámites y vida diaria en Japón.',
+        'test.h2':'Miles de latinos ya buscan hacer Japón más fácil','test.p':'Historias de personas que necesitaban una explicación simple para enfrentar procesos japoneses.',
+        'lead.eyebrow':'Acceso gratis al simulador','lead.h2':'Déjanos tus datos y empieza a estudiar',
+        'lead.p':'Con estos datos podremos avisarte cuando agreguemos más guías de Facil Japón.',
+        'lead.li1':'Acceso inmediato al quiz gratis.','lead.li2':'Te contactaremos solo con contenido útil relacionado con Japón.','lead.li3':'Puedes empezar aunque todavía no tengas cita en el centro de licencias.',
+        'form.name':'Nombre','form.name.ph':'Tu nombre','form.email':'Correo','form.country':'País de licencia','form.country.ph':'Selecciona...','form.other':'Otro',
+        'form.prefecture':'Prefectura en Japón','form.prefecture.ph':'Ej: Aichi, Tokyo, Osaka',
+        'form.stage':'¿En qué etapa estás?','stage1':'Solo estoy investigando','stage2':'Ya tengo licencia extranjera y quiero cambiarla','stage3':'Ya tengo cita en el centro de licencias','stage4':'Ya presenté y quiero estudiar mejor',
+        'form.need':'¿Qué otro proceso de Japón te gustaría que Facil Japón explique?','form.need.ph':'Ej: banco, seguro de salud, guardería, vivienda, visa, impuestos...',
+        'form.consent':'Acepto que Facil Japón guarde mis datos para darme acceso al simulador y enviarme información útil sobre procesos en Japón.','form.submit':'Entrar al quiz gratis →',
+        'cta.h2':'Facil Japón empieza con tu licencia japonesa','cta.p':'Hoy estudias para el examen. Mañana podrás entender otros procesos de Japón sin perderte.','cta.btn':'Quiero estudiar gratis 🚀',
+      },
+      en: {
+        'nav.proceso':'Process','nav.funciones':'Features','nav.app':'App','nav.faq':'FAQ','nav.start':'Start',
+        'hero.eyebrow':'Facil Japón · Paperwork & life in Japan for Latinos 🇯🇵',
+        'hero.h1':'Japanese driver\'s license conversion <span class="gradient-text">made simple.</span>',
+        'hero.p':'Start free with the Japanese license module. We explain the 外免切替 process, documents, theory exam, and practice questions in plain language.',
+        'hero.li1':'Step-by-step guide to convert your foreign license to Japanese.','hero.li2':'Free simulator with true/false exam-style questions.',
+        'hero.li3':'Explanations in Spanish & English, contextual Japanese, kanji, and romaji.','hero.li4':'Designed for Latinos living, working, or newly arrived in Japan.',
+        'hero.cta1':'Study free now →','hero.cta2':'See the process',
+        'hero.microcopy':'Just leave your basic info. Then go straight to the free simulator.',
+        'hero.social':'Built for people who want to understand, practice, and move forward.',
+        'stat1':'Latinos we want to help','stat2':'Simulator pass target','stat3':'Practice questions','stat4':'Free quiz access','stat4.val':'Free',
+        'proceso.eyebrow':'The full process explained','proceso.h2':'How to convert your foreign license to a Japanese one',
+        'proceso.p':'外免切替 (Gaimen Kirikae) is the official process to convert a foreign driver\'s license into a Japanese one.',
+        'step1.h3':'Check eligibility','step1.p':'Confirm your foreign license is valid and you meet the residency period requirement.',
+        'step2.h3':'Gather documents','step2.p':'License, passport, residence card, official translation, photo, and prefecture forms.',
+        'step3.h3':'Book your appointment','step3.p':'Schedule at the license center and avoid arriving unprepared.',
+        'step4.h3':'Submit documents','step4.p':'The center reviews your history and confirms whether you can proceed.',
+        'step5.h3':'Study for the exam','step5.p':'Practice true/false questions just like the actual test.',
+        'step6.h3':'Practical test','step6.p':'In some cases you will need to take a driving test on a circuit.',
+        'step7.h3':'Get your license','step7.p':'If you pass, you receive your Japanese license and can drive with confidence.',
+        'notice.label':'Important:','notice':'Requirements vary by prefecture. Use this guide as a reference and always verify official local information.','notice.cta':'I want to study for free',
+        'func.eyebrow':'Designed for Latinos, built for Japan','func.h2':'Everything you need to study without getting confused','func.p':'We apply one simple UX rule: don\'t make you overthink.',
+        'f1.h3':'Exam-style questions','f1.p':'Question bank based on the Japanese license conversion exam format.',
+        'f2.h3':'Latino-friendly explanations','f2.p':'We don\'t just give you the answer — we explain the Japanese logic practically.',
+        'f3.h3':'Contextual Japanese','f3.p':'Learn kanji, hiragana, romaji and key terms used on signs and rules.',
+        'f4.h3':'Quick mode','f4.p':'Study one-handed on the train, during breaks, or in short windows.',
+        'f5.h3':'Smart progress','f5.p':'Accuracy, pass target, frequent errors, and probability of passing.',
+        'f6.h3':'Facil Japón grows with you','f6.p':'Today: license. Next: banking, health, housing, admin, and daily life.',
+        'app.eyebrow':'How the app works','app.h2':'Studying has never been this easy',
+        'flow1.h3':'1. Select your language','flow1.p':'Study in Spanish, English, or Japanese.',
+        'flow2.h3':'2. Choose a category','flow2.p':'Reinforce the topics you need most.',
+        'flow3.h3':'3. Answer','flow3.p':'Train with ○ true and × false, just like in Japan.',
+        'flow4.h3':'4. Learn and improve','flow4.p':'Get a clear explanation and review your mistakes.',
+        'prep.eyebrow':'Full preparation','prep.h2':'Your exam doesn\'t have to feel impossible',
+        'prep.li1':'More than 1,000 exam-style questions.','prep.li2':'Explanation after every answer.',
+        'prep.li3':'Automatic review of failed questions.','prep.li4':'Stats to know if you\'re ready.',
+        'prep.li5':'Works at home, on the train, or during breaks.','prep.cta':'Enter the free simulator →',
+        'faq.eyebrow':'FAQ','faq.h2':'What Latinos most ask about the Japanese license','faq.p':'Answers to common questions.',
+        'faq1.h3':'What is 外免切替?','faq1.p':'The process to convert a foreign driver\'s license to a Japanese one, also known as Gaimen Kirikae.',
+        'faq2.h3':'Is the exam available in Spanish?','faq2.p':'Depends on the prefecture. The app prepares you to understand the rules.',
+        'faq3.h3':'How many correct answers do I need?','faq3.p':'The simulator trains with a 45/50 target (90%) to give you a safety margin.',
+        'faq4.h3':'Does it work for Colombians, Peruvians, or Mexicans?','faq4.p':'Yes. Designed for Latinos in Japan, though requirements may vary by country and prefecture.',
+        'faq5.h3':'Do I need a practical test?','faq5.p':'In many cases yes. This version focuses on preparing the theory exam.',
+        'faq6.h3':'Will Facil Japón only cover driving licenses?','faq6.p':'No. The license is the first process. The vision is to explain daily life and admin in Japan.',
+        'test.h2':'Thousands of Latinos are already making Japan easier','test.p':'Stories from people who needed a simple explanation to handle Japanese processes.',
+        'lead.eyebrow':'Free simulator access','lead.h2':'Leave your info and start studying',
+        'lead.p':'We\'ll let you know when we add more Facil Japón guides.',
+        'lead.li1':'Immediate access to the free quiz.','lead.li2':'We\'ll only contact you with useful Japan-related content.','lead.li3':'You can start even if you haven\'t scheduled your appointment yet.',
+        'form.name':'Name','form.name.ph':'Your name','form.email':'Email','form.country':'License country','form.country.ph':'Select...','form.other':'Other',
+        'form.prefecture':'Prefecture in Japan','form.prefecture.ph':'E.g: Aichi, Tokyo, Osaka',
+        'form.stage':'What stage are you at?','stage1':'Just researching','stage2':'I have a foreign license and want to convert it','stage3':'I already have an appointment at the license center','stage4':'I already went and want to study more',
+        'form.need':'What other Japan process would you like Facil Japón to explain?','form.need.ph':'E.g: banking, health insurance, childcare, housing, visa, taxes...',
+        'form.consent':'I agree to receive useful information about processes in Japan. No spam.','form.submit':'Access the free simulator →',
+        'cta.h2':'Facil Japón starts with your Japanese license','cta.p':'Today you study for the exam. Tomorrow you can tackle any Japan process without getting lost.','cta.btn':'I want to study for free 🚀',
+      },
+      jp: {
+        'nav.proceso':'プロセス','nav.funciones':'機能','nav.app':'アプリ','nav.faq':'FAQ','nav.start':'始める',
+        'hero.eyebrow':'Facil Japón · 在日ラテン系のための手続きガイド 🇯🇵',
+        'hero.h1':'外国免許から日本免許へ <span class="gradient-text">迷わず切り替え。</span>',
+        'hero.p':'外免切替モジュールで無料スタート。手続き、書類、学科試験、過去問をわかりやすく解説します。',
+        'hero.li1':'外国免許から日本免許への切り替えをステップごとに解説。','hero.li2':'○×形式の無料模擬試験シミュレーター。',
+        'hero.li3':'スペイン語・英語・日本語で解説。漢字・ひらがな・ローマ字対応。','hero.li4':'日本在住・就労中・来日したばかりのラテン系の方向け。',
+        'hero.cta1':'今すぐ無料で学習 →','hero.cta2':'プロセスを見る',
+        'hero.microcopy':'基本情報を入力するだけ。すぐに無料シミュレーターへ。',
+        'hero.social':'考えすぎずに、理解して、練習して、前に進むための学習ツール。',
+        'stat1':'支援したいラテン系の方','stat2':'シミュレーター合格目標','stat3':'練習問題数','stat4':'無料クイズアクセス','stat4.val':'無料',
+        'proceso.eyebrow':'プロセスの全体像','proceso.h2':'外国免許を日本免許に切り替える方法',
+        'proceso.p':'外免切替（Gaimen Kirikae）とは、外国の運転免許を日本の免許に切り替える手続きです。',
+        'step1.h3':'資格確認','step1.p':'外国免許が有効か、居住期間の要件を満たしているか確認してください。',
+        'step2.h3':'書類準備','step2.p':'免許証、パスポート、在留カード、翻訳書、写真、都道府県の書類が必要です。',
+        'step3.h3':'予約','step3.p':'免許センターで予約し、必要書類を事前に確認しましょう。',
+        'step4.h3':'書類提出','step4.p':'センターが履歴を確認し、手続きが続けられるか判断します。',
+        'step5.h3':'試験勉強','step5.p':'本番と同じ○×形式の問題で練習しましょう。',
+        'step6.h3':'技能試験','step6.p':'場合によって、コースでの実技試験が必要です。',
+        'step7.h3':'免許取得','step7.p':'合格すれば日本の免許証が交付されます。',
+        'notice.label':'重要：','notice':'要件は都道府県によって異なります。必ず地元の公式情報をご確認ください。','notice.cta':'無料で学習したい',
+        'func.eyebrow':'ラテン系のために設計、日本仕様','func.h2':'混乱せずに学習するために必要なすべて','func.p':'シンプルなUXルール：余計なことを考えさせない。',
+        'f1.h3':'試験形式の問題','f1.p':'日本の外免切替試験形式に基づいた問題バンク。',
+        'f2.h3':'丁寧な解説','f2.p':'答えだけでなく、日本のルールの理由をわかりやすく説明します。',
+        'f3.h3':'文脈で学ぶ日本語','f3.p':'標識やルールで使われる漢字・ひらがな・ローマ字を学べます。',
+        'f4.h3':'クイックモード','f4.p':'電車内や休憩中でも片手で学習できます。',
+        'f5.h3':'スマートな進捗管理','f5.p':'正確率、合格目標、頻出ミス、合格確率を確認できます。',
+        'f6.h3':'Facil Japónはあなたとともに成長','f6.p':'今日は免許。次は銀行、医療、住居、その他の手続き。',
+        'app.eyebrow':'アプリの使い方','app.h2':'学習がこんなに簡単に',
+        'flow1.h3':'1. 言語を選択','flow1.p':'スペイン語・英語・日本語で学習。',
+        'flow2.h3':'2. カテゴリを選択','flow2.p':'最も必要なテーマを強化しましょう。',
+        'flow3.h3':'3. 回答','flow3.p':'日本と同じ○×形式で練習。',
+        'flow4.h3':'4. 学んで改善','flow4.p':'明確な解説を受け、ミスを復習しましょう。',
+        'prep.eyebrow':'完全な試験対策','prep.h2':'試験は難しくなくていい',
+        'prep.li1':'1,000問以上の試験形式問題。','prep.li2':'各問題の後に解説あり。',
+        'prep.li3':'間違えた問題の自動復習。','prep.li4':'合格準備ができているか確認できる統計。',
+        'prep.li5':'自宅、電車、休憩中でも学習できます。','prep.cta':'無料シミュレーターに入る →',
+        'faq.eyebrow':'よくある質問','faq.h2':'外免切替についてよくある質問','faq.p':'申し込み前によくある疑問への回答。',
+        'faq1.h3':'外免切替とは何ですか？','faq1.p':'外国の運転免許を日本の免許に切り替える手続きです。英語ではGaimen Kirikai とも呼ばれます。',
+        'faq2.h3':'試験はスペイン語で受けられますか？','faq2.p':'都道府県によります。アプリはルールを理解するための準備をサポートします。',
+        'faq3.h3':'何問正解が必要ですか？','faq3.p':'シミュレーターは45/50（90%）を目標に練習します。',
+        'faq4.h3':'コロンビア人・ペルー人・メキシコ人も使えますか？','faq4.p':'はい。在日ラテン系向けですが、要件は国・都道府県により異なる場合があります。',
+        'faq5.h3':'技能試験は必要ですか？','faq5.p':'多くの場合必要です。このバージョンは学科試験の準備に特化しています。',
+        'faq6.h3':'Facil Japónは免許だけですか？','faq6.p':'いいえ。免許は最初のプロセスです。日本の日常生活と手続きを解説する予定です。',
+        'test.h2':'多くのラテン系が日本を簡単にしようとしています','test.p':'日本の手続きを一人で抱え込まずに乗り越えた人たちの話。',
+        'lead.eyebrow':'無料シミュレーターアクセス','lead.h2':'情報を入力して学習を始めよう',
+        'lead.p':'Facil Japónに新しいガイドが追加されたらお知らせします。',
+        'lead.li1':'無料クイズに即アクセス。','lead.li2':'日本に関する有用な情報のみお送りします。','lead.li3':'免許センターの予約がなくても始められます。',
+        'form.name':'名前','form.name.ph':'お名前','form.email':'メール','form.country':'免許の国','form.country.ph':'選択...','form.other':'その他',
+        'form.prefecture':'都道府県','form.prefecture.ph':'例：愛知、東京、大阪',
+        'form.stage':'現在の状況は？','stage1':'まだ調べている段階','stage2':'外国免許を持っていて切り替えたい','stage3':'免許センターの予約がある','stage4':'既に受験し、もっと勉強したい',
+        'form.need':'Facil Japónに解説してほしい他の手続きは？','form.need.ph':'例：銀行、健康保険、保育園、住居、ビザ、税金...',
+        'form.consent':'日本の手続きに関する有用な情報の受信に同意します。スパムなし。','form.submit':'無料シミュレーターにアクセス →',
+        'cta.h2':'Facil Japónは免許から始まります','cta.p':'今日は学科試験の準備。明日は日本の他の手続きも迷わず進めます。','cta.btn':'無料で学習したい 🚀',
+      },
+      pt: {
+        'nav.proceso':'Processo','nav.funciones':'Funcionalidades','nav.app':'App','nav.faq':'FAQ','nav.start':'Começar',
+        'hero.eyebrow':'Facil Japón · processos e vida no Japão para latinos 🇯🇵',
+        'hero.h1':'Habilitação no Japão <span class="gradient-text">sem se perder.</span>',
+        'hero.p':'Comece gratuitamente com o módulo de licença japonesa. Explicamos o processo 外免切替, os documentos, o exame teórico e as perguntas em linguagem clara.',
+        'hero.li1':'Guia passo a passo para converter sua habilitação estrangeira para japonesa.','hero.li2':'Simulador gratuito com perguntas verdadeiro/falso.',
+        'hero.li3':'Explicações em português, japonês contextual, kanji, romaji e áudio opcional.','hero.li4':'Pensado para latinos que vivem, trabalham ou chegaram recentemente ao Japão.',
+        'hero.cta1':'Estudar grátis agora →','hero.cta2':'Ver o processo',
+        'hero.microcopy':'Deixe seus dados básicos. Depois acesse o simulador gratuito.',
+        'hero.social':'Feito para quem quer entender, praticar e avançar sem complicação.',
+        'stat1':'Latinos que queremos ajudar','stat2':'Meta de aprovação do simulador','stat3':'Perguntas para praticar','stat4':'Acesso gratuito ao quiz','stat4.val':'Grátis',
+        'proceso.eyebrow':'Todo o processo explicado','proceso.h2':'Como converter sua habilitação estrangeira para japonesa',
+        'proceso.p':'外免切替 (Gaimen Kirikae) é o processo oficial para converter uma habilitação estrangeira em japonesa.',
+        'step1.h3':'Verifique elegibilidade','step1.p':'Confirme se sua habilitação é válida e se cumpre o tempo de residência exigido.',
+        'step2.h3':'Reúna documentos','step2.p':'Habilitação, passaporte, residência, tradução oficial, foto e formulários da prefeitura.',
+        'step3.h3':'Agende sua consulta','step3.p':'Marque no centro de habilitação e evite chegar sem saber o que vão pedir.',
+        'step4.h3':'Apresente documentos','step4.p':'O centro revisa seu histórico e confirma se você pode continuar o processo.',
+        'step5.h3':'Estude para o exame','step5.p':'Pratique com perguntas verdadeiro/falso, como no exame real.',
+        'step6.h3':'Exame prático','step6.p':'Em alguns casos será necessário fazer uma prova de condução em circuito.',
+        'step7.h3':'Receba sua habilitação','step7.p':'Se aprovado, recebe a habilitação japonesa e pode dirigir com tranquilidade.',
+        'notice.label':'Importante:','notice':'Os requisitos variam por prefeitura. Use este guia como referência e verifique sempre as informações oficiais locais.','notice.cta':'Quero estudar de graça',
+        'func.eyebrow':'Desenvolvida para latinos, pensada para o Japão','func.h2':'Tudo o que você precisa para estudar sem se confundir','func.p':'Aplicamos uma regra simples de UX: não fazer você pensar demais.',
+        'f1.h3':'Perguntas tipo exame','f1.p':'Banco de perguntas baseado no formato do exame de conversão de habilitação no Japão.',
+        'f2.h3':'Explicações para latinos','f2.p':'Não só damos a resposta. Explicamos a lógica japonesa de forma prática.',
+        'f3.h3':'Japonês contextual','f3.p':'Aprenda kanji, hiragana, romaji e termos-chave usados em placas e regras.',
+        'f4.h3':'Modo rápido','f4.p':'Estude com uma mão no trem, intervalos ou momentos curtos do dia.',
+        'f5.h3':'Progresso inteligente','f5.p':'Precisão, meta de aprovação, erros frequentes e probabilidade de passar.',
+        'f6.h3':'Facil Japón cresce com você','f6.p':'Hoje habilitação. Depois banco, saúde, moradia, trâmites e vida diária.',
+        'app.eyebrow':'Como o app funciona','app.h2':'Estudar nunca foi tão fácil',
+        'flow1.h3':'1. Selecione seu idioma','flow1.p':'Estude em português, inglês ou japonês.',
+        'flow2.h3':'2. Escolha a categoria','flow2.p':'Reforce os temas que mais precisa.',
+        'flow3.h3':'3. Responda','flow3.p':'Treine com ○ verdadeiro e × falso, como no Japão.',
+        'flow4.h3':'4. Aprenda e melhore','flow4.p':'Receba uma explicação clara e revise seus erros.',
+        'prep.eyebrow':'Preparação completa','prep.h2':'Seu exame não precisa parecer impossível',
+        'prep.li1':'Mais de 1.000 perguntas tipo exame.','prep.li2':'Explicação após cada resposta.',
+        'prep.li3':'Revisão automática das perguntas erradas.','prep.li4':'Estatísticas para saber se você está pronto.',
+        'prep.li5':'Funciona para estudar em casa, no trem ou nos intervalos.','prep.cta':'Entrar no simulador gratuito →',
+        'faq.eyebrow':'Perguntas frequentes','faq.h2':'O que os latinos mais buscam sobre habilitação japonesa','faq.p':'Respostas às dúvidas mais comuns.',
+        'faq1.h3':'O que é 外免切替?','faq1.p':'É o processo para converter uma habilitação estrangeira em japonesa, também conhecido como Gaimen Kirikae.',
+        'faq2.h3':'O exame está disponível em português?','faq2.p':'Depende da prefeitura. O app prepara você para entender as regras.',
+        'faq3.h3':'Quantas questões certas preciso?','faq3.p':'O simulador treina com meta de 45/50 (90%) para dar uma margem de segurança.',
+        'faq4.h3':'Serve para brasileiros e outros latinos?','faq4.p':'Sim. Pensado para latinos no Japão, embora requisitos variem por país e prefeitura.',
+        'faq5.h3':'Preciso de exame prático?','faq5.p':'Em muitos casos sim. Esta versão foca na preparação para o exame teórico.',
+        'faq6.h3':'Facil Japón será só sobre habilitação?','faq6.p':'Não. A habilitação é o primeiro processo. A visão é explicar a vida diária e os trâmites no Japão.',
+        'test.h2':'Milhares de latinos já buscam facilitar o Japão','test.p':'Histórias de pessoas que precisavam de uma explicação simples para enfrentar processos japoneses.',
+        'lead.eyebrow':'Acesso gratuito ao simulador','lead.h2':'Deixe seus dados e comece a estudar',
+        'lead.p':'Com esses dados poderemos avisá-lo quando adicionarmos mais guias da Facil Japón.',
+        'lead.li1':'Acesso imediato ao quiz gratuito.','lead.li2':'Entraremos em contato apenas com conteúdo útil sobre o Japão.','lead.li3':'Você pode começar mesmo sem ter agendamento no centro de habilitação.',
+        'form.name':'Nome','form.name.ph':'Seu nome','form.email':'E-mail','form.country':'País da habilitação','form.country.ph':'Selecione...','form.other':'Outro',
+        'form.prefecture':'Prefeitura no Japão','form.prefecture.ph':'Ex: Aichi, Tóquio, Osaka',
+        'form.stage':'Em que etapa você está?','stage1':'Apenas pesquisando','stage2':'Tenho habilitação estrangeira e quero trocar','stage3':'Já tenho agendamento no centro','stage4':'Já fiz o processo e quero estudar melhor',
+        'form.need':'Que outro processo do Japão você gostaria que a Facil Japón explicasse?','form.need.ph':'Ex: banco, seguro saúde, creche, moradia, visto, impostos...',
+        'form.consent':'Aceito receber informações úteis sobre processos no Japão. Sem spam.','form.submit':'Acessar o simulador gratuito →',
+        'cta.h2':'Facil Japón começa com sua habilitação japonesa','cta.p':'Hoje você estuda para o exame. Amanhã poderá entender outros processos do Japão.','cta.btn':'Quero estudar de graça 🚀',
+      },
+      tl: {
+        'nav.proceso':'Proseso','nav.funciones':'Mga Feature','nav.app':'App','nav.faq':'FAQ','nav.start':'Magsimula',
+        'hero.eyebrow':'Facil Japón · mga proseso at buhay sa Japan para sa mga Latino 🇯🇵',
+        'hero.h1':'Pagpapalit ng lisensya sa Japan <span class="gradient-text">nang walang pagkalito.</span>',
+        'hero.p':'Magsimula nang libre sa module ng Japanese na lisensya. Ipinapaliwanag namin ang proseso ng 外免切替, mga dokumento, teoryang pagsusulit, at mga tanong sa malinaw na wika.',
+        'hero.li1':'Hakbang-hakbang na gabay para baguhin ang iyong dayuhang lisensya sa Japanese.','hero.li2':'Libreng simulator na may mga tanong na totoo/mali.',
+        'hero.li3':'Mga paliwanag sa Filipino, kontekstwal na Japanese, kanji, romaji, at opsyonal na audio.','hero.li4':'Dinisenyo para sa mga Latinong nakatira, nagtatrabaho, o bagong dating sa Japan.',
+        'hero.cta1':'Mag-aral nang libre ngayon →','hero.cta2':'Tingnan ang proseso',
+        'hero.microcopy':'Iwan lang ang iyong basic na impormasyon. Pagkatapos ay direkta sa libreng simulator.',
+        'hero.social':'Ginawa para sa mga taong gustong umunawa, magsanay, at sumulong.',
+        'stat1':'Mga Latino na gusto naming tulungan','stat2':'Target na pumasa sa simulator','stat3':'Mga tanong para sa pagsasanay','stat4':'Libreng access sa quiz','stat4.val':'Libre',
+        'proceso.eyebrow':'Ang buong proseso ay ipinaliwanag','proceso.h2':'Paano palitan ang iyong dayuhang lisensya sa Japanese',
+        'proceso.p':'外免切替 (Gaimen Kirikae) ang opisyal na proseso para gawing Japanese lisensya ang iyong dayuhang lisensya.',
+        'step1.h3':'Suriin ang pagiging karapat-dapat','step1.p':'Kumpirmahin kung ang iyong dayuhang lisensya ay may bisa at natutugunan mo ang kinakailangang panahon ng tirahan.',
+        'step2.h3':'Mangalap ng mga dokumento','step2.p':'Lisensya, pasaporte, residence card, opisyal na pagsasalin, litrato, at mga form ng iyong prefecture.',
+        'step3.h3':'Mag-book ng appointment','step3.p':'Mag-iskedyul sa license center at huwag dumating nang walang alam kung ano ang kakailanganin.',
+        'step4.h3':'Ipasa ang mga dokumento','step4.p':'Sinusuri ng center ang iyong kasaysayan at kinukumpirma kung maaari kang magpatuloy.',
+        'step5.h3':'Pag-aralan ang pagsusulit','step5.p':'Magsanay gamit ang mga tanong na totoo/mali, tulad ng tunay na pagsusulit.',
+        'step6.h3':'Praktikal na pagsusulit','step6.p':'Sa ilang kaso kailangan mong kumuha ng pagsusulit sa pagmamaneho sa circuit.',
+        'step7.h3':'Tanggapin ang iyong lisensya','step7.p':'Kung pumasa ka, matatanggap mo ang iyong Japanese na lisensya at makakapagte-drive nang may kumpiyansa.',
+        'notice.label':'Mahalaga:','notice':'Nag-iiba ang mga kinakailangan ayon sa prefecture. Gamitin ang gabay na ito bilang sanggunian at palaging beripikahin ang opisyal na lokal na impormasyon.','notice.cta':'Gusto kong mag-aral nang libre',
+        'func.eyebrow':'Dinisenyo para sa mga Latino, para sa Japan','func.h2':'Lahat ng kailangan mo para mag-aral nang walang pagkalito','func.p':'Isinusunod namin ang isang simpleng panuntunan sa UX: huwag hayaang mag-isip nang labis.',
+        'f1.h3':'Mga tanong na tulad ng pagsusulit','f1.p':'Question bank batay sa format ng pagsusulit sa pagpapalit ng lisensya sa Japan.',
+        'f2.h3':'Mga paliwanag na pang-Latino','f2.p':'Hindi lang namin ibinibigay ang sagot. Ipinaliliwanag namin ang Japanese na lohika nang praktikal.',
+        'f3.h3':'Kontekstwal na Japanese','f3.p':'Matuto ng kanji, hiragana, romaji, at mga pangunahing termino sa mga senyas at patakaran.',
+        'f4.h3':'Mabilis na mode','f4.p':'Mag-aral nang isang kamay sa tren, pahinga, o maikling sandali ng araw.',
+        'f5.h3':'Matalinong pag-unlad','f5.p':'Katumpakan, target na pumasa, madalas na mali, at posibilidad na makapasa.',
+        'f6.h3':'Lumalaki ang Facil Japón kasama mo','f6.p':'Ngayon: lisensya. Susunod: bangko, kalusugan, pabahay, at pang-araw-araw na buhay.',
+        'app.eyebrow':'Paano gumagana ang app','app.h2':'Hindi pa kailanman ganito kadali ang pag-aaral',
+        'flow1.h3':'1. Piliin ang iyong wika','flow1.p':'Mag-aral sa Español, Ingles, o Japanese.',
+        'flow2.h3':'2. Pumili ng kategorya','flow2.p':'Palakasin ang mga paksang pinaka-kailangan mo.',
+        'flow3.h3':'3. Sagutin','flow3.p':'Magsanay gamit ang ○ totoo at × mali, tulad sa Japan.',
+        'flow4.h3':'4. Matuto at mapabuti','flow4.p':'Makatanggap ng malinaw na paliwanag at suriin ang iyong mga pagkakamali.',
+        'prep.eyebrow':'Kumpletong paghahanda','prep.h2':'Hindi kailangang mahirap ang iyong pagsusulit',
+        'prep.li1':'Mahigit 1,000 tanong na tulad ng pagsusulit.','prep.li2':'Paliwanag pagkatapos ng bawat sagot.',
+        'prep.li3':'Awtomatikong pagsusuri ng mga napalyang tanong.','prep.li4':'Mga estadistika para malaman kung handa ka na.',
+        'prep.li5':'Gumagana sa bahay, tren, o pahinga.','prep.cta':'Pumasok sa libreng simulator →',
+        'faq.eyebrow':'Mga madalas na tanong','faq.h2':'Ang pinakamaraming hinahanap ng mga Latino tungkol sa Japanese na lisensya','faq.p':'Mga sagot sa karaniwang tanong.',
+        'faq1.h3':'Ano ang 外免切替?','faq1.p':'Ito ang proseso para palitan ang dayuhang lisensya ng Japanese na lisensya, kilala rin bilang Gaimen Kirikae.',
+        'faq2.h3':'Mayroon bang pagsusulit sa Filipino?','faq2.p':'Depende sa prefecture. Inihahanda ka ng app para maunawaan ang mga patakaran.',
+        'faq3.h3':'Ilang tamang sagot ang kailangan ko?','faq3.p':'Nag-eensayo ang simulator na may target na 45/50 (90%) para may margin ng kaligtasan.',
+        'faq4.h3':'Gumagana ba ito para sa mga Filipino at ibang Latino?','faq4.p':'Oo. Dinisenyo ito para sa mga Latino sa Japan, kahit maaaring mag-iba ang mga kinakailangan.',
+        'faq5.h3':'Kailangan ko ba ng praktikal na pagsusulit?','faq5.p':'Sa maraming kaso oo. Ang bersyong ito ay nakatuon sa paghahanda para sa teoryang pagsusulit.',
+        'faq6.h3':'Lisensya lang ang tatalakayin ng Facil Japón?','faq6.p':'Hindi. Ang lisensya ang unang proseso. Ang layunin ay ipaliwanag ang pang-araw-araw na buhay at mga proseso sa Japan.',
+        'test.h2':'Libu-libong Latino ang naghahanap na gawing mas madali ang Japan','test.p':'Mga kwento ng mga taong kailangan ng simpleng paliwanag para harapin ang mga proseso sa Japan.',
+        'lead.eyebrow':'Libreng access sa simulator','lead.h2':'Iwan ang iyong mga detalye at magsimulang mag-aral',
+        'lead.p':'Aabisuhan ka namin kapag nagdagdag kami ng mga gabay sa Facil Japón.',
+        'lead.li1':'Agarang access sa libreng quiz.','lead.li2':'Makikipag-ugnayan lang kami para sa kapaki-pakinabang na nilalaman tungkol sa Japan.','lead.li3':'Maaari kang magsimula kahit wala ka pang appointment sa license center.',
+        'form.name':'Pangalan','form.name.ph':'Ang iyong pangalan','form.email':'Email','form.country':'Bansa ng lisensya','form.country.ph':'Pumili...','form.other':'Iba pa',
+        'form.prefecture':'Prefecture sa Japan','form.prefecture.ph':'Hal: Aichi, Tokyo, Osaka',
+        'form.stage':'Sa anong yugto ka na?','stage1':'Nagsasaliksik pa lang','stage2':'May dayuhang lisensya ako at gusto kong palitan','stage3':'May appointment na ako sa license center','stage4':'Nagpasa na ako at gusto pang mas matuto',
+        'form.need':'Anong iba pang proseso sa Japan ang gusto mong ipaliwanag ng Facil Japón?','form.need.ph':'Hal: bangko, insurance sa kalusugan, paaralan, pabahay, visa, buwis...',
+        'form.consent':'Sumasang-ayon ako na makatanggap ng kapaki-pakinabang na impormasyon tungkol sa Japan. Walang spam.','form.submit':'I-access ang libreng simulator →',
+        'cta.h2':'Nagsisimula ang Facil Japón sa iyong Japanese na lisensya','cta.p':'Ngayon nag-aaral ka para sa pagsusulit. Bukas mahaharap mo ang anumang proseso sa Japan.','cta.btn':'Gusto kong mag-aral nang libre 🚀',
+      },
+    };
+
+    function setLang(lang) {
+      if (!I18N[lang]) return;
+      localStorage.setItem('fj_lang', lang);
+      document.documentElement.lang = {es:'es',en:'en',jp:'ja',pt:'pt',tl:'fil'}[lang] || lang;
+      const t = I18N[lang];
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const v = t[el.dataset.i18n]; if (v !== undefined) el.textContent = v;
+      });
+      document.querySelectorAll('[data-i18n-html]').forEach(el => {
+        const v = t[el.dataset.i18nHtml]; if (v !== undefined) el.innerHTML = v;
+      });
+      document.querySelectorAll('[data-i18n-ph]').forEach(el => {
+        const v = t[el.dataset.i18nPh]; if (v !== undefined) el.placeholder = v;
+      });
+      document.querySelectorAll('[data-i18n-opt]').forEach(el => {
+        const v = t[el.dataset.i18nOpt]; if (v !== undefined) el.textContent = v;
+      });
+      const sel = document.getElementById('langSelect');
+      if (sel) sel.value = lang;
+    }
+
+    // ── THEME ──────────────────────────────────────────────────
+    function toggleTheme() {
+      const current = document.documentElement.dataset.theme;
+      const next = current === 'dark' ? 'light' : 'dark';
+      document.documentElement.dataset.theme = next;
+      localStorage.setItem('fj_theme', next);
+      document.getElementById('themeToggle').textContent = next === 'dark' ? '☀️' : '🌙';
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const btn = document.getElementById('themeToggle');
+      const isDark = document.documentElement.dataset.theme === 'dark';
+      btn.textContent = isDark ? '☀️' : '🌙';
+      btn.addEventListener('click', toggleTheme);
+      setLang(localStorage.getItem('fj_lang') || 'es');
+    });
+
+    // ── LEAD / QUIZ ────────────────────────────────────────────
     const LEAD_ENDPOINT = "https://script.google.com/macros/s/AKfycbyKebbb6peIQMHAo8zoUZYfvRqaTad70bq81Rd3e2aNZUzdLZVh8xNnYPRFkp5aWiXl/exec"; // Ej: "https://tu-endpoint.com/api/leads"
     const QUIZ_URL = "./quiz/index.html";
 
@@ -1161,7 +1561,8 @@
         navLinks.style.alignItems = 'stretch';
         navLinks.style.padding = '18px';
         navLinks.style.borderRadius = '18px';
-        navLinks.style.background = 'rgba(4, 9, 13, 0.96)';
+        navLinks.style.background = document.documentElement.dataset.theme === 'light'
+          ? 'rgba(248,252,255,0.98)' : 'rgba(4, 9, 13, 0.96)';
         navLinks.style.border = '1px solid rgba(149,194,211,.18)';
       });
     }
