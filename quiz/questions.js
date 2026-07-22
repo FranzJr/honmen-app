@@ -1434,7 +1434,11 @@ const QUESTIONS = [
     jpterm: "初心者マーク",
     romaji: "shoshinsha māku",
     termMeaning: "Señal de conductor novato (obligatoria el primer año de licencia)",
-    imgUrl: ""
+    imgUrl: "",
+    pt: "Das pessoas que obtiveram recentemente a carteira de habilitação regular, apenas as que não têm confiança em sua direção exibem o sinal de motorista novato; as que têm confiança não são obrigadas a exibi-lo.",
+    expPT: "Motoristas novatos (com licença há menos de um ano) são obrigados a exibir o sinal de novato independentemente de sua confiança.",
+    tl: "Sa mga taong kamakailan lamang na nakakuha ng regular na lisensya sa pagmamaneho, ang mga hindi nagtitiwala sa kanilang pagmamaneho lang ang nagpapakita ng tanda ng bagong driver; ang mga may tiwala ay hindi kinakailangang ipakita ito.",
+    expTL: "Ang mga bagong driver (may lisensya nang wala pang isang taon) ay kinakailangang magpakita ng tanda ng bagong driver anuman ang kanilang kumpiyansa."
   },
   {
     cat: "Técnica de Manejo",
@@ -1454,7 +1458,11 @@ const QUESTIONS = [
     jpterm: "エンジンブレーキ",
     romaji: "enjin burēki",
     termMeaning: "Freno motor (frenar reduciendo marchas en lugar de usar el pedal de freno)",
-    imgUrl: ""
+    imgUrl: "",
+    pt: "Ao descer uma ladeira longa, os motoristas de veículos de quatro rodas devem usar principalmente o freio motor e aplicar o freio de pé apenas como auxiliar.",
+    expPT: "Os motoristas devem usar principalmente o freio motor e aplicar o freio de pé como auxiliar.",
+    tl: "Kapag nagmamaneho sa mahabang pabababang daan, ang mga driver ay dapat pangunahing gumamit ng engine braking at gamitin ang paa na preno bilang pantulong lamang.",
+    expTL: "Ang mga driver ay dapat pangunahing gumamit ng engine braking at gamitin ang paa na preno bilang pantulong."
   },
   {
     cat: "Autopistas",
@@ -1474,7 +1482,11 @@ const QUESTIONS = [
     jpterm: "路肩",
     romaji: "rokata",
     termMeaning: "Arcén / berma de la carretera (franja lateral de seguridad)",
-    imgUrl: ""
+    imgUrl: "",
+    pt: "Se um motorista for obrigado a estacionar em uma rodovia porque o veículo não pode circular devido a uma pane, deve estacionar em um acostamento ou faixa lateral suficientemente larga.",
+    expPT: "Estacione o carro em um lugar onde não interfira com o progresso dos outros veículos.",
+    tl: "Kung ang isang driver ay napilitang magpark sa expressway dahil hindi mapatakbo ang sasakyan dahil sa pagkasira, ang driver ay dapat mag-park sa sapat na malawak na balikat o gilid na strip.",
+    expTL: "Ipark ang kotse sa lugar na hindi makakagambala sa pag-usad ng ibang mga sasakyan."
   },
   {
     cat: "Prioridad de Paso",
@@ -1494,7 +1506,11 @@ const QUESTIONS = [
     jpterm: "横断歩道",
     romaji: "ōdan hodō",
     termMeaning: "Paso peatonal / cruce de cebra",
-    imgUrl: ""
+    imgUrl: "",
+    pt: "Se um pedestre está cruzando em uma interseção ou perto dela que não tem faixa de pedestres, o veículo deve reduzir a velocidade, desacelerar, parar ou tomar outras precauções para não obstruir a travessia do pedestre.",
+    expPT: "Os motoristas devem considerar os pedestres enquanto dirigem.",
+    tl: "Kung ang isang manlalakad ay tumatawid sa o malapit sa isang interseksyon na walang pedestrian crossing, ang isang sasakyan ay dapat bawasan ang bilis, bumagal, huminto, o gumawa ng iba pang pag-iingat upang hindi mahadlangan ang pagtawid ng manlalakad.",
+    expTL: "Ang mga driver ay dapat isaalang-alang ang mga manlalakad habang nagmamaneho."
   },
   {
     cat: "Señales de Tránsito",
@@ -1514,7 +1530,11 @@ const QUESTIONS = [
     jpterm: "停止禁止部分",
     romaji: "teishi kinshi bubun",
     termMeaning: "Zona de prohibición de parada (marcada en el pavimento)",
-    imgUrl: "https://i0.wp.com/www.gaijinworld.com/wp-content/uploads/2025/03/karimen7-07.webp?fit=300%2C300&ssl=1"
+    imgUrl: "https://i0.wp.com/www.gaijinworld.com/wp-content/uploads/2025/03/karimen7-07.webp?fit=300%2C300&ssl=1",
+    pt: "Onde há uma marcação no pavimento como mostrada na figura, os veículos têm permissão para prosseguir, mas não devem parar dentro dela.",
+    expPT: "Esta marcação designa uma 'zona de proibição de parada' onde os veículos não devem parar.",
+    tl: "Kung saan may marka sa kalsada tulad ng ipinapakita sa figure, ang mga sasakyan ay pinapayagang magpatuloy ngunit hindi dapat huminto sa loob nito.",
+    expTL: "Ang markang ito ay nagtatanda ng 'no stopping zone' kung saan ang mga sasakyan ay hindi dapat huminto."
   },
   {
     cat: "Alcohol y Conducción",
@@ -1534,7 +1554,11 @@ const QUESTIONS = [
     jpterm: "飲酒運転",
     romaji: "inshu unten",
     termMeaning: "Conducción bajo efectos del alcohol (DUI — delito grave en Japón)",
-    imgUrl: ""
+    imgUrl: "",
+    pt: "Não se deve oferecer ou recomendar bebida alcoólica a alguém que possa dirigir depois.",
+    expPT: "É crime permitir que alguém dirija quando está embriagado.",
+    tl: "Hindi dapat mag-alok o magrekomenda ng alkohol sa isang taong maaaring magmaneho pagkatapos.",
+    expTL: "Ito ay isang krimen na payagan ang pagmamaneho kapag lasing."
   },
   {
     cat: "Distancia de Seguridad",
@@ -1554,7 +1578,11 @@ const QUESTIONS = [
     jpterm: "車間距離",
     romaji: "shakan kyori",
     termMeaning: "Distancia entre vehículos (seguimiento seguro)",
-    imgUrl: ""
+    imgUrl: "",
+    pt: "A distância entre veículos nas rodovias nacionais, considerando uma superfície de estrada seca, deve ser de pelo menos 80 metros ao dirigir a 80 km/h.",
+    expPT: "Essa distância entre veículos é necessária ao considerar a distância de frenagem.",
+    tl: "Ang distansya sa pagitan ng mga sasakyan sa pambansang expressway, na ipinapalagay na tuyo ang daan, ay dapat na hindi bababa sa 80 metro kapag nagmamaneho sa 80 km/h.",
+    expTL: "Ang distansyang ito sa pagitan ng mga sasakyan ay kinakailangan kapag isinasaalang-alang ang distansya sa paghinto."
   },
   {
     cat: "Motos y Ciclomotores",
@@ -1574,7 +1602,11 @@ const QUESTIONS = [
     jpterm: "二段階右折",
     romaji: "nidankai usetsu",
     termMeaning: "Giro a la derecha en dos pasos (obligatorio para ciclomotores en vías multilane)",
-    imgUrl: ""
+    imgUrl: "",
+    pt: "Em interseções entre vias com três ou mais faixas em cada direção (vias multilane), veículos de duas rodas devem, em princípio, usar o método de curva à direita em dois passos.",
+    expPT: "Nas vias multilane, as motonetas em geral, em princípio, usam o método de curva à direita em dois passos.",
+    tl: "Sa mga interseksyon sa pagitan ng mga daan na may tatlo o higit pang linya sa bawat direksyon (multilane na mga daan), ang mga dalawang gulong na sasakyan ay dapat, sa prinsipyo, gumamit ng two-step na paraan ng pag-turn sa kanan.",
+    expTL: "Sa mga multilane na daan, ang mga pangkalahatang moped, sa prinsipyo, ay gumagamit ng two-step na paraan ng pag-turn sa kanan."
   },
   {
     cat: "Tranvías",
@@ -1594,7 +1626,11 @@ const QUESTIONS = [
     jpterm: "安全地帯",
     romaji: "anzen chitai",
     termMeaning: "Zona de seguridad (isla peatonal junto a parada de tranvía o autobús)",
-    imgUrl: ""
+    imgUrl: "",
+    pt: "Quando há passageiros embarcando e desembarcando de um bonde, o motorista deve parar até que todos os passageiros tenham chegado à calçada. No entanto, se houver uma zona de segurança, o motorista poderá passar pelo bonde a uma velocidade de 10 km/h ou menos.",
+    expPT: "Os veículos podem prosseguir em baixa velocidade ao passar por uma zona de segurança.",
+    tl: "Kapag may mga pasahero na sumasakay at bumababa sa tram, ang driver ay dapat huminto hanggang sa makarating ang lahat ng pasahero sa bangketa. Gayunpaman, kung may safety zone, ang driver ay maaaring dumaan sa tram sa bilis na 10 km/h o mas mababa.",
+    expTL: "Ang mga sasakyan ay maaaring magpatuloy sa mababang bilis kapag dumadaan sa safety zone."
   },
   {
     cat: "Carriles",
@@ -1614,7 +1650,11 @@ const QUESTIONS = [
     jpterm: "左側通行",
     romaji: "hidarigawa tsūkō",
     termMeaning: "Circulación por la izquierda (regla fundamental en Japón)",
-    imgUrl: "https://i0.wp.com/www.gaijinworld.com/wp-content/uploads/2024/03/sign1-9.jpg?fit=300%2C300&ssl=1"
+    imgUrl: "https://i0.wp.com/www.gaijinworld.com/wp-content/uploads/2024/03/sign1-9.jpg?fit=300%2C300&ssl=1",
+    pt: "Em uma via onde há uma sinalização de trânsito como mostrada na figura, os caminhões de grande porte devem trafegar na faixa mais à esquerda, em princípio.",
+    expPT: "Eles devem trafegar na faixa mais à esquerda, em princípio.",
+    tl: "Sa isang daan kung saan may tanda ng trapiko tulad ng ipinapakita sa figure, ang malalaking trak ay dapat maglakbay sa pinaka-kaliwang linya, sa prinsipyo.",
+    expTL: "Sila ay dapat maglakbay sa pinaka-kaliwang linya, sa prinsipyo."
   },
   {
     cat: "Seguridad Infantil",
@@ -1634,7 +1674,11 @@ const QUESTIONS = [
     jpterm: "チャイルドシート",
     romaji: "chairudo shīto",
     termMeaning: "Silla de seguridad para niños (obligatoria para menores de 6 años)",
-    imgUrl: ""
+    imgUrl: "",
+    pt: "O uso de cadeirinha infantil também é obrigatório no banco traseiro, incluindo para crianças pré-escolares com menos de seis anos.",
+    expPT: "O uso de cadeirinha infantil também é obrigatório no banco traseiro.",
+    tl: "Ang paggamit ng child seat ay kinakailangan rin sa likod na upuan para sa mga batang wala pang anim na taong gulang.",
+    expTL: "Ang paggamit ng child seat ay kinakailangan sa likod na upuan din."
   },
   {
     cat: "Física del Manejo",
@@ -1654,7 +1698,11 @@ const QUESTIONS = [
     jpterm: "遠心力",
     romaji: "enshinryoku",
     termMeaning: "Fuerza centrífuga (fuerza que empuja hacia afuera en las curvas)",
-    imgUrl: ""
+    imgUrl: "",
+    pt: "A força centrífuga aumenta proporcionalmente ao quadrado da velocidade, e também aumenta inversamente proporcional ao raio da curva (menor raio = maior força).",
+    expPT: "Esta é uma lei da natureza (lei da física). É preciso estar totalmente ciente disso ao dirigir.",
+    tl: "Ang centrifugal force ay tumataas nang proporsyonal sa parisukat ng bilis, at tumataas din nang inversely proporsyonal sa radius ng kurba (mas maliit na radius = mas malaking puwersa).",
+    expTL: "Ito ay batas ng kalikasan (batas ng pisika). Dapat ay lubos na mabatid ito kapag nagmamaneho."
   },
   {
     cat: "Adelantamiento",
@@ -1674,7 +1722,11 @@ const QUESTIONS = [
     jpterm: "追い越し",
     romaji: "oikoshi",
     termMeaning: "Adelantamiento (sobrepasar a otro vehículo cambiando de carril)",
-    imgUrl: ""
+    imgUrl: "",
+    pt: "Quando um motorista está sendo ultrapassado por outro veículo, deve ceder passagem movendo-se para a esquerda e desacelerando.",
+    expPT: "Os motoristas devem ceder passagem ao veículo que está ultrapassando, movendo-se para a esquerda e desacelerando.",
+    tl: "Kapag ang isang driver ay niyayabangan ng ibang sasakyan, dapat magbigay ng daan sa pamamagitan ng paglipat sa kaliwang bahagi at pagbagal.",
+    expTL: "Ang mga driver ay dapat magbigay ng daan sa sasakyang nag-oovertake sa pamamagitan ng paglipat sa kaliwang bahagi at pagbagal."
   },
   {
     cat: "Curvas",
@@ -1694,7 +1746,11 @@ const QUESTIONS = [
     jpterm: "スローイン・ファストアウト",
     romaji: "surō in fasuto auto",
     termMeaning: "Técnica de curva: lento al entrar, aceleración al salir",
-    imgUrl: "https://i0.wp.com/www.gaijinworld.com/wp-content/uploads/2025/03/honmeneng-01-09-png.webp?fit=303%2C300&ssl=1"
+    imgUrl: "https://i0.wp.com/www.gaijinworld.com/wp-content/uploads/2025/03/honmeneng-01-09-png.webp?fit=303%2C300&ssl=1",
+    pt: "O método de passar em torno da curva como mostrado na figura não está correto; os motoristas devem desacelerar antes da curva e acelerar no final.",
+    expPT: "Os motoristas devem desacelerar antes da curva e acelerar no final dela.",
+    tl: "Ang paraan ng pagdaan sa kurba tulad ng ipinapakita sa figure ay hindi tama; ang mga driver ay dapat bumagal bago ang kurba at pabilisin sa dulo.",
+    expTL: "Ang mga driver ay dapat bumagal bago ang kurba at pabilisin sa dulo ng kurba."
   },
   {
     cat: "Seguridad Vial",
@@ -1714,7 +1770,11 @@ const QUESTIONS = [
     jpterm: "正面衝突",
     romaji: "shōmen shōtotsu",
     termMeaning: "Colisión frontal (choque de frente con otro vehículo)",
-    imgUrl: ""
+    imgUrl: "",
+    pt: "Mesmo quando parece que haverá uma colisão frontal, é errado virar para a direita porque isso resulta em uma colisão perigosa com outros veículos.",
+    expPT: "Uma velocidade menor resultaria em menos dano e aumentaria a possibilidade de evitar uma colisão.",
+    tl: "Kahit na mukhang magkakaharap ang pagbangga sa isang papalapit na sasakyan, mali ang lumiko sa kanan dahil magdudulot ito ng mapanganib na banggaan sa ibang mga sasakyan.",
+    expTL: "Ang mababang bilis ay magdudulot ng mas kaunting pinsala at magpapataas ng posibilidad na maiwasan ang banggaan."
   },
   {
     cat: "Motos y Ciclomotores",
@@ -1734,7 +1794,11 @@ const QUESTIONS = [
     jpterm: "死角",
     romaji: "shikaku",
     termMeaning: "Punto ciego (zona no visible desde el espejo retrovisor del vehículo)",
-    imgUrl: ""
+    imgUrl: "",
+    pt: "Mesmo que um veículo de duas rodas esteja visível no espelho retrovisor de um veículo de quatro rodas, o motorista de quatro rodas ainda pode não percebê-lo.",
+    expPT: "O motorista de um veículo de quatro rodas pode não perceber um veículo de duas rodas.",
+    tl: "Kahit na ang isang dalawang gulong na sasakyan ay makikita sa rearview mirror ng apat na gulong na sasakyan, ang driver ng apat na gulong na sasakyan ay maaari pa ring hindi mapansin ito.",
+    expTL: "Ang driver ng apat na gulong na sasakyan ay maaaring hindi mapansin ang dalawang gulong na sasakyan."
   },
   {
     cat: "Señales de Tránsito",
@@ -1754,7 +1818,11 @@ const QUESTIONS = [
     jpterm: "高さ制限",
     romaji: "takasa seigen",
     termMeaning: "Restricción de altura (medida desde el suelo hasta el punto más alto)",
-    imgUrl: "https://i0.wp.com/www.gaijinworld.com/wp-content/uploads/2025/03/honmeneng-01-01.webp?fit=300%2C300&ssl=1"
+    imgUrl: "https://i0.wp.com/www.gaijinworld.com/wp-content/uploads/2025/03/honmeneng-01-01.webp?fit=300%2C300&ssl=1",
+    pt: "Onde há uma sinalização como mostrada na figura, apenas veículos com altura total de até 3,3 metros podem prosseguir.",
+    expPT: "Apenas veículos com altura total acima do solo de até 3,3 metros podem prosseguir.",
+    tl: "Kung saan may tanda tulad ng ipinapakita sa figure, tanging mga sasakyan na may kabuuang taas na hanggang 3.3 metro lamang ang maaaring magpatuloy.",
+    expTL: "Tanging mga sasakyan na may kabuuang taas na hanggang 3.3 metro lamang ang maaaring magpatuloy."
   },
   {
     cat: "Parada y Estacionamiento",
@@ -1774,7 +1842,11 @@ const QUESTIONS = [
     jpterm: "トンネル",
     romaji: "tonneru",
     termMeaning: "Túnel (prohibición total de parada y estacionamiento dentro)",
-    imgUrl: ""
+    imgUrl: "",
+    pt: "Nem o estacionamento nem a parada de um veículo são permitidos em túneis, independentemente de haver ou não faixas para veículos.",
+    expPT: "Nem o estacionamento nem a parada de um veículo são permitidos em túneis com e sem faixas para veículos.",
+    tl: "Hindi pinapayagan ang pagpapark o pagtigil ng sasakyan sa mga tunel, anuman kung may mga linya para sa mga sasakyan o wala.",
+    expTL: "Hindi pinapayagan ang pagpapark o pagtigil ng sasakyan sa mga tunel na may at walang mga linya para sa mga sasakyan."
   },
   {
     cat: "Peatones",
@@ -1794,7 +1866,11 @@ const QUESTIONS = [
     jpterm: "スクールゾーン",
     romaji: "sukūru zōn",
     termMeaning: "Zona escolar (área de baja velocidad cerca de escuelas)",
-    imgUrl: ""
+    imgUrl: "",
+    pt: "Alguns pedestres, como idosos e crianças, comportam-se de forma inesperada e os motoristas devem prestar atenção especial.",
+    expPT: "Os motoristas devem compreender plenamente as características dos idosos e das crianças ao dirigir.",
+    tl: "Ang ilang mga manlalakad, tulad ng matatanda at mga bata, ay kumikilos sa hindi inaasahang paraan, at ang mga driver ay dapat magbigay ng espesyal na pansin.",
+    expTL: "Ang mga driver ay dapat ganap na maunawaan ang mga katangian ng mga matatanda at mga bata kapag nagmamaneho."
   },
   {
     cat: "Averías",
@@ -1814,7 +1890,11 @@ const QUESTIONS = [
     jpterm: "非常用反射板",
     romaji: "hijō yō hanshaban",
     termMeaning: "Triángulo reflectante de emergencia (obligatorio en averías)",
-    imgUrl: ""
+    imgUrl: "",
+    pt: "Ao estacionar em uma via comum durante o dia devido a uma pane, é necessário indicar claramente que o veículo está parado colocando sinalizadores de parada e triângulo de emergência, não apenas luzes de emergência.",
+    expPT: "Para evitar acidentes de trânsito, é melhor indicar claramente que o veículo está parado devido a uma pane.",
+    tl: "Kapag nagpark sa karaniwang kalsada sa araw dahil sa pagkasira, kailangan na malinaw na ipahiwatig na ang sasakyan ay natigil sa pamamagitan ng paglalagay ng stop signal plate o emergency triangular stop board, hindi lamang hazard lights.",
+    expTL: "Upang maiwasan ang mga aksidente sa trapiko, mas mainam na malinaw na ipahayag na ang sasakyan ay natigil dahil sa pagkasira."
   },
   {
     cat: "Averías",
@@ -1834,7 +1914,11 @@ const QUESTIONS = [
     jpterm: "ハザードランプ",
     romaji: "hazādo ranpu",
     termMeaning: "Luces de emergencia / intermitentes de avería",
-    imgUrl: ""
+    imgUrl: "",
+    pt: "Ao estacionar em uma via comum à noite, mesmo com triângulo de emergência e placa de sinalização, as luzes de emergência, de estacionamento ou traseiras ainda são necessárias.",
+    expPT: "As luzes de emergência, luzes de estacionamento ou lanternas traseiras não são necessárias quando um triângulo de emergência e uma placa de sinal de parada estão colocados.",
+    tl: "Kapag nagpark sa karaniwang kalsada sa gabi, kahit may emergency triangular stop board at stop signal plate, ang hazard lights, parking lights, o tail lamps ay kinakailangan pa rin.",
+    expTL: "Ang hazard lights, parking lights, o tail lamps ay hindi kinakailangan kapag may nakalagay na emergency triangular stop board at stop signal plate."
   },
   {
     cat: "Responsabilidad del Propietario",
@@ -1854,7 +1938,11 @@ const QUESTIONS = [
     jpterm: "無免許運転",
     romaji: "mumenkyo unten",
     termMeaning: "Conducción sin licencia (delito grave; el propietario también puede ser responsable)",
-    imgUrl: ""
+    imgUrl: "",
+    pt: "O proprietário de um veículo nunca deve emprestá-lo a uma pessoa que não tem carteira de habilitação.",
+    expPT: "O proprietário do veículo deve ser responsável pelo uso do automóvel.",
+    tl: "Ang may-ari ng sasakyan ay hindi dapat kailanman ipahiram ito sa isang taong walang lisensya sa pagmamaneho.",
+    expTL: "Ang may-ari ng sasakyan ay dapat na maging responsable sa paggamit ng sasakyan."
   },
   {
     cat: "Adelantamiento",
@@ -1874,7 +1962,11 @@ const QUESTIONS = [
     jpterm: "追い越し禁止",
     romaji: "oikoshi kinshi",
     termMeaning: "Prohibición de adelantamiento (no se permite cambiar de carril para sobrepasar)",
-    imgUrl: "https://i0.wp.com/www.gaijinworld.com/wp-content/uploads/2025/03/honmeneng-01-02.webp?fit=300%2C300&ssl=1"
+    imgUrl: "https://i0.wp.com/www.gaijinworld.com/wp-content/uploads/2025/03/honmeneng-01-02.webp?fit=300%2C300&ssl=1",
+    pt: "Onde há uma sinalização como mostrada na figura, os veículos não devem mudar de faixa para ultrapassar automóveis.",
+    expPT: "Em uma zona de proibição de ultrapassagem, os veículos não devem mudar de faixa para ultrapassar automóveis.",
+    tl: "Kung saan may tanda ng trapiko tulad ng ipinapakita sa figure, ang mga sasakyan ay hindi dapat magpalit ng linya upang lampasan ang mga sasakyan.",
+    expTL: "Sa isang no overtaking zone, ang mga sasakyan ay hindi dapat magpalit ng linya upang lampasan ang mga sasakyan."
   },
   {
     cat: "Señales Manuales",
@@ -1894,7 +1986,11 @@ const QUESTIONS = [
     jpterm: "手信号",
     romaji: "te shingō",
     termMeaning: "Señal manual (gestos con el brazo para indicar maniobras de conducción)",
-    imgUrl: ""
+    imgUrl: "",
+    pt: "O sinal de mão ao dar ré é: braço estendido horizontalmente para fora da janela, movendo-o para cima e para baixo.",
+    expPT: "O sinal de mão a ser usado ao dar ré é especificado como um movimento de braço.",
+    tl: "Ang hand signal kapag nagre-reverse ay: braso na nakahilera palabas ng bintana at ilipat ito pataas at pababa.",
+    expTL: "Ang hand signal na gagamitin kapag nagre-reverse ay tinukoy bilang galaw ng braso."
   },
   {
     cat: "Distancia de Seguridad",
@@ -1914,7 +2010,11 @@ const QUESTIONS = [
     jpterm: "停止距離",
     romaji: "teishi kyori",
     termMeaning: "Distancia de parada total (distancia de reacción + distancia de frenado)",
-    imgUrl: ""
+    imgUrl: "",
+    pt: "Em uma descida, o aumento de velocidade faz com que a distância de frenagem seja maior do que em uma estrada plana.",
+    expPT: "Os motoristas devem aumentar a distância entre veículos, levando em conta a influência da gravidade (efeito de aceleração).",
+    tl: "Sa pabababang daan, ang pagtaas ng bilis ay nagdudulot ng mas mahabang distansya sa paghinto kaysa sa patag na daan.",
+    expTL: "Ang mga driver ay dapat mag-iwan ng mas maraming distansya sa pagitan ng mga sasakyan, isinasaalang-alang ang impluwensya ng grabidad (epekto ng akselerasyon)."
   },
   {
     cat: "Técnica de Manejo",
@@ -1934,7 +2034,11 @@ const QUESTIONS = [
     jpterm: "クリープ現象",
     romaji: "kurīpu genshō",
     termMeaning: "Fenómeno de creep (movimiento lento del vehículo automático sin pisar el acelerador)",
-    imgUrl: ""
+    imgUrl: "",
+    pt: "Quando um veículo de câmbio automático está parado e o câmbio está em uma posição diferente de estacionamento, o veículo pode avançar levemente devido ao efeito 'creep'.",
+    expPT: "Esta é uma das características dos veículos com câmbio automático. Certifique-se de aplicar os freios.",
+    tl: "Kapag ang isang sasakyan na may automatic transmission ay nakatigil at ang gear shift ay nasa posisyon maliban sa parking, ang sasakyan ay maaaring kumilos pasulong nang kaunti dahil sa 'creep' effect.",
+    expTL: "Ito ay isa sa mga katangian ng mga sasakyan na may automatic transmission. Siguraduhing gamitin ang mga preno."
   },
   {
     cat: "Señal de Conductor Novato",
@@ -1954,7 +2058,11 @@ const QUESTIONS = [
     jpterm: "高齢者マーク",
     romaji: "kōreisha māku",
     termMeaning: "Señal de conductor mayor (obligatoria para conductores de 75+ años)",
-    imgUrl: ""
+    imgUrl: "",
+    pt: "Ultrapassar um veículo com sinalização de motorista novato ou sênior não é proibido, mas não se deve passar muito perto ou cortar o caminho.",
+    expPT: "Ultrapassar ou passar não é proibido, mas não se deve passar muito perto ou cortar o caminho deles.",
+    tl: "Ang pag-overtake sa isang sasakyan na nagpapakita ng tanda ng bagong driver o matandang driver ay hindi ipinagbabawal, ngunit hindi dapat dumaan nang masyadong malapit o putulin ang kanilang landas.",
+    expTL: "Ang pag-overtake o pagdaan ay hindi ipinagbabawal, ngunit hindi dapat dumaan nang masyadong malapit o putulin ang kanilang landas."
   },
   {
     cat: "Señales de Tránsito",
@@ -1974,7 +2082,11 @@ const QUESTIONS = [
     jpterm: "警察官の手信号",
     romaji: "keisatsukan no te shingō",
     termMeaning: "Señal manual del agente de policía (prioridad sobre los semáforos)",
-    imgUrl: "https://i0.wp.com/www.gaijinworld.com/wp-content/uploads/2025/03/honmeneng-01-07-png.webp?fit=300%2C300&ssl=1"
+    imgUrl: "https://i0.wp.com/www.gaijinworld.com/wp-content/uploads/2025/03/honmeneng-01-07-png.webp?fit=300%2C300&ssl=1",
+    pt: "Para o tráfego na direção da seta mais fina como mostrado na figura, o sinal do policial representa um sinal vermelho.",
+    expPT: "O significado do sinal de mão do policial é o mesmo que o do sinal vermelho.",
+    tl: "Para sa trapiko na nagpapatuloy sa direksyon ng mas manipis na arrow tulad ng ipinapakita sa figure, ang senyal ng pulis ay kumakatawan sa pulang ilaw.",
+    expTL: "Ang kahulugan ng hand signal ng pulis ay katulad ng sa pula na ilaw."
   },
   {
     cat: "Documentación del Vehículo",
@@ -1994,7 +2106,11 @@ const QUESTIONS = [
     jpterm: "乗車定員",
     romaji: "jōsha teiin",
     termMeaning: "Capacidad de asientos (el conductor siempre está incluido en el total)",
-    imgUrl: ""
+    imgUrl: "",
+    pt: "A capacidade de assentos indicada no certificado de inspeção do veículo inclui o motorista.",
+    expPT: "O motorista está incluído na capacidade de assentos.",
+    tl: "Ang kapasidad ng upuan na nabanggit sa sertipiko ng inspeksyon ng sasakyan ay kasama ang driver.",
+    expTL: "Ang driver ay kasama sa kapasidad ng upuan."
   },
   {
     cat: "Autopistas",
@@ -2014,7 +2130,11 @@ const QUESTIONS = [
     jpterm: "パーキングエリア",
     romaji: "pākingu eria",
     termMeaning: "Área de estacionamiento en autopistas (lugar designado para descanso y servicios)",
-    imgUrl: ""
+    imgUrl: "",
+    pt: "Enquanto dirige em uma rodovia nacional, se o motorista se sentir cansado, não pode usar o acostamento como local de descanso.",
+    expPT: "O acostamento ou a faixa lateral de uma rodovia não deve ser usado como local de descanso.",
+    tl: "Habang nagmamaneho sa pambansang expressway, kung ang driver ay nakakaramdam ng pagod, hindi maaaring gamitin ang side strip o balikat bilang lugar ng pahinga.",
+    expTL: "Ang side strip o balikat ng expressway ay hindi dapat gamitin bilang lugar ng pahinga."
   },
   {
     cat: "Señales de Tránsito",
@@ -2034,7 +2154,11 @@ const QUESTIONS = [
     jpterm: "自転車専用",
     romaji: "jitensha senyō",
     termMeaning: "Exclusivo para bicicletas (carril o vía reservada solo para ciclistas)",
-    imgUrl: "https://i0.wp.com/www.gaijinworld.com/wp-content/uploads/2024/03/sign1-8.jpg?fit=200%2C200&ssl=1"
+    imgUrl: "https://i0.wp.com/www.gaijinworld.com/wp-content/uploads/2024/03/sign1-8.jpg?fit=200%2C200&ssl=1",
+    pt: "A sinalização de trânsito mostrada na figura designa uma ciclovia ou uma via dedicada para bicicletas, não uma travessia de bicicleta.",
+    expPT: "A sinalização designa uma ciclovia ou uma via dedicada para bicicletas.",
+    tl: "Ang tanda ng trapiko na ipinapakita sa figure ay nagtatanda ng bicycle path o dedikadong kalsada para sa mga bisikleta, hindi isang bicycle crossing.",
+    expTL: "Ang tanda ay nagtatanda ng bicycle path o dedikadong kalsada para sa mga bisikleta."
   },
   {
     cat: "Carga y Pasajeros",
@@ -2054,7 +2178,11 @@ const QUESTIONS = [
     jpterm: "積載制限",
     romaji: "sekisai seigen",
     termMeaning: "Límite de carga (restricciones sobre peso, dimensiones y posición de la carga)",
-    imgUrl: ""
+    imgUrl: "",
+    pt: "A carga pode ser colocada nos assentos de um veículo de passageiros regular, desde que não obstrua a condução.",
+    expPT: "A carga pode ser colocada nos assentos desde que não obstrua a condução.",
+    tl: "Ang kargamento ay maaaring ilagay sa mga upuan ng isang regular na sasakyang pang-pasahero, maliban kung ito ay hadlang sa pagmamaneho.",
+    expTL: "Ang kargamento ay maaaring ilagay sa mga upuan maliban kung ito ay hadlang sa pagmamaneho."
   },
   {
     cat: "Intersecciones",
@@ -2074,7 +2202,11 @@ const QUESTIONS = [
     jpterm: "危険予測",
     romaji: "kiken yosoku",
     termMeaning: "Anticipación de peligros (percibir el riesgo antes de que ocurra)",
-    imgUrl: ""
+    imgUrl: "",
+    pt: "As interseções e seus arredores são as partes mais perigosas e propensas a acidentes da via, por isso os motoristas devem ter cuidado especial.",
+    expPT: "Muitos acidentes de trânsito ocorrem em interseções. É necessário ter muito cuidado ao se aproximar de uma.",
+    tl: "Ang mga interseksyon at kanilang kapaligiran ay ang pinaka-mapanganib at accident-prone na bahagi ng kalsada, kaya ang mga driver ay dapat maging espesyal na maingat.",
+    expTL: "Maraming aksidente sa trapiko ang nangyayari sa mga interseksyon. Ang maingat na pansin ay kinakailangan kapag papalapit sa isa."
   },
   {
     cat: "Responsabilidad del Conductor",
@@ -2094,7 +2226,11 @@ const QUESTIONS = [
     jpterm: "行政責任",
     romaji: "gyōsei sekinin",
     termMeaning: "Responsabilidad administrativa (sistema de puntos y suspensión de licencia)",
-    imgUrl: ""
+    imgUrl: "",
+    pt: "Obter uma carteira de habilitação significa também entender as responsabilidades que vêm com ela, não apenas ter o direito de dirigir.",
+    expPT: "Aqueles que não estão cientes de suas responsabilidades em potenciais acidentes não estão aptos para dirigir.",
+    tl: "Ang pagkuha ng lisensya sa pagmamaneho ay nangangahulugan din ng pag-unawa sa mga responsibilidad na kasama nito, hindi lamang ang karapatang magmaneho.",
+    expTL: "Ang mga hindi nakakaalam ng kanilang mga responsibilidad sa mga potensyal na aksidente ay hindi angkop na magmaneho."
   },
   {
     cat: "Adelantamiento",
@@ -2114,7 +2250,11 @@ const QUESTIONS = [
     jpterm: "中央線",
     romaji: "chūōsen",
     termMeaning: "Línea central de la carretera (separa los sentidos de circulación)",
-    imgUrl: ""
+    imgUrl: "",
+    pt: "Ao ultrapassar outro veículo em uma via onde a metade esquerda não é suficiente, é permitido ultrapassar usando o lado direito da linha central.",
+    expPT: "Isso é permitido como exceção à regra geral de condução pelo lado esquerdo.",
+    tl: "Kapag nag-oovtake ng ibang sasakyan sa isang daan kung saan ang kaliwang kalahati ay hindi sapat, pinapayagan ang pag-overtake gamit ang kanang bahagi ng centerline ng daan.",
+    expTL: "Ito ay pinapayagan bilang pagbubukod sa pangkalahatang panuntunan ng pagmamaneho sa kaliwang bahagi."
   },
   {
     cat: "Señales de Tránsito",
@@ -2134,7 +2274,11 @@ const QUESTIONS = [
     jpterm: "交通標識",
     romaji: "kōtsū hyōshiki",
     termMeaning: "Señales de tránsito (señales que regulan, advierten e informan a los conductores)",
-    imgUrl: ""
+    imgUrl: "",
+    pt: "As sinalizações de trânsito e as marcações no pavimento informam os motoristas sobre como prosseguir, pontos que exigem cautela, ações proibidas e outras informações necessárias para o trânsito.",
+    expPT: "As sinalizações de trânsito e as marcações no pavimento informam os motoristas sobre a velocidade, como prosseguir e outros pontos que exigem atenção.",
+    tl: "Ang mga tanda ng trapiko at marka sa kalsada ay nagbibigay-alam sa mga driver kung paano magpatuloy, mga puntong nangangailangan ng pag-iingat, mga ipinagbabawal na aksyon, at iba pang impormasyon na kinakailangan para sa trapiko.",
+    expTL: "Ang mga tanda ng trapiko at marka sa kalsada ay nagbibigay-alam sa mga driver tungkol sa bilis, kung paano magpatuloy, at iba pang mga puntong nangangailangan ng pansin."
   },
   {
     cat: "Técnica de Manejo",
@@ -2154,7 +2298,11 @@ const QUESTIONS = [
     jpterm: "ポンピングブレーキ",
     romaji: "ponpingu burēki",
     termMeaning: "Freno pulsado (presionar el freno varias veces para evitar bloqueo de ruedas)",
-    imgUrl: ""
+    imgUrl: "",
+    pt: "Quando obrigado a aplicar os freios em alta velocidade, deve-se usar um movimento de bombeamento e não frear bruscamente, para evitar o bloqueio das rodas.",
+    expPT: "A frenagem brusca durante a condução em alta velocidade é perigosa porque o veículo perde estabilidade.",
+    tl: "Kapag napilitang gamitin ang mga preno sa mataas na bilis, dapat gamitin nang may pumping motion at hindi biglang sagwan, upang maiwasan ang pag-lock ng gulong.",
+    expTL: "Ang biglang pagsagwan sa mataas na bilis ng pagmamaneho ay mapanganib dahil nawawala ang katatagan ng sasakyan."
   },
   {
     cat: "Carriles y Franjas",
@@ -2174,7 +2322,11 @@ const QUESTIONS = [
     jpterm: "路側帯",
     romaji: "rosokutai",
     termMeaning: "Franja lateral (zona al borde de la carretera reservada para peatones)",
-    imgUrl: "https://i0.wp.com/www.gaijinworld.com/wp-content/uploads/2025/03/honmeneng-01-08-png.webp?fit=300%2C300&ssl=1"
+    imgUrl: "https://i0.wp.com/www.gaijinworld.com/wp-content/uploads/2025/03/honmeneng-01-08-png.webp?fit=300%2C300&ssl=1",
+    pt: "Nas faixas laterais como mostrado na figura, nenhum veículo pode prosseguir, pois é uma faixa lateral para pedestres.",
+    expPT: "Veículos leves não podem prosseguir porque é uma faixa lateral para pedestres.",
+    tl: "Sa mga side strip tulad ng ipinapakita sa figure, walang sasakyan ang maaaring magpatuloy dahil ito ay isang side strip para sa mga manlalakad.",
+    expTL: "Ang mga magaan na sasakyan ay hindi maaaring magpatuloy dahil ito ay isang side strip para sa mga manlalakad."
   },
   {
     cat: "Motos y Ciclomotores",
@@ -2194,7 +2346,11 @@ const QUESTIONS = [
     jpterm: "二輪免許",
     romaji: "nirin menkyo",
     termMeaning: "Licencia para motocicletas (licencia especial requerida para conducir motos)",
-    imgUrl: ""
+    imgUrl: "",
+    pt: "Os motoristas de veículos de duas rodas podem ser lentos para detectar as condições à frente porque seu campo de visão é estreito, por isso devem tentar ampliar o campo de visão.",
+    expPT: "Os motoristas de veículos de duas rodas devem tentar ampliar seu campo de visão.",
+    tl: "Ang mga driver ng dalawang gulong na sasakyan ay maaaring mabagal sa pagtukoy ng mga kondisyon sa harap dahil ang kanilang larangan ng bisyon ay makitid, kaya dapat subukang palawakin ang larangan ng bisyon.",
+    expTL: "Ang mga driver ng dalawang gulong na sasakyan ay dapat subukang palawakin ang kanilang larangan ng bisyon."
   },
   {
     cat: "Licencia de Conducir",
@@ -2214,7 +2370,11 @@ const QUESTIONS = [
     jpterm: "免許停止",
     romaji: "menkyo teishi",
     termMeaning: "Suspensión de licencia (período durante el cual el conductor no puede manejar legalmente)",
-    imgUrl: ""
+    imgUrl: "",
+    pt: "Dirigir com uma licença suspensa durante o período de suspensão constitui conduzir sem licença válida.",
+    expPT: "Isso constitui conduzir sem uma licença válida porque a licença suspensa é temporariamente inválida.",
+    tl: "Ang pagmamaneho na may suspended na lisensya sa panahon ng suspensyon ay bumubuo ng pagmamaneho nang walang wastong lisensya.",
+    expTL: "Ito ay bumubuo ng pagmamaneho nang walang wastong lisensya dahil ang suspended na lisensya ay pansamantalang hindi wasto."
   },
   {
     cat: "Conducción Nocturna",
@@ -2234,7 +2394,11 @@ const QUESTIONS = [
     jpterm: "眩惑",
     romaji: "genwaku",
     termMeaning: "Deslumbramiento (ceguera temporal por luces brillantes de vehículos que se aproximan)",
-    imgUrl: ""
+    imgUrl: "",
+    pt: "À noite, quando as luzes de um veículo que vem em sentido contrário são muito brilhantes, deve-se desviar o olhar levemente para a esquerda, não encarar diretamente.",
+    expPT: "Deve-se desviar o olhar levemente para a esquerda para não ser ofuscado pelas luzes do veículo que vem em sentido contrário.",
+    tl: "Sa gabi kapag masyadong maliwanag ang mga ilaw ng isang papalapit na sasakyan, dapat ilipat ang tingin nang kaunti sa kaliwa, hindi direktang tingnan ang mga ilaw.",
+    expTL: "Dapat ilipat ng isa ang kanyang tingin nang kaunti sa kaliwa upang hindi masina ng mga ilaw ng papalapit na sasakyan."
   },
   {
     cat: "Adelantamiento",
@@ -2254,7 +2418,11 @@ const QUESTIONS = [
     jpterm: "車線変更",
     romaji: "shasen henkō",
     termMeaning: "Cambio de carril (maniobra de moverse de un carril a otro)",
-    imgUrl: ""
+    imgUrl: "",
+    pt: "Ao começar a ultrapassar um veículo à frente, deve-se evitar aproximar-se demais dele e mudar de faixa lentamente.",
+    expPT: "Deve-se evitar aproximar-se demais do veículo à frente e mudar de faixa lentamente.",
+    tl: "Kapag nagsisimulang mag-overtake ng sasakyan sa harap, dapat iwasan ang paglapit nang masyadong malapit dito at dahan-dahang magpalit ng linya.",
+    expTL: "Dapat iwasan ang paglapit nang masyadong malapit sa sasakyan sa harap at dahan-dahang magpalit ng linya."
   },
   {
     cat: "Señales de Tránsito",
@@ -2274,7 +2442,11 @@ const QUESTIONS = [
     jpterm: "転回禁止",
     romaji: "tenkai kinshi",
     termMeaning: "Prohibición de giro en U (no se permite dar la vuelta completa en ese punto)",
-    imgUrl: "https://i0.wp.com/www.gaijinworld.com/wp-content/uploads/2024/02/karimen2-8.jpg?fit=300%2C300&ssl=1"
+    imgUrl: "https://i0.wp.com/www.gaijinworld.com/wp-content/uploads/2024/02/karimen2-8.jpg?fit=300%2C300&ssl=1",
+    pt: "Quando há uma sinalização como mostrada na figura, os veículos não devem cruzar a linha sólida, exceto para entrar em estabelecimentos à esquerda.",
+    expPT: "É permitido cruzar a via ao fazer uma curva à esquerda para entrar em um estabelecimento comercial ou estacionamento.",
+    tl: "Kapag may tanda ng trapiko tulad ng ipinapakita sa figure, ang mga sasakyan ay hindi dapat tumawid sa solid na linya, maliban upang pumasok sa mga lugar ng negosyo sa kaliwa.",
+    expTL: "Pinapayagan ang pagtawid ng kalsada kapag gumagawa ng left turn upang makapasok sa isang lugar ng negosyo o parking lot."
   },
   {
     cat: "Motos y Ciclomotores",
@@ -2294,7 +2466,11 @@ const QUESTIONS = [
     jpterm: "教習所",
     romaji: "kyōshūjo",
     termMeaning: "Autoescuela / centro de formación de conductores (obligatorio para obtener la licencia en Japón)",
-    imgUrl: ""
+    imgUrl: "",
+    pt: "A postura correta de pilotagem para veículos de duas rodas NÃO é inclinar-se muito para frente; o excesso de inclinação é perigoso pois estreita o campo de visão.",
+    expPT: "Inclinar-se demais para frente é perigoso porque o campo de visão fica estreito.",
+    tl: "Ang tamang postura ng pagsakay para sa dalawang gulong na sasakyan ay HINDI sobrang yumukod pasulong; ang labis na pagkukuyo ay mapanganib dahil nagiging makitid ang larangan ng bisyon.",
+    expTL: "Ang masyadong pagyukod pasulong ay mapanganib dahil nagiging makitid ang larangan ng bisyon."
   },
   {
     cat: "Pasos a Nivel",
@@ -2314,7 +2490,11 @@ const QUESTIONS = [
     jpterm: "踏切",
     romaji: "fumikiri",
     termMeaning: "Paso a nivel (cruce de tren — obligatorio detenerse y verificar ambas direcciones)",
-    imgUrl: ""
+    imgUrl: "",
+    pt: "Ao passar por um cruzamento ferroviário, mesmo que um trem tenha acabado de passar, ainda é necessário confirmar que não há outro trem vindo.",
+    expPT: "É necessária confirmação ao passar por um cruzamento ferroviário de várias pistas.",
+    tl: "Kapag dumadaan sa isang railway crossing, kahit may tren lang kamakailan na dumaan, kailangan pa rin kumpirmahin kung walang isa pang tren na paparating.",
+    expTL: "Ang pagkumpirma ay kinakailangan kapag dumadaan sa isang multilane na railway crossing."
   },
   {
     cat: "Señales de Tránsito",
@@ -2334,7 +2514,11 @@ const QUESTIONS = [
     jpterm: "一方通行",
     romaji: "ippō tsūkō",
     termMeaning: "Sentido único / dirección única de circulación",
-    imgUrl: "https://i0.wp.com/www.gaijinworld.com/wp-content/uploads/2025/03/honmeneng-01-14-png.webp?fit=300%2C300&ssl=1"
+    imgUrl: "https://i0.wp.com/www.gaijinworld.com/wp-content/uploads/2025/03/honmeneng-01-14-png.webp?fit=300%2C300&ssl=1",
+    pt: "Onde há uma sinalização de trânsito como mostrada na figura, o motorista deve prosseguir pelo lado esquerdo da via conforme indicado.",
+    expPT: "O motorista deve prosseguir conforme designado pela sinalização de trânsito (pelo lado esquerdo).",
+    tl: "Kung saan may tanda ng trapiko tulad ng ipinapakita sa figure, ang driver ay dapat magpatuloy sa kaliwang bahagi ng kalsada ayon sa itinuturo ng tanda.",
+    expTL: "Ang driver ay dapat magpatuloy ayon sa itinakda ng tanda ng trapiko (sa kaliwang bahagi)."
   },
   {
     cat: "Física del Manejo",
@@ -2354,7 +2538,11 @@ const QUESTIONS = [
     jpterm: "ハイドロプレーニング",
     romaji: "haidoropurēningu",
     termMeaning: "Hydroplaning (pérdida de contacto de los neumáticos con el suelo por una capa de agua)",
-    imgUrl: ""
+    imgUrl: "",
+    pt: "O fenômeno de aquaplanagem é quando o veículo desliza sobre a água; as ondas nos pneus se chamam de fenômeno de onda estacionária.",
+    expPT: "As ondas nos pneus são chamadas de fenômeno de onda estacionária.",
+    tl: "Ang hydroplaning phenomenon ay kapag ang sasakyan ay humihiwalay sa kalsada at gumagalaw sa tubig; ang mga wave-shaped ripples sa gulong ay tinatawag na standing wave phenomenon.",
+    expTL: "Ang mga wave-shaped ripples sa gulong ay tinatawag na standing wave phenomenon."
   },
   {
     cat: "Señales Manuales",
@@ -2374,7 +2562,11 @@ const QUESTIONS = [
     jpterm: "徐行",
     romaji: "jokō",
     termMeaning: "Velocidad reducida / ir despacio (velocidad que permite detenerse de inmediato)",
-    imgUrl: ""
+    imgUrl: "",
+    pt: "O sinal de mão para desacelerar é o mesmo que para parar: braço estendido diagonalmente para baixo e para fora.",
+    expPT: "Tanto a desaceleração quanto a parada têm o mesmo sinal, com o braço estendido diagonalmente para baixo e para fora.",
+    tl: "Ang hand signal para sa pagbagal ay katulad ng para sa paghinto: braso na nakaabot nang pahilis pababa at palabas.",
+    expTL: "Ang pagbagal at paghinto ay parehong signal na may braso na nakaabot nang pahilis pababa at palabas."
   },
   {
     cat: "Física del Manejo",
@@ -2394,7 +2586,11 @@ const QUESTIONS = [
     jpterm: "タイヤ空気圧",
     romaji: "taiya kūkiatsu",
     termMeaning: "Presión de los neumáticos (debe verificarse regularmente para seguridad)",
-    imgUrl: ""
+    imgUrl: "",
+    pt: "Se a pressão do pneu dianteiro direito for menor que a do esquerdo, o volante puxará para a direita (lado de menor pressão), não para a esquerda.",
+    expPT: "O volante puxará para a direita porque é puxado para o lado com menor pressão.",
+    tl: "Kung ang presyon ng kanang harap na gulong ay mas mababa kaysa sa kaliwang harap na gulong, ang manibela ay mahahatak sa kanan (panig ng mas mababang presyon), hindi sa kaliwa.",
+    expTL: "Ang manibela ay mahahatak sa kanan dahil ito ay hinihila sa panig na may mas mababang presyon."
   },
   {
     cat: "Seguridad Vial",
@@ -2414,7 +2610,11 @@ const QUESTIONS = [
     jpterm: "疲労運転",
     romaji: "hirō unten",
     termMeaning: "Conducción fatigada (conducir con cansancio excesivo — causa frecuente de accidentes)",
-    imgUrl: ""
+    imgUrl: "",
+    pt: "Se dirigir por um longo período, o motorista deve parar a cada duas horas e fazer uma pausa de 10 minutos ou mais.",
+    expPT: "Considerando a influência da fadiga, dirigir por duas horas consecutivas ou mais é muito perigoso.",
+    tl: "Kung nagmamaneho ng matagal na panahon, ang driver ay dapat tumigil tuwing dalawang oras at magpahinga ng 10 minuto o higit pa.",
+    expTL: "Isinasaalang-alang ang impluwensya ng pagod, ang pagmamaneho nang dalawang magkakasunod na oras o higit pa ay napaka-mapanganib."
   },
   {
     cat: "Prioridad de Paso",
@@ -2434,7 +2634,11 @@ const QUESTIONS = [
     jpterm: "左方優先",
     romaji: "sahō yūsen",
     termMeaning: "Prioridad izquierda (en Japón, el vehículo de la izquierda tiene prioridad en intersecciones sin señales)",
-    imgUrl: "https://i0.wp.com/www.gaijinworld.com/wp-content/uploads/2025/03/honmeneng-01-05-png.webp?fit=300%2C300&ssl=1"
+    imgUrl: "https://i0.wp.com/www.gaijinworld.com/wp-content/uploads/2025/03/honmeneng-01-05-png.webp?fit=300%2C300&ssl=1",
+    pt: "Quando o veículo A e o veículo B se aproximam de uma interseção sem sinais, e o veículo B vem da esquerda, o veículo B tem preferência (não o A).",
+    expPT: "Veículos que se aproximam pela esquerda têm preferência de passagem, portanto o veículo B não pode ser obstruído pelo veículo A.",
+    tl: "Kapag ang sasakyan A at sasakyan B ay papalapit sa isang interseksyon na walang mga senyal, at ang sasakyan B ay papalapit mula sa kaliwa, ang sasakyan B ang may karapatan sa daan (hindi ang A).",
+    expTL: "Ang mga sasakyan na papalapit mula sa kaliwa ay may karapatan sa daan, kaya ang sasakyan B ay hindi maaaring hadlangan ng sasakyan A."
   },
   {
     cat: "Conducción bajo la Lluvia",
@@ -2454,7 +2658,11 @@ const QUESTIONS = [
     jpterm: "梅雨",
     romaji: "tsuyu",
     termMeaning: "Temporada de lluvias (junio-julio) — período de alta precaución al conducir en Japón",
-    imgUrl: ""
+    imgUrl: "",
+    pt: "Porque a visibilidade é ruim quando chove, os motoristas devem evitar aproximar-se do acostamento ao encontrar veículos que vêm em sentido contrário.",
+    expPT: "Os motoristas devem evitar se aproximar do acostamento porque ele fica solto e pode fazer o veículo cair.",
+    tl: "Dahil mahinang ang visibility kapag umuulan, ang mga driver ay dapat iwasang lumapit sa balikat kapag nakatagpo ng mga sasakyang papalapit mula sa kabila.",
+    expTL: "Ang mga driver ay dapat iwasang lumapit sa balikat dahil ito ay nagiging maluwag at maaaring magdulot ng pagbagsak ng sasakyan."
   },
   {
     cat: "Parada y Estacionamiento",
@@ -2474,7 +2682,11 @@ const QUESTIONS = [
     jpterm: "消火栓",
     romaji: "shōkasen",
     termMeaning: "Hidrante de incendios (prohibido estacionar a menos de 5 metros)",
-    imgUrl: ""
+    imgUrl: "",
+    pt: "É proibido estacionar dentro de 5 metros de um hidrante ou local de equipamentos de combate a incêndio; e dentro de 1 metro de um alarme de incêndio.",
+    expPT: "É proibido estacionar dentro de 1 metro de um alarme de incêndio.",
+    tl: "Ipinagbabawal ang pagpapark sa loob ng 5 metro mula sa isang fire hydrant o lugar ng kagamitan sa paglalaban ng sunog; at sa loob ng 1 metro mula sa fire alarm.",
+    expTL: "Ipinagbabawal ang pagpapark sa loob ng 1 metro mula sa isang fire alarm."
   },
   {
     cat: "Técnica de Manejo",
@@ -2494,7 +2706,11 @@ const QUESTIONS = [
     jpterm: "右折",
     romaji: "usetsu",
     termMeaning: "Giro a la derecha (maniobra compleja en Japón — equivale al giro izquierda en países que circulan por la derecha)",
-    imgUrl: ""
+    imgUrl: "",
+    pt: "Ao fazer uma curva à direita em via de mão dupla, o automóvel deve se aproximar do centro da via, não da borda direita.",
+    expPT: "Os automóveis devem se aproximar do centro da via quando não estiverem em uma rua de mão única.",
+    tl: "Kapag gumagawa ng right turn sa daan na dalawang daan, ang sasakyan ay dapat lumapit sa gitna ng kalsada, hindi sa kanang gilid.",
+    expTL: "Ang mga sasakyan ay dapat lumapit sa gitna ng kalsada kapag hindi nagmamaneho sa isang one-way na kalye."
   },
   {
     cat: "Señales de Tránsito",
@@ -2514,7 +2730,11 @@ const QUESTIONS = [
     jpterm: "赤点滅",
     romaji: "aka tenmitsu",
     termMeaning: "Luz roja intermitente (parada obligatoria — igual que una señal de STOP)",
-    imgUrl: ""
+    imgUrl: "",
+    pt: "Quando o sinal de trânsito é uma luz vermelha piscante, os veículos devem parar antes da linha de parada. Apenas desacelerar não é uma opção.",
+    expPT: "Os veículos devem parar. Reduzir a velocidade não é uma opção.",
+    tl: "Kapag ang senyal ng trapiko ay isang kumikislap na pulang ilaw, ang mga sasakyan ay dapat huminto bago ang stop line. Ang pagbagal lamang ay hindi isang opsyon.",
+    expTL: "Ang mga sasakyan ay dapat huminto. Ang pagbagal ay hindi isang opsyon."
   },
   {
     cat: "Señales de Tránsito",
@@ -2534,7 +2754,11 @@ const QUESTIONS = [
     jpterm: "乗車定員制限",
     romaji: "jōsha teiin seigen",
     termMeaning: "Restricción de capacidad de pasajeros (ciertos vehículos según número de ocupantes)",
-    imgUrl: "https://i0.wp.com/www.gaijinworld.com/wp-content/uploads/2025/03/honmeneng-01-03.webp?fit=300%2C300&ssl=1"
+    imgUrl: "https://i0.wp.com/www.gaijinworld.com/wp-content/uploads/2025/03/honmeneng-01-03.webp?fit=300%2C300&ssl=1",
+    pt: "Em uma via com a sinalização mostrada na figura, um veículo de passageiros com capacidade para 11 ou mais pessoas não pode prosseguir.",
+    expPT: "A sinalização de trânsito indica que a via está fechada para veículos de passageiros com capacidade para 11 ou mais pessoas.",
+    tl: "Sa isang daan na may tanda ng trapiko tulad ng ipinapakita sa figure, ang isang sasakyang pang-pasahero na may kapasidad na 11 o higit pang tao ay hindi maaaring magpatuloy.",
+    expTL: "Ang tanda ng trapiko ay nagpapakita na ang kalsada ay sarado sa mga sasakyang pang-pasahero na may kapasidad na 11 o higit pang tao."
   },
   {
     cat: "Parada y Estacionamiento",
@@ -2554,7 +2778,11 @@ const QUESTIONS = [
     jpterm: "停車",
     romaji: "teisha",
     termMeaning: "Parada (detención breve con el conductor presente y disponible para moverse)",
-    imgUrl: ""
+    imgUrl: "",
+    pt: "Em uma via com menos de 3,5 metros de largura disponível, um automóvel pode parar para carregar ou descarregar carga se o motorista estiver presente.",
+    expPT: "Os motoristas têm permissão para estacionar ao carregar ou descarregar carga e o motorista está imediatamente supervisionando.",
+    tl: "Sa isang kalsada na may lapad na wala sa 3.5 metro, ang isang sasakyan ay maaaring tumigil para mag-load o mag-unload ng kargamento kung ang driver ay naroroon.",
+    expTL: "Ang mga driver ay pinapayagang mag-park kapag naglo-load o nag-unload ng kargamento at ang driver ay agad na nagbabantay dito."
   },
   {
     cat: "Estacionamiento",
@@ -2574,7 +2802,11 @@ const QUESTIONS = [
     jpterm: "車庫証明",
     romaji: "shako shōmei",
     termMeaning: "Certificado de garaje (obligatorio antes de comprar un auto en Japón — dentro de 2km del domicilio)",
-    imgUrl: ""
+    imgUrl: "",
+    pt: "O proprietário de um automóvel (excluindo veículos de duas rodas) deve obter um certificado de espaço de estacionamento pessoal dentro de 2 km antes da compra.",
+    expPT: "O espaço de estacionamento pessoal deve estar dentro de 2 km.",
+    tl: "Ang may-ari ng isang sasakyan (hindi kasama ang dalawang gulong na motor vehicle) ay dapat makakuha ng sertipiko ng personal na lugar ng pagpapark sa loob ng 2 km bago bumili.",
+    expTL: "Ang personal na lugar ng pagpapark ay dapat nasa loob ng 2 km."
   },
   {
     cat: "Adelantamiento",
@@ -2594,7 +2826,11 @@ const QUESTIONS = [
     jpterm: "二重追い越し",
     romaji: "nijū oikoshi",
     termMeaning: "Doble adelantamiento (dos vehículos adelantando simultáneamente — extremadamente peligroso)",
-    imgUrl: ""
+    imgUrl: "",
+    pt: "Se o motorista perceber que o veículo atrás tenta ultrapassar, deve ceder passagem, não acelerar para impedir a ultrapassagem.",
+    expPT: "Como a ultrapassagem perigosa é proibida, desistir da tentativa de ultrapassar é o correto.",
+    tl: "Kung napansin ng driver na ang sasakyan sa likod ay sinusubukan na lampasan, dapat magbigay ng daan, hindi pabilisin upang mahadlangan ang pag-overtake.",
+    expTL: "Dahil ang mapanganib na pag-overtake ay ipinagbabawal, ang pag-abandona ng pagtatangkang mag-overtake ay tama."
   },
   {
     cat: "Señales de Tránsito",
@@ -2614,7 +2850,11 @@ const QUESTIONS = [
     jpterm: "動物注意",
     romaji: "dōbutsu chūi",
     termMeaning: "Advertencia de animales (señal de precaución por aparición de animales en la vía)",
-    imgUrl: "https://i0.wp.com/www.gaijinworld.com/wp-content/uploads/2024/04/sign4-06-jpg.webp?fit=300%2C300&ssl=1"
+    imgUrl: "https://i0.wp.com/www.gaijinworld.com/wp-content/uploads/2024/04/sign4-06-jpg.webp?fit=300%2C300&ssl=1",
+    pt: "A sinalização de trânsito na figura indica que há perigo de animais aparecerem repentinamente perto da via.",
+    expPT: "Este é um sinal de aviso para indicar que há perigo de animais aparecerem repentinamente.",
+    tl: "Ang tanda ng trapiko sa figure ay nagpapahiwatig na may panganib na biglaang lumabas ang mga hayop malapit sa kalsada.",
+    expTL: "Ito ay isang babala na tanda upang ipahiwatig na may panganib na biglaang lumabas ang mga hayop."
   },
   {
     cat: "Seguridad Vial",
@@ -2634,7 +2874,11 @@ const QUESTIONS = [
     jpterm: "居眠り運転",
     romaji: "inemuri unten",
     termMeaning: "Conducción soñolienta (una de las principales causas de accidentes graves en autopistas)",
-    imgUrl: ""
+    imgUrl: "",
+    pt: "Se os motoristas sentirem qualquer sonolência ao dirigir à noite, devem parar em um lugar seguro e descansar antes de continuar.",
+    expPT: "Não se deve aguentar a sonolência, mas sim aliviá-la antes de retomar a condução.",
+    tl: "Kung ang mga driver ay nakakaramdam ng kahit katiting na antok habang nagmamaneho sa gabi, dapat nilang itigil ang sasakyan sa isang ligtas na lugar at magpahinga bago magpatuloy.",
+    expTL: "Hindi dapat tiisin ang antok ngunit dapat alisin ang antok bago ipagpatuloy ang pagmamaneho."
   },
   {
     cat: "Señales de Tránsito",
@@ -2654,7 +2898,11 @@ const QUESTIONS = [
     jpterm: "原動機付自転車",
     romaji: "gendōki tsuki jitensha",
     termMeaning: "Ciclomotor (moto de ≤50cc — categoría especial en el sistema de licencias japonés)",
-    imgUrl: "https://i0.wp.com/www.gaijinworld.com/wp-content/uploads/2024/04/sign5-09-jpg.webp?fit=300%2C300&ssl=1"
+    imgUrl: "https://i0.wp.com/www.gaijinworld.com/wp-content/uploads/2024/04/sign5-09-jpg.webp?fit=300%2C300&ssl=1",
+    pt: "Nas vias com a sinalização mostrada na figura, nem as motonetas em geral podem prosseguir.",
+    expPT: "Motonetas em geral também NÃO podem prosseguir.",
+    tl: "Sa mga kalsada na may tanda ng trapiko tulad ng ipinapakita sa figure, ang mga pangkalahatang moped ay HINDI RIN maaaring magpatuloy.",
+    expTL: "Ang mga pangkalahatang moped ay HINDI RIN maaaring magpatuloy."
   },
   {
     cat: "Autopistas",
@@ -2674,7 +2922,11 @@ const QUESTIONS = [
     jpterm: "追突",
     romaji: "tsuitsutsu",
     termMeaning: "Alcance / colisión trasera (especialmente peligroso en autopistas con vehículos averiados)",
-    imgUrl: ""
+    imgUrl: "",
+    pt: "Se forçado a estacionar em uma rodovia devido a uma pane, o motorista e os passageiros devem sair do veículo e esperar em local seguro, não dentro do veículo.",
+    expPT: "É mais seguro sair do veículo e esperar em outro lugar porque há perigo de ser atingido.",
+    tl: "Kung napipilitan na mag-park sa expressway dahil sa pagkasira, ang driver at mga pasahero ay dapat lumabas ng sasakyan at maghintay sa ligtas na lugar, hindi sa loob ng sasakyan.",
+    expTL: "Mas ligtas na umalis sa sasakyan at maghintay sa ibang lugar dahil may panganib na matamaan."
   },
   {
     cat: "Señales de Tránsito",
@@ -2694,7 +2946,11 @@ const QUESTIONS = [
     jpterm: "バス専用",
     romaji: "basu senyō",
     termMeaning: "Exclusivo para autobuses (carril o señal reservada para uso exclusivo de autobuses)",
-    imgUrl: "https://i0.wp.com/www.gaijinworld.com/wp-content/uploads/2025/03/honmeneng-01-06-png.webp?fit=300%2C300&ssl=1"
+    imgUrl: "https://i0.wp.com/www.gaijinworld.com/wp-content/uploads/2025/03/honmeneng-01-06-png.webp?fit=300%2C300&ssl=1",
+    pt: "Onde há um painel como mostrado na figura, apenas ônibus podem seguir o sinal de trânsito neste painel, colocado para facilitar o fluxo do transporte público.",
+    expPT: "O painel é usado para indicar que o sinal está colocado para o fluxo tranquilo do tráfego de ônibus.",
+    tl: "Kung saan may signboard tulad ng ipinapakita sa figure, tanging mga bus lamang ang maaaring sumunod sa senyal ng trapiko sa signboard na ito, na inilagay para sa maayos na daloy ng transporteng pampubliko.",
+    expTL: "Ang signboard ay ginagamit upang ipahiwatig na ang senyal ay inilagay para sa maayos na daloy ng trapiko ng bus."
   },
   {
     cat: "Adelantamiento",
@@ -2714,7 +2970,11 @@ const QUESTIONS = [
     jpterm: "クラクション",
     romaji: "kurakkushon",
     termMeaning: "Claxon / bocina (solo para uso en situaciones de peligro en Japón)",
-    imgUrl: ""
+    imgUrl: "",
+    pt: "Quando um veículo tenta ultrapassar o veículo à frente, o veículo à frente pode usar a buzina quando necessário para evitar perigo.",
+    expPT: "A buzina pode ser usada quando necessário para evitar perigo.",
+    tl: "Kapag ang isang sasakyan ay sinusubukang lampasan ang sasakyan sa harap, ang sasakyan sa harap ay maaaring gumamit ng busina kapag kinakailangan upang maiwasan ang panganib.",
+    expTL: "Ang busina ay maaaring gamitin kapag kinakailangan upang maiwasan ang panganib."
   },
   {
     cat: "Física del Manejo",
@@ -2734,7 +2994,11 @@ const QUESTIONS = [
     jpterm: "スリップサイン",
     romaji: "surippusain",
     termMeaning: "Indicador de desgaste del neumático (cuando aparece, el neumático debe reemplazarse)",
-    imgUrl: ""
+    imgUrl: "",
+    pt: "Quando os pneus se desgastam, a distância de frenagem aumenta, mas a distância de reação não é afetada pelos pneus desgastados.",
+    expPT: "A distância de reação não tem nada a ver com pneus desgastados porque os freios não funcionam até serem acionados.",
+    tl: "Kapag ang mga gulong ay nagagasgas, ang distansya sa paghinto ay tumataas, ngunit ang distansya ng reaksyon ay hindi apektado ng mga gasgas na gulong.",
+    expTL: "Ang distansya ng reaksyon ay walang kaugnayan sa mga gasgas na gulong dahil ang mga preno ay hindi gumaganap hanggang sa gamitin."
   },
   {
     cat: "Carga y Pasajeros",
@@ -2754,7 +3018,11 @@ const QUESTIONS = [
     jpterm: "制限外積載",
     romaji: "seigen gai sekisai",
     termMeaning: "Carga que excede los límites permitidos (requiere permiso especial de la policía)",
-    imgUrl: "https://i0.wp.com/www.gaijinworld.com/wp-content/uploads/2025/03/honmeneng-01-10-png.webp?fit=300%2C300&ssl=1"
+    imgUrl: "https://i0.wp.com/www.gaijinworld.com/wp-content/uploads/2025/03/honmeneng-01-10-png.webp?fit=300%2C300&ssl=1",
+    pt: "Se o comprimento total da carga ultrapassar mais de 1/10 do comprimento do veículo, é necessário obter uma licença especial.",
+    expPT: "Deve-se obter uma licença porque o comprimento total ultrapassa mais de 1/10 do comprimento do veículo.",
+    tl: "Kung ang kabuuang haba ng karga ay lumalagpas sa higit sa 1/10 ng haba ng sasakyan, kailangan makakuha ng espesyal na permit.",
+    expTL: "Ang isang permit ay dapat makuha dahil ang kabuuang haba ay lumalagpas sa higit sa 1/10 ng haba ng sasakyan."
   },
   {
     cat: "Documentación del Vehículo",
@@ -2774,7 +3042,11 @@ const QUESTIONS = [
     jpterm: "車検",
     romaji: "shaken",
     termMeaning: "Inspección vehicular periódica (obligatoria y muy estricta en Japón — cada 2-3 años)",
-    imgUrl: ""
+    imgUrl: "",
+    pt: "A etiqueta de inspeção indica a data da PRÓXIMA inspeção (não a data em que foi feita).",
+    expPT: "Eles indicam o próximo momento de inspeção (ano, mês).",
+    tl: "Ang inspection sticker ay nagpapahiwatig ng SUSUNOD na inspeksyon (hindi ang petsa kung kailan ginawa ang inspeksyon).",
+    expTL: "Ang mga ito ay nagpapahiwatig ng susunod na timing ng inspeksyon (taon, buwan)."
   },
   {
     cat: "Seguridad Vial",
@@ -2794,7 +3066,11 @@ const QUESTIONS = [
     jpterm: "目の疲れ",
     romaji: "me no tsukare",
     termMeaning: "Fatiga ocular (afectación principal de la fatiga al conducir — aumenta errores de percepción)",
-    imgUrl: ""
+    imgUrl: "",
+    pt: "A fadiga durante a condução é mais evidente nos olhos, devido ao seu uso intenso, causando lentidão no tempo de reação.",
+    expPT: "A fadiga e seus efeitos são mais evidentes nos olhos devido ao seu uso intenso durante a condução.",
+    tl: "Ang pagod habang nagmamaneho ay pinakamalinaw na nakikita sa mga mata, dahil sa kanilang mabigat na paggamit, na nagdudulot ng pagbagal ng reaction time.",
+    expTL: "Ang pagod at ang mga epekto nito ay pinaka-kapansin-pansin sa mga mata dahil sa kanilang mabigat na paggamit habang nagmamaneho."
   },
   {
     cat: "Luces del Vehículo",
@@ -2814,7 +3090,11 @@ const QUESTIONS = [
     jpterm: "前照灯",
     romaji: "zenshōtō",
     termMeaning: "Faros delanteros (obligatorio encenderlos con visibilidad inferior a 50m, incluso de día)",
-    imgUrl: ""
+    imgUrl: "",
+    pt: "Ao prosseguir em um túnel ou neblina densa, os faróis do veículo devem ser ligados não apenas para ver, mas também para ser visto pelos outros.",
+    expPT: "O propósito dos faróis não é apenas manter o alcance de visão, mas também fazer com que outros percebam o veículo.",
+    tl: "Kapag nagpapatuloy sa isang tunel o makapal na ulap, ang mga headlight ng sasakyan ay dapat na i-on hindi lamang upang makita, kundi upang mapansin din ng iba.",
+    expTL: "Ang layunin ng mga headlight ay hindi lamang upang mapanatili ang saklaw ng bisyon kundi pati na rin upang mapansin ng iba ang sasakyan."
   },
   {
     cat: "Prioridad de Paso",
@@ -2834,7 +3114,11 @@ const QUESTIONS = [
     jpterm: "右折優先",
     romaji: "usetsu yūsen",
     termMeaning: "Prioridad en giro derecho (los que giran a la derecha siempre ceden el paso a recto y giro izquierda)",
-    imgUrl: "https://i0.wp.com/www.gaijinworld.com/wp-content/uploads/2025/03/honmeneng-01-11-png.webp?fit=300%2C300&ssl=1"
+    imgUrl: "https://i0.wp.com/www.gaijinworld.com/wp-content/uploads/2025/03/honmeneng-01-11-png.webp?fit=300%2C300&ssl=1",
+    pt: "Na situação mostrada na figura, veículos que fazem curva à direita não devem obstruir veículos que vêm em sentido contrário em linha reta.",
+    expPT: "Veículos que fazem curvas à direita não devem obstruir o progresso dos veículos que vêm em sentido contrário em linha reta.",
+    tl: "Sa sitwasyon na ipinapakita sa figure, ang mga sasakyang gumagawa ng right turn ay hindi dapat hadlangan ang mga sasakyang papalapit na tumatahak nang tuwid.",
+    expTL: "Ang mga sasakyang gumagawa ng right turn ay hindi dapat hadlangan ang pag-usad ng mga sasakyang papalapit na tumatahak nang tuwid."
   },
   {
     cat: "Señales de Tránsito",
@@ -2854,7 +3138,11 @@ const QUESTIONS = [
     jpterm: "停止線",
     romaji: "teishi sen",
     termMeaning: "Línea de parada (marca en el pavimento que indica dónde detenerse ante un semáforo o señal de STOP)",
-    imgUrl: ""
+    imgUrl: "",
+    pt: "Em uma interseção com sinal de trânsito mas sem linha de parada, os veículos devem parar imediatamente antes da interseção, não antes do sinal.",
+    expPT: "Os veículos devem parar imediatamente antes da interseção, não imediatamente antes do sinal de trânsito.",
+    tl: "Sa isang interseksyon na may senyal ng trapiko ngunit walang stop line, ang mga sasakyan ay dapat huminto kaagad bago ang interseksyon, hindi bago ang senyal ng trapiko.",
+    expTL: "Ang mga sasakyan ay dapat huminto kaagad bago ang interseksyon, hindi kaagad bago ang senyal ng trapiko."
   },
   {
     cat: "Autopistas",
@@ -2874,7 +3162,11 @@ const QUESTIONS = [
     jpterm: "最低速度",
     romaji: "saitei sokudo",
     termMeaning: "Velocidad mínima (50 km/h en autopistas japonesas — los vehículos más lentos deben usar el carril izquierdo)",
-    imgUrl: ""
+    imgUrl: "",
+    pt: "A faixa de viagem mais lenta pode ser usada por qualquer veículo que não consiga atingir o limite de velocidade mínimo, não apenas por caminhões grandes.",
+    expPT: "Qualquer veículo que não consiga cumprir o limite de velocidade mínimo tem permissão para usá-la.",
+    tl: "Ang mas mabagal na linya ng paglalakbay ay maaaring gamitin ng anumang sasakyan na hindi matupad ang minimum na limitasyon sa bilis, hindi lamang ng malalaking trak.",
+    expTL: "Ang anumang sasakyan na hindi matupad ang minimum na limitasyon sa bilis ay pinapayagang gamitin ito."
   },
   {
     cat: "Señales de Tránsito",
@@ -2894,7 +3186,11 @@ const QUESTIONS = [
     jpterm: "自動車専用道路",
     romaji: "jidōsha senyō dōro",
     termMeaning: "Carretera exclusiva para automóviles (prohíbe peatones, bicicletas y ciclomotores)",
-    imgUrl: "https://i0.wp.com/www.gaijinworld.com/wp-content/uploads/2025/03/honmeneng-01-04-png.webp?fit=300%2C300&ssl=1"
+    imgUrl: "https://i0.wp.com/www.gaijinworld.com/wp-content/uploads/2025/03/honmeneng-01-04-png.webp?fit=300%2C300&ssl=1",
+    pt: "A sinalização de trânsito mostrada na figura designa uma rodovia nacional ou via expressa exclusiva para veículos motorizados.",
+    expPT: "Este é um sinal designando apenas veículos motorizados, e é colocado em uma rodovia nacional ou via expressa.",
+    tl: "Ang tanda ng trapiko na ipinapakita sa figure ay nagtatanda ng pambansang expressway o motorway na eksklusibo para sa mga motor vehicle.",
+    expTL: "Ito ay isang tanda na nagtatanda ng mga motor vehicle lamang, at inilalagay sa isang pambansang expressway o motorway."
   },
   {
     cat: "Física del Manejo",
@@ -2914,7 +3210,11 @@ const QUESTIONS = [
     jpterm: "運動エネルギー",
     romaji: "undō enerugī",
     termMeaning: "Energía cinética (proporcional al cuadrado de la velocidad — reducir la velocidad reduce dramáticamente el daño)",
-    imgUrl: ""
+    imgUrl: "",
+    pt: "Quando um veículo colide com um objeto, se reduzir a velocidade pela metade, o dano da colisão diminui para um QUARTO (não metade), porque a energia cinética é proporcional ao quadrado da velocidade.",
+    expPT: "A energia cinética no momento de uma colisão é proporcional ao quadrado da velocidade.",
+    tl: "Kapag ang isang sasakyan ay nagbanggaan sa isang bagay, kung mababawasan ang bilis sa kalahati, ang pinsala mula sa banggaan ay bababa sa ISANG-IKAAPAT (hindi kalahati), dahil ang kinetic energy ay proporsyonal sa parisukat ng bilis.",
+    expTL: "Ang kinetic energy sa oras ng banggaan ay proporsyonal sa parisukat ng bilis."
   },
   {
     cat: "Mantenimiento del Vehículo",
@@ -2934,7 +3234,11 @@ const QUESTIONS = [
     jpterm: "サイドブレーキ",
     romaji: "saido burēki",
     termMeaning: "Freno de mano / freno de estacionamiento (debe tener recorrido libre cuando está aplicado)",
-    imgUrl: ""
+    imgUrl: "",
+    pt: "Quando o freio de mão de um veículo de quatro rodas está funcionando corretamente, deve haver espaço para puxá-lo um pouco mais. Se não houver, o freio não está regulado.",
+    expPT: "Deve haver espaço para puxá-lo mais. Caso contrário, o freio não funciona bem.",
+    tl: "Kapag ang handbrake ng isang apat na gulong na sasakyan ay gumagana nang tama, dapat may espasyo pa para hilahin pa ito nang kaunti. Kung wala, ang preno ay hindi maayos na nakaayos.",
+    expTL: "Dapat may espasyo pa para hilahin pa ito. Kung hindi, ang preno ay hindi gumagana nang maayos."
   },
   {
     cat: "Señales de Tránsito",
@@ -2954,7 +3258,11 @@ const QUESTIONS = [
     jpterm: "落石注意",
     romaji: "rakuseki chūi",
     termMeaning: "Precaución por caída de rocas (señal de advertencia en carreteras de montaña)",
-    imgUrl: "https://i0.wp.com/www.gaijinworld.com/wp-content/uploads/2024/04/sign4-11-jpg.webp?fit=300%2C300&ssl=1"
+    imgUrl: "https://i0.wp.com/www.gaijinworld.com/wp-content/uploads/2024/04/sign4-11-jpg.webp?fit=300%2C300&ssl=1",
+    pt: "A sinalização de trânsito mostrada na figura avisa sobre queda de rochas, não sobre acostamento instável.",
+    expPT: "Este sinal avisa sobre queda de rochas.",
+    tl: "Ang tanda ng trapiko na ipinapakita sa figure ay nagbababala ng pagbagsak ng mga bato, hindi ng madaling gumuho na balikat.",
+    expTL: "Ang tandang ito ay nagbababala ng pagbagsak ng mga bato."
   },
   {
     cat: "Física del Manejo",
@@ -2974,7 +3282,11 @@ const QUESTIONS = [
     jpterm: "空走距離",
     romaji: "kūsō kyori",
     termMeaning: "Distancia de reacción (metros recorridos durante el tiempo de reacción antes de que el freno actúe)",
-    imgUrl: ""
+    imgUrl: "",
+    pt: "Quando o freio é acionado em resposta ao perigo, há cerca de 1 segundo de tempo de reação antes que o freio comece a funcionar.",
+    expPT: "Os motoristas devem estar cientes do tempo de reação ao dirigir, para reagir com segurança caso surja um perigo.",
+    tl: "Kapag ang preno ay ginagamit bilang tugon sa panganib, mayroon humigit-kumulang 1 segundo na oras ng reaksyon bago magsimulang gumana ang preno.",
+    expTL: "Ang mga driver ay dapat na magkamalay ng oras ng reaksyon habang nagmamaneho, upang makapagtugon nang ligtas kung magkaroon ng panganib."
   },
   {
     cat: "Curvas",
@@ -2994,7 +3306,11 @@ const QUESTIONS = [
     jpterm: "追い越し禁止",
     romaji: "oikoshi kinshi",
     termMeaning: "Prohibición de adelantamiento (obligatoria en curvas, cimas de colinas y zonas escolares)",
-    imgUrl: ""
+    imgUrl: "",
+    pt: "As curvas são locais perigosos onde os motoristas não devem ultrapassar e devem desacelerar.",
+    expPT: "As curvas são locais perigosos onde os motoristas não devem ultrapassar outros e devem desacelerar.",
+    tl: "Ang mga kanto ay mga mapanganib na lugar kung saan ang mga driver ay hindi dapat mag-overtake ng iba at dapat bumagal.",
+    expTL: "Ang mga kanto ay mga mapanganib na lugar kung saan ang mga driver ay hindi dapat mag-overtake ng iba at dapat bumagal."
   },
   {
     cat: "Vehículos de Emergencia",
@@ -3014,7 +3330,11 @@ const QUESTIONS = [
     jpterm: "緊急車両",
     romaji: "kinkyū sharyō",
     termMeaning: "Vehículo de emergencia (ambulancia, bomberos, policía — todos los demás deben ceder el paso)",
-    imgUrl: ""
+    imgUrl: "",
+    pt: "Se um veículo de emergência estiver em uma interseção ou perto dela, os veículos devem liberar a interseção e dar passagem ao veículo de emergência em qualquer direção.",
+    expPT: "Os veículos devem deixar o veículo de emergência prosseguir em qualquer direção em uma interseção.",
+    tl: "Kung ang isang emergency vehicle ay nasa o malapit sa isang interseksyon, ang mga sasakyan ay dapat alisin ang interseksyon at magbigay ng daan sa emergency vehicle sa anumang direksyon.",
+    expTL: "Ang mga sasakyan ay dapat hayaan ang emergency vehicle na magpatuloy sa anumang direksyon sa isang interseksyon."
   },
   {
     cat: "Documentación del Vehículo",
@@ -3034,7 +3354,11 @@ const QUESTIONS = [
     jpterm: "自賠責保険",
     romaji: "jibaiseki hoken",
     termMeaning: "Seguro obligatorio de responsabilidad civil (compulsory automobile liability insurance — obligatorio en Japón)",
-    imgUrl: ""
+    imgUrl: "",
+    pt: "O certificado de inspeção do veículo e o certificado de seguro de responsabilidade civil obrigatório DEVEM ser mantidos no veículo durante a condução.",
+    expPT: "Deve-se mantê-los no veículo durante a condução.",
+    tl: "Ang sertipiko ng inspeksyon ng motor vehicle at ang sertipiko ng compulsory automobile liability insurance ay DAPAT itago sa sasakyan habang nagmamaneho.",
+    expTL: "Dapat itago ang mga ito sa sasakyan habang nagmamaneho."
   },
   {
     cat: "Motos y Ciclomotores",
@@ -3054,7 +3378,11 @@ const QUESTIONS = [
     jpterm: "死角",
     romaji: "shikaku",
     termMeaning: "Punto ciego (zona no visible en los espejos retrovisores del vehículo)",
-    imgUrl: ""
+    imgUrl: "",
+    pt: "É necessário ter cuidado quando um veículo de duas rodas passa por um de quatro rodas, porque tende a ser ignorado no ponto cego do espelho retrovisor.",
+    expPT: "Um veículo de duas rodas tende a ser ignorado no ponto cego do espelho retrovisor de um veículo de quatro rodas.",
+    tl: "Ang pag-iingat ay kinakailangan kapag ang isang dalawang gulong na sasakyan ay dumadaan sa isang apat na gulong na sasakyan, dahil ito ay may posibilidad na mapabayaan sa blind spot ng rearview mirror.",
+    expTL: "Ang isang dalawang gulong na sasakyan ay may posibilidad na mapabayaan sa blind spot ng rearview mirror ng isang apat na gulong na sasakyan."
   },
   {
     cat: "Técnica de Manejo",
@@ -3074,7 +3402,11 @@ const QUESTIONS = [
     jpterm: "急ブレーキ",
     romaji: "kyū burēki",
     termMeaning: "Frenazo brusco (debe evitarse siempre, especialmente en superficies resbaladizas)",
-    imgUrl: ""
+    imgUrl: "",
+    pt: "Em superfícies ruins como lama ou cascalho, a direção pode perder estabilidade facilmente, portanto operações repentinas devem ser evitadas.",
+    expPT: "Operações repentinas são perigosas e devem ser evitadas, especialmente em superfícies ruins.",
+    tl: "Sa masamang ibabaw ng kalsada tulad ng putik o graba, madaling mawala ang katatagan ng manibela, samakatuwid ang mga biglang operasyon ay dapat iwasan.",
+    expTL: "Ang mga biglang operasyon ay mapanganib at dapat iwasan, lalo na sa masamang ibabaw ng kalsada."
   },
   {
     cat: "Prioridad de Paso",
@@ -3094,7 +3426,11 @@ const QUESTIONS = [
     jpterm: "優先道路",
     romaji: "yūsen dōro",
     termMeaning: "Vía prioritaria (el conductor en esta vía no tiene que ceder el paso ni reducir la velocidad)",
-    imgUrl: "https://i0.wp.com/www.gaijinworld.com/wp-content/uploads/2025/03/honmeneng-01-12-png.webp?fit=300%2C300&ssl=1"
+    imgUrl: "https://i0.wp.com/www.gaijinworld.com/wp-content/uploads/2025/03/honmeneng-01-12-png.webp?fit=300%2C300&ssl=1",
+    pt: "Na situação mostrada na figura, o veículo A pode prosseguir normalmente porque tem a preferência de passagem na interseção seguinte.",
+    expPT: "O veículo A não precisa desacelerar porque tem a preferência de passagem.",
+    tl: "Sa sitwasyon na ipinapakita sa figure, ang sasakyan A ay maaaring magpatuloy nang normal dahil ito ay may karapatan sa daan sa paparating na interseksyon.",
+    expTL: "Ang sasakyan A ay hindi kailangang bumagal dahil ito ay may karapatan sa daan."
   },
   {
     cat: "Mantenimiento del Vehículo",
@@ -3114,7 +3450,11 @@ const QUESTIONS = [
     jpterm: "冷却水",
     romaji: "reikya kusui",
     termMeaning: "Refrigerante del motor (una fuga indica avería mecánica — no debe conducirse el vehículo)",
-    imgUrl: ""
+    imgUrl: "",
+    pt: "O vazamento de líquido de arrefecimento ou óleo é uma falha mecânica que requer reparo, independentemente da quantidade.",
+    expPT: "O vazamento de líquido de arrefecimento ou óleo é uma falha mecânica que requer reparo.",
+    tl: "Ang pagtagas ng coolant o langis ay isang mechanical na pagkasira na nangangailangan ng pagkukumpuni, anuman ang dami.",
+    expTL: "Ang pagtagas ng coolant o langis ay isang mechanical na pagkasira na nangangailangan ng pagkukumpuni."
   },
   {
     cat: "Carriles y Franjas",
@@ -3134,7 +3474,11 @@ const QUESTIONS = [
     jpterm: "歩道",
     romaji: "hodō",
     termMeaning: "Acera / vereda (exclusiva para peatones — los vehículos no pueden usarla nunca)",
-    imgUrl: ""
+    imgUrl: "",
+    pt: "Quando a via está congestionada, os automóveis e motonetas NÃO podem entrar na faixa lateral ou na calçada.",
+    expPT: "Automóveis e motonetas não podem entrar na faixa lateral ou na calçada.",
+    tl: "Kapag ang kalsada ay siksik, ang mga sasakyan at moped ay HINDI maaaring pumasok sa side strip o sa bangketa.",
+    expTL: "Ang mga sasakyan at moped ay hindi maaaring pumasok sa side strip o sa bangketa."
   },
   {
     cat: "Comportamiento en el Tráfico",
@@ -3154,7 +3498,11 @@ const QUESTIONS = [
     jpterm: "割り込み",
     romaji: "warikomi",
     termMeaning: "Colarse / infiltrarse en el tráfico (infracción y conducta descortés en Japón)",
-    imgUrl: ""
+    imgUrl: "",
+    pt: "Quando os veículos avançam em sucessão, não devem entrar em uma interseção se não puderem sair dela, respeitando o estado do tráfego.",
+    expPT: "Deve-se respeitar o estado do trânsito e tentar dirigir de forma ordenada.",
+    tl: "Kapag ang mga sasakyan ay sumusunod sa pagkakasunod-sunod, hindi dapat pumasok sa isang interseksyon kung hindi sila makakalabas dito, iginagalang ang estado ng trapiko.",
+    expTL: "Dapat igalang ang estado ng trapiko at subukang magmaneho nang maayos."
   },
   {
     cat: "Motos y Ciclomotores",
@@ -3174,7 +3522,11 @@ const QUESTIONS = [
     jpterm: "右直事故",
     romaji: "uchoku jiko",
     termMeaning: "Accidente directo-derecha (colisión entre vehículo que va recto y uno que gira a la derecha)",
-    imgUrl: ""
+    imgUrl: "",
+    pt: "Ao prosseguir em linha reta por uma interseção em um veículo de duas rodas, deve-se escolher a faixa correta conforme a sinalização.",
+    expPT: "A distância e a velocidade dos veículos de duas rodas tendem a ser mal julgadas porque são menores do que os de quatro rodas.",
+    tl: "Kapag magpapatuloy nang tuwid sa isang interseksyon sa isang dalawang gulong na sasakyan, dapat piliin ang tamang linya ayon sa tanda.",
+    expTL: "Ang distansya at bilis ng mga dalawang gulong na sasakyan ay may posibilidad na maling matantiya dahil sila ay mas maliit kaysa sa mga apat na gulong na sasakyan."
   },
   {
     cat: "Conducción Nocturna",
@@ -3194,7 +3546,11 @@ const QUESTIONS = [
     jpterm: "夜間運転",
     romaji: "yakan unten",
     termMeaning: "Conducción nocturna (requiere velocidad reducida por menor visibilidad)",
-    imgUrl: ""
+    imgUrl: "",
+    pt: "Como a visibilidade é significativamente pior à noite, os pedestres e obstáculos são mais difíceis de ver, por isso os motoristas devem exercer maior cautela e velocidade reduzida.",
+    expPT: "Seria perigoso não dirigir em velocidade mais baixa porque a área iluminada pelos faróis é limitada.",
+    tl: "Dahil ang visibility ay mas masahol sa gabi, ang mga manlalakad at mga hadlang ay mas mahirap makita, kaya ang mga driver ay dapat mag-ehersisyo ng mas malaking pag-iingat at mas mababang bilis.",
+    expTL: "Magiging mapanganib ang hindi magmaneho sa mas mababang bilis dahil ang maliwanag na lugar na nira-radiate ng mga headlight ay limitado."
   },
   {
     cat: "Técnica de Manejo",
@@ -3214,6 +3570,10 @@ const QUESTIONS = [
     jpterm: "車庫入れ",
     romaji: "shako ire",
     termMeaning: "Aparcar en garaje (maniobra de estacionamiento — generalmente en reversa para facilitar la salida)",
-    imgUrl: "https://i0.wp.com/www.gaijinworld.com/wp-content/uploads/2025/03/honmeneng-01-13-png.webp?fit=300%2C300&ssl=1"
+    imgUrl: "https://i0.wp.com/www.gaijinworld.com/wp-content/uploads/2025/03/honmeneng-01-13-png.webp?fit=300%2C300&ssl=1",
+    pt: "Ao entrar em uma garagem à beira da estrada, é melhor entrar conforme indicado pelas setas na figura, considerando a conveniência para sair na próxima vez.",
+    expPT: "Considere os inconvenientes para o tráfego e a segurança para sair na próxima vez ao estacionar.",
+    tl: "Kapag pumapasok sa isang garage sa tabi ng kalsada, pinakamabuti na pumasok ayon sa ipinahiwatig ng mga arrow sa figure, isinasaalang-alang ang kaginhawaan para sa paglabas sa susunod na pagkakataon.",
+    expTL: "Isaalang-alang ang mga abala sa ibang trapiko at kaligtasan para sa paglabas sa susunod na pagkakataon kapag nagpapark."
   }
 ];

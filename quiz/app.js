@@ -97,6 +97,64 @@ const STRINGS = {
       passed:   '合格ライン突破！🌟',
     },
   },
+  pt: {
+    t: 'Verdadeiro', f: 'Falso',
+    qOf: 'Pergunta {n} de {t}',
+    goal: 'Meta: <strong>45 corretas</strong>',
+    correct: 'Correto!', incorrect: 'Incorreto',
+    answer: 'Resposta correta',
+    next: 'Continuar →', results: 'Ver Resultados →',
+    pass: '✓ APROVADO — {s}/50 ({p}%). Você atingiu o requisito de 90%!',
+    fail: '✗ REPROVADO — {s}/50 ({p}%). Precisa de 45/50. Continue estudando!',
+    restart: '↺ Novo Exame',
+    review: 'REVISÃO — INCORRETAS ({n})',
+    perfect: '✓ PERFEITO! SEM ERROS.',
+    stC: 'Corretas', stW: 'Incorretas', stP: 'Pontuação',
+    scSub: 'de 50 · Aprovado com 45/50 (90%)',
+    eyebrow: '外免切替 知識確認 · Exame Completo',
+    cultureHd: 'No Japão...', termHd: 'Termo-chave',
+    theme: 'Tema de cor', font: 'Tamanho do texto',
+    visual: 'Filtros visuais', mode: 'Modo de estudo',
+    quickName: '⚡ Modo Rápido',
+    quickDesc: 'Uma mão, sem distrações, resposta rápida',
+    msgs: {
+      start:    'Vamos lá! 🎯',
+      halfway:  'Já passou da metade! 🚀',
+      pass3:    'Só mais {n} para passar! 🎯',
+      great:    'Você está indo muito bem 💪',
+      perfect:  'Perfeito até agora! ✨',
+      passed:   'Você já passou! Continue 🌟',
+    },
+  },
+  tl: {
+    t: 'Tama', f: 'Mali',
+    qOf: 'Tanong {n} ng {t}',
+    goal: 'Target: <strong>45 tama</strong>',
+    correct: 'Tama!', incorrect: 'Mali',
+    answer: 'Tamang sagot',
+    next: 'Magpatuloy →', results: 'Tingnan ang Resulta →',
+    pass: '✓ PUMASA — {s}/50 ({p}%). Natugunan mo ang 90% na kinakailangan!',
+    fail: '✗ HINDI PUMASA — {s}/50 ({p}%). Kailangan ng 45/50. Patuloy mag-aral!',
+    restart: '↺ Bagong Pagsusulit',
+    review: 'PAGSUSURI — MGA MALI ({n})',
+    perfect: '✓ PERPEKTO! WALANG PAGKAKAMALI.',
+    stC: 'Tama', stW: 'Mali', stP: 'Puntos',
+    scSub: 'sa 50 · Pumasa = 45/50 (90%)',
+    eyebrow: '外免切替 知識確認 · Kumpletong Pagsusulit',
+    cultureHd: 'Sa Japan...', termHd: 'Pangunahing termino',
+    theme: 'Tema ng kulay', font: 'Laki ng teksto',
+    visual: 'Mga visual filter', mode: 'Mode ng pag-aaral',
+    quickName: '⚡ Mabilis na Mode',
+    quickDesc: 'Isang kamay, walang distraksiyon, mabilis na sagot',
+    msgs: {
+      start:    'Halina na! 🎯',
+      halfway:  'Kalahati na! 🚀',
+      pass3:    '{n} pa lang para pumasa! 🎯',
+      great:    'Magaling ka 💪',
+      perfect:  'Perpekto hanggang ngayon! ✨',
+      passed:   'Pumasa ka na! Ituloy mo 🌟',
+    },
+  },
 };
 
 // ═══════════════════════════════════════════════════════════════
@@ -127,10 +185,14 @@ const DOM = {
   bEN:        () => $('bEN'),
   bES:        () => $('bES'),
   bJP:        () => $('bJP'),
+  bPT:        () => $('bPT'),
+  bTL:        () => $('bTL'),
   // lang blocks
   bkEN:       () => $('bkEN'),
   bkES:       () => $('bkES'),
   bkJP:       () => $('bkJP'),
+  bkPT:       () => $('bkPT'),
+  bkTL:       () => $('bkTL'),
   // labels
   lblT:       () => $('lblT'),
   lblF:       () => $('lblF'),
@@ -147,6 +209,8 @@ const DOM = {
   qES:        () => $('qES'),
   qJPk:       () => $('qJPk'),
   qJPh:       () => $('qJPh'),
+  qPT:        () => $('qPT'),
+  qTL:        () => $('qTL'),
   qImgWrap:   () => $('qImgWrap'),
   qImg:       () => $('qImg'),
   // answer buttons
@@ -295,17 +359,25 @@ window.matchMedia('(prefers-color-scheme: dark)')
 // LANGUAGE
 // ═══════════════════════════════════════════════════════════════
 function getCatLabel(q) {
-  return state.lang === 'en' ? q.catEN : state.lang === 'jp' ? q.catJP : q.cat;
+  if (state.lang === 'jp') return q.catJP;
+  if (state.lang === 'en' || state.lang === 'pt' || state.lang === 'tl') return q.catEN;
+  return q.cat;
 }
 
 function setLang(lang) {
   state.lang = lang;
   const s = STRINGS[lang];
 
-  // toggle lang buttons + blocks
-  ['EN', 'ES', 'JP'].forEach(code => {
-    DOM[`b${code}`]().classList.toggle('on', code === lang.toUpperCase());
-    DOM[`bk${code}`]().classList.toggle('on', code === lang.toUpperCase());
+  // toggle lang buttons (all 5)
+  ['EN', 'ES', 'JP', 'PT', 'TL'].forEach(code => {
+    const btn = DOM[`b${code}`]?.();
+    if (btn) btn.classList.toggle('on', code === lang.toUpperCase());
+  });
+
+  // toggle question blocks
+  const blockCode = lang.toUpperCase();
+  ['EN', 'ES', 'JP', 'PT', 'TL'].forEach(code => {
+    DOM[`bk${code}`]().classList.toggle('on', code === blockCode);
   });
 
   // update static labels
@@ -452,6 +524,8 @@ function renderQuestion() {
   DOM.qES().textContent  = q.es;
   DOM.qJPk().textContent = q.jpk;
   DOM.qJPh().textContent = q.jph;
+  DOM.qPT().textContent  = q.pt;
+  DOM.qTL().textContent  = q.tl;
 
   // figure image
   const imgWrap = DOM.qImgWrap();
@@ -511,11 +585,13 @@ function answer(val) {
   // pick explanation by language
   const exp = lang === 'en' ? q.expEN
             : lang === 'jp' ? q.expJP
+            : lang === 'pt' ? q.expPT
+            : lang === 'tl' ? q.expTL
             : q.expES;
 
   const correctLabel = q.correct
-    ? (lang === 'en' ? 'TRUE ✓' : lang === 'jp' ? '正しい ✓' : 'VERDADERO ✓')
-    : (lang === 'en' ? 'FALSE ✗' : lang === 'jp' ? '間違い ✗' : 'FALSO ✗');
+    ? (lang === 'en' ? 'TRUE ✓' : lang === 'jp' ? '正しい ✓' : lang === 'pt' ? 'VERDADEIRO ✓' : lang === 'tl' ? 'TAMA ✓' : 'VERDADERO ✓')
+    : (lang === 'en' ? 'FALSE ✗' : lang === 'jp' ? '間違い ✗' : lang === 'pt' ? 'FALSO ✗' : lang === 'tl' ? 'MALI ✗' : 'FALSO ✗');
 
   // feedback block
   const fb = DOM.fb();
@@ -638,11 +714,11 @@ function buildReview() {
   rw.innerHTML = `<div class="rev-hd">${fmt(s.review, { n: wrongH.length })}</div>`;
 
   wrongH.forEach(({ q }) => {
-    const text = lang === 'jp' ? q.jpk : lang === 'en' ? q.en : q.es;
+    const text = lang === 'jp' ? q.jpk : lang === 'en' ? q.en : lang === 'pt' ? q.pt : lang === 'tl' ? q.tl : q.es;
     const ans  = q.correct
-      ? (lang === 'en' ? 'TRUE' : lang === 'jp' ? '正しい' : 'VERDADERO')
-      : (lang === 'en' ? 'FALSE' : lang === 'jp' ? '間違い' : 'FALSO');
-    const label = lang === 'en' ? 'Answer' : lang === 'jp' ? '答え' : 'Respuesta';
+      ? (lang === 'en' ? 'TRUE' : lang === 'jp' ? '正しい' : lang === 'pt' ? 'VERDADEIRO' : lang === 'tl' ? 'TAMA' : 'VERDADERO')
+      : (lang === 'en' ? 'FALSE' : lang === 'jp' ? '間違い' : lang === 'pt' ? 'FALSO' : lang === 'tl' ? 'MALI' : 'FALSO');
+    const label = lang === 'en' ? 'Answer' : lang === 'jp' ? '答え' : lang === 'pt' ? 'Resposta' : lang === 'tl' ? 'Sagot' : 'Respuesta';
 
     const div = document.createElement('div');
     div.className = 'rev-item';
