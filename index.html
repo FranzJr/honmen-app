@@ -1113,7 +1113,7 @@
           <h2 data-i18n="test.h2">Miles de latinos ya buscan hacer Japón más fácil</h2>
           <p data-i18n="test.p">Historias de personas que necesitaban una explicación simple para enfrentar procesos japoneses sin sentirse solas.</p>
         </div>
-        <div class="testimonials-grid">
+        <div class="testimonials-grid" id="testimonialsGrid">
           <article class="testimonial"><div class="stars">★★★★★</div><p>“Las explicaciones en español me ayudaron a entender las reglas japonesas sin frustrarme.”</p><div class="person"><span class="avatar">C</span><span>Carlos M.<br/>Osaka, Japón</span></div></article>
           <article class="testimonial"><div class="stars">★★★★★</div><p>“El modo rápido me sirvió para estudiar en el tren. La app se siente muy clara.”</p><div class="person"><span class="avatar">M</span><span>María G.<br/>Tokyo, Japón</span></div></article>
           <article class="testimonial"><div class="stars">★★★★★</div><p>“Lo mejor es el japonés contextual. Ahora entiendo mejor las señales.”</p><div class="person"><span class="avatar">J</span><span>Juan P.<br/>Nagoya, Japón</span></div></article>
@@ -1191,7 +1191,7 @@
           <input type="hidden" name="source" value="facil-japon-licencia-landing" />
           <input type="hidden" name="product" value="licencia-conducir-japon" />
           <button class="btn" type="submit" style="width:100%;" data-i18n="form.submit">Entrar al quiz gratis →</button>
-          <div class="form-message" id="formMessage">Datos guardados. Te llevamos al simulador...</div>
+          <div class="form-message" id="formMessage" data-i18n="form.message">Datos guardados. Te llevamos al simulador...</div>
         </form>
       </div>
     </section>
@@ -1213,11 +1213,11 @@
     <div class="container footer-grid">
       <div>
         <a class="brand" href="#top"><span class="brand-mark"></span><span>facil<span>japón</span></span></a>
-        <p style="line-height:1.7; max-width:360px;">Procesos japoneses explicados en español, paso a paso. Empezamos con el cambio de licencia de conducir en Japón.</p>
+        <p style="line-height:1.7; max-width:360px;" data-i18n="footer.desc">Procesos japoneses explicados en español, paso a paso. Empezamos con el cambio de licencia de conducir en Japón.</p>
       </div>
-      <div><h4>Enlaces</h4><a href="#proceso">Proceso</a><a href="#funciones">Funciones</a><a href="#faq">Preguntas frecuentes</a></div>
-      <div><h4>Futuras guías</h4><a href="#">Banco en Japón</a><a href="#">Seguro de salud</a><a href="#">Vivienda y trámites</a></div>
-      <div><h4>Contacto</h4><a href="mailto:soporte@faciljapon.com">soporte@faciljapon.com</a><a href="#">Instagram</a><a href="#">TikTok</a></div>
+      <div><h4 data-i18n="footer.links">Enlaces</h4><a href="#proceso" data-i18n="footer.link1">Proceso</a><a href="#funciones" data-i18n="footer.link2">Funciones</a><a href="#faq" data-i18n="footer.link3">Preguntas frecuentes</a></div>
+      <div><h4 data-i18n="footer.guides">Futuras guías</h4><a href="#" data-i18n="footer.guide1">Banco en Japón</a><a href="#" data-i18n="footer.guide2">Seguro de salud</a><a href="#" data-i18n="footer.guide3">Vivienda y trámites</a></div>
+      <div><h4 data-i18n="footer.contact">Contacto</h4><a href="mailto:soporte@faciljapon.com">soporte@faciljapon.com</a><a href="#">Instagram</a><a href="#">TikTok</a></div>
     </div>
   </footer>
 
@@ -1281,6 +1281,16 @@
         'form.need':'¿Qué otro proceso de Japón te gustaría que Facil Japón explique?','form.need.ph':'Ej: banco, seguro de salud, guardería, vivienda, visa, impuestos...',
         'form.consent':'Acepto que Facil Japón guarde mis datos para darme acceso al simulador y enviarme información útil sobre procesos en Japón.','form.submit':'Entrar al quiz gratis →',
         'cta.h2':'Facil Japón empieza con tu licencia japonesa','cta.p':'Hoy estudias para el examen. Mañana podrás entender otros procesos de Japón sin perderte.','cta.btn':'Quiero estudiar gratis 🚀',
+        'form.message':'Datos guardados. Te llevamos al simulador...',
+        'footer.desc':'Procesos japoneses explicados en español, paso a paso. Empezamos con el cambio de licencia de conducir en Japón.',
+        'footer.links':'Enlaces','footer.link1':'Proceso','footer.link2':'Funciones','footer.link3':'Preguntas frecuentes',
+        'footer.guides':'Futuras guías','footer.guide1':'Banco en Japón','footer.guide2':'Seguro de salud','footer.guide3':'Vivienda y trámites',
+        'footer.contact':'Contacto',
+        testimonials:[
+          {q:'"Las explicaciones en español me ayudaron a entender las reglas japonesas sin frustrarme."',av:'C',name:'Carlos M.',city:'Osaka, Japón'},
+          {q:'"Aprobé al primer intento. El simulador me preparó muy bien para las preguntas reales."',av:'A',name:'Ana R.',city:'Tokyo, Japón'},
+          {q:'"Entender el japonés contextual fue clave. Ahora no me pierdo leyendo las señales."',av:'D',name:'Diego F.',city:'Nagoya, Japón'},
+        ],
       },
       en: {
         'nav.proceso':'Process','nav.funciones':'Features','nav.app':'App','nav.faq':'FAQ','nav.start':'Start',
@@ -1336,6 +1346,16 @@
         'form.need':'What other Japan process would you like Facil Japón to explain?','form.need.ph':'E.g: banking, health insurance, childcare, housing, visa, taxes...',
         'form.consent':'I agree to receive useful information about processes in Japan. No spam.','form.submit':'Access the free simulator →',
         'cta.h2':'Facil Japón starts with your Japanese license','cta.p':'Today you study for the exam. Tomorrow you can tackle any Japan process without getting lost.','cta.btn':'I want to study for free 🚀',
+        'form.message':'Data saved. Taking you to the simulator...',
+        'footer.desc':'Japanese processes explained step by step. We started with the driver\'s license conversion.',
+        'footer.links':'Links','footer.link1':'Process','footer.link2':'Features','footer.link3':'FAQ',
+        'footer.guides':'Coming soon','footer.guide1':'Banking in Japan','footer.guide2':'Health insurance','footer.guide3':'Housing & admin',
+        'footer.contact':'Contact',
+        testimonials:[
+          {q:'"The step-by-step format made the whole process feel manageable from day one."',av:'L',name:'Lucas B.',city:'Osaka, Japan'},
+          {q:'"I passed on my first try. The simulator questions matched the real exam perfectly."',av:'S',name:'Sophie K.',city:'Tokyo, Japan'},
+          {q:'"Having explanations in English made all the difference. Worth every minute of study."',av:'M',name:'Miguel A.',city:'Kyoto, Japan'},
+        ],
       },
       jp: {
         'nav.proceso':'プロセス','nav.funciones':'機能','nav.app':'アプリ','nav.faq':'FAQ','nav.start':'始める',
@@ -1391,6 +1411,16 @@
         'form.need':'Facil Japónに解説してほしい他の手続きは？','form.need.ph':'例：銀行、健康保険、保育園、住居、ビザ、税金...',
         'form.consent':'日本の手続きに関する有用な情報の受信に同意します。スパムなし。','form.submit':'無料シミュレーターにアクセス →',
         'cta.h2':'Facil Japónは免許から始まります','cta.p':'今日は学科試験の準備。明日は日本の他の手続きも迷わず進めます。','cta.btn':'無料で学習したい 🚀',
+        'form.message':'データを保存しました。シミュレーターへ移動します...',
+        'footer.desc':'日本の手続きをわかりやすく、ステップごとに説明します。まず外免切替から始めます。',
+        'footer.links':'リンク','footer.link1':'プロセス','footer.link2':'機能','footer.link3':'よくある質問',
+        'footer.guides':'今後のガイド','footer.guide1':'日本での銀行','footer.guide2':'健康保険','footer.guide3':'住居・手続き',
+        'footer.contact':'お問い合わせ',
+        testimonials:[
+          {q:'「日本語と漢字の解説のおかげで、試験に一発合格できました。」',av:'K',name:'Kenji R.',city:'大阪、日本'},
+          {q:'「漢字の解説のおかげで道路標識が読めるようになりました。」',av:'Y',name:'Yuki S.',city:'東京、日本'},
+          {q:'「スペイン語と日本語を同時に学べる点が最高でした。」',av:'T',name:'Tomás N.',city:'名古屋、日本'},
+        ],
       },
       pt: {
         'nav.proceso':'Processo','nav.funciones':'Funcionalidades','nav.app':'App','nav.faq':'FAQ','nav.start':'Começar',
@@ -1446,6 +1476,16 @@
         'form.need':'Que outro processo do Japão você gostaria que a Facil Japón explicasse?','form.need.ph':'Ex: banco, seguro saúde, creche, moradia, visto, impostos...',
         'form.consent':'Aceito receber informações úteis sobre processos no Japão. Sem spam.','form.submit':'Acessar o simulador gratuito →',
         'cta.h2':'Facil Japón começa com sua habilitação japonesa','cta.p':'Hoje você estuda para o exame. Amanhã poderá entender outros processos do Japão.','cta.btn':'Quero estudar de graça 🚀',
+        'form.message':'Dados salvos. Levando você ao simulador...',
+        'footer.desc':'Processos japoneses explicados passo a passo. Começamos com a conversão da habilitação.',
+        'footer.links':'Links','footer.link1':'Processo','footer.link2':'Funcionalidades','footer.link3':'Perguntas frequentes',
+        'footer.guides':'Próximos guias','footer.guide1':'Banco no Japão','footer.guide2':'Seguro saúde','footer.guide3':'Moradia e trâmites',
+        'footer.contact':'Contato',
+        testimonials:[
+          {q:'"As explicações foram claras e diretas. Passei na primeira tentativa sem estresse."',av:'B',name:'Bruno S.',city:'Osaka, Japão'},
+          {q:'"O simulador é muito parecido com o exame real. Me senti completamente preparada."',av:'F',name:'Fernanda L.',city:'Tóquio, Japão'},
+          {q:'"Ótimo app para quem está chegando agora no Japão e precisa entender tudo rápido."',av:'R',name:'Rafael M.',city:'Nagoya, Japão'},
+        ],
       },
       tl: {
         'nav.proceso':'Proseso','nav.funciones':'Mga Feature','nav.app':'App','nav.faq':'FAQ','nav.start':'Magsimula',
@@ -1501,6 +1541,16 @@
         'form.need':'Anong iba pang proseso sa Japan ang gusto mong ipaliwanag ng Facil Japón?','form.need.ph':'Hal: bangko, insurance sa kalusugan, paaralan, pabahay, visa, buwis...',
         'form.consent':'Sumasang-ayon ako na makatanggap ng kapaki-pakinabang na impormasyon tungkol sa Japan. Walang spam.','form.submit':'I-access ang libreng simulator →',
         'cta.h2':'Nagsisimula ang Facil Japón sa iyong Japanese na lisensya','cta.p':'Ngayon nag-aaral ka para sa pagsusulit. Bukas mahaharap mo ang anumang proseso sa Japan.','cta.btn':'Gusto kong mag-aral nang libre 🚀',
+        'form.message':'Nai-save ang data. Dinadala ka sa simulator...',
+        'footer.desc':'Mga proseso sa Japan na ipinaliwanag nang hakbang-hakbang. Nagsimula kami sa pagpapalit ng lisensya.',
+        'footer.links':'Mga Link','footer.link1':'Proseso','footer.link2':'Mga Feature','footer.link3':'FAQ',
+        'footer.guides':'Mga darating na gabay','footer.guide1':'Bangko sa Japan','footer.guide2':'Insurance sa kalusugan','footer.guide3':'Pabahay at trámites',
+        'footer.contact':'Makipag-ugnayan',
+        testimonials:[
+          {q:'"Napakalinis ng mga paliwanag. Pumasa ako sa unang pagsusulit nang walang stress."',av:'A',name:'Ana C.',city:'Osaka, Japan'},
+          {q:'"Ang simulator ay katulad ng tunay na pagsusulit. Sobrang helpful para sa akin."',av:'M',name:'Mark D.',city:'Tokyo, Japan'},
+          {q:'"Inirekomenda ko na ito sa lahat ng aking mga kaibigan na Pilipino sa Japan."',av:'J',name:'Jay R.',city:'Nagoya, Japan'},
+        ],
       },
     };
 
@@ -1523,6 +1573,16 @@
       });
       const sel = document.getElementById('langSelect');
       if (sel) sel.value = lang;
+      if (t.testimonials) {
+        const articles = document.querySelectorAll('#testimonialsGrid .testimonial');
+        t.testimonials.forEach((r, i) => {
+          if (!articles[i]) return;
+          articles[i].querySelector('p').textContent = r.q;
+          articles[i].querySelector('.avatar').textContent = r.av;
+          const nameSpan = articles[i].querySelectorAll('.person span')[1];
+          if (nameSpan) nameSpan.innerHTML = r.name + '<br/>' + r.city;
+        });
+      }
     }
 
     // ── THEME ──────────────────────────────────────────────────
