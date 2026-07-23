@@ -439,7 +439,7 @@ const SESSION_KEY = 'honmen_quiz_session';
 function saveSession() {
   try {
     const data = {
-      v:         1,
+      v:         2,
       questions: state.questions,
       current:   state.current,
       score:     state.score,
@@ -462,7 +462,7 @@ function loadSession() {
     const raw = localStorage.getItem(SESSION_KEY);
     if (!raw) return false;
     const data = JSON.parse(raw);
-    if (data.v !== 1 || !Array.isArray(data.questions) || !data.questions.length) return false;
+    if (data.v !== 2 || !Array.isArray(data.questions) || !data.questions.length) return false;
     state.questions = data.questions;
     state.current   = data.current   || 0;
     state.score     = data.score     || 0;
