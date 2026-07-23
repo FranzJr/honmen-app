@@ -713,6 +713,65 @@
     .flow-item h3 { margin-top: 18px; font-size: 1.02rem; }
     .flow-item p { color: var(--muted); line-height: 1.55; }
 
+    /* Light mode: elements on dark phone/mini screens need to stay legible */
+    [data-theme="light"] .phone-screen .pill,
+    [data-theme="light"] .mini-screen .pill {
+      background: rgba(255,255,255,.13);
+      border-color: rgba(200,230,245,.38);
+      color: #C5DAE8;
+    }
+    [data-theme="light"] .phone-screen .pill.active,
+    [data-theme="light"] .mini-screen .pill.active {
+      background: rgba(95,166,192,.3);
+      color: var(--soft-blue);
+    }
+    [data-theme="light"] .phone-screen .progress {
+      background: rgba(255,255,255,.16);
+    }
+    /* question-card gets white bg in light mode → text must be dark */
+    [data-theme="light"] .phone-screen .question-card .question-text {
+      color: var(--body-text-2);
+    }
+    /* term-card inside white question-card needs more contrast */
+    [data-theme="light"] .phone-screen .question-card .term-card {
+      background: rgba(95,166,192,.16);
+      border-color: rgba(95,166,192,.32);
+    }
+    /* term-card directly on dark phone-screen (phone-cluster phones) */
+    [data-theme="light"] .phone-screen > .term-card {
+      background: rgba(95,166,192,.18);
+      border-color: rgba(95,166,192,.35);
+      color: var(--light-blue-gray);
+    }
+    /* mini-screen: question-text sits directly on dark bg → keep light */
+    [data-theme="light"] .mini-screen .question-text {
+      color: #D8EAF5;
+    }
+    /* mini-screen: answer buttons on dark bg */
+    [data-theme="light"] .mini-screen .answer-btn {
+      background: rgba(255,255,255,.09);
+      border-color: rgba(255,255,255,.22);
+      color: #C8DCE8;
+    }
+    [data-theme="light"] .mini-screen .answer-btn.true  { border-color: rgba(66,232,139,.4);  color: var(--success); }
+    [data-theme="light"] .mini-screen .answer-btn.false { border-color: rgba(255,102,136,.38); color: var(--danger); }
+    /* mini-option inside mini-screen on dark bg */
+    [data-theme="light"] .mini-screen .mini-option {
+      background: rgba(255,255,255,.09);
+      border-color: rgba(200,230,245,.3);
+      color: #C5DAE8;
+    }
+    [data-theme="light"] .mini-screen .mini-option.active {
+      background: rgba(95,166,192,.28);
+      color: var(--soft-blue);
+    }
+    /* term-card directly on dark mini-screen */
+    [data-theme="light"] .mini-screen .term-card {
+      background: rgba(95,166,192,.18);
+      border-color: rgba(95,166,192,.32);
+      color: var(--light-blue-gray);
+    }
+
     .two-col {
       display: grid;
       grid-template-columns: .9fr 1.1fr;
