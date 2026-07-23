@@ -133,11 +133,11 @@
       --phone-case: #C8D8E6;
       --phone-case-border: rgba(0,80,120,.22);
       --phone-case-shadow: rgba(0,0,0,.22);
-      --phone-screen-bg: linear-gradient(180deg, #1a2d3d, #0d1a26);
-      --phone-screen-border: rgba(100,160,190,.25);
-      --phone-top-color: #E0EAF3;
-      --phone-q-text: #E4EFF7;
-      --phone-progress-track: rgba(255,255,255,.12);
+      --phone-screen-bg: linear-gradient(180deg, #E2EDF5, #ECF4FA);
+      --phone-screen-border: rgba(0,100,140,.15);
+      --phone-top-color: #1A3042;
+      --phone-q-text: #1A3042;
+      --phone-progress-track: rgba(0,0,0,.12);
       --mini-case: #BDD0E0;
       --mini-case-border: rgba(0,80,120,.2);
       --mini-screen-bg: #1e3245;
@@ -713,22 +713,17 @@
     .flow-item h3 { margin-top: 18px; font-size: 1.02rem; }
     .flow-item p { color: var(--muted); line-height: 1.55; }
 
-    /* Light mode: elements on dark phone/mini screens need to stay legible */
-    [data-theme="light"] .phone-screen .pill,
+    /* Light mode: mini-screen stays dark → pills need to remain legible */
     [data-theme="light"] .mini-screen .pill {
       background: rgba(255,255,255,.13);
       border-color: rgba(200,230,245,.38);
       color: #C5DAE8;
     }
-    [data-theme="light"] .phone-screen .pill.active,
     [data-theme="light"] .mini-screen .pill.active {
       background: rgba(95,166,192,.3);
       color: var(--soft-blue);
     }
-    [data-theme="light"] .phone-screen .progress {
-      background: rgba(255,255,255,.16);
-    }
-    /* question-card gets white bg in light mode → text must be dark */
+    /* question-card: text must be dark (card bg is white in light mode) */
     [data-theme="light"] .phone-screen .question-card .question-text {
       color: var(--body-text-2);
     }
