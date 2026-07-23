@@ -25,7 +25,11 @@ const QUESTIONS = [
     expES: "FALSO. Una parada de hasta 5 minutos para carga/descarga se llama 'parada temporal' (停車 teisha), no estacionamiento (駐車 chusha). La distinción es legal.",
     expJP: "誤り。5分以内の積み降ろしは「停車」であり「駐車」ではありません。",
     culture: "En Japón existe una diferencia legal muy importante entre PARAR (停車 teisha, hasta 5 min con conductor) y ESTACIONAR (駐車 chusha, más de 5 min o sin conductor). Muchos latinos confunden estos términos y reciben multas.",
-    jpterm: "停車", romaji: "teisha", termMeaning: "Parada temporal (menos de 5 minutos, conductor presente)"
+    jpterm: "停車", romaji: "teisha", termMeaning: "Parada temporal (menos de 5 minutos, conductor presente)",
+    pt: "Parar por menos de cinco minutos para carregar ou descarregar carga é considerado 'parada temporária', não 'estacionamento', pela lei de trânsito japonesa.",
+    expPT: "FALSO. Uma parada de até 5 minutos para carga/descarga é 'parada temporária' (停車 teisha), não estacionamento (駐車 chusha). A distinção legal é muito importante.",
+    tl: "Ang pagtigil ng wala pang limang minuto para mag-load o mag-unload ng kargamento ay itinuturing na 'pansamantalang hinto', hindi 'pagpapark', sa ilalim ng batas trapiko ng Hapon.",
+    expTL: "MALI. Ang pagtigil ng hanggang 5 minuto para mag-load/unload ay 'pansamantalang hinto' (停車 teisha), hindi pagpapark (駐車 chusha). Ang pagkakaibang legal ay napakahalaga."
   },
   {
     cat: "Prioridad de Paso", catEN: "Right of Way", catJP: "優先",
@@ -39,7 +43,11 @@ const QUESTIONS = [
     expES: "VERDADERO. El vehículo con carril despejado tiene prioridad. El conductor con el obstáculo en su carril debe detenerse y ceder.",
     expJP: "正しい。車線が空いている側の車が優先です。",
     culture: "En Japón la lógica es: quien tiene el obstáculo tiene la obligación. Es diferente a muchos países latinoamericanos donde esto no está claramente definido. Los japoneses son muy estrictos con esta regla en calles estrechas (細い道 hosoi michi).",
-    jpterm: "譲る", romaji: "yuzuru", termMeaning: "Ceder el paso / dar preferencia"
+    jpterm: "譲る", romaji: "yuzuru", termMeaning: "Ceder el paso / dar preferencia",
+    pt: "Ao passar por um carro que vem em sentido contrário em uma via estreita onde um lado está obstruído, o motorista com o obstáculo em sua faixa deve parar e ceder passagem.",
+    expPT: "VERDADEIRO. O veículo com a faixa livre tem preferência de passagem. O motorista cuja faixa está bloqueada deve parar e ceder.",
+    tl: "Kapag dumadaan sa isang sasakyan na papalapit sa isang makipot na daan kung saan ang isang bahagi ay naharang, ang driver na may hadlang sa kanilang linya ay dapat huminto at magbigay ng daan.",
+    expTL: "TAMA. Ang sasakyan na may malinaw na linya ang may karapatan sa daan. Ang driver na ang linya ay naharang ay dapat huminto at magbigay ng daan."
   },
   {
     cat: "Cruces Ferroviarios", catEN: "Railway Crossings", catJP: "踏切",
@@ -53,7 +61,11 @@ const QUESTIONS = [
     expES: "VERDADERO. La ley japonesa exige parada COMPLETA en todos los cruces ferroviarios sin excepción, aunque las señales parezcan libres.",
     expJP: "正しい。踏切では必ず一時停止と安全確認が義務です。",
     culture: "En Japón los trenes son extremadamente frecuentes y puntuales. La parada obligatoria en los 踏切 (fumikiri) se toma muy en serio. En Colombia o Perú muchos cruces no tienen señales — aquí todos tienen reglas estrictas y hay cámaras.",
-    jpterm: "踏切", romaji: "fumikiri", termMeaning: "Cruce ferroviario (paso a nivel)"
+    jpterm: "踏切", romaji: "fumikiri", termMeaning: "Cruce ferroviario (paso a nivel)",
+    pt: "Em cruzamentos ferroviários, os motoristas devem sempre parar, olhar e ouvir antes de prosseguir, mesmo que o cruzamento não tenha sinais ativos.",
+    expPT: "VERDADEIRO. A lei japonesa exige parada completa em TODOS os cruzamentos ferroviários sem exceção, mesmo quando os sinais parecem estar livres.",
+    tl: "Sa mga railway crossing, ang mga driver ay dapat palaging huminto, tumingin, at makinig bago magpatuloy, kahit ang crossing ay walang aktibong mga senyal.",
+    expTL: "TAMA. Ang batas Hapon ay nangangailangan ng kumpletong hinto sa LAHAT ng level crossing nang walang pagbubukod, kahit na ang mga senyal ay mukhang malinaw."
   },
   {
     cat: "Señales de Tránsito", catEN: "Traffic Signals", catJP: "信号",
@@ -67,7 +79,11 @@ const QUESTIONS = [
     expES: "VERDADERO. La flecha verde específicamente permite girar mientras el tráfico cruzado está detenido.",
     expJP: "正しい。青の矢印信号が出た場合は赤信号でも右折できます。",
     culture: "En Japón se conduce por la IZQUIERDA, por lo que girar a la derecha cruza los carriles contrarios. Por eso normalmente está prohibido en rojo — salvo que haya una flecha azul especial (矢印信号 yajirushi shingou).",
-    jpterm: "矢印信号", romaji: "yajirushi shingou", termMeaning: "Señal de flecha (permite giro en dirección específica)"
+    jpterm: "矢印信号", romaji: "yajirushi shingou", termMeaning: "Señal de flecha (permite giro en dirección específica)",
+    pt: "Os motoristas têm permissão para virar à direita no semáforo vermelho se um sinal de seta verde à direita for exibido.",
+    expPT: "VERDADEIRO. Uma seta verde permite especificamente a conversão enquanto o tráfego cruzado permanece parado. Este é o 'sinal de conversão' do Japão.",
+    tl: "Ang mga driver ay pinapayagang lumiko sa kanan sa pulang ilaw kung ipinakita ang isang berdeng arrow signal na nagtuturo sa kanan.",
+    expTL: "TAMA. Ang berdeng arrow ay nagpapahintulot ng pagliko habang ang trapiko sa kabilang daan ay nakatigil. Ito ang 'turn signal override' ng Hapon."
   },
   {
     cat: "Cinturón de Seguridad", catEN: "Seatbelts", catJP: "シートベルト",
@@ -81,7 +97,11 @@ const QUESTIONS = [
     expES: "VERDADERO. La ley del cinturón en Japón aplica a TODOS los asientos — delanteros y traseros por igual.",
     expJP: "正しい。シートベルト着用義務は全席に適用されます。",
     culture: "En muchos países de Latinoamérica el cinturón trasero no se exige o no se multa. En Japón es obligatorio en todos los asientos y hay cámaras que lo detectan. La multa es inmediata.",
-    jpterm: "シートベルト", romaji: "shiitoberuto", termMeaning: "Cinturón de seguridad"
+    jpterm: "シートベルト", romaji: "shiitoberuto", termMeaning: "Cinturón de seguridad",
+    pt: "Todos os ocupantes do veículo, incluindo passageiros no banco traseiro, são legalmente obrigados a usar cinto de segurança.",
+    expPT: "VERDADEIRO. As leis de cinto de segurança no Japão se aplicam a TODOS os assentos — dianteiro e traseiro igualmente.",
+    tl: "Ang lahat ng sakay ng sasakyan, kabilang ang mga pasahero sa likod na upuan, ay legal na kinakailangang magsuot ng safety belt.",
+    expTL: "TAMA. Ang mga batas sa safety belt sa Hapon ay naaangkop sa LAHAT ng upuan — harap at likod nang pantay."
   },
   {
     cat: "Teléfono Móvil", catEN: "Mobile Phones", catJP: "携帯電話",
@@ -95,7 +115,11 @@ const QUESTIONS = [
     expES: "FALSO. Incluso el uso manos libres está restringido si distrae al conductor. Ingresar destinos mientras se conduce está prohibido.",
     expJP: "誤り。ハンズフリーであっても運転中の携帯電話操作は禁止されています。",
     culture: "En Japón es ilegal usar el teléfono al volante incluso en manos libres si distrae. La multa puede ser de ¥30,000 a ¥50,000. Debes configurar tu navegación ANTES de arrancar.",
-    jpterm: "ながら運転", romaji: "nagara unten", termMeaning: "Conducción distraída (conducir mientras haces otra cosa)"
+    jpterm: "ながら運転", romaji: "nagara unten", termMeaning: "Conducción distraída (conducir mientras haces otra cosa)",
+    pt: "Usar um celular para navegação enquanto dirige é permitido, desde que você não segure o dispositivo na mão.",
+    expPT: "FALSO. Mesmo o uso viva-voz é restrito se distrair o motorista. Inserir destinos enquanto o carro está em movimento é proibido.",
+    tl: "Ang paggamit ng mobile phone para sa navigation habang nagmamaneho ay pinapayagan, basta hindi mo hawak ang device sa iyong kamay.",
+    expTL: "MALI. Kahit ang hands-free na paggamit ay limitado kung nakakaabala ito sa driver. Ang pagpasok ng mga direksyon habang gumagalaw ay ipinagbabawal."
   },
   {
     cat: "Límites de Velocidad", catEN: "Speed Limits", catJP: "速度制限",
@@ -109,7 +133,11 @@ const QUESTIONS = [
     expES: "FALSO. NUNCA puedes exceder legalmente el límite de velocidad en Japón, ni al adelantar.",
     expJP: "誤り。追い越し時であっても制限速度を超えることは一切許されません。",
     culture: "A diferencia de Europa o algunos países latinos donde se tolera 'un poco más' al adelantar, en Japón el límite es absoluto. Hay radares fijos y móviles en muchas carreteras.",
-    jpterm: "制限速度", romaji: "seigen sokudo", termMeaning: "Límite de velocidad"
+    jpterm: "制限速度", romaji: "seigen sokudo", termMeaning: "Límite de velocidad",
+    pt: "Ao ultrapassar outro veículo, você pode exceder o limite de velocidade por um curto período.",
+    expPT: "FALSO. Nunca é legalmente permitido exceder o limite de velocidade no Japão, mesmo ao ultrapassar.",
+    tl: "Kapag nag-oovtake ng ibang sasakyan, maaari kang lumampas sa nakalaang limitasyon ng bilis nang sandali.",
+    expTL: "MALI. Hindi ka KAILANMAN legal na makakalusot sa limitasyon ng bilis sa Hapon, kahit kapag nag-oovtake."
   },
   {
     cat: "Marcas Viales", catEN: "Lane Markings", catJP: "道路標示",
@@ -123,7 +151,11 @@ const QUESTIONS = [
     expES: "FALSO. Una doble línea amarilla significa 'prohibido cruzar' sin importar las condiciones, incluso sin tráfico contrario.",
     expJP: "誤り。黄色の二重線は条件にかかわらず越境禁止です。",
     culture: "En Japón las líneas amarillas continuas son absolutas. No existe la lógica de 'si no hay nadie...' La ley es la ley. Esta mentalidad es fundamental para entender el tráfico japonés.",
-    jpterm: "追い越し禁止", romaji: "oikoshi kinshi", termMeaning: "Prohibido adelantar"
+    jpterm: "追い越し禁止", romaji: "oikoshi kinshi", termMeaning: "Prohibido adelantar",
+    pt: "Você pode cruzar uma linha dupla amarela quando não há veículos que venham em sentido contrário.",
+    expPT: "FALSO. Uma linha dupla amarela significa 'não cruzar' independentemente das condições — mesmo sem tráfego que venha em sentido contrário.",
+    tl: "Maaari kang tumawid sa isang double yellow line kapag walang mga sasakyan na papalapit.",
+    expTL: "MALI. Ang double yellow line ay nangangahulugang 'huwag tumawid' anuman ang kondisyon — kahit walang papalapit na trapiko."
   },
   {
     cat: "Intersecciones", catEN: "Intersections", catJP: "交差点",
@@ -137,7 +169,11 @@ const QUESTIONS = [
     expES: "FALSO. En Japón, el vehículo de la DERECHA tiene prioridad. ¡Esta es una pregunta trampa clásica del examen!",
     expJP: "誤り。日本では右方からの車が優先です。",
     culture: "¡TRAMPA CLÁSICA del examen! En Japón el vehículo que viene por la DERECHA tiene prioridad en intersecciones sin señales. Es lo opuesto de lo que intuyen muchos latinos. Recuerda: Japón circula por la IZQUIERDA.",
-    jpterm: "優先道路", romaji: "yuusen douro", termMeaning: "Vía prioritaria"
+    jpterm: "優先道路", romaji: "yuusen douro", termMeaning: "Vía prioritaria",
+    pt: "Em uma interseção sem sinais ou placas, o carro da esquerda tem preferência de passagem.",
+    expPT: "FALSO. No Japão, o veículo da DIREITA tem prioridade em interseções sem sinalização de largura igual. Questão armadilha clássica.",
+    tl: "Sa isang interseksyon na walang mga senyal o tanda, ang kotse sa kaliwa ang may karapatan sa daan.",
+    expTL: "MALI. Sa Hapon, ang sasakyan sa KANAN ang may prioridad sa mga interseksyong walang senyal na may pantay na lapad. Klasikong tanong na bitag."
   },
   {
     cat: "Parada y Estacionamiento", catEN: "Stopping & Parking", catJP: "駐停車",
@@ -151,7 +187,11 @@ const QUESTIONS = [
     expES: "VERDADERO. En una zona de 'prohibido estacionar' (駐車禁止), las paradas breves para pasajeros están permitidas — pero no puedes dejar el vehículo desatendido.",
     expJP: "正しい。駐車禁止区域でも乗客の乗降のための短時間停車は認められています。",
     culture: "En Japón hay dos señales diferentes: 駐車禁止 (solo prohíbe estacionar, sí puedes parar brevemente) y 駐停車禁止 (prohíbe tanto estacionar como parar). Aprende a distinguirlas.",
-    jpterm: "駐車禁止", romaji: "chusha kinshi", termMeaning: "Prohibido estacionar (parada breve permitida)"
+    jpterm: "駐車禁止", romaji: "chusha kinshi", termMeaning: "Prohibido estacionar (parada breve permitida)",
+    pt: "Você pode parar temporariamente em uma zona de 'proibido estacionar' para deixar ou pegar passageiros.",
+    expPT: "VERDADEIRO. Em uma zona de proibido estacionar (駐車禁止), paradas breves para passageiros são permitidas — mas você não pode deixar o veículo sem condutor.",
+    tl: "Maaari kang huminto pansamantala sa isang 'no parking' zone upang isakay o ibaba ang mga pasahero.",
+    expTL: "TAMA. Sa isang 'no parking' zone (駐車禁止), pinapayagan ang maikling hinto para sa mga pasahero — ngunit hindi mo maaaring iwan ang sasakyan nang walang driver."
   },
   {
     cat: "Vehículos de Emergencia", catEN: "Emergency Vehicles", catJP: "緊急車両",
@@ -165,7 +205,11 @@ const QUESTIONS = [
     expES: "VERDADERO. Siempre muévete al lado IZQUIERDO y detente hasta que el vehículo de emergencia pase.",
     expJP: "正しい。緊急車両が接近した場合は左側に寄って停止する義務があります。",
     culture: "En Japón se conduce por la izquierda, así que al ceder paso a emergencias también te mueves a la IZQUIERDA. Es al revés de Colombia o México. ¡No te confundas en el examen práctico!",
-    jpterm: "緊急自動車", romaji: "kinkyuu jidousha", termMeaning: "Vehículo de emergencia (ambulancia, bomberos, policía)"
+    jpterm: "緊急自動車", romaji: "kinkyuu jidousha", termMeaning: "Vehículo de emergencia (ambulancia, bomberos, policía)",
+    pt: "Quando um veículo de emergência se aproxima com a sirene ligada, você deve mover-se para o lado esquerdo e parar.",
+    expPT: "VERDADEIRO. Sempre vá para a ESQUERDA e pare até que o veículo de emergência passe.",
+    tl: "Kapag papalapit ang isang emergency vehicle na may tunog na sirena, dapat kang lumipat sa kaliwang bahagi at huminto.",
+    expTL: "TAMA. Laging lumapit sa KALIWA at huminto hanggang sa lumipas ang emergency vehicle."
   },
   {
     cat: "Giros en U", catEN: "U-Turns", catJP: "転回",
@@ -179,7 +223,11 @@ const QUESTIONS = [
     expES: "FALSO. Los giros en U solo se permiten donde no hay señal de prohibición. Muchas vías los prohíben explícitamente.",
     expJP: "誤り。転回禁止標識がある場所ではUターンは禁止です。",
     culture: "En Japón las calles son más estrechas y los giros en U son mucho más restringidos que en Latinoamérica. En ciudades como Nagoya, los giros en U en avenidas principales son casi siempre prohibidos.",
-    jpterm: "転回禁止", romaji: "tenkai kinshi", termMeaning: "Prohibido el giro en U"
+    jpterm: "転回禁止", romaji: "tenkai kinshi", termMeaning: "Prohibido el giro en U",
+    pt: "Os motoristas têm permissão de fazer retorno em qualquer lugar, desde que seja seguro e não haja tráfego vindo.",
+    expPT: "FALSO. Os retornos só são permitidos onde não há placa proibindo. Muitas vias proíbem expressamente o retorno independentemente da segurança.",
+    tl: "Ang mga driver ay pinapayagang gumawa ng U-turn kahit saan basta ligtas at walang trapiko na paparating.",
+    expTL: "MALI. Ang mga U-turn ay pinapayagan lamang kung saan walang tanda na nagbabawal nito. Maraming kalsada ang tahasang nagbabawal ng U-turn anuman ang kaligtasan."
   },
   {
     cat: "Parada y Estacionamiento", catEN: "Stopping & Parking", catJP: "駐停車",
@@ -193,7 +241,11 @@ const QUESTIONS = [
     expES: "VERDADERO. Detenerse o estacionar dentro de los 5 metros de un cruce peatonal es ilegal — obstruye la visibilidad de todos.",
     expJP: "正しい。横断歩道から5メートル以内は駐停車禁止です。",
     culture: "Los 5 metros son una distancia crítica en el examen japonés. También aplica a 3 metros de entradas de garajes y bomberos, y 10 metros de cruces ferroviarios. Aprende estos números: 3m, 5m, 10m, 30m.",
-    jpterm: "横断歩道", romaji: "oudanhodou", termMeaning: "Cruce peatonal / paso de cebra"
+    jpterm: "横断歩道", romaji: "oudanhodou", termMeaning: "Cruce peatonal / paso de cebra",
+    pt: "Você não deve parar ou estacionar dentro de 5 metros de uma faixa de pedestres.",
+    expPT: "VERDADEIRO. Parar ou estacionar dentro de 5 metros de uma faixa de pedestres é ilegal — bloqueia a visibilidade tanto de motoristas quanto de pedestres.",
+    tl: "Hindi ka dapat huminto o mag-park sa loob ng 5 metro mula sa isang pedestrian crossing.",
+    expTL: "TAMA. Ang pagtigil o pagpapark sa loob ng 5 metro ng isang pedestrian crossing ay ilegal — nahahadlangan nito ang visibility ng mga driver at manlalakad."
   },
   {
     cat: "Posición en Vía", catEN: "Road Position", catJP: "通行位置",
@@ -207,7 +259,11 @@ const QUESTIONS = [
     expES: "VERDADERO. En vías sin marcas, ambos conductores deben mantenerse a la izquierda para poder cruzarse con seguridad.",
     expJP: "正しい。標示のない道路では左側に寄る原則があります。",
     culture: "Japón es un país de circulación por la IZQUIERDA. En vías estrechas sin marcas, ambos conductores se corren a SU izquierda. Para un latino acostumbrado a circular por la derecha, esto requiere práctica mental.",
-    jpterm: "左側通行", romaji: "hidarigawa tsuuryou", termMeaning: "Circulación por la izquierda (regla fundamental de Japón)"
+    jpterm: "左側通行", romaji: "hidarigawa tsuuryou", termMeaning: "Circulación por la izquierda (regla fundamental de Japón)",
+    pt: "Ao dirigir em uma via sem marcações de faixa e dois veículos se aproximam um do outro, cada um deve manter-se o mais à esquerda possível.",
+    expPT: "VERDADEIRO. Em vias sem marcações, ambos os motoristas devem manter-se à esquerda para poderem passar com segurança.",
+    tl: "Kapag nagmamaneho sa isang kalsada na walang marka ng linya at dalawang sasakyan ang nagkaharap, ang bawat isa ay dapat manatili sa pinaka-kaliwang bahagi hangga't maaari.",
+    expTL: "TAMA. Sa mga kalsadang walang marka, ang parehong driver ay dapat manatili sa kaliwa upang ligtas silang makalagpas."
   },
   {
     cat: "Seguridad en Autopista", catEN: "Highway Safety", catJP: "高速安全",
@@ -221,7 +277,11 @@ const QUESTIONS = [
     expES: "FALSO. Tras una avería, conductor y pasajeros deben salir a un área segura. Quedarse en el vehículo en autopista es extremadamente peligroso.",
     expJP: "誤り。故障時は車から降りて安全な場所に避難しなければなりません。",
     culture: "El protocolo en autopistas japonesas es: 1) Luces de emergencia, 2) Salir y alejarse a la barrera de protección, 3) Colocar triángulo 50m atrás, 4) Llamar al 110 (policía) o 115 (carretera).",
-    jpterm: "非常停車帯", romaji: "hijou teishataai", termMeaning: "Carril de emergencia en autopista"
+    jpterm: "非常停車帯", romaji: "hijou teishataai", termMeaning: "Carril de emergencia en autopista",
+    pt: "Se seu veículo quebrar em uma rodovia e você ativar as luzes de emergência, pode permanecer no carro aguardando o guincho.",
+    expPT: "FALSO. Após uma pane, o motorista e os passageiros devem sair para um local seguro. Permanecer no carro em uma rodovia é extremamente perigoso.",
+    tl: "Kung ang iyong sasakyan ay nasira sa expressway at i-activate mo ang hazard lights, maaari kang manatili sa kotse habang naghihintay ng tow truck.",
+    expTL: "MALI. Pagkatapos ng pagkasira, ang driver at mga pasahero ay dapat lumabas sa isang ligtas na lugar. Ang pananatili sa kotse sa expressway ay napaka-mapanganib."
   },
   {
     cat: "Conducción en Lluvia", catEN: "Weather Driving", catJP: "雨天走行",
@@ -235,7 +295,11 @@ const QUESTIONS = [
     expES: "VERDADERO. Las superficies mojadas reducen el agarre y extienden la distancia de frenado.",
     expJP: "正しい。濡れた路面はタイヤのグリップを低下させ制動距離が伸びます。",
     culture: "Japón tiene temporadas de lluvia intensa (梅雨 tsuyu, junio-julio) y muchos tifones. La ley japonesa exige ajustar la velocidad a las condiciones.",
-    jpterm: "梅雨", romaji: "tsuyu", termMeaning: "Temporada de lluvias en Japón (junio-julio)"
+    jpterm: "梅雨", romaji: "tsuyu", termMeaning: "Temporada de lluvias en Japón (junio-julio)",
+    pt: "Em dia de chuva, mesmo com boa visibilidade, os motoristas são obrigados a reduzir a velocidade e aumentar a distância de seguimento.",
+    expPT: "VERDADEIRO. Superfícies molhadas reduzem o atrito dos pneus e aumentam a distância de frenagem — exigindo velocidade reduzida e maior distância de seguimento.",
+    tl: "Sa makulimlim na araw, kahit maganda ang visibility, ang mga driver ay kinakailangang bawasan ang bilis at dagdagan ang distansya ng pagsunod.",
+    expTL: "TAMA. Ang mga basa na ibabaw ay nagbabawas ng grip ng gulong at nagpapalaki ng distansya sa paghinto — nangangailangan ng mas mababang bilis at mas malaking distansya."
   },
   {
     cat: "Cruce Peatonal", catEN: "Pedestrian Crossings", catJP: "横断歩道",
@@ -249,7 +313,11 @@ const QUESTIONS = [
     expES: "FALSO. Los conductores deben reducir velocidad si hay peatones que pudieran cruzar — incluso antes de que alguien empiece.",
     expJP: "誤り。横断しようとする歩行者がいる可能性がある場合は、渡り始める前から徐行が必要です。",
     culture: "¡Los peatones tienen PRIORIDAD ABSOLUTA en los cruces japoneses! Incluso si el peatón solo está parado esperando, el carro debe detenerse completamente. En Colombia o México es común que los carros no paren — aquí es una infracción seria con cámara incluida.",
-    jpterm: "徐行", romaji: "jokou", termMeaning: "Circular despacio / reducir velocidad (listo para detenerse)"
+    jpterm: "徐行", romaji: "jokou", termMeaning: "Circular despacio / reducir velocidad (listo para detenerse)",
+    pt: "Ao se aproximar de uma faixa de pedestres sem semáforo, o motorista só precisa desacelerar se um pedestre já estiver atravessando.",
+    expPT: "FALSO. Os motoristas devem desacelerar se houver pedestres — mesmo antes de qualquer um começar a atravessar.",
+    tl: "Kapag papalapit sa isang pedestrian crossing na walang traffic light, ang driver ay kailangang bumagal lamang kung ang isang manlalakad ay tumatawid na.",
+    expTL: "MALI. Ang mga driver ay dapat bumagal kung may mga manlalakad na maaaring dumating — kahit bago pa man magsimulang tumawid ang sinuman."
   },
   {
     cat: "Parada Ilegal", catEN: "Illegal Stopping", catJP: "違法停車",
@@ -263,7 +331,11 @@ const QUESTIONS = [
     expES: "FALSO. Las luces de emergencia NO legalizan una parada ilegal. La situación sigue siendo peligrosa.",
     expJP: "誤り。ハザードランプは違法停車を合法化しません。",
     culture: "En muchos países latinos es común 'pararse un momentito' con las luces de emergencia. En Japón las luces de emergencia son solo para situaciones de peligro real — no autorizan parar donde está prohibido.",
-    jpterm: "ハザードランプ", romaji: "hazaado ranpu", termMeaning: "Luces de emergencia / intermitentes"
+    jpterm: "ハザードランプ", romaji: "hazaado ranpu", termMeaning: "Luces de emergencia / intermitentes",
+    pt: "Se um veículo estiver parado ilegalmente mas com as luzes de emergência ligadas, pode ser ultrapassado com cuidado mesmo que obstrua ligeiramente a via.",
+    expPT: "FALSO. As luzes de emergência NÃO legalizam a parada ilegal. A situação ainda deve ser tratada como perigosa.",
+    tl: "Kung ang isang sasakyan ay nakatigil nang ilegal ngunit may nakabukas na hazard lights, maaari itong lampasan nang maingat kahit bahagyang nakaharang sa kalsada.",
+    expTL: "MALI. Ang hazard lights ay HINDI nagpapalegal ng ilegal na pagtigil. Ang sitwasyon ay dapat pa ring ituring na mapanganib."
   },
   {
     cat: "Teléfono Móvil", catEN: "Mobile Phones", catJP: "携帯電話",
@@ -277,7 +349,11 @@ const QUESTIONS = [
     expES: "FALSO. Detenerse en un semáforo rojo sigue contando como 'conducir' en Japón. La regla aplica con el motor encendido en tráfico.",
     expJP: "誤り。赤信号停車中も「運転中」に含まれます。",
     culture: "Esta es una pregunta trampa muy común. En Japón estar detenido en un semáforo con el motor encendido = conducir. Muchos latinos confunden esto y reciben multas. Pon el teléfono en modo silencio antes de arrancar.",
-    jpterm: "赤信号", romaji: "aka shingou", termMeaning: "Semáforo en rojo"
+    jpterm: "赤信号", romaji: "aka shingou", termMeaning: "Semáforo en rojo",
+    pt: "Um motorista pode usar o celular brevemente enquanto parado em um semáforo vermelho se o veículo não estiver em movimento.",
+    expPT: "FALSO. Parado no semáforo vermelho ainda conta como 'dirigindo' no Japão. A regra se aplica sempre que o motor estiver ligado no trânsito.",
+    tl: "Ang isang driver ay maaaring sandaling gumamit ng mobile phone habang nakatigil sa pulang ilaw kung ang sasakyan ay hindi gumagalaw.",
+    expTL: "MALI. Ang pagtigil sa pulang ilaw ay itinuturing pa rin na 'pagmamaneho' sa Hapon. Ang panuntunan ay naaangkop sa tuwing naka-on ang makina sa trapiko."
   },
   {
     cat: "Peatones", catEN: "Pedestrians", catJP: "歩行者",
@@ -291,7 +367,11 @@ const QUESTIONS = [
     expES: "VERDADERO. Cuando no hay aceras, los peatones son especialmente vulnerables. Los conductores deben reducir velocidad.",
     expJP: "正しい。歩道のない道路では歩行者が特に優先されます。",
     culture: "Japón es un país de peatones y ciclistas. En las calles residenciales (住宅街 juutakugai) es muy común que niños, ancianos y ciclistas compartan el espacio con carros.",
-    jpterm: "歩行者優先", romaji: "hokousha yuusen", termMeaning: "Prioridad para peatones"
+    jpterm: "歩行者優先", romaji: "hokousha yuusen", termMeaning: "Prioridad para peatones",
+    pt: "Em vias estreitas sem calçadas, os pedestres sempre têm prioridade sobre os veículos.",
+    expPT: "VERDADEIRO. Quando não há calçadas, os pedestres são especialmente vulneráveis. Os motoristas devem desacelerar e estar prontos para parar.",
+    tl: "Sa mga makipot na kalsada na walang bangketa, ang mga manlalakad ay palaging may prioridad kaysa sa mga sasakyan.",
+    expTL: "TAMA. Kapag walang bangketa, ang mga manlalakad ay espesyal na marupok. Ang mga driver ay dapat bumagal at handang huminto."
   },
   {
     cat: "Conducción Nocturna", catEN: "Night Driving", catJP: "夜間運転",
@@ -305,7 +385,11 @@ const QUESTIONS = [
     expES: "VERDADERO. La luz alta es el estándar de noche en vías sin alumbrado. Cambia a luz baja con tráfico en sentido contrario.",
     expJP: "正しい。夜間は照明のない道路でハイビームが基本です。",
     culture: "En Colombia muchos conductores siempre usan luz baja — en Japón esto puede ser peligroso en carreteras sin iluminación. La ley recomienda luz alta (ハイビーム) por defecto y cambiar a baja (ロービーム) al encontrarse con otro vehículo.",
-    jpterm: "ハイビーム", romaji: "hai biimu", termMeaning: "Luz alta / luces largas"
+    jpterm: "ハイビーム", romaji: "hai biimu", termMeaning: "Luz alta / luces largas",
+    pt: "Ao dirigir à noite, recomenda-se usar faróis altos, a menos que causem ofuscamento ou perigo a outros.",
+    expPT: "VERDADEIRO. Os faróis altos são o padrão à noite em vias sem iluminação. Mude para faróis baixos ao encontrar tráfego que vem em sentido contrário ou pedestres.",
+    tl: "Kapag nagmamaneho sa gabi, inirerekomenda ang paggamit ng high beams maliban kung nagdudulot ito ng glare o panganib sa iba.",
+    expTL: "TAMA. Ang high beams ang default sa gabi sa mga kalsadang walang ilaw. Lumipat sa low beams para sa papalapit na trapiko o mga manlalakad."
   },
   {
     cat: "Velocidad", catEN: "Speed", catJP: "速度",
@@ -319,7 +403,11 @@ const QUESTIONS = [
     expES: "VERDADERO. La velocidad máxima por defecto en vías ordinarias sin señal es 60 km/h.",
     expJP: "正しい。標識のない一般道路での法定最高速度は60km/hです。",
     culture: "En Japón si NO hay señal de velocidad, el límite es 60 km/h en vías ordinarias. En escuelas (スクールゾーン) suele ser 30 km/h. ¡Memoriza estos números!",
-    jpterm: "法定速度", romaji: "houtei sokudo", termMeaning: "Velocidad legal por defecto (sin señal)"
+    jpterm: "法定速度", romaji: "houtei sokudo", termMeaning: "Velocidad legal por defecto (sin señal)",
+    pt: "Ao dirigir em uma via comum sem limite de velocidade indicado, a velocidade máxima para um carro de passeio regular é de 60 km/h.",
+    expPT: "VERDADEIRO. A velocidade legal padrão em vias comuns sem sinalização é de 60 km/h para carros de passeio regulares.",
+    tl: "Kapag nagmamaneho sa karaniwang kalsada na walang nakatalagang limitasyon ng bilis, ang maximum na bilis para sa isang regular na sasakyang pang-pasahero ay 60 km/h.",
+    expTL: "TAMA. Ang default na legal na bilis sa mga kalsadang walang marka ay 60 km/h para sa mga regular na sasakyang pang-pasahero."
   },
   {
     cat: "Autopistas", catEN: "Highways", catJP: "高速道路",
@@ -333,7 +421,11 @@ const QUESTIONS = [
     expES: "VERDADERO. La velocidad máxima por defecto en autopistas japonesas es 100 km/h.",
     expJP: "正しい。高速道路での法定最高速度は100km/hです。",
     culture: "La velocidad MÍNIMA en autopistas japonesas es 50 km/h — circular más lento también es infracción. En algunos tramos nuevos el máximo es 110 o 120 km/h si hay señal especial.",
-    jpterm: "高速道路", romaji: "kousoku douro", termMeaning: "Autopista (de peaje, generalmente)"
+    jpterm: "高速道路", romaji: "kousoku douro", termMeaning: "Autopista (de peaje, generalmente)",
+    pt: "A velocidade máxima em uma rodovia para um carro de passeio regular sem sinalização especial é de 100 km/h.",
+    expPT: "VERDADEIRO. A velocidade máxima padrão nas rodovias japonesas para carros de passeio regulares é de 100 km/h.",
+    tl: "Ang maximum na bilis sa expressway para sa isang regular na sasakyang pang-pasahero na walang espesyal na tanda ay 100 km/h.",
+    expTL: "TAMA. Ang default na maximum na bilis sa mga expressway ng Hapon para sa mga regular na sasakyang pang-pasahero ay 100 km/h."
   },
   {
     cat: "Conductores Nuevos", catEN: "New Drivers", catJP: "初心運転者",
@@ -347,7 +439,11 @@ const QUESTIONS = [
     expES: "VERDADERO. TODOS los conductores nuevos (licencia < 1 año) deben mostrar la marca de novato (若葉マーク) sin importar su confianza.",
     expJP: "正しい。普通免許取得後1年未満の運転者は全員、若葉マークの表示が義務です。",
     culture: "La 若葉マーク (hoja verde) es obligatoria para conductores con menos de 1 año de licencia japonesa. Si conduces con licencia extranjera convertida, eres oficialmente 'conductor nuevo' en Japón. Otros conductores deben tener paciencia contigo por ley.",
-    jpterm: "若葉マーク", romaji: "wakaba maaku", termMeaning: "Marca de conductor novato (hoja verde)"
+    jpterm: "若葉マーク", romaji: "wakaba maaku", termMeaning: "Marca de conductor novato (hoja verde)",
+    pt: "Novos motoristas com licença há menos de um ano devem exibir a sinalização de motorista novato independentemente de seu nível de confiança.",
+    expPT: "VERDADEIRO. Todos os novos motoristas (com licença há menos de 1 ano) devem exibir a sinalização de novato (若葉マーク) independentemente da confiança.",
+    tl: "Ang mga bagong driver na may lisensya nang wala pang isang taon ay dapat magpakita ng tanda ng bagong driver anuman ang kanilang antas ng kumpiyansa.",
+    expTL: "TAMA. Ang lahat ng bagong driver (may lisensya nang wala pang 1 taon) ay dapat magpakita ng tanda ng bagong driver (若葉マーク) anuman ang kumpiyansa."
   },
   {
     cat: "Fuerza Centrífuga", catEN: "Centrifugal Force", catJP: "遠心力",
@@ -361,7 +457,11 @@ const QUESTIONS = [
     expES: "VERDADERO. F=mv²/r. Velocidad×3 → fuerza×9. Por eso tomar curvas a alta velocidad es tan peligroso.",
     expJP: "正しい。遠心力はF=mv²/rで、速度が3倍になれば9倍の力がかかります。",
     culture: "Esta pregunta de física aparece en todos los exámenes de conducir en Japón. Recuerda: si duplicas la velocidad, la fuerza en curva es 4 veces mayor. Si triplicas: 9 veces.",
-    jpterm: "遠心力", romaji: "enshin ryoku", termMeaning: "Fuerza centrífuga"
+    jpterm: "遠心力", romaji: "enshin ryoku", termMeaning: "Fuerza centrífuga",
+    pt: "A força centrífuga é proporcional ao quadrado da velocidade. Quando a velocidade triplica, a força centrífuga aumenta nove vezes.",
+    expPT: "VERDADEIRO. F=mv²/r. Velocidade×3 → força×9. É por isso que fazer curvas em alta velocidade é tão perigoso.",
+    tl: "Ang centrifugal force ay proporsyonal sa parisukat ng bilis. Kapag nag-triple ang bilis, ang centrifugal force ay tumataas ng siyam na beses.",
+    expTL: "TAMA. F=mv²/r. Bilis×3 → puwersa×9. Kaya naman ang pag-ikot sa mataas na bilis ay mapanganib."
   },
   {
     cat: "Distancia de Frenado", catEN: "Stopping Distance", catJP: "停止距離",
@@ -375,7 +475,11 @@ const QUESTIONS = [
     expES: "VERDADERO. Distancia de detención = distancia de reacción (空走距離) + distancia de frenado (制動距離).",
     expJP: "正しい。停止距離＝空走距離＋制動距離です。",
     culture: "A 60 km/h, la distancia total puede ser 40-50 metros. El examen japonés evalúa que entiendas esto. ¡Mantén distancia!",
-    jpterm: "空走距離", romaji: "kuusou kyori", termMeaning: "Distancia de reacción (antes de que actúe el freno)"
+    jpterm: "空走距離", romaji: "kuusou kyori", termMeaning: "Distancia de reacción (antes de que actúe el freno)",
+    pt: "A distância de parada consiste na distância de reação mais a distância de frenagem.",
+    expPT: "VERDADEIRO. Distância de parada = distância de reação (空走距離) + distância de frenagem (制動距離). Ambas aumentam com a velocidade.",
+    tl: "Ang distansya sa paghinto ay binubuo ng distansya ng reaksyon kasama ang distansya sa pagsagwan.",
+    expTL: "TAMA. Distansya sa paghinto = distansya ng reaksyon (空走距離) + distansya sa pagsagwan (制動距離). Parehong tumataas sa bilis."
   },
   {
     cat: "Intersecciones", catEN: "Intersections", catJP: "交差点",
@@ -389,7 +493,11 @@ const QUESTIONS = [
     expES: "VERDADERO. En Japón (tráfico por la izquierda), girar a la derecha cruza los carriles contrarios — siempre se debe ceder.",
     expJP: "正しい。右折車は直進・左折する車の進行を妨げてはなりません。",
     culture: "En el examen práctico de Hirabari, el examinador prestará especial atención al giro a la derecha. Tienes que cruzar el tráfico contrario — el giro más peligroso en Japón.",
-    jpterm: "右折", romaji: "usetsu", termMeaning: "Giro a la derecha (el giro más peligroso en Japón)"
+    jpterm: "右折", romaji: "usetsu", termMeaning: "Giro a la derecha (el giro más peligroso en Japón)",
+    pt: "Ao virar à direita em uma interseção, um veículo deve ceder passagem aos veículos que vêm em sentido contrário e seguem em frente ou viram à esquerda.",
+    expPT: "VERDADEIRO. No Japão (trânsito pela esquerda), virar à direita cruza as faixas de veículos que vêm em sentido contrário — portanto, os que viram à direita devem sempre ceder.",
+    tl: "Kapag lumiko sa kanan sa isang interseksyon, ang isang sasakyan ay dapat magbigay ng daan sa mga sasakyang papalapit na tumatahak nang tuwid o lumiliko sa kaliwa.",
+    expTL: "TAMA. Sa Hapon (trapiko sa kaliwang bahagi), ang pagliko sa kanan ay tumatawid sa mga paparating na linya — kaya ang mga lumiliko sa kanan ay dapat palaging magbigay ng daan."
   },
   {
     cat: "Alcohol", catEN: "Alcohol", catJP: "飲酒",
@@ -403,7 +511,11 @@ const QUESTIONS = [
     expES: "VERDADERO. Japón tiene tolerancia CERO para conducir bajo el efecto del alcohol.",
     expJP: "正しい。少量でも運転能力に影響するおそれがある場合は飲酒運転となります。",
     culture: "En Japón la cultura de 'una cervecita no pasa nada' NO existe para conductores. Las sanciones son severas: prisión, multa de hasta ¥500,000 y pérdida de licencia.",
-    jpterm: "飲酒運転", romaji: "inshu unten", termMeaning: "Conducción bajo influencia del alcohol (delito grave)"
+    jpterm: "飲酒運転", romaji: "inshu unten", termMeaning: "Conducción bajo influencia del alcohol (delito grave)",
+    pt: "Mesmo uma pequena quantidade de álcool que possa afetar a capacidade de dirigir torna ilegal dirigir.",
+    expPT: "VERDADEIRO. O Japão tem tolerância zero para direção embriagada. Qualquer quantidade que possa afetar a capacidade torna ilegal dirigir.",
+    tl: "Kahit isang maliit na halaga ng alkohol na maaaring makaapekto sa kakayahan sa pagmamaneho ay nagpapalabas sa pagiging ilegal ng pagmamaneho.",
+    expTL: "TAMA. Ang Hapon ay may zero tolerance para sa pagmamaneho na lango. Ang anumang halaga na maaaring makaapekto sa kakayahan ay nagpapalabas ng ilegal na pagmamaneho."
   },
   {
     cat: "Adelantamiento", catEN: "Overtaking", catJP: "追い越し",
@@ -417,7 +529,11 @@ const QUESTIONS = [
     expES: "VERDADERO. Está prohibido adelantar en cimas de colinas, curvas pronunciadas, túneles, cruces ferroviarios e intersecciones.",
     expJP: "正しい。上り坂の頂上付近は追い越し禁止場所の一つです。",
     culture: "El examen tiene una lista específica de lugares donde NO se puede adelantar. Memorízalos: cimas de colinas, curvas peligrosas, dentro de túneles, cruces ferroviarios (±30m), intersecciones.",
-    jpterm: "追い越し禁止", romaji: "oikoshi kinshi", termMeaning: "Zona donde está prohibido adelantar"
+    jpterm: "追い越し禁止", romaji: "oikoshi kinshi", termMeaning: "Zona donde está prohibido adelantar",
+    pt: "É proibido ultrapassar perto do topo de uma subida.",
+    expPT: "VERDADEIRO. Ultrapassar é proibido em topos de subidas, curvas acentuadas, túneis, cruzamentos ferroviários e interseções.",
+    tl: "Ipinagbabawal ang pag-overtake malapit sa tuktok ng paakyat na kalsada.",
+    expTL: "TAMA. Ipinagbabawal ang pag-overtake sa mga tuktok ng burol, matarik na kurba, tunel, railway crossing at interseksyon."
   },
   {
     cat: "Señales de Tránsito", catEN: "Traffic Signals", catJP: "信号",
@@ -431,7 +547,11 @@ const QUESTIONS = [
     expES: "VERDADERO. Amarillo intermitente = avanzar con precaución. Rojo intermitente = parada completa, luego avanzar cuando sea seguro.",
     expJP: "正しい。黄色点滅＝注意して進む。赤色点滅＝一時停止して安全確認後に進む。",
     culture: "Los semáforos parpadeantes son comunes en Japón de madrugada o en cruces secundarios. ¡Trampa clásica! Amarillo parpadeante NO obliga a parar (solo precaución), rojo parpadeante SÍ obliga a parar.",
-    jpterm: "点滅信号", romaji: "tenmetsu shingou", termMeaning: "Señal intermitente (amarillo = precaución, rojo = detención)"
+    jpterm: "点滅信号", romaji: "tenmetsu shingou", termMeaning: "Señal intermitente (amarillo = precaución, rojo = detención)",
+    pt: "Um sinal amarelo piscante significa 'prossiga com cuidado', enquanto um vermelho piscante significa 'pare e verifique a segurança antes de prosseguir'.",
+    expPT: "VERDADEIRO. Amarelo piscante = prossiga com cuidado. Vermelho piscante = parada completa obrigatória, depois prossiga quando for seguro.",
+    tl: "Ang kumikislap na dilaw na senyal ay nangangahulugang 'magpatuloy nang may pag-iingat', habang ang kumikislap na pula ay nangangahulugang 'huminto at suriin ang kaligtasan bago magpatuloy'.",
+    expTL: "TAMA. Kumikislap na dilaw = magpatuloy nang may pag-iingat. Kumikislap na pula = kailangang kumpletong hinto, pagkatapos ay magpatuloy kapag ligtas."
   },
   {
     cat: "Autopistas", catEN: "Highways", catJP: "高速道路",
@@ -445,7 +565,11 @@ const QUESTIONS = [
     expES: "VERDADERO. Hacer marcha atrás en autopista está estrictamente prohibido. Si te pasas de la salida, ve a la siguiente.",
     expJP: "正しい。高速道路での後退は理由を問わず厳禁です。",
     culture: "En Colombia es común ver carros en reversa en carreteras. En Japón está absolutamente prohibido en autopistas. Las cámaras y los carros detrás tuyo van a 100 km/h.",
-    jpterm: "後退禁止", romaji: "koutai kinshi", termMeaning: "Prohibido retroceder / hacer marcha atrás"
+    jpterm: "後退禁止", romaji: "koutai kinshi", termMeaning: "Prohibido retroceder / hacer marcha atrás",
+    pt: "Dar ré em uma rodovia é estritamente proibido independentemente do motivo.",
+    expPT: "VERDADEIRO. Dar ré em uma rodovia é estritamente proibido. Se você perder sua saída, prossiga até a próxima.",
+    tl: "Ang pag-reverse sa expressway ay mahigpit na ipinagbabawal anuman ang dahilan.",
+    expTL: "TAMA. Ang pag-reverse sa expressway ay mahigpit na ipinagbabawal. Kung mapalalagpas ang iyong exit, magpatuloy sa susunod."
   },
   {
     cat: "Señales de Policía", catEN: "Police Signals", catJP: "警察官の指示",
@@ -459,7 +583,11 @@ const QUESTIONS = [
     expES: "VERDADERO. Las señales manuales de los policías de tránsito siempre tienen prioridad sobre semáforos y todas las señales.",
     expJP: "正しい。交通整理の警察官の指示はすべての交通規制に優先します。",
     culture: "En Japón los policías de tránsito (交通整理 koutou souri) tienen autoridad total sobre todas las señales. Si el semáforo está en verde pero el policía levanta la mano — te detienes.",
-    jpterm: "交通整理", romaji: "koutuu seiri", termMeaning: "Control de tránsito por policía"
+    jpterm: "交通整理", romaji: "koutuu seiri", termMeaning: "Control de tránsito por policía",
+    pt: "Os sinais de mão de um policial de trânsito têm prioridade sobre os semáforos.",
+    expPT: "VERDADEIRO. Os sinais de mão da polícia de trânsito têm sempre prioridade sobre os semáforos e todos os outros controles.",
+    tl: "Ang mga hand signal ng isang traffic police officer ay may prioridad kaysa sa mga traffic light.",
+    expTL: "TAMA. Ang mga hand signal ng traffic police ay palaging may prioridad kaysa sa mga traffic light at lahat ng iba pang kontrol."
   },
   {
     cat: "Distancia de Frenado", catEN: "Stopping Distance", catJP: "停止距離",
@@ -473,7 +601,11 @@ const QUESTIONS = [
     expES: "VERDADERO. Las vías mojadas reducen la fricción y aumentan la distancia de frenado. Siempre conduce más lento bajo lluvia.",
     expJP: "正しい。濡れた路面では摩擦が小さくなるため制動距離が伸びます。",
     culture: "En lluvia, añade un 50% a tu distancia de seguridad habitual. En nieve o hielo (poco común en Nagoya, pero posible en enero-febrero), multiplícala por 2 o más.",
-    jpterm: "制動距離", romaji: "seidou kyori", termMeaning: "Distancia de frenado (desde que se pisa el freno hasta detenerse)"
+    jpterm: "制動距離", romaji: "seidou kyori", termMeaning: "Distancia de frenado (desde que se pisa el freno hasta detenerse)",
+    pt: "A distância de parada de um veículo aumenta em vias molhadas ou escorregadias em comparação com vias secas na mesma velocidade.",
+    expPT: "VERDADEIRO. Vias molhadas reduzem o atrito e aumentam a distância de parada. Sempre dirija mais devagar na chuva.",
+    tl: "Ang distansya sa paghinto ng isang sasakyan ay tumataas sa basa o madulas na kalsada kumpara sa tuyong kalsada sa parehong bilis.",
+    expTL: "TAMA. Ang mga basang kalsada ay nagbabawas ng friction at nagpapalaki ng distansya sa paghinto. Palaging magmaneho nang mas mabagal sa ulan."
   },
   {
     cat: "Parada y Estacionamiento", catEN: "Stopping & Parking", catJP: "駐停車",
@@ -487,7 +619,11 @@ const QUESTIONS = [
     expES: "VERDADERO. Detenerse y estacionar están prohibidos dentro de los 10 metros a cada lado de un cruce ferroviario.",
     expJP: "正しい。踏切前後10メートル以内は駐停車禁止です。",
     culture: "Las distancias en metros son muy importantes: 3m (garajes/bomberos), 5m (cruces peatonales/hidrantes), 10m (intersecciones/cruces ferroviarios), 30m (señal de 'toque bocina'). Salen mucho en el examen.",
-    jpterm: "踏切", romaji: "fumikiri", termMeaning: "Cruce ferroviario / paso a nivel"
+    jpterm: "踏切", romaji: "fumikiri", termMeaning: "Cruce ferroviario / paso a nivel",
+    pt: "Tanto a parada quanto o estacionamento são proibidos dentro de 10 metros em ambos os lados de um cruzamento ferroviário.",
+    expPT: "VERDADEIRO. Parada e estacionamento são ambos proibidos dentro de 10 metros em ambos os lados de um cruzamento ferroviário.",
+    tl: "Ang pagtigil at pagpapark ay parehong ipinagbabawal sa loob ng 10 metro sa magkabilang panig ng isang railway crossing.",
+    expTL: "TAMA. Ang pagtigil at pagpapark ay parehong ipinagbabawal sa loob ng 10 metro sa magkabilang panig ng isang railway crossing."
   },
   {
     cat: "Señales", catEN: "Turn Signals", catJP: "方向指示器",
@@ -501,7 +637,11 @@ const QUESTIONS = [
     expES: "VERDADERO. Al cambiar de carril, señaliza al menos 3 segundos de antelación para advertir a otros usuarios.",
     expJP: "正しい。進路変更の3秒前に方向指示器を出す義務があります。",
     culture: "En Latinoamérica es común cambiar de carril sin intermitente — aquí es infracción. El examinador en Hirabari observa si señalizas: 3 segundos en carril, 30 metros en intersecciones.",
-    jpterm: "方向指示器", romaji: "houkou shijiki", termMeaning: "Intermitente / señal de giro"
+    jpterm: "方向指示器", romaji: "houkou shijiki", termMeaning: "Intermitente / señal de giro",
+    pt: "Antes de mudar de faixa, você deve sinalizar por pelo menos 3 segundos antes de se mover.",
+    expPT: "VERDADEIRO. Ao mudar de faixa, sinalize pelo menos 3 segundos antes para avisar outros usuários da via.",
+    tl: "Bago magpalit ng linya, dapat kang mag-signal nang hindi bababa sa 3 segundo bago kumilos.",
+    expTL: "TAMA. Kapag nagpapalit ng linya, mag-signal nang hindi bababa sa 3 segundo nang maaga upang babalaan ang ibang gumagamit ng kalsada."
   },
   {
     cat: "Accidentes", catEN: "Accidents", catJP: "事故",
@@ -515,7 +655,11 @@ const QUESTIONS = [
     expES: "VERDADERO. Tras un accidente: detenerse, asistir heridos, prevenir accidentes secundarios y reportar a la policía.",
     expJP: "正しい。事故後は①即時停車、②負傷者救護、③二次事故防止、④警察への報告が義務です。",
     culture: "Darse a la fuga (ひき逃げ hiki-nige) es un delito gravísimo en Japón. Llama al 119 (ambulancia) si hay heridos, 110 (policía). El seguro obligatorio (自賠責 jibaiseki) es requerido para todos los vehículos.",
-    jpterm: "ひき逃げ", romaji: "hiki-nige", termMeaning: "Darse a la fuga después de un accidente (delito grave)"
+    jpterm: "ひき逃げ", romaji: "hiki-nige", termMeaning: "Darse a la fuga después de un accidente (delito grave)",
+    pt: "Se você estiver envolvido em um acidente de trânsito, deve parar imediatamente, prestar primeiros socorros e reportar à polícia.",
+    expPT: "VERDADEIRO. Após um acidente: pare imediatamente, auxilie os feridos, previna acidentes secundários, reporte à polícia.",
+    tl: "Kung ikaw ay sangkot sa isang aksidente sa trapiko, dapat kang agad na huminto, magbigay ng first aid, at mag-ulat sa pulisya.",
+    expTL: "TAMA. Pagkatapos ng aksidente: huminto agad, tulungan ang mga nasaktan, pigilan ang mga pangalawang aksidente, mag-ulat sa pulisya."
   },
   {
     cat: "Bajadas", catEN: "Downhill", catJP: "下り坂",
@@ -529,7 +673,11 @@ const QUESTIONS = [
     expES: "FALSO. El freno MOTOR debe ser el método PRINCIPAL en bajadas largas. El uso excesivo del freno de pie causa sobrecalentamiento y falla de frenos.",
     expJP: "誤り。長い下り坂ではエンジンブレーキが主、フットブレーキが補助です。",
     culture: "El 'brake fade' (sobrecalentamiento de frenos) es un peligro real en bajadas largas. El freno motor (reducir marcha) protege los frenos físicos. Esta pregunta salió en tu examen real de Hirabari.",
-    jpterm: "エンジンブレーキ", romaji: "enjin bureeki", termMeaning: "Freno motor (reducción de velocidad por el motor, sin frenos)"
+    jpterm: "エンジンブレーキ", romaji: "enjin bureeki", termMeaning: "Freno motor (reducción de velocidad por el motor, sin frenos)",
+    pt: "Ao descer uma ladeira longa, os motoristas devem usar principalmente o freio de pé, usando o freio motor como auxiliar.",
+    expPT: "FALSO. O freio motor deve ser o método PRINCIPAL em longas descidas. O uso excessivo do freio de pé causa superaquecimento e falha dos freios.",
+    tl: "Kapag nagmamaneho pababa sa mahabang paalusog na daan, ang mga driver ay dapat pangunahing gumamit ng paa na preno, gamit ang engine braking bilang pantulong.",
+    expTL: "MALI. Ang engine braking ang dapat na PANGUNAHING paraan sa mahahabang pabababang daan. Ang sobrang paggamit ng paa na preno ay nagdudulot ng brake fade (pag-init at pagkabigo ng preno)."
   },
   {
     cat: "Licencia", catEN: "Driver's License", catJP: "免許証",
@@ -543,7 +691,11 @@ const QUESTIONS = [
     expES: "VERDADERO. Los conductores deben llevar su licencia en todo momento al conducir y mostrarla a la policía cuando se les solicite.",
     expJP: "正しい。運転中は常に免許証を携帯し、警察官から求められたら提示する義務があります。",
     culture: "En Japón la policía puede hacer controles de rutina en cualquier punto. Si no llevas la licencia, es multa inmediata incluso si tienes licencia válida. La licencia japonesa es pequeña (tamaño tarjeta) — guárdala siempre en la billetera.",
-    jpterm: "運転免許証", romaji: "unten menkyo shou", termMeaning: "Licencia de conducir japonesa"
+    jpterm: "運転免許証", romaji: "unten menkyo shou", termMeaning: "Licencia de conducir japonesa",
+    pt: "Um motorista deve sempre carregar sua carteira de habilitação enquanto dirige e deve apresentá-la quando solicitado por um policial.",
+    expPT: "VERDADEIRO. Os motoristas devem carregar a carteira de habilitação o tempo todo enquanto dirigem e apresentá-la à polícia quando solicitado.",
+    tl: "Ang isang driver ay dapat palaging magdala ng kanilang lisensya sa pagmamaneho habang nagmamaneho at dapat itong ipakita kapag hiniling ng isang pulis.",
+    expTL: "TAMA. Ang mga driver ay dapat magdala ng kanilang lisensya sa lahat ng oras habang nagmamaneho at ipakita ito sa pulisya kapag hiniling."
   },
   {
     cat: "Fatiga", catEN: "Fatigue", catJP: "疲労",
@@ -557,7 +709,11 @@ const QUESTIONS = [
     expES: "VERDADERO. La fatiga extrema deteriora gravemente el juicio y el tiempo de reacción — similar al alcohol.",
     expJP: "正しい。過労運転は飲酒運転と同様に判断力・反応速度を著しく低下させます。",
     culture: "Japón tiene una cultura de trabajo muy intensa. Si el empleador obliga a un conductor a trabajar hasta el agotamiento y hay accidente, el empleador también es responsable legalmente.",
-    jpterm: "過労運転", romaji: "karou unten", termMeaning: "Conducción en estado de agotamiento (también ilegal)"
+    jpterm: "過労運転", romaji: "karou unten", termMeaning: "Conducción en estado de agotamiento (también ilegal)",
+    pt: "Dirigir extremamente cansado tem um efeito semelhante na capacidade de dirigir como dirigir sob influência do álcool.",
+    expPT: "VERDADEIRO. O cansaço extremo prejudica gravemente o julgamento e o tempo de reação — semelhante a dirigir bêbado.",
+    tl: "Ang pagmamaneho habang lubhang pagod ay may katulad na epekto sa kakayahan sa pagmamaneho tulad ng pagmamaneho sa ilalim ng impluwensya ng alkohol.",
+    expTL: "TAMA. Ang matinding pagod ay lubhang nagpapahina ng paghatol at oras ng reaksyon — katulad ng pagmamaneho na lango."
   },
   {
     cat: "Incorporación a Autopista", catEN: "Expressway Entry", catJP: "高速合流",
@@ -571,7 +727,11 @@ const QUESTIONS = [
     expES: "VERDADERO. Al incorporarse, cede el paso a todos los vehículos que ya circulan en los carriles principales.",
     expJP: "正しい。加速車線から本線に合流する際は本線走行車に道を譲ります。",
     culture: "Usa el carril de aceleración para igualar velocidad con el tráfico (100 km/h) y entra suavemente. No te pares ni reduzcas demasiado en el carril de aceleración.",
-    jpterm: "加速車線", romaji: "kasoku shansen", termMeaning: "Carril de aceleración (para incorporarse a la autopista)"
+    jpterm: "加速車線", romaji: "kasoku shansen", termMeaning: "Carril de aceleración (para incorporarse a la autopista)",
+    pt: "Ao entrar em uma rodovia por uma faixa de aceleração, você deve ceder passagem aos veículos que já estão nas faixas principais.",
+    expPT: "VERDADEIRO. Ao entrar, ceda passagem a todos os veículos que já trafegam nas faixas principais.",
+    tl: "Kapag pumapasok sa isang expressway mula sa acceleration lane, dapat kang magbigay ng daan sa mga sasakyan na nasa pangunahing linya na.",
+    expTL: "TAMA. Kapag pumapasok, magbigay ng daan sa lahat ng sasakyan na nagmamaneho na sa mga pangunahing linya."
   },
   {
     cat: "Parada y Estacionamiento", catEN: "Stopping & Parking", catJP: "駐停車",
@@ -585,7 +745,11 @@ const QUESTIONS = [
     expES: "VERDADERO. Tanto detenerse como estacionar están prohibidos dentro de los 5 metros de un hidrante.",
     expJP: "正しい。消火栓から5メートル以内は駐停車禁止です。",
     culture: "Los hidrantes en Japón son pequeños y a veces difíciles de ver. El examen pregunta mucho sobre distancias de estacionamiento — recuerda: 5 metros del hidrante, igual que del cruce peatonal.",
-    jpterm: "消火栓", romaji: "shoukasen", termMeaning: "Hidrante de incendios"
+    jpterm: "消火栓", romaji: "shoukasen", termMeaning: "Hidrante de incendios",
+    pt: "O estacionamento é proibido dentro de 5 metros de um hidrante.",
+    expPT: "VERDADEIRO. Tanto parar quanto estacionar são proibidos dentro de 5 metros de um hidrante.",
+    tl: "Ipinagbabawal ang pagpapark sa loob ng 5 metro ng isang fire hydrant.",
+    expTL: "TAMA. Ang pagtigil at pagpapark ay parehong ipinagbabawal sa loob ng 5 metro ng isang fire hydrant."
   },
   {
     cat: "Señales", catEN: "Turn Signals", catJP: "方向指示器",
@@ -599,7 +763,11 @@ const QUESTIONS = [
     expES: "VERDADERO. Activa el indicador al menos 30 metros antes del punto de giro en una intersección.",
     expJP: "正しい。交差点での曲がる30メートル以上前に方向指示器を出す必要があります。",
     culture: "Los 30 metros y 3 segundos son números que SIEMPRE salen en el examen. En el examen práctico de Hirabari, el examinador verificará que señalices con la anticipación correcta.",
-    jpterm: "30メートル手前", romaji: "sanjuu meetoru temae", termMeaning: "30 metros antes (distancia para señalizar en intersección)"
+    jpterm: "30メートル手前", romaji: "sanjuu meetoru temae", termMeaning: "30 metros antes (distancia para señalizar en intersección)",
+    pt: "Você deve sinalizar pelo menos 30 metros antes de virar em uma interseção.",
+    expPT: "VERDADEIRO. Ative o sinal de direção pelo menos 30 metros antes de virar em uma interseção.",
+    tl: "Dapat kang mag-signal nang hindi bababa sa 30 metro bago lumiko sa isang interseksyon.",
+    expTL: "TAMA. I-activate ang iyong turn signal nang hindi bababa sa 30 metro bago lumiko sa isang interseksyon."
   },
   {
     cat: "Niebla", catEN: "Fog Driving", catJP: "霧の運転",
@@ -613,7 +781,11 @@ const QUESTIONS = [
     expES: "FALSO. En niebla densa debes REDUCIR la velocidad y encender faros y antiniebla. Aumentar la velocidad es extremadamente peligroso.",
     expJP: "誤り。濃霧時は速度を落とし、前照灯・霧灯を点灯させます。",
     culture: "Esta pregunta tiene trampa: el instinto dice 'sal rápido de la niebla' pero aumentar velocidad en visibilidad cero es suicida. La regla correcta: faros encendidos, velocidad reducida.",
-    jpterm: "霧灯", romaji: "kiritori", termMeaning: "Luces antiniebla"
+    jpterm: "霧灯", romaji: "kiritori", termMeaning: "Luces antiniebla",
+    pt: "Ao enfrentar neblina densa com visibilidade muito ruim, você deve ligar as luzes de emergência e aumentar a velocidade para sair rapidamente da zona de neblina.",
+    expPT: "FALSO. Em neblina densa, você deve REDUZIR a velocidade e ligar os faróis e luzes de neblina. Aumentar a velocidade é extremamente perigoso.",
+    tl: "Kapag nakaharap sa makapal na ulap na may napakababang visibility, dapat mong i-on ang hazard lights at dagdagan ang bilis upang mabilis na makaalis sa fog zone.",
+    expTL: "MALI. Sa makapal na ulap, dapat BAWASAN ang bilis at i-on ang mga headlight at fog light. Ang pagdaragdag ng bilis ay napaka-mapanganib."
   },
   {
     cat: "Prioridad de Paso", catEN: "Right of Way", catJP: "優先",
@@ -627,7 +799,11 @@ const QUESTIONS = [
     expES: "VERDADERO. Los vehículos que salen de propiedades privadas hacia vías públicas deben ceder el paso a todos.",
     expJP: "正しい。駐車場等から道路に出る際は、道路を通行中の車両・歩行者に優先権があります。",
     culture: "En Japón salir de un estacionamiento o garaje sin ceder el paso es causa frecuente de accidentes. Las vías públicas siempre tienen prioridad sobre las privadas.",
-    jpterm: "道路に出る", romaji: "douro ni deru", termMeaning: "Salir a la vía pública (debe ceder el paso)"
+    jpterm: "道路に出る", romaji: "douro ni deru", termMeaning: "Salir a la vía pública (debe ceder el paso)",
+    pt: "Veículos que saem de um estacionamento para uma via pública devem ceder passagem a todos os veículos e pedestres na via.",
+    expPT: "VERDADEIRO. Veículos que saem de propriedades privadas para vias públicas devem ceder passagem a todo o tráfego e pedestres já na via.",
+    tl: "Ang mga sasakyan na lumalabas mula sa isang parking lot patungo sa isang pampublikong kalsada ay dapat magbigay ng daan sa lahat ng sasakyan at manlalakad sa kalsada.",
+    expTL: "TAMA. Ang mga sasakyan na lumalabas mula sa pribadong lupa patungo sa pampublikong kalsada ay dapat magbigay ng daan sa lahat ng trapiko at manlalakad na nasa kalsada na."
   },
   {
     cat: "Asiento del Conductor", catEN: "Seating Position", catJP: "運転姿勢",
@@ -641,7 +817,11 @@ const QUESTIONS = [
     expES: "FALSO. La pierna completamente extendida pierde control fino. La rodilla ligeramente flexionada es la posición correcta.",
     expJP: "誤り。足が完全に伸びた状態では細かい操作ができません。膝を少し曲げた状態が正しい姿勢です。",
     culture: "La posición correcta al conducir es con la rodilla ligeramente flexionada (unos 120°). Esto permite reaccionar más rápido en frenadas de emergencia.",
-    jpterm: "運転姿勢", romaji: "unten shisei", termMeaning: "Postura de conducción"
+    jpterm: "運転姿勢", romaji: "unten shisei", termMeaning: "Postura de conducción",
+    pt: "Ao ajustar o assento do motorista, a perna deve estar completamente estendida ao pressionar a embreagem totalmente.",
+    expPT: "FALSO. Com a perna completamente estendida perde-se o controle fino. Um joelho levemente dobrado permite uma operação de embreagem mais suave.",
+    tl: "Kapag inaayos ang upuan ng driver, ang binti ay dapat na ganap na nakabukas kapag pinindot nang buo ang clutch.",
+    expTL: "MALI. Ang ganap na nakabukas na binti ay nawawalan ng pinong kontrol. Ang bahagyang nakatekuyang tuhod ay nagbibigay-daan sa mas maayos na operasyon ng clutch."
   },
   {
     cat: "Autopistas", catEN: "Highways", catJP: "高速道路",
@@ -655,7 +835,11 @@ const QUESTIONS = [
     expES: "VERDADERO. La velocidad mínima en autopistas japonesas es 50 km/h. Circular más despacio es una infracción.",
     expJP: "正しい。高速道路の最低速度は50km/hです。",
     culture: "¡Circular demasiado lento en autopista también es infracción en Japón! La velocidad mínima es 50 km/h. Si tu carro no puede mantener esa velocidad, no debes entrar a la autopista.",
-    jpterm: "最低速度", romaji: "saitei sokudo", termMeaning: "Velocidad mínima (en autopistas)"
+    jpterm: "最低速度", romaji: "saitei sokudo", termMeaning: "Velocidad mínima (en autopistas)",
+    pt: "A velocidade mínima em uma rodovia para um carro de passeio regular é de 50 km/h.",
+    expPT: "VERDADEIRO. A velocidade mínima nas rodovias japonesas é de 50 km/h. Dirigir mais devagar é uma infração.",
+    tl: "Ang minimum na bilis sa expressway para sa isang regular na sasakyang pang-pasahero ay 50 km/h.",
+    expTL: "TAMA. Ang minimum na bilis sa mga expressway ng Hapon ay 50 km/h. Ang pagmamaneho nang mas mabagal ay isang paglabag."
   },
   {
     cat: "Sillas Infantiles", catEN: "Child Seats", catJP: "チャイルドシート",
@@ -669,7 +853,11 @@ const QUESTIONS = [
     expES: "VERDADERO. Las sillas de seguridad infantil son obligatorias para niños menores de 6 años en Japón.",
     expJP: "正しい。6歳未満の子供にはチャイルドシートの使用が義務付けられています。",
     culture: "En Japón el uso de silla infantil (チャイルドシート) es obligatorio para menores de 6 años. No usarla es infracción. También se recomienda hasta que el niño mida 135 cm, aunque no sea obligatorio.",
-    jpterm: "チャイルドシート", romaji: "chaiirudo shiito", termMeaning: "Silla de seguridad infantil (obligatoria hasta 6 años)"
+    jpterm: "チャイルドシート", romaji: "chaiirudo shiito", termMeaning: "Silla de seguridad infantil (obligatoria hasta 6 años)",
+    pt: "Crianças menores de 6 anos devem usar cadeirinha de segurança infantil ao viajar em um veículo.",
+    expPT: "VERDADEIRO. Cadeirinhas infantis são obrigatórias para crianças menores de 6 anos no Japão.",
+    tl: "Ang mga bata na wala pang 6 na taong gulang ay dapat gumamit ng child safety seat kapag sumasakay sa isang sasakyan.",
+    expTL: "TAMA. Ang mga child safety seat ay mandatory para sa mga batang wala pang 6 na taong gulang sa Hapon."
   },
   {
     cat: "Adelantamiento", catEN: "Overtaking", catJP: "追い越し",
@@ -683,7 +871,11 @@ const QUESTIONS = [
     expES: "VERDADERO. En Japón, debes adelantar por el lado derecho del vehículo que se adelanta (hacia la línea central).",
     expJP: "正しい。追い越しは前の車の右側を通行します。",
     culture: "En Japón (circulación por la izquierda) adelantar por la derecha significa ir hacia el centro de la vía — como en Europa. Es lo contrario de lo que hacías en Colombia o Perú.",
-    jpterm: "追い越し", romaji: "oikoshi", termMeaning: "Adelantamiento (pasar a otro vehículo)"
+    jpterm: "追い越し", romaji: "oikoshi", termMeaning: "Adelantamiento (pasar a otro vehículo)",
+    pt: "Ao ultrapassar outro veículo, você deve passar pelo lado direito do veículo sendo ultrapassado.",
+    expPT: "VERDADEIRO. No Japão, você deve ultrapassar pelo lado direito do veículo sendo ultrapassado (movendo-se em direção à linha central).",
+    tl: "Kapag nag-oovtake ng ibang sasakyan, dapat kang dumaan sa kanang bahagi ng sasakyan na nilalampasan.",
+    expTL: "TAMA. Sa Hapon, dapat kang lumampas sa kanang bahagi ng sasakyan na nilalampasan (gumagalaw patungo sa center line)."
   },
   {
     cat: "Bicicletas", catEN: "Bicycles", catJP: "自転車",
@@ -697,7 +889,11 @@ const QUESTIONS = [
     expES: "FALSO. Si una bicicleta va en sentido contrario, pierde la prioridad. El conductor debe ser cauteloso, pero no está obligado a ceder automáticamente.",
     expJP: "誤り。逆走する自転車は優先権を失います。",
     culture: "Las bicicletas en Japón son muy comunes. En general tienen prioridad sobre los carros en la mayoría de situaciones, pero si van en sentido contrario a las reglas, pierden esa prioridad.",
-    jpterm: "逆走", romaji: "gyakusou", termMeaning: "Circulación en sentido contrario (infracción)"
+    jpterm: "逆走", romaji: "gyakusou", termMeaning: "Circulación en sentido contrario (infracción)",
+    pt: "Um motorista de veículo motorizado deve sempre ceder passagem a uma bicicleta mesmo que a bicicleta esteja trafegando na contramão.",
+    expPT: "FALSO. Se uma bicicleta trafega na contramão, ela perde a prioridade. Os motoristas ainda devem ser cautelosos, mas a cessão automática não é necessária.",
+    tl: "Ang isang driver ng motor vehicle ay dapat palaging magbigay ng daan sa isang bisikleta kahit na ang bisikleta ay nagmamaneho laban sa daloy ng trapiko.",
+    expTL: "MALI. Kung ang isang bisikleta ay nagmamaneho laban sa daloy, nawawala ang prioridad nito. Ang mga driver ay dapat pa ring mag-ingat, ngunit ang awtomatikong pagbibigay ng daan ay hindi kinakailangan."
   },
 
 
@@ -714,7 +910,11 @@ const QUESTIONS = [
     expES: "VERDADERO. La señal 進入禁止 (prohibido el acceso) — círculo rojo con barra blanca horizontal — prohíbe la entrada de todos los vehículos, usualmente en vías de sentido único.",
     expJP: "正しい。進入禁止標識は赤い丸に白い横棒で、すべての車両の進入を禁止します。",
     culture: "Esta señal es muy común en Japón al final de vías de un solo sentido. En Nagoya hay muchas calles residenciales de sentido único — aprende a reconocer esta señal para no entrar por el lado equivocado. Es una infracción grave.",
-    jpterm: "進入禁止", romaji: "shin'nyuu kinshi", termMeaning: "Prohibido el acceso (señal circular roja con barra blanca)"
+    jpterm: "進入禁止", romaji: "shin'nyuu kinshi", termMeaning: "Prohibido el acceso (señal circular roja con barra blanca)",
+    pt: "Uma placa circular vermelha com uma barra horizontal branca significa que a entrada é proibida para todos os veículos.",
+    expPT: "VERDADEIRO. A placa de proibição de entrada (進入禁止) — círculo vermelho com barra branca — proíbe todos os veículos de entrar, geralmente em vias de mão única ou áreas restritas.",
+    tl: "Ang isang pula na bilog na tanda na may puting pahalang na bar ay nangangahulugang ipinagbabawal ang pagpasok para sa lahat ng sasakyan.",
+    expTL: "TAMA. Ang tanda ng 進入禁止 (no entry) — pulang bilog na may puting bar — ay nagbabawal sa lahat ng sasakyan na pumasok, karaniwang sa mga one-way na kalsada o restricted na lugar."
   },
   {
     cat: "Zonas Escolares", catEN: "School Zones", catJP: "スクールゾーン",
@@ -728,7 +928,11 @@ const QUESTIONS = [
     expES: "VERDADERO. Las zonas escolares en Japón tienen típicamente un límite de 30 km/h para proteger a los niños durante los horarios de entrada y salida.",
     expJP: "正しい。スクールゾーンでは30km/hの速度制限が設けられています。",
     culture: "En Japón los niños van solos a la escuela desde muy pequeños, caminando en grupos llamados '登校班' (tsuukou-han). Estos grupos se forman y cruzan por rutas específicas. Como conductor, debes respetar estas rutas y reducir velocidad.",
-    jpterm: "スクールゾーン", romaji: "sukuuru zoon", termMeaning: "Zona escolar (límite de 30 km/h)"
+    jpterm: "スクールゾーン", romaji: "sukuuru zoon", termMeaning: "Zona escolar (límite de 30 km/h)",
+    pt: "Em uma zona escolar (スクールゾーン), o limite de velocidade máximo é geralmente de 30 km/h.",
+    expPT: "VERDADEIRO. As zonas escolares no Japão geralmente impõem um limite de velocidade de 30 km/h para proteger as crianças durante o horário de entrada e saída da escola.",
+    tl: "Sa isang school zone (スクールゾーン), ang maximum na limitasyon ng bilis ay karaniwang 30 km/h.",
+    expTL: "TAMA. Ang mga school zone sa Hapon ay karaniwang nagpapatupad ng 30 km/h na limitasyon ng bilis upang protektahan ang mga bata sa oras ng pagpasok at paglabas ng paaralan."
   },
   {
     cat: "Motocicletas", catEN: "Motorcycles", catJP: "オートバイ",
@@ -742,7 +946,11 @@ const QUESTIONS = [
     expES: "FALSO. Las motocicletas de más de 125 cc SÍ pueden circular en autopistas. Son las de 125 cc o MENOS (ciclomotores / 原付二種) las que están prohibidas en autopistas.",
     expJP: "誤り。125ccを超えるオートバイは高速道路を走行できます。禁止されているのは125cc以下の原動機付自転車です。",
     culture: "En Japón la clasificación de motocicletas es importante: 原付一種 (hasta 50cc, máx 30km/h), 原付二種 (51-125cc, no autopistas), 普通二輪 (126-400cc, puede autopistas), 大型二輪 (más de 400cc). Para el examen recuerda: 125cc o menos = no autopistas.",
-    jpterm: "原付二種", romaji: "gentsuki ni-shu", termMeaning: "Ciclomotor clase 2 (51–125 cc, prohibido en autopistas)"
+    jpterm: "原付二種", romaji: "gentsuki ni-shu", termMeaning: "Ciclomotor clase 2 (51–125 cc, prohibido en autopistas)",
+    pt: "Uma motocicleta com cilindrada acima de 125 cc não tem permissão de trafegar em rodovias.",
+    expPT: "FALSO. Motocicletas acima de 125 cc SÃO permitidas em rodovias. São as motocicletas de 125 cc ou MENOS (motonetas/原付二種) que são proibidas das rodovias.",
+    tl: "Ang isang motorsiklo na may engine displacement na higit sa 125 cc ay hindi pinapayagang maglakbay sa mga expressway.",
+    expTL: "MALI. Ang mga motorsiklo na higit sa 125 cc ay PINAPAYAGAN sa mga expressway. Ang mga motorsiklo na 125 cc o MENOS (moped/原付二種) ang ipinagbabawal sa mga expressway."
   },
   {
     cat: "Carga y Transporte", catEN: "Cargo", catJP: "積み荷",
@@ -756,7 +964,11 @@ const QUESTIONS = [
     expES: "VERDADERO. La carga puede sobresalir hasta 1/10 de la longitud del vehículo por la parte trasera. Más allá de ese límite, se requiere bandera roja de día o luz roja de noche.",
     expJP: "正しい。車体の長さの10分の1を超えてはみ出す場合は、赤い旗または灯火が必要です。",
     culture: "En Japón ver carros con maderas largas o tuberías sobresaliendo con bandera roja es común en sitios de construcción. El examen evalúa que conozcas estas reglas de seguridad para carga.",
-    jpterm: "積み荷", romaji: "tsumini", termMeaning: "Carga transportada en el vehículo"
+    jpterm: "積み荷", romaji: "tsumini", termMeaning: "Carga transportada en el vehículo",
+    pt: "Quando a carga ultrapassa mais de 10% do comprimento do veículo pela traseira, uma bandeira ou luz vermelha deve ser colocada na extremidade saliente.",
+    expPT: "VERDADEIRO. A carga pode se estender até 1/10 do comprimento do veículo pela traseira. Além desse limite, uma bandeira vermelha de dia ou luz vermelha à noite deve ser colocada.",
+    tl: "Kapag ang karga ay umaabot nang higit sa 10% ng haba ng sasakyan sa likod, ang isang pulang bandila o ilaw ay dapat ikabit sa nagsusulpot na dulo.",
+    expTL: "TAMA. Ang karga ay maaaring umaabot hanggang 1/10 ng haba ng sasakyan sa likod. Lampas sa limitasyong iyon, ang isang pulang bandila sa umaga o pulang ilaw sa gabi ay dapat ikabit."
   },
   {
     cat: "Estacionamiento en Pendiente", catEN: "Parking on Slopes", catJP: "坂道駐車",
@@ -770,7 +982,11 @@ const QUESTIONS = [
     expES: "FALSO. En una pendiente ascendente con bordillo, debes girar las ruedas hacia la IZQUIERDA (hacia el bordillo). Si el vehículo retrocede, el bordillo lo detendrá antes de que entre al tráfico.",
     expJP: "誤り。上り坂で縁石がある場合は前輪を縁石側（左）に向けます。車が後退しても縁石に当たって止まります。",
     culture: "Las reglas de estacionamiento en pendientes son: SUBIDA con bordillo → ruedas hacia el bordillo (izquierda en Japón). BAJADA con bordillo → ruedas hacia el bordillo. SIN bordillo → ruedas siempre hacia el borde de la vía. Esto puede salir en el examen.",
-    jpterm: "縁石", romaji: "enseki", termMeaning: "Bordillo / sardinela de la acera"
+    jpterm: "縁石", romaji: "enseki", termMeaning: "Bordillo / sardinela de la acera",
+    pt: "Ao estacionar em uma subida com meio-fio à direita, você deve virar as rodas dianteiras para a direita (afastando do meio-fio).",
+    expPT: "FALSO. Em uma subida com meio-fio, as rodas devem ser viradas para a ESQUERDA (em direção ao meio-fio). Se o veículo rolar para trás, será detido pelo meio-fio em vez de rolar para o tráfego.",
+    tl: "Kapag nagpark sa paakyat na kalsada na may curb sa kanan, dapat mong ipalong ang mga harap na gulong sa kanan (palayo sa curb).",
+    expTL: "MALI. Sa paakyat na kalsada na may curb, ang mga gulong ay dapat ipaling sa KALIWA (patungo sa curb). Kung ang sasakyan ay gumilig pabalik, ito ay hahangan ng curb sa halip na gumilig patungo sa trapiko."
   },
   {
     cat: "Vías de Un Solo Sentido", catEN: "One-Way Roads", catJP: "一方通行",
@@ -784,7 +1000,11 @@ const QUESTIONS = [
     expES: "VERDADERO. En una vía de sentido único, puedes moverte al lado que sea más seguro (izquierdo o derecho) — a diferencia de las vías de doble sentido donde siempre debes ir a la izquierda.",
     expJP: "正しい。一方通行路では左右どちらかの安全な側に寄ることができます。",
     culture: "Esta es una excepción importante que el examen evalúa. En vías normales (doble sentido) = siempre izquierda. En vías de sentido único = el lado más seguro. ¡No confundas las dos situaciones!",
-    jpterm: "一方通行", romaji: "ippou tsuukoo", termMeaning: "Vía de sentido único"
+    jpterm: "一方通行", romaji: "ippou tsuukoo", termMeaning: "Vía de sentido único",
+    pt: "Em uma via de mão única, quando um veículo de emergência se aproxima, você deve parar no lado direito da via se o lado direito for mais seguro.",
+    expPT: "VERDADEIRO. Em uma via de mão única, você pode parar em qualquer lado (esquerdo ou direito) que permita ao veículo de emergência passar com mais segurança — diferente de uma via de mão dupla onde deve sempre parar à esquerda.",
+    tl: "Sa isang one-way na kalsada, kapag papalapit ang isang emergency vehicle, dapat kang pumunta sa kanang bahagi ng kalsada kung ang kanang bahagi ay mas ligtas.",
+    expTL: "TAMA. Sa isang one-way na kalsada, maaari kang pumunta sa alinmang bahagi (kaliwa o kanan) na nagbibigay-daan sa emergency vehicle na makalagpas nang pinakaligtas — hindi tulad ng two-way na kalsada kung saan dapat palaging pumunta sa kaliwa."
   },
   {
     cat: "Neumáticos y Mantenimiento", catEN: "Tires", catJP: "タイヤ",
@@ -798,7 +1018,11 @@ const QUESTIONS = [
     expES: "VERDADERO. El aquaplaning ocurre cuando una película de agua levanta el neumático de la carretera. El vehículo 'flota' y la dirección/frenado pierden efectividad. Reduce la velocidad bajo lluvia.",
     expJP: "正しい。ハイドロプレーニングは水の膜でタイヤが浮き、操舵・制動が効かなくなる現象です。",
     culture: "El aquaplaning es especialmente peligroso en Japón durante los tifones y la temporada de lluvias. Para prevenirlo: velocidad reducida, neumáticos en buen estado con profundidad de banda adecuada, y evitar frenadas bruscas.",
-    jpterm: "ハイドロプレーニング", romaji: "haidoro pureeniingu", termMeaning: "Aquaplaning (pérdida de contacto neumático-asfalto por agua)"
+    jpterm: "ハイドロプレーニング", romaji: "haidoro pureeniingu", termMeaning: "Aquaplaning (pérdida de contacto neumático-asfalto por agua)",
+    pt: "A aquaplanagem ocorre quando uma película d'água se forma entre o pneu e a superfície da estrada, fazendo o motorista perder o controle da direção e dos freios.",
+    expPT: "VERDADEIRO. A aquaplanagem acontece quando uma película d'água levanta o pneu da estrada. O veículo fica flutuando e a direção/freios tornam-se ineficazes. Reduza a velocidade na chuva para evitá-la.",
+    tl: "Ang hydroplaning ay nangyayari kapag ang isang pelikula ng tubig ay bumubuo sa pagitan ng gulong at ibabaw ng kalsada, na nagdudulot ng pagkawala ng kontrol ng driver sa steering at braking.",
+    expTL: "TAMA. Ang hydroplaning ay nangyayari kapag ang pelikula ng tubig ay nagangat ng gulong mula sa kalsada. Ang sasakyan ay lumulutang at ang steering/braking ay nagiging hindi epektibo. Bumagal sa ulan upang maiwasan ito."
   },
   {
     cat: "Neumáticos y Mantenimiento", catEN: "Tires", catJP: "タイヤ",
@@ -812,7 +1036,11 @@ const QUESTIONS = [
     expES: "VERDADERO. El fenómeno de onda estacionaria ocurre a alta velocidad con neumáticos con baja presión, causando acumulación de calor y posible reventón. Verifica la presión antes de conducir en autopista.",
     expJP: "正しい。スタンディングウェーブ現象は空気圧不足のタイヤが高速走行中に発生し、タイヤバーストの原因となります。",
     culture: "Este fenómeno se confunde a menudo con aquaplaning en el examen japonés. Diferencia clave: aquaplaning = agua entre neumático y asfalto. Onda estacionaria = neumático con baja presión a alta velocidad. El examen puede preguntar cuál es cuál.",
-    jpterm: "スタンディングウェーブ", romaji: "sutandingu weebu", termMeaning: "Onda estacionaria (deformación del neumático a alta velocidad)"
+    jpterm: "スタンディングウェーブ", romaji: "sutandingu weebu", termMeaning: "Onda estacionaria (deformación del neumático a alta velocidad)",
+    pt: "O fenômeno de onda estacionária ocorre quando um pneu gira em alta velocidade e a deformação do pneu não consegue se recuperar rápido o suficiente, criando ondulações semelhantes a ondas.",
+    expPT: "VERDADEIRO. O fenômeno de onda estacionária (スタンディングウェーブ) ocorre em altas velocidades com pneus com pressão baixa, causando acúmulo de calor e potencial estouro. Verifique a pressão dos pneus antes de dirigir em rodovias.",
+    tl: "Ang standing wave phenomenon ay nangyayari kapag ang isang gulong ay umiikot sa mataas na bilis at ang depormasyon ng gulong ay hindi mabilis na makabawi, na lumilikha ng mga wave-like na undulation.",
+    expTL: "TAMA. Ang standing wave phenomenon ay nangyayari sa mataas na bilis na may mga under-inflated na gulong, na nagdudulot ng pag-ipon ng init at potensyal na pagsabog ng gulong. Suriin ang presyon ng gulong bago magmaneho sa expressway."
   },
   {
     cat: "Inspección del Vehículo", catEN: "Vehicle Inspection", catJP: "日常点検",
@@ -826,7 +1054,11 @@ const QUESTIONS = [
     expES: "FALSO. Nunca abras la tapa del radiador con el motor caliente. El refrigerante a presión puede salir disparado causando quemaduras graves. Siempre espera a que el motor se enfríe completamente.",
     expJP: "誤り。エンジンが熱い状態でラジエーターキャップを開けると、冷却水が噴出して大やけどを負う危険があります。必ずエンジンが冷えてから確認します。",
     culture: "La inspección diaria (日常点検 nichijou tenken) es obligatoria en Japón. Incluye: nivel de aceite, refrigerante, frenos, luces, neumáticos. El examen evalúa el procedimiento correcto. Nunca abras el radiador caliente — es un accidente frecuente.",
-    jpterm: "日常点検", romaji: "nichijou tenken", termMeaning: "Inspección diaria del vehículo (obligatoria)"
+    jpterm: "日常点検", romaji: "nichijou tenken", termMeaning: "Inspección diaria del vehículo (obligatoria)",
+    pt: "Para verificar o nível do líquido de arrefecimento, você deve abrir a tampa do radiador imediatamente após dirigir enquanto o motor ainda está quente.",
+    expPT: "FALSO. Nunca abra a tampa do radiador quando o motor está quente. O líquido pressurizado pode jorrar causando queimaduras graves. Sempre espere o motor esfriar completamente antes de verificar o líquido de arrefecimento.",
+    tl: "Upang suriin ang antas ng coolant, dapat mong buksan ang radiator cap kaagad pagkatapos magmaneho habang mainit pa ang makina.",
+    expTL: "MALI. Huwag kailanman buksan ang radiator cap kapag mainit ang makina. Ang pressurized na coolant ay maaaring mag-spray na nagdudulot ng malubhang pasa. Palaging hintayin ang makina na ganap na lumamig bago suriin ang coolant."
   },
   {
     cat: "Zonas Peatonales", catEN: "Pedestrian Zones", catJP: "歩行者専用",
@@ -840,7 +1072,11 @@ const QUESTIONS = [
     expES: "VERDADERO. Los vehículos autorizados (ej. camiones de reparto con permisos especiales) pueden entrar a zonas peatonales pero deben ir a velocidad de paso (徐行) y dar prioridad absoluta a los peatones.",
     expJP: "正しい。許可車両は歩行者専用道路を通行できますが、徐行し歩行者を優先しなければなりません。",
     culture: "En ciudades japonesas como Nagoya hay muchas 歩行者天国 (peatonal heaven / pedestrian malls) los fines de semana. Los vehículos de reparto tienen horarios específicos para acceder. En el examen, recuerda: permiso + velocidad peatonal + prioridad absoluta al peatón.",
-    jpterm: "歩行者専用", romaji: "hokousha sen'you", termMeaning: "Zona exclusiva para peatones"
+    jpterm: "歩行者専用", romaji: "hokousha sen'you", termMeaning: "Zona exclusiva para peatones",
+    pt: "Veículos com permissão especial podem entrar em zonas exclusivas para pedestres, mas devem trafegar na velocidade de um pedestre e dar prioridade absoluta aos pedestres.",
+    expPT: "VERDADEIRO. Veículos autorizados (como caminhões de entrega com permissões especiais) podem entrar em zonas de pedestres, mas devem mover-se na velocidade de um pedestre (徐行) e dar prioridade absoluta aos pedestres.",
+    tl: "Ang mga sasakyan na may espesyal na permit ay maaaring pumasok sa mga pedestrian-only zone, ngunit dapat maglakbay sa bilis ng paglalakad at bigyan ng ganap na prioridad ang mga manlalakad.",
+    expTL: "TAMA. Ang mga awtorisadong sasakyan (hal., mga delivery truck na may espesyal na permit) ay maaaring pumasok sa mga pedestrian zone ngunit dapat gumalaw sa bilis ng paglalakad (徐行) at bigyan ng ganap na prioridad ang mga manlalakad."
   },
   {
     cat: "Señales de Tránsito", catEN: "Road Signs", catJP: "道路標識",
@@ -854,7 +1090,11 @@ const QUESTIONS = [
     expES: "VERDADERO. Las señales triangulares amarillas (de advertencia) en Japón indican peligros adelante. Una figura con una pala indica específicamente obras o zona de construcción.",
     expJP: "正しい。黄色い三角形は警戒標識で、前方の危険を示します。工事中の標識もこの形状です。",
     culture: "En Japón las señales de advertencia son triangulares (como en Europa). Las señales regulatorias son circulares u octagonales. Las señales informativas son rectangulares. Esta clasificación es clave para el examen.",
-    jpterm: "警戒標識", romaji: "keikai hyoushiki", termMeaning: "Señal de advertencia (triangular amarilla)"
+    jpterm: "警戒標識", romaji: "keikai hyoushiki", termMeaning: "Señal de advertencia (triangular amarilla)",
+    pt: "Uma placa de aviso triangular amarela com uma pessoa carregando uma pá indica obras à frente.",
+    expPT: "VERDADEIRO. Placas triangulares amarelas (de aviso) no Japão indicam perigos à frente. Uma figura com uma pá especificamente indica construção ou zona de obras à frente.",
+    tl: "Ang isang tatsulok na dilaw na babala na tanda na may taong nagsisinsilaw ay nagpapahiwatig ng trabaho sa kalsada sa unahan.",
+    expTL: "TAMA. Ang mga dilaw na tatsulok na (babala) na tanda sa Hapon ay nagpapahiwatig ng mga panganib sa unahan. Ang isang pigura na may pala ay nagpapahiwatig ng konstruksyon o work zone sa unahan."
   },
   {
     cat: "Señales de Tránsito", catEN: "Road Signs", catJP: "道路標識",
@@ -868,7 +1108,11 @@ const QUESTIONS = [
     expES: "VERDADERO. Las señales rectangulares azules en Japón son señales de información/guía — direcciones, distancias, nombres de lugares, áreas de descanso, etc.",
     expJP: "正しい。青い長方形の標識は案内標識で、目的地への方向や距離を示します。",
     culture: "La clasificación de señales japonesas por forma y color: Rojo/circular = regulación (obligatorio cumplir). Amarillo/triangular = advertencia (precaución). Azul/rectangular = información/guía. Verde/rectangular = autopistas. Aplica muy diferente a Colombia o México.",
-    jpterm: "案内標識", romaji: "annai hyoushiki", termMeaning: "Señal de guía/información (rectangular azul)"
+    jpterm: "案内標識", romaji: "annai hyoushiki", termMeaning: "Señal de guía/información (rectangular azul)",
+    pt: "Uma placa retangular azul indica orientação ou informação, como direções para um destino.",
+    expPT: "VERDADEIRO. Placas retangulares azuis no Japão são placas de informação/orientação — direções, distâncias, nomes de lugares, áreas de descanso, etc.",
+    tl: "Ang isang asul na parihaba na tanda ay nagpapahiwatig ng gabay o impormasyon, tulad ng mga direksyon patungo sa isang destinasyon.",
+    expTL: "TAMA. Ang mga asul na parihaba na tanda sa Hapon ay mga impormasyon/gabay na tanda — mga direksyon, distansya, mga pangalan ng lugar, rest area, atbp."
   },
   {
     cat: "Autopistas", catEN: "Expressway Rules", catJP: "高速道路",
@@ -882,7 +1126,11 @@ const QUESTIONS = [
     expES: "VERDADERO. Una regla sencilla para autopistas: la distancia mínima de seguimiento en metros es igual a la velocidad en km/h (100 km/h = 100 metros, 80 km/h = 80 metros).",
     expJP: "正しい。高速道路では速度（km/h）と同じ数値（m）の車間距離が目安です。100km/hなら100m。",
     culture: "Esta regla es fácil de recordar para el examen: velocidad (km/h) = metros de distancia mínima. A 100 km/h necesitas 100 metros para detenerte en condiciones ideales. En lluvia, duplica esa distancia.",
-    jpterm: "車間距離", romaji: "shakan kyori", termMeaning: "Distancia de seguimiento entre vehículos"
+    jpterm: "車間距離", romaji: "shakan kyori", termMeaning: "Distancia de seguimiento entre vehículos",
+    pt: "Em uma rodovia, você deve manter uma distância de seguimento de pelo menos 100 metros ao trafegar a 100 km/h.",
+    expPT: "VERDADEIRO. Uma regra simples para rodovias: a distância mínima de seguimento em metros é igual à velocidade em km/h (100 km/h = 100 metros, 80 km/h = 80 metros).",
+    tl: "Sa expressway, dapat kang magtago ng distansya ng pagsunod na hindi bababa sa 100 metro kapag nagmamaneho sa 100 km/h.",
+    expTL: "TAMA. Isang simpleng panuntunan para sa mga expressway: ang minimum na distansya ng pagsunod sa metro ay katumbas ng bilis sa km/h (100 km/h = 100 metro, 80 km/h = 80 metro)."
   },
   {
     cat: "Tifones y Mal Tiempo", catEN: "Typhoons", catJP: "台風",
@@ -896,7 +1144,11 @@ const QUESTIONS = [
     expES: "VERDADERO. Cuando la visibilidad es menor de 50 metros por condiciones climáticas, los faros son obligatorios — incluso durante el día. Aplica en lluvia intensa, tifones, niebla densa, nevadas, etc.",
     expJP: "正しい。視界が50メートル未満の場合は昼間でも前照灯の点灯が義務です。",
     culture: "Japón recibe entre 10 y 25 tifones por año. En Aichi/Nagoya los tifones pueden generar lluvias de 100mm+/hora. Durante un tifón, la visibilidad puede ser cero. El consejo oficial es: si puedes, no manejes durante un tifón activo.",
-    jpterm: "台風", romaji: "taifuu", termMeaning: "Tifón (ciclón tropical que afecta Japón, especialmente en verano-otoño)"
+    jpterm: "台風", romaji: "taifuu", termMeaning: "Tifón (ciclón tropical que afecta Japón, especialmente en verano-otoño)",
+    pt: "Quando a visibilidade cai abaixo de 50 metros devido a chuva, neblina ou outras condições meteorológicas, os faróis devem ser ligados independentemente da hora do dia.",
+    expPT: "VERDADEIRO. Quando a visibilidade é inferior a 50 metros devido ao tempo, os faróis são obrigatórios — mesmo durante o dia. Isso se aplica em chuva forte, tufões, neblina densa, tempestades de neve, etc.",
+    tl: "Kapag ang visibility ay bumaba sa ibaba ng 50 metro dahil sa ulan, ulap, o iba pang kondisyon ng panahon, ang mga headlight ay dapat i-on anuman ang oras ng araw.",
+    expTL: "TAMA. Kapag ang visibility ay wala sa 50 metro dahil sa panahon, ang mga headlight ay mandatory — kahit sa araw. Naaangkop ito sa malakas na ulan, bagyo, makapal na ulap, snowstorm, atbp."
   },
   {
     cat: "Intersecciones", catEN: "Intersections", catJP: "交差点",
@@ -910,7 +1162,11 @@ const QUESTIONS = [
     expES: "VERDADERO. Si entras a una intersección con luz verde, puedes completar el cruce aunque la señal cambie mientras estás dentro. No debes detenerte bloqueando la intersección.",
     expJP: "正しい。青信号で交差点に入った場合、信号が変わっても安全に通過することができます。",
     culture: "Esta es una regla que confunde a muchos latinos. En Japón si entraste con verde, puedes terminar de cruzar aunque cambie a rojo. Lo que NO puedes hacer es quedarte parado bloqueando la intersección esperando el verde.",
-    jpterm: "交差点内", romaji: "kousaten nai", termMeaning: "Dentro de la intersección"
+    jpterm: "交差点内", romaji: "kousaten nai", termMeaning: "Dentro de la intersección",
+    pt: "Quando um veículo entra em uma interseção com sinal verde, pode continuar passando mesmo que o sinal mude para vermelho enquanto o veículo ainda está dentro da interseção.",
+    expPT: "VERDADEIRO. Se você entrar em uma interseção com sinal verde, pode completar a passagem mesmo que o sinal mude enquanto estiver dentro. Você não deve parar bloqueando a interseção.",
+    tl: "Kapag ang isang sasakyan ay pumasok sa isang interseksyon sa berdeng ilaw, maaari itong magpatuloy kahit na ang senyal ay magbago sa pula habang ang sasakyan ay nasa loob ng interseksyon.",
+    expTL: "TAMA. Kung pumasok ka sa interseksyon sa berdeng ilaw, maaari kang kumpletuhin ang pagdaan kahit na magbago ang senyal habang nasa loob ka. Hindi ka dapat huminto na hinaharang ang interseksyon."
   },
   {
     cat: "Intersecciones", catEN: "Intersections", catJP: "交差点",
@@ -924,7 +1180,11 @@ const QUESTIONS = [
     expES: "VERDADERO. Incluso con luz verde, no debes entrar a una intersección bloqueada. Esto es 'bloqueo de cruce' y es una infracción de tránsito en Japón.",
     expJP: "正しい。交差点が詰まっている場合、青信号でも進入してはなりません。これは交差点内停車違反となります。",
     culture: "El 'box blocking' (bloquear intersecciones) es muy mal visto en Japón. Los japoneses generalmente esperan pacientemente aunque el semáforo esté en verde. En Latinoamérica es común avanzar aunque bloquees — en Japón es infracción.",
-    jpterm: "渋滞", romaji: "juutai", termMeaning: "Embotellamiento / congestión de tránsito"
+    jpterm: "渋滞", romaji: "juutai", termMeaning: "Embotellamiento / congestión de tránsito",
+    pt: "Você não deve entrar em uma interseção se ela estiver bloqueada com tráfego e você não conseguir atravessá-la antes que o sinal mude.",
+    expPT: "VERDADEIRO. Mesmo com sinal verde, você não deve entrar em uma interseção bloqueada. Isso é 'bloqueio de caixa' e é uma infração de trânsito no Japão.",
+    tl: "Hindi ka dapat pumasok sa isang interseksyon kung ito ay naharang ng trapiko at hindi mo maalis ito bago magbago ang senyal.",
+    expTL: "TAMA. Kahit sa berdeng ilaw, hindi ka dapat pumasok sa isang naharang na interseksyon. Ito ay 'box blocking' at isang paglabag sa trapiko sa Hapon."
   },
   {
     cat: "Prioridad de Paso", catEN: "Right of Way", catJP: "優先",
@@ -938,7 +1198,11 @@ const QUESTIONS = [
     expES: "VERDADERO. Al girar a la izquierda (o derecha), los vehículos deben siempre ceder el paso a peatones y ciclistas que están cruzando — sin importar si el vehículo tiene verde.",
     expJP: "正しい。左折時は信号が青でも、横断歩道を渡っている歩行者・自転車に道を譲らなければなりません。",
     culture: "Esta es una de las causas más frecuentes de accidentes en Japón: conductor con verde girando sin respetar peatones. En Colombia y México los peatones suelen esperar a los carros — en Japón es al revés. El conductor SIEMPRE cede al peatón en el cruce.",
-    jpterm: "左折時の歩行者優先", romaji: "sasetsu ji no hokousha yuusen", termMeaning: "Prioridad al peatón al girar a la izquierda"
+    jpterm: "左折時の歩行者優先", romaji: "sasetsu ji no hokousha yuusen", termMeaning: "Prioridad al peatón al girar a la izquierda",
+    pt: "Um veículo que vira à esquerda deve ceder passagem a pedestres e ciclistas que atravessam a via para onde está virando, mesmo que o sinal de trânsito esteja verde para o veículo.",
+    expPT: "VERDADEIRO. Ao virar à esquerda (ou à direita), os veículos devem sempre ceder passagem a pedestres e ciclistas que estão atravessando — independentemente de o veículo ter sinal verde.",
+    tl: "Ang isang sasakyan na lumiliko sa kaliwa ay dapat magbigay ng daan sa mga manlalakad at cyclist na tumatawid sa kalsada na nilililiko nito, kahit na ang senyal ng trapiko ay berde para sa sasakyan.",
+    expTL: "TAMA. Kapag lumiliko sa kaliwa (o kanan), ang mga sasakyan ay dapat palaging magbigay ng daan sa mga manlalakad at cyclist na tumatawid — anuman kung ang sasakyan ay may berdeng senyal."
   },
   {
     cat: "Señales de Policía", catEN: "Police Signals", catJP: "警察官の指示",
@@ -952,7 +1216,11 @@ const QUESTIONS = [
     expES: "VERDADERO. Brazos horizontales con palmas hacia adelante significa PARAR para vehículos que se aproximan desde el frente y desde atrás. Es equivalente a una luz roja.",
     expJP: "正しい。両腕を水平に広げた姿勢は正面・背後からの車に対して停止を意味します。",
     culture: "Las señales de los policías japoneses son muy específicas y el examen evalúa cada posición. Hay fotos de estas posiciones en los libros de estudio. Practica reconocerlas — en el examen escrito pueden aparecer con imágenes.",
-    jpterm: "手信号", romaji: "te shingou", termMeaning: "Señal manual del policía de tránsito"
+    jpterm: "手信号", romaji: "te shingou", termMeaning: "Señal manual del policía de tránsito",
+    pt: "Quando um policial estende ambos os braços horizontalmente com as palmas voltadas para você, os veículos que se aproximam pela frente devem parar.",
+    expPT: "VERDADEIRO. Braços horizontais com palmas voltadas para frente significa PARE para veículos que se aproximam tanto pela frente quanto por trás. Isso equivale a um sinal vermelho.",
+    tl: "Kapag ang isang pulis ay nag-extend ng parehong braso nang pahalang na may mga palad na nakaharap sa iyo, ang mga sasakyan na papalapit mula sa harap ay dapat huminto.",
+    expTL: "TAMA. Ang pahalang na mga braso na may mga palad na nakaharap pasulong ay nangangahulugang HUMINTO para sa mga sasakyan na papalapit mula sa harap at likod. Ito ay katumbas ng pulang ilaw."
   },
   {
     cat: "Alcohol", catEN: "Alcohol", catJP: "飲酒",
@@ -966,7 +1234,11 @@ const QUESTIONS = [
     expES: "VERDADERO. En Japón, no solo conducir ebrio es delito — también: prestar tu carro a alguien ebrio, dar alcohol a quien va a conducir, o ir de pasajero en un carro conducido por alguien ebrio.",
     expJP: "正しい。飲酒運転だけでなく、酔った人に車を貸したり、運転する人に酒を提供したりすることも犯罪です。",
     culture: "La ley japonesa de alcohol al volante es de las más estrictas del mundo. Incluso los PASAJEROS pueden ser sancionados si saben que el conductor está ebrio. En eventos sociales japoneses es normal que el conductor designado no beba absolutamente nada.",
-    jpterm: "車両提供罪", romaji: "sharyo teikyou zai", termMeaning: "Delito de prestar vehículo a conductor ebrio"
+    jpterm: "車両提供罪", romaji: "sharyo teikyou zai", termMeaning: "Delito de prestar vehículo a conductor ebrio",
+    pt: "É crime segundo a lei japonesa permitir que alguém embriagado dirija o seu veículo.",
+    expPT: "VERDADEIRO. No Japão, não só a condução bêbada é crime — mas também: emprestar seu carro a uma pessoa bêbada, fornecer álcool a alguém que vai dirigir, ou ser passageiro num carro conduzido por um bêbado.",
+    tl: "Ito ay isang krimen sa ilalim ng batas Hapon na payagan ang isang taong naglasing na magmaneho ng iyong sasakyan.",
+    expTL: "TAMA. Sa Hapon, hindi lamang ang pagmamaneho na lango ang isang krimen — kundi pati na rin: ang pagpapahiram ng iyong kotse sa isang taong lango, ang pagbibigay ng alkohol sa isang taong magmamaneho, o ang pagiging pasahero sa isang kotseng pinamamahalaan ng isang taong lango."
   },
   {
     cat: "Autopistas", catEN: "Expressway Rules", catJP: "高速道路",
@@ -980,7 +1252,11 @@ const QUESTIONS = [
     expES: "VERDADERO. En autopistas, cuando la visibilidad cae por debajo de 100 metros, la velocidad máxima se reduce a 50 km/h — la mitad del límite normal de 100 km/h.",
     expJP: "正しい。高速道路で視界が100メートル未満の場合、最高速度は50km/hに制限されます。",
     culture: "Las autopistas japonesas tienen sistemas de señalización variable (電光掲示板 denkoukeijiban) que muestran la velocidad máxima según las condiciones. En tifones o niebla intensa, la autopista puede cerrar completamente.",
-    jpterm: "電光掲示板", romaji: "denkoukeijiban", termMeaning: "Panel de señalización variable en autopistas"
+    jpterm: "電光掲示板", romaji: "denkoukeijiban", termMeaning: "Panel de señalización variable en autopistas",
+    pt: "Em uma rodovia, quando a visibilidade cai abaixo de 100 metros devido à neblina, a velocidade máxima é reduzida para 50 km/h.",
+    expPT: "VERDADEIRO. Nas rodovias, quando a visibilidade cai abaixo de 100 metros devido ao tempo, a velocidade máxima é reduzida para 50 km/h — metade do limite normal de 100 km/h.",
+    tl: "Sa expressway, kapag ang visibility ay bumaba sa ibaba ng 100 metro dahil sa ulap, ang maximum na bilis ay nabawasan sa 50 km/h.",
+    expTL: "TAMA. Sa mga expressway, kapag ang visibility ay bumaba sa ibaba ng 100 metro dahil sa panahon, ang maximum na bilis ay nabawasan sa 50 km/h — kalahati ng normal na limitasyon na 100 km/h."
   },
   {
     cat: "Adelantamiento", catEN: "Overtaking", catJP: "追い越し",
@@ -994,7 +1270,11 @@ const QUESTIONS = [
     expES: "VERDADERO. Al ser adelantado, no debes acelerar. De hecho, debes moverte ligeramente a la izquierda para darle más espacio al vehículo que adelanta.",
     expJP: "正しい。追い越しをされているときは加速してはなりません。左に寄って追い越し車両のスペースを確保します。",
     culture: "En Latinoamérica es común 'competir' con quien te adelanta acelerando. En Japón esto es infracción. El conductor adelantado debe: no acelerar y moverse a la izquierda para facilitar el adelantamiento.",
-    jpterm: "追い越される側", romaji: "oikosareru gawa", termMeaning: "El vehículo que está siendo adelantado (debe ceder espacio)"
+    jpterm: "追い越される側", romaji: "oikosareru gawa", termMeaning: "El vehículo que está siendo adelantado (debe ceder espacio)",
+    pt: "Ao ser ultrapassado, o motorista do veículo sendo ultrapassado não deve acelerar.",
+    expPT: "VERDADEIRO. Ao ser ultrapassado, você não deve acelerar. Na verdade, deve mover-se levemente para a esquerda para dar mais espaço ao veículo que ultrapassa.",
+    tl: "Kapag nilalampasan, ang driver ng sasakyan na nilalampasan ay hindi dapat magakselereyto.",
+    expTL: "TAMA. Kapag nilalampasan, hindi ka dapat magakselereyto. Dapat ka ring lumipat nang kaunti sa kaliwa upang bigyan ng mas maraming espasyo ang sasakyang nag-oovtake."
   },
   {
     cat: "Adelantamiento", catEN: "Overtaking", catJP: "追い越し",
@@ -1008,7 +1288,11 @@ const QUESTIONS = [
     expES: "FALSO. El adelantamiento está prohibido en TODOS los túneles — sin importar el ancho. Los túneles son siempre zona de prohibición de adelantamiento en Japón.",
     expJP: "誤り。トンネル内は道幅にかかわらず追い越し禁止です。",
     culture: "Recuerda la lista completa de zonas de prohibición de adelantamiento en Japón: dentro de intersecciones, cimas de colinas, curvas peligrosas, TODOS los túneles, cruces ferroviarios y sus alrededores (30m), y donde haya señal de prohibición.",
-    jpterm: "トンネル内追い越し禁止", romaji: "tonneru nai oikoshi kinshi", termMeaning: "Adelantamiento prohibido dentro de túneles"
+    jpterm: "トンネル内追い越し禁止", romaji: "tonneru nai oikoshi kinshi", termMeaning: "Adelantamiento prohibido dentro de túneles",
+    pt: "Ultrapassar é proibido dentro de túneis quando a via é estreita.",
+    expPT: "FALSO. Ultrapassar é proibido em TODOS os túneis — independentemente da largura. Os túneis são sempre zonas de proibição de ultrapassagem no Japão.",
+    tl: "Ang pag-overtake ay ipinagbabawal sa loob ng mga tunel kapag ang kalsada ay makipot.",
+    expTL: "MALI. Ang pag-overtake ay ipinagbabawal sa LAHAT ng tunel — anuman ang lapad. Ang mga tunel ay palaging no-overtaking zone sa Hapon."
   },
   {
     cat: "Inspección del Vehículo", catEN: "Vehicle Inspection", catJP: "日常点検",
@@ -1022,7 +1306,11 @@ const QUESTIONS = [
     expES: "VERDADERO. La ley japonesa obliga a los propietarios y usuarios de vehículos a realizar inspecciones diarias regulares. Incluye frenos, luces, niveles de fluidos, neumáticos y otros elementos de seguridad.",
     expJP: "正しい。道路交通法により、自動車の使用者には日常点検の義務があります。",
     culture: "En Japón la 車検 (sha-ken, inspección técnica) es obligatoria cada 2-3 años, pero la日常点検 (inspección diaria) es tu responsabilidad como conductor. Si tu carro tiene un defecto y causas un accidente, puedes ser responsable por no haber inspeccionado.",
-    jpterm: "車検", romaji: "sha-ken", termMeaning: "Inspección técnica oficial del vehículo (obligatoria cada 2-3 años)"
+    jpterm: "車検", romaji: "sha-ken", termMeaning: "Inspección técnica oficial del vehículo (obligatoria cada 2-3 años)",
+    pt: "Os motoristas são legalmente obrigados a realizar uma inspeção diária pré-condução (日常点検) do seu veículo.",
+    expPT: "VERDADEIRO. A lei japonesa exige que os proprietários e usuários de veículos realizem inspeções diárias regulares. Isso inclui verificar freios, luzes, níveis de fluidos, pneus e outros itens de segurança.",
+    tl: "Ang mga driver ay legal na kinakailangang magsagawa ng araw-araw na pre-drive inspection (日常点検) ng kanilang sasakyan.",
+    expTL: "TAMA. Ang batas Hapon ay nangangailangan sa mga may-ari at gumagamit ng sasakyan na magsagawa ng regular na araw-araw na inspeksyon. Kabilang dito ang pagsusuri ng mga preno, ilaw, antas ng likido, gulong, at iba pang item ng kaligtasan."
   },
   {
     cat: "Distancia de Frenado", catEN: "Stopping Distance", catJP: "停止距離",
@@ -1036,7 +1324,11 @@ const QUESTIONS = [
     expES: "VERDADERO. Los vehículos más pesados tienen más energía cinética a la misma velocidad, requiriendo más distancia para detenerse. Por eso los camiones y buses necesitan mayor distancia de seguimiento.",
     expJP: "正しい。重い車はより大きな運動エネルギーを持つため、同じ速度でも制動距離が長くなります。",
     culture: "En Japón hay muchos camiones de reparto (宅配便 takuhaibin). Estos vehículos pesados necesitan mucho más espacio para frenar. Si vas detrás de un camión grande, deja más distancia de la que dejarías detrás de un carro normal.",
-    jpterm: "運動エネルギー", romaji: "undou enerugii", termMeaning: "Energía cinética (determina la distancia de frenado)"
+    jpterm: "運動エネルギー", romaji: "undou enerugii", termMeaning: "Energía cinética (determina la distancia de frenado)",
+    pt: "Um veículo mais pesado requer uma distância de frenagem maior do que um veículo mais leve trafegando na mesma velocidade.",
+    expPT: "VERDADEIRO. Veículos mais pesados têm mais energia cinética na mesma velocidade, exigindo mais distância para parar. É por isso que caminhões e ônibus precisam de maiores distâncias de seguimento.",
+    tl: "Ang isang mas mabigat na sasakyan ay nangangailangan ng mas mahabang distansya sa pagsagwan kaysa sa isang mas magaan na sasakyan na nagmamaneho sa parehong bilis.",
+    expTL: "TAMA. Ang mas mabibigat na sasakyan ay may mas maraming kinetic energy sa parehong bilis, na nangangailangan ng mas maraming distansya upang huminto. Kaya naman ang mga trak at bus ay nangangailangan ng mas malaking distansya ng pagsunod."
   },
   {
     cat: "Vías de Un Solo Sentido", catEN: "One-Way Roads", catJP: "一方通行",
@@ -1050,7 +1342,11 @@ const QUESTIONS = [
     expES: "VERDADERO. En vías de sentido único, los vehículos pueden usar cualquiera de los lados. Esta es una de las excepciones a la regla japonesa de 'mantenerse a la izquierda'.",
     expJP: "正しい。一方通行路では右側通行も認められています。",
     culture: "En las ciudades japonesas hay muchas calles residenciales de un solo sentido para manejar el tráfico en calles estrechas. En Nagoya, especialmente en barrios antiguos como Higashiyama, es muy común encontrarlas.",
-    jpterm: "右側通行", romaji: "migigawa tsuuryou", termMeaning: "Circulación por el lado derecho (permitida en vías de sentido único)"
+    jpterm: "右側通行", romaji: "migigawa tsuuryou", termMeaning: "Circulación por el lado derecho (permitida en vías de sentido único)",
+    pt: "Em uma via de mão única, os veículos podem usar o lado direito da via se o lado esquerdo estiver muito estreito ou obstruído.",
+    expPT: "VERDADEIRO. Em vias de mão única, os veículos podem usar qualquer lado da via. Esta é uma das exceções à regra de 'manter-se à esquerda' do Japão.",
+    tl: "Sa isang one-way na kalsada, ang mga sasakyan ay maaaring gumamit ng kanang bahagi ng kalsada kung ang kaliwang bahagi ay masyadong makipot o naharang.",
+    expTL: "TAMA. Sa mga one-way na kalsada, ang mga sasakyan ay maaaring gumamit ng alinmang bahagi ng kalsada. Ito ay isa sa mga pagbubukod sa panuntunang 'manatili sa kaliwa' ng Hapon."
   },
   {
     cat: "Señales", catEN: "Turn Signals", catJP: "方向指示器",
@@ -1064,7 +1360,11 @@ const QUESTIONS = [
     expES: "FALSO. Aunque se recomiendan las luces de emergencia por seguridad, no son legalmente obligatorias para paradas normales. SÍ son obligatorias al detenerse en arcenes de autopista o en situaciones de emergencia.",
     expJP: "誤り。ハザードランプは安全のために推奨されますが、通常の停車時に法律上義務付けられているわけではありません。",
     culture: "Esta es una distinción importante: en Japón las luces de emergencia son OBLIGATORIAS en autopistas (detenerse en arcén) pero RECOMENDADAS (no obligatorias) en paradas normales en vías ordinarias. El examen a veces usa este matiz como trampa.",
-    jpterm: "停車時のハザード", romaji: "teisha ji no hazaado", termMeaning: "Luces de emergencia al detenerse (obligatorio en autopistas, recomendado en otras)"
+    jpterm: "停車時のハザード", romaji: "teisha ji no hazaado", termMeaning: "Luces de emergencia al detenerse (obligatorio en autopistas, recomendado en otras)",
+    pt: "Ao parar na via, você deve ligar as luzes de emergência para avisar outros veículos da sua presença.",
+    expPT: "FALSO. Embora as luzes de emergência sejam recomendadas por segurança, elas não são legalmente obrigatórias para paradas normais. SÃO obrigatórias quando parado nos acostamentos de rodovias ou em situações de emergência.",
+    tl: "Kapag humihinto sa kalsada, dapat mong i-on ang iyong hazard lights upang babalaan ang ibang mga sasakyan ng iyong presensya.",
+    expTL: "MALI. Habang ang hazard lights ay inirerekomenda para sa kaligtasan, hindi sila legal na kinakailangan para sa normal na pagtigil. Sila ay KINAKAILANGAN kapag nakatigil sa mga balikat ng expressway o sa mga sitwasyong pang-emergency."
   },
   {
     cat: "Licencia", catEN: "Driver's License", catJP: "免許証",
@@ -1078,7 +1378,11 @@ const QUESTIONS = [
     expES: "VERDADERO. Una licencia de automóvil regular (普通免許) permite conducir vehículos ligeros (軽自動車, kei cars) ya que son una subcategoría de vehículos regulares.",
     expJP: "正しい。普通免許で軽自動車を運転できます。軽自動車は普通自動車の一種です。",
     culture: "Los 軽自動車 (kei cars) son muy populares en Japón — pequeños, económicos y fáciles de estacionar en calles estrechas. Con tu licencia colombiana convertida a japonesa (普通免許), puedes conducirlos. Marcas famosas: Honda N-Box, Suzuki Wagon R, Daihatsu Move.",
-    jpterm: "軽自動車", romaji: "kei jidousha", termMeaning: "Vehículo ligero japonés (motor hasta 660cc, muy pequeño y económico)"
+    jpterm: "軽自動車", romaji: "kei jidousha", termMeaning: "Vehículo ligero japonés (motor hasta 660cc, muy pequeño y económico)",
+    pt: "Uma pessoa pode dirigir um veículo leve (軽自動車) com uma licença de carro de passeio regular (普通免許).",
+    expPT: "VERDADEIRO. Uma licença de carro de passeio regular (普通免許) permite dirigir veículos leves (軽自動車, carros kei), pois são uma subcategoria de veículos regulares.",
+    tl: "Ang isang tao ay maaaring magmaneho ng isang light vehicle (軽自動車) na may regular na lisensya para sa sasakyang pang-pasahero (普通免許).",
+    expTL: "TAMA. Ang isang regular na lisensya para sa sasakyang pang-pasahero (普通免許) ay nagbibigay-pahintulot sa iyo na magmaneho ng mga light vehicle (軽自動車, kei car) dahil sila ay isang subcategory ng mga regular na sasakyan."
   },
   {
     cat: "Carga y Transporte", catEN: "Cargo", catJP: "積み荷",
@@ -1092,7 +1396,11 @@ const QUESTIONS = [
     expES: "VERDADERO. La altura máxima incluyendo la carga es 3.8 metros en vías ordinarias. Exceder esto requiere permisos especiales y planificación de ruta para evitar puentes bajos y túneles.",
     expJP: "正しい。一般道路での車両の最大高さ（積み荷含む）は3.8メートルです。",
     culture: "En Japón los límites de altura (3.8m), ancho (2.5m) y longitud son estrictos. Los puentes y túneles tienen señales de altura máxima. Si tienes carga alta, verifica la ruta antes de salir.",
-    jpterm: "全高制限", romaji: "zenkou seigen", termMeaning: "Límite de altura total del vehículo (3.8 metros)"
+    jpterm: "全高制限", romaji: "zenkou seigen", termMeaning: "Límite de altura total del vehículo (3.8 metros)",
+    pt: "A altura total de um veículo incluindo a carga não deve exceder 3,8 metros em vias comuns.",
+    expPT: "VERDADEIRO. A altura máxima incluindo a carga é de 3,8 metros em vias padrão. Exceder isso requer licenças especiais e planejamento de rota para evitar pontes baixas e túneis.",
+    tl: "Ang kabuuang taas ng isang sasakyan kasama ang karga nito ay hindi dapat lumampas sa 3.8 metro sa mga karaniwang kalsada.",
+    expTL: "TAMA. Ang maximum na taas kasama ang karga ay 3.8 metro sa mga karaniwang kalsada. Ang paglampas nito ay nangangailangan ng mga espesyal na permit at pagpaplano ng ruta upang maiwasan ang mga mababang tulay at tunel."
   },
   {
     cat: "Zonas Escolares", catEN: "School Zones", catJP: "スクールゾーン",
@@ -1106,7 +1414,11 @@ const QUESTIONS = [
     expES: "VERDADERO. Cuando un grupo de niños con guardia escolar está cruzando, todos los vehículos deben detenerse completamente y esperar hasta que TODOS los niños hayan cruzado completamente.",
     expJP: "正しい。誘導員付き児童集団の横断時は、全員が渡り終わるまで停止して待つ義務があります。",
     culture: "En Japón los niños de primaria llevan sombreros amarillos y cruzan en grupos organizados. Los 旗振り誘導員 (guardia de cruce con bandera) son voluntarios de la comunidad. Como conductor, debes respetarlos absolutamente — los niños confían completamente en que los carros van a parar.",
-    jpterm: "旗振り誘導員", romaji: "hata furi yuudouin", termMeaning: "Guardia de cruce escolar (voluntario con bandera)"
+    jpterm: "旗振り誘導員", romaji: "hata furi yuudouin", termMeaning: "Guardia de cruce escolar (voluntario con bandera)",
+    pt: "Quando um grupo de crianças está atravessando a via acompanhado por um guarda de travessia, os motoristas devem parar e esperar até que todas as crianças tenham atravessado completamente.",
+    expPT: "VERDADEIRO. Quando um grupo de crianças com guarda de travessia está atravessando, todos os veículos devem parar completamente e esperar até que todas as crianças tenham atravessado totalmente — não apenas iniciado a travessia.",
+    tl: "Kapag ang isang grupo ng mga bata ay tumatawid sa kalsada na sinasamahan ng isang crossing guard, ang mga driver ay dapat huminto at maghintay hanggang sa ganap na makatawid ang lahat ng bata.",
+    expTL: "TAMA. Kapag ang isang grupo ng mga bata na may crossing guard ay tumatawid, ang lahat ng sasakyan ay dapat ganap na huminto at maghintay hanggang sa bawat bata ay ganap na makatawid — hindi lamang nagsimulang tumawid."
   },
   {
     cat: "Inspección del Vehículo", catEN: "Vehicle Inspection", catJP: "日常点検",
@@ -1120,7 +1432,11 @@ const QUESTIONS = [
     expES: "FALSO. El aceite del motor debe verificarse con el motor APAGADO y el vehículo en terreno nivelado. Con el motor en marcha, el aceite está circulando y la varilla mostrará una lectura falsa.",
     expJP: "誤り。エンジンオイルはエンジンを止めて水平な場所で確認します。エンジン動作中は油量が正確に測定できません。",
     culture: "El procedimiento correcto para revisar el aceite: 1) Apagar el motor, 2) Esperar 2-3 minutos para que el aceite baje al cárter, 3) En terreno nivelado sacar la varilla (油差し棒), limpiar, insertar, sacar y leer el nivel.",
-    jpterm: "エンジンオイル", romaji: "enjin oiru", termMeaning: "Aceite del motor (debe verificarse con motor apagado)"
+    jpterm: "エンジンオイル", romaji: "enjin oiru", termMeaning: "Aceite del motor (debe verificarse con motor apagado)",
+    pt: "O nível do óleo do motor deve ser verificado com o motor em funcionamento para obter uma leitura precisa.",
+    expPT: "FALSO. O óleo do motor deve ser verificado com o motor DESLIGADO e o veículo em superfície plana. Com o motor em funcionamento, o óleo está circulando e a vareta mostrará uma leitura baixa falsa.",
+    tl: "Ang antas ng engine oil ay dapat suriin habang tumatakbo ang makina upang makakuha ng tumpak na pagbabasa.",
+    expTL: "MALI. Ang engine oil ay dapat suriin habang NAKAPATAY ang makina at ang sasakyan ay nasa patag na lupa. Habang tumatakbo ang makina, ang langis ay naka-circulate at ang dipstick ay magpapakita ng maling mababang pagbabasa."
   },
   {
     cat: "Velocidad", catEN: "Speed", catJP: "速度",
@@ -1134,7 +1450,11 @@ const QUESTIONS = [
     expES: "VERDADERO. Al remolcar, los límites de velocidad se reducen: 40 km/h en vías ordinarias (en lugar de 60 km/h) y 50 km/h en autopistas (en lugar de 100 km/h).",
     expJP: "正しい。けん引走行時は一般道路で40km/h、高速道路で50km/hが最高速度です。",
     culture: "Si alguna vez necesitas remolcar un vehículo averiado en Japón, recuerda estas velocidades reducidas. También necesitas equipo de remolque adecuado y en la mayoría de casos una licencia de remolque (けん引免許) para vehículos pesados.",
-    jpterm: "けん引", romaji: "ken'in", termMeaning: "Remolque de vehículo (requiere velocidad reducida)"
+    jpterm: "けん引", romaji: "ken'in", termMeaning: "Remolque de vehículo (requiere velocidad reducida)",
+    pt: "Ao rebocar outro veículo, a velocidade máxima é de 40 km/h em vias comuns e 50 km/h em rodovias.",
+    expPT: "VERDADEIRO. Ao rebocar, os limites de velocidade são reduzidos: 40 km/h em vias comuns (em vez de 60 km/h) e 50 km/h em rodovias (em vez de 100 km/h).",
+    tl: "Kapag naghahatid ng ibang sasakyan, ang maximum na bilis ay 40 km/h sa mga karaniwang kalsada at 50 km/h sa mga expressway.",
+    expTL: "TAMA. Kapag naghahatid, ang mga limitasyon ng bilis ay nabawasan: 40 km/h sa mga karaniwang kalsada (sa halip na 60 km/h) at 50 km/h sa mga expressway (sa halip na 100 km/h)."
   },
   {
     cat: "Prioridad de Paso", catEN: "Right of Way", catJP: "優先",
@@ -1148,7 +1468,11 @@ const QUESTIONS = [
     expES: "VERDADERO. Cuando una vía principal amplia se encuentra con una vía secundaria estrecha, la vía más amplia tiene prioridad — incluso sin señales. La diferencia de ancho es un indicador clave de prioridad.",
     expJP: "正しい。道幅が広い道路を通行する車が優先されます（標識がなくても）。",
     culture: "En Japón hay tres factores que determinan la prioridad en intersecciones sin señales: 1) Señal de prioridad (優先道路), 2) Mayor ancho de vía, 3) Vehículo de la derecha (si todo lo demás es igual). Memoriza este orden.",
-    jpterm: "幹線道路", romaji: "kanzen douro", termMeaning: "Vía principal / arteria vial"
+    jpterm: "幹線道路", romaji: "kanzen douro", termMeaning: "Vía principal / arteria vial",
+    pt: "Em uma interseção onde uma via principal cruza com uma via secundária, os veículos na via principal têm prioridade mesmo que não haja sinais ou placas.",
+    expPT: "VERDADEIRO. Quando uma via principal larga encontra uma via secundária estreita, a via mais larga tem prioridade — mesmo sem sinais. A diferença de largura é um indicador chave de prioridade em interseções sem sinalização.",
+    tl: "Sa isang interseksyon kung saan ang isang pangunahing kalsada ay tumatawid sa isang gilid na kalsada, ang mga sasakyan sa pangunahing kalsada ay may prioridad kahit walang mga tanda o senyal.",
+    expTL: "TAMA. Kapag ang isang malawak na pangunahing kalsada ay nagtagpo ng isang makipot na gilid na kalsada, ang mas malawak na kalsada ay may prioridad — kahit walang mga tanda. Ang pagkakaiba ng lapad ay isang mahalagang tagapagpahiwatig ng prioridad sa mga interseksyong walang tanda."
   },
   {
     cat: "Señales de Tránsito", catEN: "Road Signs", catJP: "道路標識",
@@ -1162,7 +1486,11 @@ const QUESTIONS = [
     expES: "FALSO. La señal 止まれ (tomare = pare) en Japón es un TRIÁNGULO INVERTIDO (rojo/blanco), no octagonal. Las señales STOP octagonales se usan en Norteamérica. Señal de stop japonesa = triángulo rojo invertido.",
     expJP: "誤り。「止まれ」標識は逆三角形（赤地に白文字）です。八角形のSTOP標識は北米のものです。",
     culture: "Diferencia cultural importante: la señal de STOP en Colombia, México y Perú es octagonal roja con STOP. En Japón es un TRIÁNGULO ROJO INVERTIDO con 止まれ (tomare). Si confundes las formas, puedes reprobar el examen.",
-    jpterm: "止まれ", romaji: "tomare", termMeaning: "PARE / STOP — señal de triángulo rojo invertido en Japón"
+    jpterm: "止まれ", romaji: "tomare", termMeaning: "PARE / STOP — señal de triángulo rojo invertido en Japón",
+    pt: "Uma placa octogonal branca com o kanji 止まれ (tomare) significa 'pare completamente e verifique a segurança antes de prosseguir'.",
+    expPT: "FALSO. A placa 止まれ (pare) no Japão é um TRIÂNGULO INVERTIDO (vermelho/branco), não octogonal. Placas octogonais de PARE são usadas na América do Norte. Placa de pare japonesa = triângulo vermelho invertido.",
+    tl: "Ang isang puting octagonal na tanda na may kanji 止まれ (tomare) ay nangangahulugang 'ganap na huminto at suriin ang kaligtasan bago magpatuloy'.",
+    expTL: "MALI. Ang tanda ng 止まれ (tomare = stop) sa Hapon ay isang INVERTED TRIANGLE (pula/puti), hindi octagonal. Ang mga octagonal na STOP sign ay ginagamit sa Hilagang Amerika. Japanese stop sign = inverted na pulang tatsulok."
   },
   {
     cat: "Conducción Nocturna", catEN: "Night Driving", catJP: "夜間運転",
@@ -1176,7 +1504,11 @@ const QUESTIONS = [
     expES: "FALSO. Incluso en vías bien iluminadas, al detenerse de noche por una avería, debes encender las luces de emergencia Y colocar un triángulo rojo de advertencia al menos 50 metros detrás del vehículo.",
     expJP: "誤り。道路上での夜間停車時は、明るさにかかわらずハザードランプの点灯と停止表示板の設置が必要です。",
     culture: "En Japón los triángulos de emergencia (停止表示板 teishi hyojiban) son obligatorios al detenerse en autopistas o vías rápidas. En vías ordinarias también se recomienda. Es un elemento de seguridad que debes llevar siempre en el carro.",
-    jpterm: "停止表示板", romaji: "teishi hyojiban", termMeaning: "Triángulo de emergencia (señal de advertencia al detenerse)"
+    jpterm: "停止表示板", romaji: "teishi hyojiban", termMeaning: "Triángulo de emergencia (señal de advertencia al detenerse)",
+    pt: "Ao estacionar em uma via à noite devido a uma pane, se a via for bem iluminada e o veículo for visível a pelo menos 50 metros, nenhuma iluminação é necessária.",
+    expPT: "FALSO. Mesmo em vias bem iluminadas, ao parar à noite devido a uma pane, você deve exibir as luzes de emergência E um triângulo de aviso vermelho colocado a pelo menos 50 metros atrás do veículo.",
+    tl: "Kapag nagpark sa kalsada sa gabi dahil sa pagkasira, kung ang kalsada ay maliwanag at ang sasakyan ay nakikita mula sa hindi bababa sa 50 metro, walang mga ilaw ang kinakailangan.",
+    expTL: "MALI. Kahit sa mga maliwanag na kalsada, kapag nakatigil sa gabi dahil sa pagkasira, dapat mong ipakita ang hazard lights AT isang pulang babala na tatsulok na inilagay nang hindi bababa sa 50 metro sa likod ng sasakyan."
   },
   {
     cat: "Motocicletas", catEN: "Motorcycles", catJP: "オートバイ",
@@ -1190,7 +1522,11 @@ const QUESTIONS = [
     expES: "VERDADERO. Los ciclomotores (原付一種, hasta 50 cc) tienen una velocidad máxima de 30 km/h en vías ordinarias. También están prohibidos en autopistas.",
     expJP: "正しい。原付一種（50cc以下）の法定最高速度は30km/hです。高速道路も走行禁止です。",
     culture: "Los 原付 (gentsuki) son muy comunes en Japón para repartidores (especialmente comida a domicilio). Si tienes licencia de auto japonesa (普通免許), automáticamente puedes conducir 原付一種. Pero recuerda: máximo 30 km/h y no autopistas.",
-    jpterm: "原付一種", romaji: "gentsuki ichi-shu", termMeaning: "Ciclomotor clase 1 (hasta 50cc, máx 30 km/h, no autopistas)"
+    jpterm: "原付一種", romaji: "gentsuki ichi-shu", termMeaning: "Ciclomotor clase 1 (hasta 50cc, máx 30 km/h, no autopistas)",
+    pt: "Uma motoneta (原付一種, até 50 cc) não deve exceder 30 km/h em vias comuns.",
+    expPT: "VERDADEIRO. Motonetas (原付一種, até 50 cc) têm velocidade máxima de 30 km/h em vias comuns. Também são proibidas de rodovias.",
+    tl: "Ang isang moped (原付一種, hanggang 50 cc) ay hindi dapat lumampas sa 30 km/h sa mga karaniwang kalsada.",
+    expTL: "TAMA. Ang mga moped (原付一種, hanggang 50 cc) ay may maximum na bilis na 30 km/h sa mga karaniwang kalsada. Sila ay ipinagbabawal din sa mga expressway."
   },
   {
     cat: "Cinturón de Seguridad", catEN: "Seatbelts", catJP: "シートベルト",
@@ -1204,7 +1540,11 @@ const QUESTIONS = [
     expES: "FALSO. El conductor es responsable de asegurarse de que TODOS los pasajeros usen cinturón, sin importar la edad — no solo los menores de 13. Los menores de 6 años deben usar silla infantil. A partir de 6 años, cinturón regular.",
     expJP: "誤り。運転者は年齢にかかわらず全同乗者のシートベルト着用を確認する義務があります。",
     culture: "En Japón la responsabilidad del cinturón recae en el conductor, no en el pasajero. Si un pasajero adulto no usa cinturón, el conductor puede recibir la multa. Esto es diferente a muchos países donde el pasajero adulto es responsable de su propio cinturón.",
-    jpterm: "シートベルト着用義務", romaji: "shiitoberuto chakuyou gimu", termMeaning: "Obligación de uso del cinturón (responsabilidad del conductor)"
+    jpterm: "シートベルト着用義務", romaji: "shiitoberuto chakuyou gimu", termMeaning: "Obligación de uso del cinturón (responsabilidad del conductor)",
+    pt: "O motorista é responsável por garantir que todos os passageiros menores de 13 anos estejam usando cintos de segurança.",
+    expPT: "FALSO. O motorista é responsável por garantir que TODOS os passageiros usem cintos de segurança, independentemente da idade — não apenas os menores de 13 anos. Crianças menores de 6 anos devem usar cadeirinha. Com 6 anos ou mais, devem usar cinto regular.",
+    tl: "Ang driver ay responsable para sa pagtitiyak na ang lahat ng pasahero na wala pang 13 taong gulang ay nagsusuot ng safety belt.",
+    expTL: "MALI. Ang driver ay responsable para sa pagtitiyak na ang LAHAT ng pasahero ay nagsusuot ng safety belt, anuman ang edad — hindi lamang ang mga wala pang 13 taong gulang. Ang mga batang wala pang 6 na taong gulang ay dapat gumamit ng child seat. Ang 6 pataas ay dapat gumamit ng regular na safety belt."
   },
   {
     cat: "Parada y Estacionamiento", catEN: "Stopping & Parking", catJP: "駐停車",
@@ -1218,7 +1558,11 @@ const QUESTIONS = [
     expES: "VERDADERO. Estacionar está prohibido en puentes. Además, detenerse también está prohibido en puentes — convirtiéndolos en zona de 駐停車禁止 (prohibido detenerse o estacionar).",
     expJP: "正しい。橋の上は駐停車禁止です。",
     culture: "Los puentes en Japón son zonas donde tanto parar como estacionar están absolutamente prohibidos. Esto incluye puentes pequeños en zonas residenciales. Si tu carro se avería en un puente, debes empujarlo hasta un lugar seguro.",
-    jpterm: "橋の上", romaji: "hashi no ue", termMeaning: "Sobre un puente (zona de prohibición de parada y estacionamiento)"
+    jpterm: "橋の上", romaji: "hashi no ue", termMeaning: "Sobre un puente (zona de prohibición de parada y estacionamiento)",
+    pt: "O estacionamento é proibido em pontes.",
+    expPT: "VERDADEIRO. O estacionamento é proibido em pontes. Além disso, parar também é proibido em pontes — tornando-as uma zona de proibição de parada e estacionamento (駐停車禁止).",
+    tl: "Ipinagbabawal ang pagpapark sa mga tulay.",
+    expTL: "TAMA. Ipinagbabawal ang pagpapark sa mga tulay. Bukod pa rito, ang pagtigil ay ipinagbabawal din sa mga tulay — na ginagawa itong isang 駐停車禁止 (no stopping or parking) zone."
   },
   {
     cat: "Señales de Tránsito", catEN: "Road Signs", catJP: "道路標識",
@@ -1232,7 +1576,11 @@ const QUESTIONS = [
     expES: "VERDADERO. En Japón, un círculo rojo con un número indica el límite de velocidad máxima en km/h. Es una señal regulatoria (obligatoria) que debe obedecerse.",
     expJP: "正しい。赤い丸の中の数字は最高速度（km/h）を示す規制標識です。",
     culture: "Las señales de velocidad en Japón son círculos rojos con el número en negro. Son fáciles de reconocer. Si no hay señal de velocidad, aplica la velocidad legal por defecto (60 km/h en vías ordinarias). La señal anula el límite por defecto.",
-    jpterm: "最高速度標識", romaji: "saikou sokudo hyoushiki", termMeaning: "Señal de límite máximo de velocidad (círculo rojo con número)"
+    jpterm: "最高速度標識", romaji: "saikou sokudo hyoushiki", termMeaning: "Señal de límite máximo de velocidad (círculo rojo con número)",
+    pt: "Uma placa mostrando o número '50' dentro de um círculo vermelho significa que a velocidade máxima é de 50 km/h.",
+    expPT: "VERDADEIRO. No Japão, um círculo vermelho com um número indica o limite máximo de velocidade em km/h. Esta é uma placa regulamentadora (obrigatória) que deve ser obedecida.",
+    tl: "Ang isang tanda na nagpapakita ng bilang '50' sa loob ng isang pulang bilog ay nangangahulugang ang maximum na bilis ay 50 km/h.",
+    expTL: "TAMA. Sa Hapon, ang isang pulang bilog na may numero ay nagpapahiwatig ng maximum na limitasyon ng bilis sa km/h. Ito ay isang regulatory (mandatory) na tanda na dapat sundin."
   },
   {
     cat: "Carga y Transporte", catEN: "Cargo", catJP: "積み荷",
@@ -1246,7 +1594,11 @@ const QUESTIONS = [
     expES: "VERDADERO. La carga puede sobresalir hasta 1/10 de la longitud del vehículo tanto por el frente como por la parte trasera. Más allá de esto, se requieren permisos especiales y banderas/luces de advertencia.",
     expJP: "正しい。積み荷の前後への突出は車体全長の10分の1まで認められています。",
     culture: "La regla del 10% (1/10) aplica tanto para la parte delantera como trasera del vehículo. Si llevas una tabla de madera o un tubo largo, mide cuidadosamente. Más del 10% = bandera roja obligatoria + posible multa.",
-    jpterm: "積み荷の突出", romaji: "tsumini no tosshutu", termMeaning: "Carga que sobresale del vehículo (máximo 1/10 de la longitud)"
+    jpterm: "積み荷の突出", romaji: "tsumini no tosshutu", termMeaning: "Carga que sobresale del vehículo (máximo 1/10 de la longitud)",
+    pt: "Quando uma carga se estende além da frente do veículo, a projeção máxima permitida é de 1/10 do comprimento total do veículo.",
+    expPT: "VERDADEIRO. A carga pode se projetar até 1/10 do comprimento do veículo tanto pela frente quanto pela traseira. Além disso, são necessárias licenças especiais e bandeiras/luzes de aviso.",
+    tl: "Kapag ang isang karga ay umaabot lampas sa harap ng sasakyan, ang maximum na pinapayagang pagsusulpot ay 1/10 ng kabuuang haba ng sasakyan.",
+    expTL: "TAMA. Ang karga ay maaaring sumulsol hanggang 1/10 ng haba ng sasakyan mula sa harap at likod. Lampas nito, ang mga espesyal na permit at babala na mga bandila/ilaw ay kinakailangan."
   },
   {
     cat: "Estacionamiento en Pendiente", catEN: "Parking on Slopes", catJP: "坂道駐車",
@@ -1260,7 +1612,11 @@ const QUESTIONS = [
     expES: "VERDADERO. En pendiente descendente, gira las ruedas hacia el bordillo (para que el vehículo ruede HACIA el bordillo si los frenos fallan) y SIEMPRE aplica el freno de mano.",
     expJP: "正しい。下り坂では前輪を縁石側に向け、パーキングブレーキをかけます。",
     culture: "En Japón las reglas de estacionamiento en pendiente son parte del examen escrito y práctico. Recuerda: siempre freno de mano activado. En carro automático también poner en posición 'P'. En manual, poner en primera (subida) o reversa (bajada).",
-    jpterm: "パーキングブレーキ", romaji: "paakyingu bureeki", termMeaning: "Freno de mano / freno de estacionamiento"
+    jpterm: "パーキングブレーキ", romaji: "paakyingu bureeki", termMeaning: "Freno de mano / freno de estacionamiento",
+    pt: "Ao estacionar em uma descida, você deve virar as rodas dianteiras em direção ao meio-fio e acionar o freio de estacionamento.",
+    expPT: "VERDADEIRO. Em uma descida, vire as rodas em direção ao meio-fio (para que o veículo role EM DIREÇÃO ao meio-fio se os freios falharem) e SEMPRE acione o freio de estacionamento.",
+    tl: "Kapag nagpark sa pabababang daan, dapat mong ipalong ang mga harap na gulong patungo sa curb at gamitin ang parking brake.",
+    expTL: "TAMA. Sa pabababang daan, ipalong ang mga gulong patungo sa curb (upang ang sasakyan ay gumilig PATUNGO sa curb kung mabigo ang mga preno) at PALAGING gamitin ang parking brake."
   },
   {
     cat: "Vías de Un Solo Sentido", catEN: "One-Way Roads", catJP: "一方通行",
@@ -1274,7 +1630,11 @@ const QUESTIONS = [
     expES: "FALSO. En una vía de sentido único con tres o más carriles, todos los carriles pueden usarse libremente. La restricción de 'mantenerse a la izquierda' para vías de 3+ carriles aplica a vías de DOBLE sentido, no de sentido único.",
     expJP: "誤り。一方通行路では車線の制限はなく、どの車線も使用できます。左側通行の制限は対向車線のある道路に適用されます。",
     culture: "Esta es una diferencia sutil que el examen japonés evalúa. Vía de doble sentido con 3+ carriles = usar el carril izquierdo excepto al adelantar. Vía de sentido único = cualquier carril es válido. ¡No confundas!",
-    jpterm: "車線選択", romaji: "shansen sentaku", termMeaning: "Selección de carril (reglas diferentes en vía normal vs sentido único)"
+    jpterm: "車線選択", romaji: "shansen sentaku", termMeaning: "Selección de carril (reglas diferentes en vía normal vs sentido único)",
+    pt: "Em uma via de mão única com três faixas, o veículo deve usar a faixa mais à esquerda, exceto ao ultrapassar.",
+    expPT: "FALSO. Em uma via de mão única com três ou mais faixas, todas as faixas podem ser usadas livremente. A restrição de 'manter-se à esquerda' para vias de 3+ faixas se aplica a VIAS DE MÃO DUPLA, não de mão única.",
+    tl: "Sa isang one-way na kalsada na may tatlong linya, ang sasakyan ay dapat gumamit ng pinaka-kaliwang linya maliban kapag nag-oovtake.",
+    expTL: "MALI. Sa isang one-way na kalsada na may tatlo o higit pang linya, lahat ng linya ay maaaring gamitin nang malaya. Ang paghihigpit na 'manatili sa kaliwa' para sa mga kalsada na may 3+ linya ay naaangkop sa MGA TWO-WAY na kalsada, hindi sa one-way."
   },
   {
     cat: "Conducción Defensiva", catEN: "Defensive Driving", catJP: "安全運転",
@@ -1288,7 +1648,11 @@ const QUESTIONS = [
     expES: "VERDADERO. Los camiones grandes tienen puntos ciegos significativos en los cuatro lados. Quedarse en el punto ciego de un camión es peligroso. Si no puedes ver al conductor del camión en sus espejos, el conductor no puede verte a ti.",
     expJP: "正しい。大型トラックには四方向に死角があります。トラックのミラーで運転者が見えない場合、運転者もあなたを見えていません。",
     culture: "En Japón los camiones de reparto (トラック) son enormes y los conductores trabajan largas horas. Ser consciente de sus puntos ciegos te protege. Regla general: si no ves los espejos del camión, el camionero no te ve a ti.",
-    jpterm: "死角", romaji: "shikaku", termMeaning: "Punto ciego (área que el conductor no puede ver)"
+    jpterm: "死角", romaji: "shikaku", termMeaning: "Punto ciego (área que el conductor no puede ver)",
+    pt: "Ao dirigir perto de um caminhão grande, você deve manter uma distância de seguimento extra porque os caminhões grandes têm pontos cegos maiores do que os carros comuns.",
+    expPT: "VERDADEIRO. Caminhões grandes têm pontos cegos significativos em todos os quatro lados. Ficar no ponto cego de um caminhão é perigoso. Se você não consegue ver o motorista do caminhão nos espelhos, ele não pode ver você.",
+    tl: "Kapag nagmamaneho malapit sa isang malaking trak, dapat kang magtago ng karagdagang distansya ng pagsunod dahil ang malalaking trak ay may mas malalaking blind spot kaysa sa mga regular na kotse.",
+    expTL: "TAMA. Ang malalaking trak ay may makabuluhang blind spot sa lahat ng apat na bahagi. Ang pananatili sa blind spot ng isang trak ay mapanganib. Kung hindi mo makita ang driver ng trak sa kanilang mga salamin, hindi rin nila makikita ang iyo."
   },
   {
     cat: "Señales de Tránsito", catEN: "Road Signs", catJP: "道路標識",
@@ -1302,7 +1666,11 @@ const QUESTIONS = [
     expES: "VERDADERO. La señal 警笛鳴らせ (toque bocina) obliga a los conductores a tocar el claxon para advertir a otros de su presencia, típicamente en curvas o cuestas con visibilidad reducida.",
     expJP: "正しい。「警笛鳴らせ」標識がある場所では、クラクションを鳴らす義務があります。",
     culture: "Esta señal es inusual para los latinos — en Colombia o Perú tocar la bocina es casi un reflejo, pero en Japón está generalmente prohibido excepto donde hay señal específica. El 警笛鳴らせ es una señal poco común pero puede aparecer en el examen.",
-    jpterm: "警笛鳴らせ", romaji: "keiteki narase", termMeaning: "Señal de 'toque el claxon' (obligatorio en ese tramo)"
+    jpterm: "警笛鳴らせ", romaji: "keiteki narase", termMeaning: "Señal de 'toque el claxon' (obligatorio en ese tramo)",
+    pt: "Uma placa de buzina (警笛鳴らせ) exige que os motoristas toquem a buzina ao passar por essa área.",
+    expPT: "VERDADEIRO. A placa 警笛鳴らせ (toque a buzina) exige que os motoristas toquem a buzina para avisar outros da sua presença, geralmente perto de curvas ou morros com visibilidade ruim.",
+    tl: "Ang isang tanda na 警笛鳴らせ (horn sign) ay nangangailangan sa mga driver na tumunog ng busina kapag dumadaan sa lugar na iyon.",
+    expTL: "TAMA. Ang tanda ng 警笛鳴らせ (tumunog ng busina) ay nangangailangan sa mga driver na tumunog ng busina upang babalaan ang iba ng kanilang presensya, karaniwang malapit sa mga kurba o burol na may mahinang visibility."
   },
   {
     cat: "Conducción Defensiva", catEN: "Defensive Driving", catJP: "安全運転",
@@ -1316,7 +1684,11 @@ const QUESTIONS = [
     expES: "VERDADERO. Conducir con visibilidad reducida por el parabrisas debido a escarcha, nieve o empañamiento está prohibido. Todos los vidrios deben estar despejados antes de conducir.",
     expJP: "正しい。霜・雪・曇りによって著しく視界が悪い状態での運転は禁止です。出発前に完全に視界を確保しなければなりません。",
     culture: "En invierno en Aichi (enero-febrero) las temperaturas pueden llegar a -2°C y el parabrisas puede congelarse durante la noche. Debes quitar toda la escarcha antes de conducir — no basta con encender el defroster y arrancar. Es infracción conducir con visibilidad reducida.",
-    jpterm: "デフロスター", romaji: "defurosutaa", termMeaning: "Descongelador del parabrisas (debe usarse antes de conducir en invierno)"
+    jpterm: "デフロスター", romaji: "defurosutaa", termMeaning: "Descongelador del parabrisas (debe usarse antes de conducir en invierno)",
+    pt: "É proibido dirigir um veículo com campo de visão perigosamente reduzido devido a gelo, neve ou névoa no para-brisa.",
+    expPT: "VERDADEIRO. Dirigir com visibilidade reduzida do para-brisa devido a gelo, neve ou névoa é proibido. Todos os vidros devem estar limpos antes de dirigir. Isso inclui o uso do desembaçador dianteiro e traseiro.",
+    tl: "Ipinagbabawal ang pagmamaneho ng isang sasakyan na may mapanganib na nabawasang larangan ng bisyon dahil sa hamog, niyebe, o ulap sa windshield.",
+    expTL: "TAMA. Ang pagmamaneho na may nabawasang visibility ng windshield dahil sa hamog, niyebe, o fogging ay ipinagbabawal. Ang lahat ng bintana ay dapat malinaw bago magmaneho. Kabilang dito ang paggamit ng defroster at defogger."
   },
   {
     cat: "Velocidad", catEN: "Speed", catJP: "速度",
@@ -1330,7 +1702,11 @@ const QUESTIONS = [
     expES: "VERDADERO. Las señales de límite de velocidad anulan el límite por defecto de 60 km/h. Las zonas escolares (30 km/h), zonas residenciales (20-30 km/h) y zonas de obras pueden tener límites menores.",
     expJP: "正しい。速度制限標識がある場合は法定速度（60km/h）より低い速度が設定されることがあります。",
     culture: "En Japón siempre busca señales de velocidad al entrar a nuevas zonas. Los barrios residenciales (住宅街) suelen tener 30 km/h o incluso 20 km/h. Las zonas cerca de parques o áreas de niños también. No asumir que siempre es 60 km/h.",
-    jpterm: "速度規制", romaji: "sokudo kisei", termMeaning: "Regulación de velocidad (señal que modifica el límite por defecto)"
+    jpterm: "速度規制", romaji: "sokudo kisei", termMeaning: "Regulación de velocidad (señal que modifica el límite por defecto)",
+    pt: "O limite de velocidade legal em uma via comum pode ser inferior a 60 km/h se houver uma placa indicando um limite reduzido.",
+    expPT: "VERDADEIRO. Placas de limite de velocidade afixadas substituem o limite padrão de 60 km/h. Zonas escolares (30 km/h), áreas residenciais (20-30 km/h) e zonas de construção podem ter limites menores.",
+    tl: "Ang legal na limitasyon ng bilis sa isang karaniwang kalsada ay maaaring mas mababa sa 60 km/h kung mayroong nakalagay na tanda na nagpapahiwatig ng bawas na limitasyon.",
+    expTL: "TAMA. Ang mga nakalagay na tanda ng limitasyon ng bilis ay nagpapalit sa default na 60 km/h na limitasyon. Ang mga school zone (30 km/h), residential area (20-30 km/h), at construction zone ay maaaring may mas mababang limitasyon."
   },
   {
     cat: "Señales de Tránsito", catEN: "Road Signs", catJP: "道路標識",
@@ -1344,7 +1720,11 @@ const QUESTIONS = [
     expES: "VERDADERO. La señal de 自転車歩行者道 (sendero bici-peatonal) sobre fondo azul significa que tanto ciclistas como peatones pueden usar el sendero. Los ciclistas deben tener cuidado y ceder el paso a los peatones.",
     expJP: "正しい。自転車歩行者道の標識は、自転車と歩行者の共用通行を示します。自転車は歩行者を優先しなければなりません。",
     culture: "En Japón muchas aceras amplias son compartidas por bicicletas y peatones. Esto es diferente a Colombia donde las bicicletas generalmente van en la calle. En los senderos compartidos japoneses, la bicicleta SIEMPRE cede al peatón.",
-    jpterm: "自転車歩行者道", romaji: "jitensha hokousha dou", termMeaning: "Sendero compartido bicicleta-peatón"
+    jpterm: "自転車歩行者道", romaji: "jitensha hokousha dou", termMeaning: "Sendero compartido bicicleta-peatón",
+    pt: "Uma placa mostrando uma bicicleta e uma figura de pedestre juntas em fundo azul significa que tanto ciclistas quanto pedestres podem usar aquele caminho.",
+    expPT: "VERDADEIRO. A placa de caminho para bicicletas e pedestres (自転車歩行者道) em fundo azul significa que tanto ciclistas quanto pedestres podem usar o caminho. Os ciclistas devem ser cuidadosos e ceder passagem aos pedestres.",
+    tl: "Ang isang tanda na nagpapakita ng bisikleta at pedestrian figure nang magkasama sa asul na background ay nangangahulugang parehong ang mga cyclist at manlalakad ay maaaring gumamit ng landas na iyon.",
+    expTL: "TAMA. Ang tanda ng 自転車歩行者道 (bicycle-pedestrian path) sa asul na background ay nangangahulugang parehong ang mga cyclist at manlalakad ay maaaring gumamit ng landas. Ang mga cyclist ay dapat mag-ingat at magbigay ng daan sa mga manlalakad."
   },
   {
     cat: "Distancia de Frenado", catEN: "Stopping Distance", catJP: "停止距離",
@@ -1358,7 +1738,11 @@ const QUESTIONS = [
     expES: "VERDADERO. Los neumáticos desgastados tienen menor profundidad de banda, lo que disminuye el agarre en la superficie de la vía y aumenta la distancia de frenado — especialmente en condiciones mojadas.",
     expJP: "正しい。タイヤの摩耗は路面とのグリップを低下させ、制動距離を延ばします。特に雨天時に顕著です。",
     culture: "En Japón la 車検 (inspección técnica) verifica la profundidad mínima de banda del neumático. Los neumáticos desgastados también son ilegales — si la banda está por debajo del límite de desgaste (1.6mm para carros de turismo), debes cambiarlos.",
-    jpterm: "タイヤの摩耗", romaji: "taiya no mamou", termMeaning: "Desgaste del neumático (afecta la distancia de frenado)"
+    jpterm: "タイヤの摩耗", romaji: "taiya no mamou", termMeaning: "Desgaste del neumático (afecta la distancia de frenado)",
+    pt: "Na mesma velocidade, um veículo com pneus gastos terá uma distância de frenagem maior do que um veículo com pneus novos.",
+    expPT: "VERDADEIRO. Pneus gastos têm menor profundidade de sulco, o que diminui o atrito na superfície da estrada e aumenta a distância de frenagem — especialmente em condições úmidas.",
+    tl: "Sa parehong bilis, ang isang sasakyan na may mga gasgas na gulong ay magkakaroon ng mas mahabang distansya sa pagsagwan kaysa sa isang sasakyan na may mga bagong gulong.",
+    expTL: "TAMA. Ang mga gasgas na gulong ay may nabawasang lalim ng tread, na nagbabawas ng grip sa ibabaw ng kalsada at nagpapalaki ng distansya sa pagsagwan — lalo na sa basa na kondisyon."
   },
   {
     cat: "Zonas Peatonales", catEN: "Pedestrian Zones", catJP: "歩行者専用",
@@ -1372,7 +1756,11 @@ const QUESTIONS = [
     expES: "VERDADERO. Los peatones que caminan por vías sin acera deben hacerlo de frente al tráfico. Los conductores deben reducir velocidad, mantener distancia segura y estar preparados para detenerse.",
     expJP: "正しい。歩道のない道路を歩く歩行者に対し、運転者は十分な安全措置を取る義務があります。",
     culture: "En Japón los peatones en vías sin acera deben caminar de frente al tráfico (por el lado derecho de la vía, mirando hacia los carros que vienen). Esto es una regla de seguridad que también aplica a Latinoamérica pero pocas personas la conocen.",
-    jpterm: "対面通行", romaji: "taimen tsuuryou", termMeaning: "Circulación en sentido contrario al tráfico (para peatones sin acera)"
+    jpterm: "対面通行", romaji: "taimen tsuuryou", termMeaning: "Circulación en sentido contrario al tráfico (para peatones sin acera)",
+    pt: "Quando um pedestre está caminhando ao longo da via (não em uma calçada) de frente para o tráfego que vem em sentido contrário, o motorista deve tomar cuidado para não colocá-lo em perigo.",
+    expPT: "VERDADEIRO. Os pedestres que caminham em vias sem calçadas devem enfrentar o tráfego que vem em sentido contrário. Os motoristas devem reduzir a velocidade, manter distância segura e estar preparados para parar.",
+    tl: "Kapag ang isang manlalakad ay naglalakad sa kalsada (hindi sa bangketa) na nakaharap sa trapiko na paparating, ang driver ay dapat mag-ingat na hindi sila mapanganib.",
+    expTL: "TAMA. Ang mga manlalakad na naglalakad sa mga kalsada na walang bangketa ay dapat humarap sa papalapit na trapiko. Ang mga driver ay dapat bumagal, magtago ng ligtas na distansya, at handang huminto."
   },
   {
     cat: "Conducción Defensiva", catEN: "Defensive Driving", catJP: "安全運転",
@@ -1386,7 +1774,11 @@ const QUESTIONS = [
     expES: "VERDADERO. Usar auriculares o audífonos al conducir está prohibido si impiden escuchar sirenas, claxons u otros sonidos del tráfico. Algunas prefecturas prohíben cualquier uso de audífonos al conducir.",
     expJP: "正しい。周囲の音が聞こえなくなるほどの音量でのヘッドホン・イヤホン使用は禁止です。都道府県によっては使用自体を禁止しています。",
     culture: "En Aichi (Nagoya) está prohibido conducir con auriculares. La multa es de ¥5,000 a ¥50,000. Muchos ciclistas también son multados por esto. Si quieres escuchar música, usa los altavoces del carro a un volumen que permita escuchar sirenas.",
-    jpterm: "ながら運転（イヤホン）", romaji: "nagara unten (iyahon)", termMeaning: "Conducción con auriculares (prohibida si bloquea sonidos externos)"
+    jpterm: "ながら運転（イヤホン）", romaji: "nagara unten (iyahon)", termMeaning: "Conducción con auriculares (prohibida si bloquea sonidos externos)",
+    pt: "É proibido dirigir usando fones de ouvido ou auriculares que reduzam significativamente sua capacidade de ouvir o tráfego ao redor.",
+    expPT: "VERDADEIRO. Usar fones de ouvido enquanto dirige é proibido se impedir você de ouvir sirenes, buzinas ou outros sons de tráfego. Algumas prefeituras proíbem qualquer uso de fones de ouvido enquanto dirige.",
+    tl: "Ipinagbabawal ang pagmamaneho habang nagsusuot ng headphone o earphone na makabuluhang nagbabawas ng iyong kakayahan na marinig ang nakapaligid na trapiko.",
+    expTL: "TAMA. Ang pagsusuot ng headphone o earphone habang nagmamaneho ay ipinagbabawal kung pinipigilan ka nitong marinig ang mga sirena, busina, o iba pang tunog ng trapiko. Ang ilang prefecture ay nagbabawal ng anumang paggamit ng headphone habang nagmamaneho."
   },
   {
     cat: "Zonas Escolares", catEN: "School Zones", catJP: "スクールゾーン",
@@ -1400,7 +1792,11 @@ const QUESTIONS = [
     expES: "FALSO. Los vehículos autorizados (residentes, repartos con permisos) pueden entrar a zonas escolares incluso durante el horario escolar, pero deben seguir reglas estrictas de velocidad y seguridad.",
     expJP: "誤り。許可を受けた車両はスクールゾーンの時間帯でも通行できますが、徐行等の安全対策が必要です。",
     culture: "Los スクールゾーン en Japón tienen horarios específicos (generalmente 7:30-8:30 am y 3:00-4:00 pm) cuando la restricción es más estricta. Fuera de esos horarios, las restricciones son más flexibles pero la velocidad de 30 km/h sigue vigente.",
-    jpterm: "通行時間帯", romaji: "tsuukoo jikantai", termMeaning: "Horario de restricción de tránsito (en zonas escolares)"
+    jpterm: "通行時間帯", romaji: "tsuukoo jikantai", termMeaning: "Horario de restricción de tránsito (en zonas escolares)",
+    pt: "Os veículos são completamente proibidos de entrar em zonas escolares durante o horário escolar, mesmo com licença.",
+    expPT: "FALSO. Veículos autorizados (moradores, entregas com licença) podem entrar em zonas escolares mesmo durante o horário escolar, mas devem seguir regras rígidas de velocidade e segurança.",
+    tl: "Ang mga sasakyan ay ganap na ipinagbabawal na pumasok sa mga school zone sa oras ng paaralan, kahit na may permit.",
+    expTL: "MALI. Ang mga awtorisadong sasakyan (mga residente, mga delivery na may permit) ay maaaring pumasok sa mga school zone kahit sa oras ng paaralan, ngunit dapat sumunod sa mahigpit na mga panuntunan ng bilis at kaligtasan."
   },
   {
     cat: "Inspección del Vehículo", catEN: "Vehicle Inspection", catJP: "日常点検",
@@ -1414,7 +1810,11 @@ const QUESTIONS = [
     expES: "VERDADERO. Un pedal de freno esponjoso o que baja demasiado indica un problema grave (aire en las líneas de freno, fuga de líquido de frenos). El vehículo no debe conducirse hasta ser reparado.",
     expJP: "正しい。ブレーキペダルが柔らかい・踏み込みすぎる場合はブレーキ系統の異常です。点検修理するまで運転してはなりません。",
     culture: "La inspección diaria del freno es simple: presiona el pedal firmemente. Debe sentirse firme y detenerse a medio recorrido. Si se va hasta el fondo o se siente esponjoso, llama a un mecánico antes de arrancar.",
-    jpterm: "ブレーキ点検", romaji: "bureeki tenken", termMeaning: "Inspección del sistema de frenos (parte de la revisión diaria)"
+    jpterm: "ブレーキ点検", romaji: "bureeki tenken", termMeaning: "Inspección del sistema de frenos (parte de la revisión diaria)",
+    pt: "Se o pedal de freio parecer esponjoso ou for quase até o chão, pode indicar ar nas linhas de freio e você não deve dirigir o veículo.",
+    expPT: "VERDADEIRO. Um pedal de freio esponjoso ou afundando indica um problema grave (ar nas linhas de freio, vazamento de fluido de freio). O veículo não deve ser dirigido até ser reparado.",
+    tl: "Kung ang brake pedal ay mukhang malambot o halos pumunta sa sahig, maaaring nagpapahiwatig ito ng hangin sa brake lines at hindi mo dapat patakbuhin ang sasakyan.",
+    expTL: "TAMA. Ang malambot o lumulubog na brake pedal ay nagpapahiwatig ng isang seryosong problema (hangin sa brake lines, pagtagas ng brake fluid). Ang sasakyan ay hindi dapat patakbuhin hanggang ma-repair."
   },
     {
     cat: "Señal de Conductor Novato",
