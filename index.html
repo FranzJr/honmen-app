@@ -140,7 +140,7 @@
       --phone-progress-track: rgba(0,0,0,.12);
       --mini-case: #BDD0E0;
       --mini-case-border: rgba(0,80,120,.2);
-      --mini-screen-bg: #1e3245;
+      --mini-screen-bg: linear-gradient(180deg, #E2EDF5, #ECF4FA);
       --body-gradient:
         radial-gradient(circle at top left, rgba(0,124,162,0.10), transparent 32rem),
         radial-gradient(circle at 88% 12%, rgba(95,166,192,0.08), transparent 30rem),
@@ -739,33 +739,11 @@
       border-color: rgba(95,166,192,.35);
       color: #C0DBE8;
     }
-    /* mini-screen: question-text sits directly on dark bg → keep light */
-    [data-theme="light"] .mini-screen .question-text {
-      color: #D8EAF5;
-    }
-    /* mini-screen: answer buttons on dark bg */
-    [data-theme="light"] .mini-screen .answer-btn {
-      background: rgba(255,255,255,.09);
-      border-color: rgba(255,255,255,.22);
-      color: #C8DCE8;
-    }
-    [data-theme="light"] .mini-screen .answer-btn.true  { border-color: rgba(66,232,139,.4);  color: var(--success); }
-    [data-theme="light"] .mini-screen .answer-btn.false { border-color: rgba(255,102,136,.38); color: var(--danger); }
-    /* mini-option inside mini-screen on dark bg */
-    [data-theme="light"] .mini-screen .mini-option {
-      background: rgba(255,255,255,.09);
-      border-color: rgba(200,230,245,.3);
-      color: #C5DAE8;
-    }
-    [data-theme="light"] .mini-screen .mini-option.active {
-      background: rgba(95,166,192,.28);
-      color: var(--soft-blue);
-    }
-    /* term-card directly on dark mini-screen */
+    /* mini-screen is now light in light mode → term-card needs readable color */
     [data-theme="light"] .mini-screen .term-card {
-      background: rgba(95,166,192,.18);
-      border-color: rgba(95,166,192,.32);
-      color: var(--light-blue-gray);
+      background: rgba(0,124,162,.09);
+      border-color: rgba(0,124,162,.22);
+      color: var(--primary);
     }
 
     .two-col {
