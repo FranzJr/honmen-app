@@ -81,6 +81,17 @@
       --form-label: #DCE7EF;
       --partner-bg: rgba(255,255,255,.03);
       --grid-line: rgba(255,255,255,0.025);
+      --phone-case: #05080c;
+      --phone-case-border: rgba(255,255,255,.18);
+      --phone-case-shadow: rgba(0,0,0,.65);
+      --phone-screen-bg: linear-gradient(180deg, #0b1219, #020405);
+      --phone-screen-border: rgba(149,194,211,.2);
+      --phone-top-color: #E6EEF5;
+      --phone-q-text: #F3F7FA;
+      --phone-progress-track: rgba(255,255,255,.08);
+      --mini-case: #05080c;
+      --mini-case-border: rgba(255,255,255,.16);
+      --mini-screen-bg: #101820;
       --body-gradient:
         radial-gradient(circle at top left, rgba(0,124,162,0.32), transparent 32rem),
         radial-gradient(circle at 88% 12%, rgba(95,166,192,0.22), transparent 30rem),
@@ -119,6 +130,17 @@
       --form-label: #1E3044;
       --partner-bg: rgba(0,0,0,.025);
       --grid-line: rgba(0,100,140,0.04);
+      --phone-case: #C8D8E6;
+      --phone-case-border: rgba(0,80,120,.22);
+      --phone-case-shadow: rgba(0,0,0,.22);
+      --phone-screen-bg: linear-gradient(180deg, #1a2d3d, #0d1a26);
+      --phone-screen-border: rgba(100,160,190,.25);
+      --phone-top-color: #E0EAF3;
+      --phone-q-text: #E4EFF7;
+      --phone-progress-track: rgba(255,255,255,.12);
+      --mini-case: #BDD0E0;
+      --mini-case-border: rgba(0,80,120,.2);
+      --mini-screen-bg: #1e3245;
       --body-gradient:
         radial-gradient(circle at top left, rgba(0,124,162,0.10), transparent 32rem),
         radial-gradient(circle at 88% 12%, rgba(95,166,192,0.08), transparent 30rem),
@@ -409,9 +431,9 @@
       height: 640px;
       border-radius: 42px;
       padding: 16px;
-      background: #05080c;
-      border: 1px solid rgba(255,255,255,.18);
-      box-shadow: 0 40px 100px rgba(0,0,0,.65), 0 0 0 8px rgba(255,255,255,.035);
+      background: var(--phone-case);
+      border: 1px solid var(--phone-case-border);
+      box-shadow: 0 40px 100px var(--phone-case-shadow), 0 0 0 8px rgba(255,255,255,.035);
       position: relative;
       overflow: hidden;
     }
@@ -430,8 +452,8 @@
     .phone-screen {
       height: 100%;
       border-radius: 30px;
-      background: linear-gradient(180deg, #0b1219, #020405);
-      border: 1px solid rgba(149,194,211,.2);
+      background: var(--phone-screen-bg);
+      border: 1px solid var(--phone-screen-border);
       padding: 20px 18px;
       overflow: hidden;
     }
@@ -442,7 +464,7 @@
       align-items: center;
       font-weight: 800;
       font-size: .8rem;
-      color: #E6EEF5;
+      color: var(--phone-top-color);
       margin-bottom: 22px;
     }
 
@@ -460,7 +482,7 @@
 
     .progress {
       height: 8px;
-      background: rgba(255,255,255,.08);
+      background: var(--phone-progress-track);
       border-radius: 999px;
       margin: 16px 0 26px;
       overflow: hidden;
@@ -496,7 +518,7 @@
     .question-text {
       font-size: 1.12rem;
       line-height: 1.65;
-      color: #F3F7FA;
+      color: var(--phone-q-text);
       margin: 0 0 24px;
     }
 
@@ -660,9 +682,9 @@
     }
 
     .mini-phone {
-      border: 1px solid rgba(255,255,255,.16);
+      border: 1px solid var(--mini-case-border);
       border-radius: 28px;
-      background: #05080c;
+      background: var(--mini-case);
       padding: 10px;
       box-shadow: 0 20px 50px rgba(0,0,0,.35);
       min-height: 330px;
@@ -670,7 +692,7 @@
 
     .mini-screen {
       border-radius: 22px;
-      background: #101820;
+      background: var(--mini-screen-bg);
       height: 250px;
       padding: 20px 16px;
       display: grid;
