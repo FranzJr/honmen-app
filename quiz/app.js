@@ -524,8 +524,8 @@ function renderQuestion() {
   DOM.qES().textContent  = q.es;
   DOM.qJPk().textContent = q.jpk;
   DOM.qJPh().textContent = q.jph;
-  DOM.qPT().textContent  = q.pt;
-  DOM.qTL().textContent  = q.tl;
+  DOM.qPT().textContent  = q.pt  || q.en;
+  DOM.qTL().textContent  = q.tl  || q.en;
 
   // figure image
   const imgWrap = DOM.qImgWrap();
@@ -585,8 +585,8 @@ function answer(val) {
   // pick explanation by language
   const exp = lang === 'en' ? q.expEN
             : lang === 'jp' ? q.expJP
-            : lang === 'pt' ? q.expPT
-            : lang === 'tl' ? q.expTL
+            : lang === 'pt' ? (q.expPT || q.expEN)
+            : lang === 'tl' ? (q.expTL || q.expEN)
             : q.expES;
 
   const correctLabel = q.correct
@@ -714,7 +714,7 @@ function buildReview() {
   rw.innerHTML = `<div class="rev-hd">${fmt(s.review, { n: wrongH.length })}</div>`;
 
   wrongH.forEach(({ q }) => {
-    const text = lang === 'jp' ? q.jpk : lang === 'en' ? q.en : lang === 'pt' ? q.pt : lang === 'tl' ? q.tl : q.es;
+    const text = lang === 'jp' ? q.jpk : lang === 'en' ? q.en : lang === 'pt' ? (q.pt || q.en) : lang === 'tl' ? (q.tl || q.en) : q.es;
     const ans  = q.correct
       ? (lang === 'en' ? 'TRUE' : lang === 'jp' ? '正しい' : lang === 'pt' ? 'VERDADEIRO' : lang === 'tl' ? 'TAMA' : 'VERDADERO')
       : (lang === 'en' ? 'FALSE' : lang === 'jp' ? '間違い' : lang === 'pt' ? 'FALSO' : lang === 'tl' ? 'MALI' : 'FALSO');
