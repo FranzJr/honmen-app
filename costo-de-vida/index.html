@@ -1,0 +1,1262 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#007CA2">
+<script>
+  (function(){var s=localStorage.getItem('fj_theme'),d=window.matchMedia('(prefers-color-scheme: dark)').matches;document.documentElement.dataset.theme=s||(d?'dark':'light');})();
+</script>
+<title>Costo de vida en Japón · Facil Japón</title>
+<meta name="description" content="Calcula cuánto cuesta mudarte y vivir en Japón: renta, mudanza, comida, transporte, hijos, mascotas y más, por ciudad. En español, inglés, portugués, japonés y tagalo.">
+<link rel="canonical" href="https://faciljapon.com/costo-de-vida/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --z-teal:    #007CA2;
+  --z-cyan:    #5FA6C0;
+  --z-soft:    #71AEC4;
+
+  --bg:       #F4F7FA;
+  --bg2:      #FFFFFF;
+  --bg3:      #EBF0F5;
+  --bg4:      #E0E8EE;
+  --border:   #D4DDE6;
+  --border2:  #C2CDD9;
+
+  --text:    #0F1720;
+  --text2:   #2E3E52;
+  --muted:   #5A6B7E;
+  --muted2:  #8C9CAC;
+
+  --accent:    var(--z-teal);
+  --accent-l:  var(--z-cyan);
+  --accent-bg: rgba(0,124,162,.08);
+  --accent-bd: rgba(0,124,162,.2);
+
+  --ok:    #0A7A50;
+  --ok-bg: #EDFBF4;
+
+  --grad: linear-gradient(135deg, var(--z-teal) 0%, var(--z-cyan) 100%);
+
+  --s1: 0 1px 3px rgba(15,23,32,.06), 0 4px 12px rgba(15,23,32,.04);
+  --s2: 0 4px 20px rgba(15,23,32,.08), 0 1px 4px rgba(15,23,32,.05);
+  --s3: 0 8px 32px rgba(0,124,162,.15), 0 2px 8px rgba(0,124,162,.08);
+
+  --font: 'Manrope', 'Noto Sans JP', system-ui, sans-serif;
+  --font-jp: 'Noto Sans JP', 'Manrope', sans-serif;
+
+  --r:  12px;
+  --r2: 16px;
+  --r3: 20px;
+  --rpill: 100px;
+
+  --fxs: .74rem;
+  --fsm: .86rem;
+  --fmd: .98rem;
+  --flg: 1.1rem;
+  --fxl: 1.3rem;
+  --f2xl: 1.7rem;
+}
+
+[data-theme="dark"] {
+  --bg:      #0F1720;
+  --bg2:     #172030;
+  --bg3:     #1E2D40;
+  --bg4:     #243550;
+  --border:  #263346;
+  --border2: #2E3E56;
+  --text:    #EBF0F8;
+  --text2:   #A8BDD0;
+  --muted:   #7A8FA8;
+  --muted2:  #5A7090;
+  --accent:    var(--z-cyan);
+  --accent-l:  var(--z-soft);
+  --accent-bg: rgba(95,166,192,.10);
+  --accent-bd: rgba(95,166,192,.25);
+  --ok:    #2DD47A;
+  --ok-bg: rgba(45,212,122,.08);
+  --grad:  linear-gradient(135deg, var(--z-cyan) 0%, var(--z-soft) 100%);
+  --s1: 0 1px 3px rgba(0,0,0,.3), 0 4px 12px rgba(0,0,0,.2);
+  --s2: 0 4px 20px rgba(0,0,0,.4), 0 1px 4px rgba(0,0,0,.3);
+  --s3: 0 8px 32px rgba(0,0,0,.5), 0 2px 8px rgba(0,0,0,.3);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html,body{ height:100%; }
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  transition: background .25s ease, color .25s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+}
+
+.wrap { max-width: 720px; margin: 0 auto; padding: 0 20px 60px; }
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0 8px;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.brand { display: flex; align-items: center; gap: 10px; min-width: 0; }
+.brand-mark {
+  width: 36px; height: 36px; border-radius: 10px;
+  background: var(--grad);
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 900; font-size: 15px; color: white;
+  box-shadow: var(--s2); flex-shrink: 0;
+}
+.brand-text { display: flex; flex-direction: column; }
+.brand-title { font-weight: 800; font-size: var(--fmd); letter-spacing: -.01em; line-height: 1.1; }
+.brand-sub { font-size: var(--fxs); font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: .1em; margin-top: 3px; }
+
+.header-actions { display: flex; gap: 8px; align-items: center; }
+
+.lang-select-mini {
+  appearance: none; -webkit-appearance: none;
+  background: var(--bg2); border: 1px solid var(--border); border-radius: var(--rpill);
+  color: var(--text); font-family: inherit; font-weight: 700; font-size: var(--fxs);
+  min-height: 38px; padding: 0 26px 0 14px; cursor: pointer;
+  background-image: linear-gradient(45deg, transparent 50%, var(--muted) 50%), linear-gradient(135deg, var(--muted) 50%, transparent 50%);
+  background-position: right 14px center, right 9px center;
+  background-size: 5px 5px, 5px 5px; background-repeat: no-repeat;
+}
+
+.icon-btn {
+  width: 38px; height: 38px; border-radius: 50%;
+  border: 1px solid var(--border); background: var(--bg2); color: var(--text);
+  cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 16px;
+  transition: all .2s ease;
+}
+.icon-btn:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-bg); }
+
+.back-link { display: inline-flex; align-items: center; gap: 4px; color: var(--muted); font-size: var(--fxs); font-weight: 700; margin-top: 10px; }
+.back-link:hover { color: var(--accent); }
+a { text-decoration: none; }
+
+.intro { padding: 18px 0 6px; }
+.intro-eyebrow { font-size: var(--fxs); font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: .16em; margin-bottom: 10px; }
+.intro h1 { font-size: var(--f2xl); font-weight: 800; letter-spacing: -.02em; line-height: 1.2; margin-bottom: 10px; }
+.intro p { color: var(--muted); font-size: var(--fmd); line-height: 1.65; max-width: 56ch; }
+
+.card {
+  border: 1px solid var(--border);
+  background: var(--bg2);
+  border-radius: var(--r2);
+  padding: 20px;
+  margin-top: 18px;
+  box-shadow: var(--s1);
+}
+
+.card h2 {
+  font-size: var(--fxs);
+  font-weight: 800;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  margin-bottom: 16px;
+}
+
+.field { margin-bottom: 16px; }
+.field:last-child { margin-bottom: 0; }
+.field label.flabel {
+  display: block; font-size: var(--fsm); font-weight: 700; color: var(--text2); margin-bottom: 8px;
+}
+
+select.input, input[type="number"].input, input[type="text"].input {
+  width: 100%;
+  border: 1.5px solid var(--border);
+  background: var(--bg);
+  color: var(--text);
+  border-radius: var(--r);
+  padding: 12px 14px;
+  font-family: inherit;
+  font-size: var(--fmd);
+  font-weight: 600;
+  outline: none;
+}
+select.input { appearance: none; -webkit-appearance: none;
+  background-image: linear-gradient(45deg, transparent 50%, var(--muted) 50%), linear-gradient(135deg, var(--muted) 50%, transparent 50%);
+  background-position: calc(100% - 18px) center, calc(100% - 13px) center;
+  background-size: 5px 5px, 5px 5px; background-repeat: no-repeat;
+  padding-right: 36px;
+}
+select.input:focus, input.input:focus { border-color: var(--accent); }
+
+.pill-row { display: flex; gap: 8px; flex-wrap: wrap; }
+.pill-opt {
+  border: 1.5px solid var(--border);
+  background: var(--bg);
+  color: var(--text);
+  border-radius: var(--rpill);
+  padding: 9px 16px;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: var(--fsm);
+  cursor: pointer;
+  transition: all .18s ease;
+}
+.pill-opt:hover { border-color: var(--accent-bd); }
+.pill-opt.active { background: var(--grad); border-color: transparent; color: white; box-shadow: var(--s2); }
+
+.check-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 0;
+  border-top: 1px solid var(--border);
+}
+.field .check-row:first-of-type { border-top: none; padding-top: 0; }
+.check-row input[type="checkbox"] { width: 20px; height: 20px; accent-color: var(--accent); cursor: pointer; flex-shrink: 0; }
+.check-row .clabel { font-weight: 700; font-size: var(--fsm); flex: 1; }
+.sub-fields { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 0 0 12px 30px; }
+.sub-fields.hidden { display: none; }
+.sub-fields.full { grid-template-columns: 1fr; }
+
+.result-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 16px 18px;
+  border-radius: var(--r2);
+  background: var(--grad);
+  color: white;
+  margin-bottom: 14px;
+}
+.result-total .label { font-size: var(--fsm); font-weight: 700; opacity: .9; }
+.result-total .value { font-size: var(--fxl); font-weight: 900; letter-spacing: -.01em; }
+.result-total .value small { display: block; font-size: var(--fxs); font-weight: 700; opacity: .85; margin-top: 2px; }
+
+.line-item {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: var(--fsm);
+}
+.line-item:last-child { border-bottom: none; }
+.line-item .li-label { color: var(--text2); font-weight: 600; }
+.line-item .li-value { font-weight: 800; color: var(--text); white-space: nowrap; }
+
+.share-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 18px; }
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  border: none; border-radius: var(--rpill); padding: 12px 20px;
+  font-family: inherit; font-weight: 700; font-size: var(--fsm); cursor: pointer;
+  background: var(--grad); color: white; box-shadow: var(--s2); transition: all .2s ease;
+}
+.btn:hover { transform: translateY(-1px); }
+.btn.secondary { background: var(--bg2); color: var(--text); border: 1.5px solid var(--border); box-shadow: none; }
+.btn.secondary:hover { border-color: var(--accent); color: var(--accent); }
+
+.disclaimer {
+  margin-top: 18px;
+  font-size: var(--fxs);
+  color: var(--muted);
+  line-height: 1.6;
+  background: var(--accent-bg);
+  border: 1px solid var(--accent-bd);
+  border-radius: var(--r);
+  padding: 14px 16px;
+}
+
+.toast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  background: var(--text);
+  color: var(--bg);
+  padding: 12px 20px;
+  border-radius: var(--rpill);
+  font-size: var(--fsm);
+  font-weight: 700;
+  opacity: 0;
+  pointer-events: none;
+  transition: all .25s ease;
+  z-index: 90;
+}
+.toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+.footer { text-align: center; padding: 30px 0 10px; font-size: var(--fxs); color: var(--muted2); }
+
+@media (max-width: 480px) {
+  .sub-fields { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="header">
+    <div class="brand">
+      <div class="brand-mark">¥</div>
+      <div class="brand-text">
+        <div class="brand-title" id="brandTitle">Costo de vida</div>
+        <div class="brand-sub">Facil Japón</div>
+      </div>
+    </div>
+    <div class="header-actions">
+      <select class="lang-select-mini" id="langSelect" aria-label="Idioma" onchange="handleLangChange(this.value)">
+        <option value="es">🇪🇸 ES</option>
+        <option value="en">🇬🇧 EN</option>
+        <option value="pt">🇧🇷 PT</option>
+        <option value="jp">🇯🇵 日</option>
+        <option value="tl">🇵🇭 TL</option>
+      </select>
+      <button class="icon-btn" id="themeToggle" aria-label="Cambiar tema">☀️</button>
+    </div>
+  </header>
+
+  <a class="back-link" href="../" id="backLink">← Facil Japón</a>
+
+  <div class="intro">
+    <div class="intro-eyebrow" id="introEyebrow">Calculadora</div>
+    <h1 id="introTitle">¿Cuánto cuesta vivir en Japón?</h1>
+    <p id="introDesc">Estima cuánto necesitas para mudarte y cuánto gastarás cada mes, según la ciudad, tu hogar y tu estilo de vida. Ajusta las opciones y el resultado se actualiza al instante.</p>
+  </div>
+
+  <!-- FORM -->
+  <div class="card">
+    <h2 id="hCiudad">Ciudad</h2>
+    <div class="field">
+      <select class="input" id="fCity"></select>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2 id="hHogar">Tu hogar</h2>
+    <div class="field">
+      <label class="flabel" id="lblPeople">Personas en el hogar</label>
+      <select class="input" id="fPeople">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3+</option>
+      </select>
+    </div>
+    <div class="field">
+      <label class="flabel" id="lblLifestyle">Estilo de vida</label>
+      <div class="pill-row" id="fLifestyle">
+        <button class="pill-opt" data-val="ahorro" id="lsAhorro">Ahorro</button>
+        <button class="pill-opt active" data-val="estandar" id="lsEstandar">Estándar</button>
+        <button class="pill-opt" data-val="comodo" id="lsComodo">Cómodo</button>
+      </div>
+    </div>
+    <div class="field">
+      <label class="flabel" id="lblTransport">Transporte principal</label>
+      <select class="input" id="fTransport">
+        <option value="tren" id="optTren">Tren / bus</option>
+        <option value="bici" id="optBici">Bicicleta</option>
+        <option value="auto" id="optAuto">Auto</option>
+      </select>
+    </div>
+    <div class="field">
+      <label class="flabel" id="lblGuarantor">¿Tienes garante japonés?</label>
+      <div class="pill-row" id="fGuarantor">
+        <button class="pill-opt active" data-val="yes" id="gYes">Sí</button>
+        <button class="pill-opt" data-val="no" id="gNo">No, necesito seguro de garantía</button>
+      </div>
+    </div>
+    <div class="field">
+      <label class="flabel" id="lblFurniture">Nivel de muebles para la mudanza</label>
+      <div class="pill-row" id="fFurniture">
+        <button class="pill-opt" data-val="minimo" id="fnMinimo">Mínimo</button>
+        <button class="pill-opt active" data-val="estandar" id="fnEstandar">Estándar</button>
+        <button class="pill-opt" data-val="completo" id="fnCompleto">Completo</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2 id="hExtras">Extras</h2>
+
+    <div class="field">
+      <div class="check-row">
+        <input type="checkbox" id="cKids">
+        <span class="clabel" id="lblKids">Hijos (guardería / escuela)</span>
+      </div>
+      <div class="sub-fields hidden" id="subKids">
+        <input type="number" min="0" max="10" class="input" id="kidsCount" placeholder="Cantidad" value="1">
+        <select class="input" id="kidsLevel">
+          <option value="guarderia" id="klGuarderia">Guardería</option>
+          <option value="primaria" id="klPrimaria">Primaria</option>
+          <option value="secundaria" id="klSecundaria">Secundaria</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="field">
+      <div class="check-row">
+        <input type="checkbox" id="cPets">
+        <span class="clabel" id="lblPets">Mascotas</span>
+      </div>
+      <div class="sub-fields hidden" id="subPets" style="grid-template-columns:1fr 1fr 1fr;">
+        <div>
+          <label class="flabel" id="lblDogs" style="font-size:var(--fxs);">Perros</label>
+          <input type="number" min="0" max="10" class="input" id="petDogs" value="1">
+        </div>
+        <div>
+          <label class="flabel" id="lblCats" style="font-size:var(--fxs);">Gatos</label>
+          <input type="number" min="0" max="10" class="input" id="petCats" value="0">
+        </div>
+        <div>
+          <label class="flabel" id="lblOtherPets" style="font-size:var(--fxs);">Otras</label>
+          <input type="number" min="0" max="10" class="input" id="petOther" value="0">
+        </div>
+      </div>
+    </div>
+
+    <div class="check-row">
+      <input type="checkbox" id="cGym">
+      <span class="clabel" id="lblGym">Gimnasio</span>
+    </div>
+
+    <div class="field">
+      <div class="check-row">
+        <input type="checkbox" id="cRemit">
+        <span class="clabel" id="lblRemit">Envío de dinero al exterior</span>
+      </div>
+      <div class="sub-fields hidden full" id="subRemit">
+        <input type="number" min="0" class="input" id="remitAmount" placeholder="Monto en ¥ por mes" value="30000">
+      </div>
+    </div>
+
+    <div class="field">
+      <div class="check-row">
+        <input type="checkbox" id="cOther">
+        <span class="clabel" id="lblOther">Otro gasto</span>
+      </div>
+      <div class="sub-fields hidden" id="subOther">
+        <input type="text" class="input" id="otherLabel" placeholder="¿Qué gasto?">
+        <input type="number" min="0" class="input" id="otherAmount" placeholder="Monto en ¥ por mes" value="10000">
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2 id="hMoneda">Moneda de referencia</h2>
+    <div class="field">
+      <select class="input" id="fCurrency"></select>
+    </div>
+  </div>
+
+  <!-- RESULTS -->
+  <div class="card" id="cardMoveIn">
+    <h2 id="hMudanza">Costo de mudanza (pago único)</h2>
+    <div class="result-total">
+      <span class="label" id="lblTotalMudanza">Total estimado</span>
+      <span class="value" id="totalMoveIn">¥0<small id="totalMoveInAlt"></small></span>
+    </div>
+    <div id="linesMoveIn"></div>
+  </div>
+
+  <div class="card" id="cardMonthly">
+    <h2 id="hMensual">Costo de vida mensual</h2>
+    <div class="result-total">
+      <span class="label" id="lblTotalMensual">Total estimado</span>
+      <span class="value" id="totalMonthly">¥0<small id="totalMonthlyAlt"></small></span>
+    </div>
+    <div id="linesMonthly"></div>
+  </div>
+
+  <div class="share-row">
+    <button class="btn" id="btnCopyLink">🔗 <span id="lblCopyLink">Copiar link para compartir</span></button>
+    <button class="btn secondary" id="btnDownloadImg">🖼️ <span id="lblDownloadImg">Descargar como imagen</span></button>
+  </div>
+
+  <div class="disclaimer" id="disclaimerText">
+    Estos valores son estimados de referencia, calculados a partir de rangos típicos publicados sobre costo de vida en Japón. Los precios reales varían según el barrio, la inmobiliaria, tu ingreso y tipo de contrato. Úsalos como punto de partida, no como cotización exacta.
+  </div>
+
+  <div class="footer" id="footerText">
+    Facil Japón · Calculadora de costo de vida
+  </div>
+</div>
+
+<div class="toast" id="toast">Copiado</div>
+
+<script>
+/* ═══════════════════════════════════════════════
+   I18N
+═══════════════════════════════════════════════ */
+const I18N = {
+  es: {
+    brandTitle:'Costo de vida', backLink:'← Facil Japón',
+    introEyebrow:'Calculadora', introTitle:'¿Cuánto cuesta vivir en Japón?',
+    introDesc:'Estima cuánto necesitas para mudarte y cuánto gastarás cada mes, según la ciudad, tu hogar y tu estilo de vida. Ajusta las opciones y el resultado se actualiza al instante.',
+    hCiudad:'Ciudad', hHogar:'Tu hogar', hExtras:'Extras', hMoneda:'Moneda de referencia',
+    lblPeople:'Personas en el hogar', lblLifestyle:'Estilo de vida', lblTransport:'Transporte principal',
+    lblGuarantor:'¿Tienes garante japonés?', lblFurniture:'Nivel de muebles para la mudanza',
+    ahorro:'Ahorro', estandar:'Estándar', comodo:'Cómodo',
+    optTren:'Tren / bus', optBici:'Bicicleta', optAuto:'Auto',
+    gYes:'Sí', gNo:'No, necesito seguro de garantía',
+    fnMinimo:'Mínimo', fnEstandar:'Estándar', fnCompleto:'Completo',
+    lblKids:'Hijos (guardería / escuela)', klGuarderia:'Guardería', klPrimaria:'Primaria', klSecundaria:'Secundaria',
+    lblPets:'Mascotas', lblDogs:'Perros', lblCats:'Gatos', lblOtherPets:'Otras',
+    lblGym:'Gimnasio', lblRemit:'Envío de dinero al exterior', lblOther:'Otro gasto',
+    remitPh:'Monto en ¥ por mes', otherLabelPh:'¿Qué gasto?', otherAmountPh:'Monto en ¥ por mes',
+    hMudanza:'Costo de mudanza (pago único)', hMensual:'Costo de vida mensual',
+    lblTotalMudanza:'Total estimado', lblTotalMensual:'Total estimado',
+    lblCopyLink:'Copiar link para compartir', lblDownloadImg:'Descargar como imagen',
+    copiedToast:'¡Link copiado!',
+    disclaimerText:'Estos valores son estimados de referencia, calculados a partir de rangos típicos de costo de vida en Japón. Los precios reales varían según el barrio, la inmobiliaria, tu ingreso y tipo de contrato. Úsalos como punto de partida, no como cotización exacta.',
+    footerText:'Facil Japón · Calculadora de costo de vida',
+    currencyNone:'Solo yenes (¥)',
+    items: {
+      moveDeposit:'Depósito (敷金)', moveKey:'Llave / dinero no reembolsable (礼金)', moveAgency:'Comisión de la inmobiliaria',
+      moveGuarantorIns:'Seguro de garantía (sin garante)', moveFireIns:'Seguro contra incendio', moveFirstRent:'Primer mes de renta',
+      moveFlete:'Mudanza (flete)', moveFurniture:'Muebles y electrodomésticos', moveSetup:'Apertura de luz, gas y agua', moveInternet:'Instalación de internet',
+      monRent:'Renta mensual', monCommon:'Gastos comunes del edificio (管理費)', monUtilities:'Luz, gas y agua',
+      monFood:'Comida', monLeisure:'Ocio y varios', monTransitTrain:'Transporte (tren/bus)', monTransitBike:'Mantenimiento de bicicleta',
+      monTransitCar:'Auto (estacionamiento, seguro, mantenimiento)', monInternetPhone:'Internet y celular', monHealthPension:'Seguro de salud + pensión',
+      monKids:'Guardería/escuela de hijos', monDogs:'Perros (comida, veterinario, registro)', monCats:'Gatos (comida, veterinario)',
+      monOtherPets:'Otras mascotas', monGym:'Gimnasio', monRemittance:'Envío de dinero al exterior',
+    },
+    cityLabels: { tokio:'Tokio', osaka:'Osaka', nagoya:'Nagoya', fukuoka:'Fukuoka', sapporo:'Sapporo', rural:'Zona rural / pueblo' },
+  },
+  en: {
+    brandTitle:'Cost of living', backLink:'← Facil Japón',
+    introEyebrow:'Calculator', introTitle:'How much does it cost to live in Japan?',
+    introDesc:'Estimate how much you need to move and how much you\'ll spend monthly, based on city, household and lifestyle. Adjust the options and the result updates instantly.',
+    hCiudad:'City', hHogar:'Your household', hExtras:'Extras', hMoneda:'Reference currency',
+    lblPeople:'People in the household', lblLifestyle:'Lifestyle', lblTransport:'Main transportation',
+    lblGuarantor:'Do you have a Japanese guarantor?', lblFurniture:'Furniture level for moving',
+    ahorro:'Budget', estandar:'Standard', comodo:'Comfortable',
+    optTren:'Train / bus', optBici:'Bicycle', optAuto:'Car',
+    gYes:'Yes', gNo:'No, I need guarantor insurance',
+    fnMinimo:'Minimal', fnEstandar:'Standard', fnCompleto:'Full',
+    lblKids:'Children (daycare / school)', klGuarderia:'Daycare', klPrimaria:'Elementary', klSecundaria:'Middle/high school',
+    lblPets:'Pets', lblDogs:'Dogs', lblCats:'Cats', lblOtherPets:'Others',
+    lblGym:'Gym', lblRemit:'Sending money abroad', lblOther:'Other expense',
+    remitPh:'Amount in ¥ per month', otherLabelPh:'What expense?', otherAmountPh:'Amount in ¥ per month',
+    hMudanza:'Moving cost (one-time)', hMensual:'Monthly cost of living',
+    lblTotalMudanza:'Estimated total', lblTotalMensual:'Estimated total',
+    lblCopyLink:'Copy shareable link', lblDownloadImg:'Download as image',
+    copiedToast:'Link copied!',
+    disclaimerText:'These figures are reference estimates based on typical cost-of-living ranges in Japan. Actual prices vary by neighborhood, agency, income and contract type. Use them as a starting point, not an exact quote.',
+    footerText:'Facil Japón · Cost of living calculator',
+    currencyNone:'Yen only (¥)',
+    items: {
+      moveDeposit:'Deposit (敷金)', moveKey:'Key money, non-refundable (礼金)', moveAgency:'Real estate agency fee',
+      moveGuarantorIns:'Guarantor insurance (no guarantor)', moveFireIns:'Fire insurance', moveFirstRent:'First month rent',
+      moveFlete:'Moving company', moveFurniture:'Furniture and appliances', moveSetup:'Utility setup fees', moveInternet:'Internet installation',
+      monRent:'Monthly rent', monCommon:'Building common fees (管理費)', monUtilities:'Electricity, gas and water',
+      monFood:'Food', monLeisure:'Leisure and misc.', monTransitTrain:'Transit (train/bus)', monTransitBike:'Bicycle upkeep',
+      monTransitCar:'Car (parking, insurance, upkeep)', monInternetPhone:'Internet and phone', monHealthPension:'Health insurance + pension',
+      monKids:'Children daycare/school', monDogs:'Dogs (food, vet, registration)', monCats:'Cats (food, vet)',
+      monOtherPets:'Other pets', monGym:'Gym', monRemittance:'Money sent abroad',
+    },
+    cityLabels: { tokio:'Tokyo', osaka:'Osaka', nagoya:'Nagoya', fukuoka:'Fukuoka', sapporo:'Sapporo', rural:'Countryside / small town' },
+  },
+  jp: {
+    brandTitle:'生活費', backLink:'← Facil Japón',
+    introEyebrow:'計算ツール', introTitle:'日本での生活費はどのくらい？',
+    introDesc:'都市、世帯構成、ライフスタイルをもとに、引っ越し費用と毎月の生活費を推定します。設定を変えると結果はすぐに更新されます。',
+    hCiudad:'都市', hHogar:'世帯情報', hExtras:'追加項目', hMoneda:'参考通貨',
+    lblPeople:'世帯人数', lblLifestyle:'ライフスタイル', lblTransport:'主な交通手段',
+    lblGuarantor:'日本人の保証人はいますか？', lblFurniture:'引っ越し時の家具レベル',
+    ahorro:'節約', estandar:'標準', comodo:'快適',
+    optTren:'電車・バス', optBici:'自転車', optAuto:'車',
+    gYes:'はい', gNo:'いいえ、保証会社が必要',
+    fnMinimo:'最小限', fnEstandar:'標準', fnCompleto:'フル',
+    lblKids:'子供（保育園・学校）', klGuarderia:'保育園', klPrimaria:'小学校', klSecundaria:'中学・高校',
+    lblPets:'ペット', lblDogs:'犬', lblCats:'猫', lblOtherPets:'その他',
+    lblGym:'ジム', lblRemit:'海外送金', lblOther:'その他の支出',
+    remitPh:'月額（¥）', otherLabelPh:'何の支出？', otherAmountPh:'月額（¥）',
+    hMudanza:'引っ越し費用（一回限り）', hMensual:'毎月の生活費',
+    lblTotalMudanza:'推定合計', lblTotalMensual:'推定合計',
+    lblCopyLink:'共有リンクをコピー', lblDownloadImg:'画像として保存',
+    copiedToast:'リンクをコピーしました！',
+    disclaimerText:'これらの数値は日本の一般的な生活費の範囲に基づいた参考値です。実際の価格は地域、不動産会社、収入、契約内容によって異なります。目安としてご利用ください。',
+    footerText:'Facil Japón · 生活費計算ツール',
+    currencyNone:'円のみ（¥）',
+    items: {
+      moveDeposit:'敷金', moveKey:'礼金', moveAgency:'仲介手数料',
+      moveGuarantorIns:'保証会社利用料（保証人なし）', moveFireIns:'火災保険', moveFirstRent:'前家賃',
+      moveFlete:'引っ越し業者費用', moveFurniture:'家具・家電', moveSetup:'ライフライン開通費用', moveInternet:'インターネット開通費用',
+      monRent:'家賃', monCommon:'管理費', monUtilities:'電気・ガス・水道',
+      monFood:'食費', monLeisure:'娯楽・雑費', monTransitTrain:'交通費（電車・バス）', monTransitBike:'自転車維持費',
+      monTransitCar:'車（駐車場・保険・維持費）', monInternetPhone:'インターネット・携帯', monHealthPension:'健康保険・年金',
+      monKids:'子供の保育園・学校費用', monDogs:'犬（食費・獣医・登録）', monCats:'猫（食費・獣医）',
+      monOtherPets:'その他のペット', monGym:'ジム', monRemittance:'海外送金',
+    },
+    cityLabels: { tokio:'東京', osaka:'大阪', nagoya:'名古屋', fukuoka:'福岡', sapporo:'札幌', rural:'地方・田舎' },
+  },
+  pt: {
+    brandTitle:'Custo de vida', backLink:'← Facil Japón',
+    introEyebrow:'Calculadora', introTitle:'Quanto custa viver no Japão?',
+    introDesc:'Estime quanto você precisa para se mudar e quanto vai gastar por mês, conforme a cidade, seu lar e seu estilo de vida. Ajuste as opções e o resultado atualiza na hora.',
+    hCiudad:'Cidade', hHogar:'Seu lar', hExtras:'Extras', hMoneda:'Moeda de referência',
+    lblPeople:'Pessoas no domicílio', lblLifestyle:'Estilo de vida', lblTransport:'Transporte principal',
+    lblGuarantor:'Você tem um fiador japonês?', lblFurniture:'Nível de móveis para a mudança',
+    ahorro:'Econômico', estandar:'Padrão', comodo:'Confortável',
+    optTren:'Trem / ônibus', optBici:'Bicicleta', optAuto:'Carro',
+    gYes:'Sim', gNo:'Não, preciso de seguro fiador',
+    fnMinimo:'Mínimo', fnEstandar:'Padrão', fnCompleto:'Completo',
+    lblKids:'Filhos (creche / escola)', klGuarderia:'Creche', klPrimaria:'Fundamental', klSecundaria:'Ensino médio',
+    lblPets:'Animais de estimação', lblDogs:'Cachorros', lblCats:'Gatos', lblOtherPets:'Outros',
+    lblGym:'Academia', lblRemit:'Envio de dinheiro ao exterior', lblOther:'Outro gasto',
+    remitPh:'Valor em ¥ por mês', otherLabelPh:'Qual gasto?', otherAmountPh:'Valor em ¥ por mês',
+    hMudanza:'Custo de mudança (único)', hMensual:'Custo de vida mensal',
+    lblTotalMudanza:'Total estimado', lblTotalMensual:'Total estimado',
+    lblCopyLink:'Copiar link para compartilhar', lblDownloadImg:'Baixar como imagem',
+    copiedToast:'Link copiado!',
+    disclaimerText:'Estes valores são estimativas de referência baseadas em faixas típicas de custo de vida no Japão. Os preços reais variam por bairro, imobiliária, renda e tipo de contrato. Use como ponto de partida, não como orçamento exato.',
+    footerText:'Facil Japón · Calculadora de custo de vida',
+    currencyNone:'Somente ienes (¥)',
+    items: {
+      moveDeposit:'Depósito (敷金)', moveKey:'Luvas, não reembolsável (礼金)', moveAgency:'Comissão da imobiliária',
+      moveGuarantorIns:'Seguro fiador (sem fiador)', moveFireIns:'Seguro contra incêndio', moveFirstRent:'Primeiro mês de aluguel',
+      moveFlete:'Empresa de mudança', moveFurniture:'Móveis e eletrodomésticos', moveSetup:'Taxas de instalação de utilidades', moveInternet:'Instalação de internet',
+      monRent:'Aluguel mensal', monCommon:'Taxa condominial (管理費)', monUtilities:'Luz, gás e água',
+      monFood:'Alimentação', monLeisure:'Lazer e outros', monTransitTrain:'Transporte (trem/ônibus)', monTransitBike:'Manutenção da bicicleta',
+      monTransitCar:'Carro (estacionamento, seguro, manutenção)', monInternetPhone:'Internet e celular', monHealthPension:'Seguro de saúde + pensão',
+      monKids:'Creche/escola dos filhos', monDogs:'Cachorros (comida, veterinário, registro)', monCats:'Gatos (comida, veterinário)',
+      monOtherPets:'Outros animais', monGym:'Academia', monRemittance:'Envio de dinheiro ao exterior',
+    },
+    cityLabels: { tokio:'Tóquio', osaka:'Osaka', nagoya:'Nagoya', fukuoka:'Fukuoka', sapporo:'Sapporo', rural:'Zona rural / cidade pequena' },
+  },
+  tl: {
+    brandTitle:'Gastos sa pamumuhay', backLink:'← Facil Japón',
+    introEyebrow:'Calculator', introTitle:'Magkano ang gastos sa pamumuhay sa Japan?',
+    introDesc:'Tantyahin kung magkano ang kakailanganin mo para lumipat at kung magkano ang gagastusin mo buwan-buwan, base sa lungsod, sambahayan, at lifestyle. Baguhin ang mga opsyon at agad na mag-a-update ang resulta.',
+    hCiudad:'Lungsod', hHogar:'Ang iyong tahanan', hExtras:'Mga extra', hMoneda:'Reference na currency',
+    lblPeople:'Bilang ng tao sa bahay', lblLifestyle:'Lifestyle', lblTransport:'Pangunahing transportasyon',
+    lblGuarantor:'May Japanese guarantor ka ba?', lblFurniture:'Antas ng muwebles para sa paglipat',
+    ahorro:'Matipid', estandar:'Karaniwan', comodo:'Komportable',
+    optTren:'Tren / bus', optBici:'Bisikleta', optAuto:'Kotse',
+    gYes:'Oo', gNo:'Hindi, kailangan ko ng guarantor insurance',
+    fnMinimo:'Minimal', fnEstandar:'Karaniwan', fnCompleto:'Kumpleto',
+    lblKids:'Mga anak (daycare / paaralan)', klGuarderia:'Daycare', klPrimaria:'Elementarya', klSecundaria:'High school',
+    lblPets:'Mga alagang hayop', lblDogs:'Aso', lblCats:'Pusa', lblOtherPets:'Iba pa',
+    lblGym:'Gym', lblRemit:'Padala ng pera sa ibang bansa', lblOther:'Ibang gastos',
+    remitPh:'Halaga sa ¥ kada buwan', otherLabelPh:'Anong gastos?', otherAmountPh:'Halaga sa ¥ kada buwan',
+    hMudanza:'Gastos sa paglipat (isang beses)', hMensual:'Buwanang gastos sa pamumuhay',
+    lblTotalMudanza:'Tinatayang kabuuan', lblTotalMensual:'Tinatayang kabuuan',
+    lblCopyLink:'Kopyahin ang link para ibahagi', lblDownloadImg:'I-download bilang larawan',
+    copiedToast:'Na-copy ang link!',
+    disclaimerText:'Ang mga halagang ito ay tinatayang reference lamang, batay sa karaniwang saklaw ng gastos sa pamumuhay sa Japan. Ang aktwal na presyo ay nag-iiba ayon sa lugar, ahensya, kita, at uri ng kontrata. Gamitin ito bilang panimulang tantiya lamang.',
+    footerText:'Facil Japón · Calculator ng gastos sa pamumuhay',
+    currencyNone:'Yen lamang (¥)',
+    items: {
+      moveDeposit:'Deposito (敷金)', moveKey:'Key money, hindi na-rerefund (礼金)', moveAgency:'Bayad sa real estate agency',
+      moveGuarantorIns:'Guarantor insurance (walang guarantor)', moveFireIns:'Fire insurance', moveFirstRent:'Unang buwan ng upa',
+      moveFlete:'Kumpanya ng paglipat', moveFurniture:'Muwebles at appliances', moveSetup:'Bayad sa pag-set up ng utilities', moveInternet:'Pag-install ng internet',
+      monRent:'Buwanang upa', monCommon:'Common fee ng building (管理費)', monUtilities:'Kuryente, gas at tubig',
+      monFood:'Pagkain', monLeisure:'Libangan at iba pa', monTransitTrain:'Transportasyon (tren/bus)', monTransitBike:'Pagpapanatili ng bisikleta',
+      monTransitCar:'Kotse (paradahan, insurance, maintenance)', monInternetPhone:'Internet at cellphone', monHealthPension:'Health insurance + pensyon',
+      monKids:'Daycare/paaralan ng anak', monDogs:'Aso (pagkain, beterinaryo, rehistro)', monCats:'Pusa (pagkain, beterinaryo)',
+      monOtherPets:'Ibang alagang hayop', monGym:'Gym', monRemittance:'Padala ng pera sa ibang bansa',
+    },
+    cityLabels: { tokio:'Tokyo', osaka:'Osaka', nagoya:'Nagoya', fukuoka:'Fukuoka', sapporo:'Sapporo', rural:'Lalawigan / maliit na bayan' },
+  },
+};
+
+/* ═══════════════════════════════════════════════
+   DATA
+═══════════════════════════════════════════════ */
+const CITY_INDEX = { tokio:1.15, osaka:1.0, nagoya:0.95, fukuoka:0.88, sapporo:0.85, rural:0.75 };
+const CITY_KEYS = ['tokio','osaka','nagoya','fukuoka','sapporo','rural'];
+
+const RENT = {
+  tokio:   { '1':[70000,95000],  '2':[110000,150000], '3':[160000,220000] },
+  osaka:   { '1':[50000,70000],  '2':[80000,110000],  '3':[120000,160000] },
+  nagoya:  { '1':[45000,65000],  '2':[70000,95000],   '3':[100000,140000] },
+  fukuoka: { '1':[40000,58000],  '2':[65000,85000],   '3':[90000,125000] },
+  sapporo: { '1':[38000,55000],  '2':[60000,80000],   '3':[85000,115000] },
+  rural:   { '1':[25000,40000],  '2':[40000,60000],   '3':[55000,85000] },
+};
+
+const MOVING_FLAT = { '1':[25000,40000], '2':[40000,65000], '3':[70000,110000] };
+
+const FURNITURE = {
+  minimo:   { '1':[30000,60000],  '2':[45000,90000],  '3':[75000,150000] },
+  estandar: { '1':[100000,180000],'2':[150000,270000],'3':[250000,450000] },
+  completo: { '1':[250000,400000],'2':[375000,600000],'3':[625000,1000000] },
+};
+
+const COMMON_FEES = { '1':[3000,8000], '2':[5000,12000], '3':[8000,18000] };
+const PARKING_BY_CITY = { tokio:30000, osaka:20000, nagoya:15000, fukuoka:12000, sapporo:10000, rural:3000 };
+
+const BASE = { foodPerAdult:35000, leisurePerAdult:15000, transitPerAdult:8000, utilitiesBaseHousehold:10000, utilitiesPerExtraPerson:4000 };
+const LIFESTYLE_MULT = { ahorro:0.75, estandar:1, comodo:1.4 };
+const CHILD_COST = { guarderia:[20000,60000], primaria:[5000,12000], secundaria:[8000,18000] };
+const PET_COST = { perro:[8000,14000], gato:[5000,9000], otra:[3000,6000] };
+const GYM_COST = [6000,12000];
+
+const CURRENCIES = {
+  JPY: { symbol:'¥', suffix:'', jpyPerUnit:1 },
+  USD: { symbol:'$', suffix:'', jpyPerUnit:150 },
+  BRL: { symbol:'R$', suffix:'', jpyPerUnit:27 },
+  PHP: { symbol:'₱', suffix:'', jpyPerUnit:2.6 },
+  MXN: { symbol:'$', suffix:' MXN', jpyPerUnit:8.2 },
+  COP: { symbol:'$', suffix:' COP', jpyPerUnit:0.0375 },
+  PEN: { symbol:'S/', suffix:'', jpyPerUnit:39.5 },
+  ARS: { symbol:'$', suffix:' ARS', jpyPerUnit:0.15 },
+  CLP: { symbol:'$', suffix:' CLP', jpyPerUnit:0.155 },
+};
+const CURRENCY_KEYS = ['JPY','USD','BRL','PHP','MXN','COP','PEN','ARS','CLP'];
+const DEFAULT_CURRENCY_BY_LANG = { es:'USD', en:'USD', pt:'BRL', jp:'JPY', tl:'PHP' };
+
+/* ═══════════════════════════════════════════════
+   RANGE HELPERS
+═══════════════════════════════════════════════ */
+function R(a,b){ return [a,b]; }
+function addR(a,b){ return [a[0]+b[0], a[1]+b[1]]; }
+function mulR(a,n){ return [a[0]*n, a[1]*n]; }
+function scaleR(a,f){ return [a[0]*f, a[1]*f]; }
+function sumR(arr){ return arr.reduce(addR, [0,0]); }
+
+/* ═══════════════════════════════════════════════
+   STATE
+═══════════════════════════════════════════════ */
+const state = {
+  lang: localStorage.getItem('fj_lang') || 'es',
+  city: 'tokio',
+  people: '1',
+  lifestyle: 'estandar',
+  transport: 'tren',
+  hasGuarantor: true,
+  furniture: 'estandar',
+  hasKids: false, kidsCount: 1, kidsLevel: 'guarderia',
+  hasPets: false, dogs: 1, cats: 0, otherPets: 0,
+  hasGym: false,
+  hasRemit: false, remitAmount: 30000,
+  hasOther: false, otherLabel: '', otherAmount: 10000,
+  currency: null,
+};
+
+function t(){ return I18N[state.lang]; }
+
+/* ═══════════════════════════════════════════════
+   URL STATE (share link)
+═══════════════════════════════════════════════ */
+function stateToParams(){
+  const p = new URLSearchParams();
+  p.set('lang', state.lang);
+  p.set('city', state.city);
+  p.set('people', state.people);
+  p.set('lifestyle', state.lifestyle);
+  p.set('transport', state.transport);
+  p.set('guarantor', state.hasGuarantor ? '1' : '0');
+  p.set('furniture', state.furniture);
+  p.set('currency', state.currency);
+  if (state.hasKids) { p.set('kids', state.kidsCount); p.set('kidsLevel', state.kidsLevel); }
+  if (state.hasPets) { p.set('dogs', state.dogs); p.set('cats', state.cats); p.set('otherPets', state.otherPets); }
+  if (state.hasGym) p.set('gym', '1');
+  if (state.hasRemit) p.set('remit', state.remitAmount);
+  if (state.hasOther) { p.set('otherLabel', state.otherLabel); p.set('otherAmount', state.otherAmount); }
+  return p;
+}
+
+function applyParamsToState(p){
+  if (!p || [...p.keys()].length === 0) return false;
+  if (p.has('lang') && I18N[p.get('lang')]) state.lang = p.get('lang');
+  if (p.has('city') && CITY_INDEX[p.get('city')]) state.city = p.get('city');
+  if (p.has('people')) state.people = p.get('people');
+  if (p.has('lifestyle')) state.lifestyle = p.get('lifestyle');
+  if (p.has('transport')) state.transport = p.get('transport');
+  if (p.has('guarantor')) state.hasGuarantor = p.get('guarantor') === '1';
+  if (p.has('furniture')) state.furniture = p.get('furniture');
+  if (p.has('currency') && CURRENCIES[p.get('currency')]) state.currency = p.get('currency');
+  state.hasKids = p.has('kids');
+  if (state.hasKids) { state.kidsCount = parseInt(p.get('kids'),10) || 1; state.kidsLevel = p.get('kidsLevel') || 'guarderia'; }
+  state.hasPets = p.has('dogs') || p.has('cats') || p.has('otherPets');
+  if (state.hasPets) { state.dogs = parseInt(p.get('dogs'),10)||0; state.cats = parseInt(p.get('cats'),10)||0; state.otherPets = parseInt(p.get('otherPets'),10)||0; }
+  state.hasGym = p.get('gym') === '1';
+  state.hasRemit = p.has('remit');
+  if (state.hasRemit) state.remitAmount = parseInt(p.get('remit'),10) || 0;
+  state.hasOther = p.has('otherAmount');
+  if (state.hasOther) { state.otherLabel = p.get('otherLabel') || ''; state.otherAmount = parseInt(p.get('otherAmount'),10) || 0; }
+  return true;
+}
+
+function updateUrl(){
+  const p = stateToParams();
+  history.replaceState(null, '', location.pathname + '?' + p.toString());
+}
+
+/* ═══════════════════════════════════════════════
+   CALCULATIONS
+═══════════════════════════════════════════════ */
+function getBucket(){ const n = parseInt(state.people,10); return n >= 3 ? '3' : String(n); }
+
+function computeMoveIn(){
+  const bucket = getBucket();
+  const rent = RENT[state.city][bucket];
+  const items = [];
+  items.push({ key:'moveDeposit', range: rent });
+  items.push({ key:'moveKey', range: rent });
+  items.push({ key:'moveAgency', range: scaleR(rent, 1.1) });
+  if (!state.hasGuarantor) items.push({ key:'moveGuarantorIns', range: [Math.max(30000, rent[0]*0.5), Math.max(30000, rent[1]*0.5)] });
+  items.push({ key:'moveFireIns', range: [15000, 20000] });
+  items.push({ key:'moveFirstRent', range: rent });
+  items.push({ key:'moveFlete', range: MOVING_FLAT[bucket] });
+  items.push({ key:'moveFurniture', range: FURNITURE[state.furniture][bucket] });
+  items.push({ key:'moveSetup', range: [8000, 15000] });
+  items.push({ key:'moveInternet', range: [5000, 15000] });
+  return items;
+}
+
+function computeMonthly(){
+  const bucket = getBucket();
+  const people = parseInt(state.people, 10);
+  const idx = CITY_INDEX[state.city];
+  const lifestyleMult = LIFESTYLE_MULT[state.lifestyle];
+  const items = [];
+
+  items.push({ key:'monRent', range: RENT[state.city][bucket] });
+  items.push({ key:'monCommon', range: COMMON_FEES[bucket] });
+
+  const utilPoint = (BASE.utilitiesBaseHousehold + BASE.utilitiesPerExtraPerson * (people - 1)) * idx;
+  items.push({ key:'monUtilities', range: [utilPoint*0.85, utilPoint*1.15] });
+
+  const netPeople = 1 + Math.max(0, people - 1) * 0.7;
+  const foodPoint = BASE.foodPerAdult * idx * lifestyleMult * netPeople;
+  items.push({ key:'monFood', range: [foodPoint*0.85, foodPoint*1.15] });
+
+  const leisurePoint = BASE.leisurePerAdult * idx * lifestyleMult * netPeople;
+  items.push({ key:'monLeisure', range: [leisurePoint*0.85, leisurePoint*1.15] });
+
+  if (state.transport === 'tren') {
+    const tr = BASE.transitPerAdult * idx * people;
+    items.push({ key:'monTransitTrain', range: [tr*0.9, tr*1.1] });
+  } else if (state.transport === 'bici') {
+    items.push({ key:'monTransitBike', range: [1000, 3000] });
+  } else {
+    const parking = PARKING_BY_CITY[state.city];
+    const base = parking + 15000 + 10000 + 3000;
+    items.push({ key:'monTransitCar', range: [base - 3000, base + 5000] });
+  }
+
+  const extraPhones = Math.max(0, people - 1);
+  items.push({ key:'monInternetPhone', range: addR([7000,12000], [extraPhones*2500, extraPhones*4000]) });
+  items.push({ key:'monHealthPension', range: mulR([25000,45000], people) });
+
+  if (state.hasKids && state.kidsCount > 0) items.push({ key:'monKids', range: mulR(CHILD_COST[state.kidsLevel], state.kidsCount) });
+  if (state.hasPets) {
+    if (state.dogs > 0) items.push({ key:'monDogs', range: mulR(PET_COST.perro, state.dogs) });
+    if (state.cats > 0) items.push({ key:'monCats', range: mulR(PET_COST.gato, state.cats) });
+    if (state.otherPets > 0) items.push({ key:'monOtherPets', range: mulR(PET_COST.otra, state.otherPets) });
+  }
+  if (state.hasGym) items.push({ key:'monGym', range: GYM_COST });
+  if (state.hasRemit && state.remitAmount > 0) items.push({ key:'monRemittance', range: [state.remitAmount, state.remitAmount] });
+  if (state.hasOther && state.otherAmount > 0) items.push({ key:null, customLabel: state.otherLabel, range: [state.otherAmount, state.otherAmount] });
+
+  return items;
+}
+
+/* ═══════════════════════════════════════════════
+   FORMATTING
+═══════════════════════════════════════════════ */
+function fmtCurrency(n, code){
+  const c = CURRENCIES[code];
+  return c.symbol + Math.round(n).toLocaleString('en-US') + c.suffix;
+}
+function fmtRange(range, code){
+  const a = Math.round(range[0]), b = Math.round(range[1]);
+  if (a === b) return fmtCurrency(a, code);
+  return fmtCurrency(a, code) + ' – ' + fmtCurrency(b, code);
+}
+function convert(range, code){
+  const rate = CURRENCIES[code].jpyPerUnit;
+  return [range[0]/rate, range[1]/rate];
+}
+
+/* ═══════════════════════════════════════════════
+   RENDER
+═══════════════════════════════════════════════ */
+function renderCitySelect(){
+  const L = t();
+  const sel = document.getElementById('fCity');
+  sel.innerHTML = CITY_KEYS.map(k => `<option value="${k}">${L.cityLabels[k]}</option>`).join('');
+  sel.value = state.city;
+}
+
+function renderCurrencySelect(){
+  const sel = document.getElementById('fCurrency');
+  const L = t();
+  sel.innerHTML = `<option value="JPY">${L.currencyNone}</option>` +
+    CURRENCY_KEYS.filter(c => c !== 'JPY').map(c => `<option value="${c}">¥ → ${c}</option>`).join('');
+  sel.value = state.currency;
+}
+
+function renderLines(containerId, items){
+  const L = t();
+  const el = document.getElementById(containerId);
+  el.innerHTML = items.map(it => {
+    const label = it.key ? L.items[it.key] : (it.customLabel || L.items.monOtherPets);
+    return `<div class="line-item"><span class="li-label">${label}</span><span class="li-value">${fmtRange(it.range, 'JPY')}</span></div>`;
+  }).join('');
+}
+
+function recompute(){
+  const moveItems = computeMoveIn();
+  const monthlyItems = computeMonthly();
+  const moveTotal = sumR(moveItems.map(i => i.range));
+  const monthlyTotal = sumR(monthlyItems.map(i => i.range));
+
+  renderLines('linesMoveIn', moveItems);
+  renderLines('linesMonthly', monthlyItems);
+
+  document.getElementById('totalMoveIn').firstChild.textContent = fmtRange(moveTotal, 'JPY') + ' ';
+  document.getElementById('totalMonthly').firstChild.textContent = fmtRange(monthlyTotal, 'JPY') + ' ';
+
+  const altMove = document.getElementById('totalMoveInAlt');
+  const altMonthly = document.getElementById('totalMonthlyAlt');
+  if (state.currency && state.currency !== 'JPY') {
+    altMove.textContent = '≈ ' + fmtRange(convert(moveTotal, state.currency), state.currency);
+    altMonthly.textContent = '≈ ' + fmtRange(convert(monthlyTotal, state.currency), state.currency);
+  } else {
+    altMove.textContent = '';
+    altMonthly.textContent = '';
+  }
+
+  updateUrl();
+}
+
+/* ═══════════════════════════════════════════════
+   I18N APPLY
+═══════════════════════════════════════════════ */
+function applyI18n(){
+  const L = t();
+  document.documentElement.lang = {es:'es',en:'en',jp:'ja',pt:'pt',tl:'fil'}[state.lang] || state.lang;
+  document.getElementById('langSelect').value = state.lang;
+
+  const map = {
+    brandTitle:'brandTitle', backLink:'backLink', introEyebrow:'introEyebrow', introTitle:'introTitle', introDesc:'introDesc',
+    hCiudad:'hCiudad', hHogar:'hHogar', hExtras:'hExtras', hMoneda:'hMoneda',
+    lblPeople:'lblPeople', lblLifestyle:'lblLifestyle', lblTransport:'lblTransport', lblGuarantor:'lblGuarantor', lblFurniture:'lblFurniture',
+    lsAhorro:'ahorro', lsEstandar:'estandar', lsComodo:'comodo',
+    optTren:'optTren', optBici:'optBici', optAuto:'optAuto',
+    gYes:'gYes', gNo:'gNo',
+    fnMinimo:'fnMinimo', fnEstandar:'fnEstandar', fnCompleto:'fnCompleto',
+    lblKids:'lblKids', klGuarderia:'klGuarderia', klPrimaria:'klPrimaria', klSecundaria:'klSecundaria',
+    lblPets:'lblPets', lblDogs:'lblDogs', lblCats:'lblCats', lblOtherPets:'lblOtherPets',
+    lblGym:'lblGym', lblRemit:'lblRemit', lblOther:'lblOther',
+    hMudanza:'hMudanza', hMensual:'hMensual', lblTotalMudanza:'lblTotalMudanza', lblTotalMensual:'lblTotalMensual',
+    lblCopyLink:'lblCopyLink', lblDownloadImg:'lblDownloadImg',
+    disclaimerText:'disclaimerText', footerText:'footerText',
+  };
+  Object.entries(map).forEach(([id, key]) => {
+    const el = document.getElementById(id);
+    if (el && L[key] !== undefined) el.textContent = L[key];
+  });
+
+  document.getElementById('remitAmount').placeholder = L.remitPh;
+  document.getElementById('otherLabel').placeholder = L.otherLabelPh;
+  document.getElementById('otherAmount').placeholder = L.otherAmountPh;
+
+  renderCitySelect();
+  renderCurrencySelect();
+  recompute();
+}
+
+/* ═══════════════════════════════════════════════
+   PILL GROUPS
+═══════════════════════════════════════════════ */
+function bindPillGroup(containerId, onPick){
+  const container = document.getElementById(containerId);
+  container.querySelectorAll('.pill-opt').forEach(btn => {
+    btn.onclick = () => {
+      container.querySelectorAll('.pill-opt').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      onPick(btn.dataset.val);
+      recompute();
+    };
+  });
+}
+
+function setActivePill(containerId, val){
+  document.querySelectorAll(`#${containerId} .pill-opt`).forEach(b => b.classList.toggle('active', b.dataset.val === val));
+}
+
+/* ═══════════════════════════════════════════════
+   SHARE: LINK
+═══════════════════════════════════════════════ */
+function showToast(msg){
+  const el = document.getElementById('toast');
+  el.textContent = msg;
+  el.classList.add('show');
+  setTimeout(() => el.classList.remove('show'), 2200);
+}
+
+function copyShareLink(){
+  updateUrl();
+  const url = location.href;
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(url).then(() => showToast(t().copiedToast)).catch(() => promptFallback(url));
+  } else {
+    promptFallback(url);
+  }
+}
+function promptFallback(url){ window.prompt('Copia el link:', url); }
+
+/* ═══════════════════════════════════════════════
+   SHARE: IMAGE
+═══════════════════════════════════════════════ */
+// Character-based wrap: correct for CJK text (no spaces between words) and
+// still fine for space-delimited languages, so one algorithm covers all 5.
+function wrapLines(ctx, text, maxWidth){
+  const chars = [...text];
+  let line = '';
+  const lines = [];
+  for (const ch of chars) {
+    const test = line + ch;
+    if (ctx.measureText(test).width > maxWidth && line !== '') {
+      lines.push(line);
+      line = ch;
+    } else {
+      line = test;
+    }
+  }
+  if (line) lines.push(line);
+  return lines;
+}
+function drawLines(ctx, lines, x, y, lineHeight){
+  lines.forEach((line, i) => ctx.fillText(line, x, y + i * lineHeight));
+}
+
+function buildShareCanvas(){
+  const L = t();
+  const moveItems = computeMoveIn();
+  const monthlyItems = computeMonthly();
+  const moveTotal = sumR(moveItems.map(i => i.range));
+  const monthlyTotal = sumR(monthlyItems.map(i => i.range));
+
+  const W = 1000;
+  const margin = 60;
+  const lineH = 34;
+  const headerH = 150;
+  const sectionGapH = 60;
+  const disclaimerLineH = 20;
+
+  // Measure the disclaimer's wrapped line count up front so the canvas is sized exactly.
+  const measureCtx = document.createElement('canvas').getContext('2d');
+  measureCtx.font = '600 14px Manrope, "Noto Sans JP", sans-serif';
+  const disclaimerLines = wrapLines(measureCtx, L.disclaimerText, W - margin * 2);
+
+  const totalH = headerH
+    + sectionGapH + (moveItems.length + 1) * lineH
+    + sectionGapH + (monthlyItems.length + 1) * lineH
+    + 46 + disclaimerLines.length * disclaimerLineH + 24;
+
+  const canvas = document.createElement('canvas');
+  canvas.width = W;
+  canvas.height = totalH;
+  const ctx = canvas.getContext('2d');
+
+  ctx.fillStyle = '#FFFFFF';
+  ctx.fillRect(0, 0, W, totalH);
+
+  const grad = ctx.createLinearGradient(0, 0, W, 0);
+  grad.addColorStop(0, '#007CA2');
+  grad.addColorStop(1, '#5FA6C0');
+  ctx.fillStyle = grad;
+  ctx.fillRect(0, 0, W, headerH);
+
+  ctx.fillStyle = '#FFFFFF';
+  ctx.font = '900 34px Manrope, "Noto Sans JP", sans-serif';
+  ctx.fillText('Facil Japón · ' + L.introTitle, margin, 62);
+  ctx.font = '700 18px Manrope, "Noto Sans JP", sans-serif';
+  ctx.globalAlpha = 0.92;
+  ctx.fillText(L.cityLabels[state.city] + ' · ' + state.people + (state.people === '3' ? '+' : '') + ' · ' + L[state.lifestyle], margin, 96);
+  ctx.globalAlpha = 1;
+
+  let y = headerH + sectionGapH;
+  ctx.fillStyle = '#0F1720';
+  ctx.font = '800 20px Manrope, "Noto Sans JP", sans-serif';
+  ctx.fillText(L.hMudanza.toUpperCase(), margin, y);
+  y += 30;
+  ctx.font = '600 17px Manrope, "Noto Sans JP", sans-serif';
+  moveItems.forEach(it => {
+    const label = it.key ? L.items[it.key] : (it.customLabel || '');
+    const value = fmtRange(it.range, 'JPY');
+    ctx.fillStyle = '#2E3E52';
+    ctx.fillText(label, margin, y);
+    ctx.textAlign = 'right';
+    ctx.fillStyle = '#0F1720';
+    ctx.font = '800 17px Manrope, "Noto Sans JP", sans-serif';
+    ctx.fillText(value, W - margin, y);
+    ctx.textAlign = 'left';
+    ctx.font = '600 17px Manrope, "Noto Sans JP", sans-serif';
+    y += lineH;
+  });
+  ctx.font = '900 20px Manrope, "Noto Sans JP", sans-serif';
+  ctx.fillStyle = '#007CA2';
+  ctx.fillText(L.lblTotalMudanza + ':', margin, y);
+  ctx.textAlign = 'right';
+  ctx.fillText(fmtRange(moveTotal, 'JPY'), W - margin, y);
+  ctx.textAlign = 'left';
+
+  y += sectionGapH;
+  ctx.fillStyle = '#0F1720';
+  ctx.font = '800 20px Manrope, "Noto Sans JP", sans-serif';
+  ctx.fillText(L.hMensual.toUpperCase(), margin, y);
+  y += 30;
+  ctx.font = '600 17px Manrope, "Noto Sans JP", sans-serif';
+  monthlyItems.forEach(it => {
+    const label = it.key ? L.items[it.key] : (it.customLabel || '');
+    const value = fmtRange(it.range, 'JPY');
+    ctx.fillStyle = '#2E3E52';
+    ctx.fillText(label, margin, y);
+    ctx.textAlign = 'right';
+    ctx.fillStyle = '#0F1720';
+    ctx.font = '800 17px Manrope, "Noto Sans JP", sans-serif';
+    ctx.fillText(value, W - margin, y);
+    ctx.textAlign = 'left';
+    ctx.font = '600 17px Manrope, "Noto Sans JP", sans-serif';
+    y += lineH;
+  });
+  ctx.font = '900 20px Manrope, "Noto Sans JP", sans-serif';
+  ctx.fillStyle = '#007CA2';
+  ctx.fillText(L.lblTotalMensual + ':', margin, y);
+  ctx.textAlign = 'right';
+  ctx.fillText(fmtRange(monthlyTotal, 'JPY'), W - margin, y);
+  ctx.textAlign = 'left';
+
+  y += 46;
+  ctx.fillStyle = '#8C9CAC';
+  ctx.font = '600 14px Manrope, "Noto Sans JP", sans-serif';
+  drawLines(ctx, disclaimerLines, margin, y, disclaimerLineH);
+
+  return canvas;
+}
+
+function downloadShareImage(){
+  const canvas = buildShareCanvas();
+  canvas.toBlob(blob => {
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'costo-de-vida-facil-japon.png';
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    URL.revokeObjectURL(url);
+  }, 'image/png');
+}
+
+/* ═══════════════════════════════════════════════
+   LANGUAGE / THEME
+═══════════════════════════════════════════════ */
+function handleLangChange(lang){
+  if (!I18N[lang]) return;
+  state.lang = lang;
+  if (!state.currency) state.currency = DEFAULT_CURRENCY_BY_LANG[lang];
+  localStorage.setItem('fj_lang', lang);
+  applyI18n();
+}
+
+function toggleTheme(){
+  const current = document.documentElement.dataset.theme;
+  const next = current === 'dark' ? 'light' : 'dark';
+  document.documentElement.dataset.theme = next;
+  localStorage.setItem('fj_theme', next);
+  document.getElementById('themeToggle').textContent = next === 'dark' ? '☀️' : '🌙';
+}
+
+/* ═══════════════════════════════════════════════
+   BIND
+═══════════════════════════════════════════════ */
+function bindForm(){
+  document.getElementById('fCity').onchange = e => { state.city = e.target.value; recompute(); };
+  document.getElementById('fPeople').onchange = e => { state.people = e.target.value; recompute(); };
+  document.getElementById('fTransport').onchange = e => { state.transport = e.target.value; recompute(); };
+  document.getElementById('fCurrency').onchange = e => { state.currency = e.target.value; recompute(); };
+
+  bindPillGroup('fLifestyle', v => state.lifestyle = v);
+  bindPillGroup('fGuarantor', v => state.hasGuarantor = (v === 'yes'));
+  bindPillGroup('fFurniture', v => state.furniture = v);
+
+  const toggleSub = (checkboxId, subId, onChange) => {
+    const cb = document.getElementById(checkboxId);
+    cb.onchange = () => {
+      document.getElementById(subId).classList.toggle('hidden', !cb.checked);
+      onChange(cb.checked);
+      recompute();
+    };
+  };
+  toggleSub('cKids', 'subKids', v => state.hasKids = v);
+  toggleSub('cPets', 'subPets', v => state.hasPets = v);
+  toggleSub('cRemit', 'subRemit', v => state.hasRemit = v);
+  toggleSub('cOther', 'subOther', v => state.hasOther = v);
+
+  document.getElementById('cGym').onchange = e => { state.hasGym = e.target.checked; recompute(); };
+
+  document.getElementById('kidsCount').oninput = e => { state.kidsCount = parseInt(e.target.value,10) || 0; recompute(); };
+  document.getElementById('kidsLevel').onchange = e => { state.kidsLevel = e.target.value; recompute(); };
+  document.getElementById('petDogs').oninput = e => { state.dogs = parseInt(e.target.value,10) || 0; recompute(); };
+  document.getElementById('petCats').oninput = e => { state.cats = parseInt(e.target.value,10) || 0; recompute(); };
+  document.getElementById('petOther').oninput = e => { state.otherPets = parseInt(e.target.value,10) || 0; recompute(); };
+  document.getElementById('remitAmount').oninput = e => { state.remitAmount = parseInt(e.target.value,10) || 0; recompute(); };
+  document.getElementById('otherLabel').oninput = e => { state.otherLabel = e.target.value; recompute(); };
+  document.getElementById('otherAmount').oninput = e => { state.otherAmount = parseInt(e.target.value,10) || 0; recompute(); };
+
+  document.getElementById('btnCopyLink').onclick = copyShareLink;
+  document.getElementById('btnDownloadImg').onclick = downloadShareImage;
+
+  document.getElementById('themeToggle').onclick = toggleTheme;
+}
+
+function syncFormFromState(){
+  document.getElementById('fPeople').value = state.people;
+  document.getElementById('fTransport').value = state.transport;
+  setActivePill('fLifestyle', state.lifestyle);
+  setActivePill('fGuarantor', state.hasGuarantor ? 'yes' : 'no');
+  setActivePill('fFurniture', state.furniture);
+
+  document.getElementById('cKids').checked = state.hasKids;
+  document.getElementById('subKids').classList.toggle('hidden', !state.hasKids);
+  document.getElementById('kidsCount').value = state.kidsCount;
+  document.getElementById('kidsLevel').value = state.kidsLevel;
+
+  document.getElementById('cPets').checked = state.hasPets;
+  document.getElementById('subPets').classList.toggle('hidden', !state.hasPets);
+  document.getElementById('petDogs').value = state.dogs;
+  document.getElementById('petCats').value = state.cats;
+  document.getElementById('petOther').value = state.otherPets;
+
+  document.getElementById('cGym').checked = state.hasGym;
+
+  document.getElementById('cRemit').checked = state.hasRemit;
+  document.getElementById('subRemit').classList.toggle('hidden', !state.hasRemit);
+  document.getElementById('remitAmount').value = state.remitAmount;
+
+  document.getElementById('cOther').checked = state.hasOther;
+  document.getElementById('subOther').classList.toggle('hidden', !state.hasOther);
+  document.getElementById('otherLabel').value = state.otherLabel;
+  document.getElementById('otherAmount').value = state.otherAmount;
+}
+
+/* ═══════════════════════════════════════════════
+   INIT
+═══════════════════════════════════════════════ */
+function init(){
+  const hadParams = applyParamsToState(new URLSearchParams(location.search));
+  if (!state.currency) state.currency = DEFAULT_CURRENCY_BY_LANG[state.lang] || 'USD';
+
+  const isDark = document.documentElement.dataset.theme === 'dark';
+  document.getElementById('themeToggle').textContent = isDark ? '☀️' : '🌙';
+
+  bindForm();
+  syncFormFromState();
+  applyI18n();
+}
+init();
+</script>
+</body>
+</html>

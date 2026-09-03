@@ -39,8 +39,10 @@
     .hub-hero h1 { max-width: 900px; margin-inline: auto; }
     .hub-hero p { max-width: 620px; margin-inline: auto; color: var(--body-text); font-size: 1.12rem; line-height: 1.75; }
     .hub-choices { padding-bottom: 90px; }
+    .hub-choices .choice-grid { grid-template-columns: repeat(3, 1fr); }
     .hub-note { text-align: center; color: var(--muted); font-size: .92rem; max-width: 560px; margin: 34px auto 0; line-height: 1.6; }
-    @media (max-width: 640px) { .hub-hero { padding: 60px 0 30px; } }
+    @media (max-width: 900px) { .hub-choices .choice-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 640px) { .hub-hero { padding: 60px 0 30px; } .hub-choices .choice-grid { grid-template-columns: 1fr; } }
   </style>
 
   <!-- Structured data -->
@@ -70,6 +72,7 @@
       <nav class="nav-links" aria-label="Navegación principal">
         <a href="aprender-japones/" data-i18n="nav.learn">Aprender japonés</a>
         <a href="licencia/" data-i18n="nav.license">Cambio de licencia</a>
+        <a href="costo-de-vida/" data-i18n="nav.cost">Costo de vida</a>
       </nav>
       <div class="nav-actions">
         <select class="lang-select" id="langSelect" aria-label="Idioma" onchange="setLang(this.value)">
@@ -107,6 +110,12 @@
           <p data-i18n="choice.license.p">Guía y simulador gratis para el examen de cambio de licencia de conducir en Japón (外免切替).</p>
           <span class="choice-cta" data-i18n="choice.cta">Empezar →</span>
         </a>
+        <a class="choice-card" href="costo-de-vida/">
+          <span class="choice-icon">💴</span>
+          <h3 data-i18n="choice.cost.h3">Costo de vida</h3>
+          <p data-i18n="choice.cost.p">Calcula cuánto cuesta mudarte y vivir en Japón: renta, comida, hijos, mascotas y más.</p>
+          <span class="choice-cta" data-i18n="choice.cta">Empezar →</span>
+        </a>
       </div>
       <p class="hub-note" data-i18n="hub.note">Facil Japón crece contigo: hoy licencia y kanji, mañana más guías y módulos para la vida diaria en Japón.</p>
     </section>
@@ -118,7 +127,7 @@
         <a class="brand" href="./"><span class="brand-mark"></span><span>facil<span>japón</span></span></a>
         <p style="line-height:1.7; max-width:360px;" data-i18n="footer.desc">Trámites y japonés explicados paso a paso, en varios idiomas, para vivir en Japón sin perderte.</p>
       </div>
-      <div><h4 data-i18n="footer.links">Enlaces</h4><a href="aprender-japones/" data-i18n="nav.learn">Aprender japonés</a><a href="licencia/" data-i18n="nav.license">Cambio de licencia</a></div>
+      <div><h4 data-i18n="footer.links">Enlaces</h4><a href="aprender-japones/" data-i18n="nav.learn">Aprender japonés</a><a href="licencia/" data-i18n="nav.license">Cambio de licencia</a><a href="costo-de-vida/" data-i18n="nav.cost">Costo de vida</a></div>
       <div><h4 data-i18n="footer.contact">Contacto</h4><a href="mailto:soporte@faciljapon.com">soporte@faciljapon.com</a><a href="#">Instagram</a><a href="#">TikTok</a></div>
     </div>
   </footer>
@@ -127,60 +136,65 @@
     // ── I18N ───────────────────────────────────────────────────
     const I18N = {
       es: {
-        'nav.learn':'Aprender japonés','nav.license':'Cambio de licencia',
+        'nav.learn':'Aprender japonés','nav.license':'Cambio de licencia','nav.cost':'Costo de vida',
         'hero.eyebrow':'Facil Japón · tu punto de partida en Japón 🇯🇵',
         'hero.h1':'Todo lo que necesitas para vivir en Japón, <span class="gradient-text">explicado fácil.</span>',
         'hero.p':'Reunimos guías y apps para entender trámites y aprender japonés sin perderte. Elige por dónde quieres empezar.',
         'choice.learn.h3':'Aprender japonés','choice.learn.p':'Vocabulario, kanji y japonés contextual, organizado por nivel JLPT, para avanzar a tu ritmo.',
         'choice.license.h3':'Cambio de licencia','choice.license.p':'Guía y simulador gratis para el examen de cambio de licencia de conducir en Japón (外免切替).',
+        'choice.cost.h3':'Costo de vida','choice.cost.p':'Calcula cuánto cuesta mudarte y vivir en Japón: renta, comida, hijos, mascotas y más.',
         'choice.cta':'Empezar →',
         'hub.note':'Facil Japón crece contigo: hoy licencia y kanji, mañana más guías y módulos para la vida diaria en Japón.',
         'footer.desc':'Trámites y japonés explicados paso a paso, en varios idiomas, para vivir en Japón sin perderte.',
         'footer.links':'Enlaces','footer.contact':'Contacto',
       },
       en: {
-        'nav.learn':'Learn Japanese','nav.license':'License conversion',
+        'nav.learn':'Learn Japanese','nav.license':'License conversion','nav.cost':'Cost of living',
         'hero.eyebrow':'Facil Japón · your starting point in Japan 🇯🇵',
         'hero.h1':'Everything you need to live in Japan, <span class="gradient-text">made simple.</span>',
         'hero.p':'We bring together guides and apps to handle paperwork and learn Japanese without getting lost. Choose where to start.',
         'choice.learn.h3':'Learn Japanese','choice.learn.p':'Vocabulary, kanji and contextual Japanese, organized by JLPT level, at your own pace.',
         'choice.license.h3':'License conversion','choice.license.p':'Free guide and simulator for the Japanese driver\'s license conversion exam (外免切替).',
+        'choice.cost.h3':'Cost of living','choice.cost.p':'Calculate how much it costs to move and live in Japan: rent, food, kids, pets and more.',
         'choice.cta':'Start →',
         'hub.note':'Facil Japón grows with you: today license and kanji, tomorrow more guides and modules for daily life in Japan.',
         'footer.desc':'Japanese paperwork and language explained step by step, in several languages, to live in Japan without getting lost.',
         'footer.links':'Links','footer.contact':'Contact',
       },
       jp: {
-        'nav.learn':'日本語を学ぶ','nav.license':'免許の切替',
+        'nav.learn':'日本語を学ぶ','nav.license':'免許の切替','nav.cost':'生活費',
         'hero.eyebrow':'Facil Japón · 日本での出発点 🇯🇵',
         'hero.h1':'日本で暮らすために必要なことを、<span class="gradient-text">わかりやすく。</span>',
         'hero.p':'手続きの理解と日本語学習をひとつにまとめました。始めたい方から選んでください。',
         'choice.learn.h3':'日本語を学ぶ','choice.learn.p':'語彙・漢字・文脈で学ぶ日本語をJLPTレベル別に、自分のペースで。',
         'choice.license.h3':'免許の切替','choice.license.p':'外免切替の試験対策ガイドと無料シミュレーター。',
+        'choice.cost.h3':'生活費','choice.cost.p':'引っ越しと生活にかかる費用を計算：家賃、食費、子供、ペットなど。',
         'choice.cta':'始める →',
         'hub.note':'Facil Japónはあなたとともに成長します。今日は免許と漢字、これから日常生活のためのガイドが増えていきます。',
         'footer.desc':'日本の手続きと日本語を、複数の言語でステップごとにわかりやすく解説します。',
         'footer.links':'リンク','footer.contact':'お問い合わせ',
       },
       pt: {
-        'nav.learn':'Aprender japonês','nav.license':'Troca de habilitação',
+        'nav.learn':'Aprender japonês','nav.license':'Troca de habilitação','nav.cost':'Custo de vida',
         'hero.eyebrow':'Facil Japón · seu ponto de partida no Japão 🇯🇵',
         'hero.h1':'Tudo o que você precisa para viver no Japão, <span class="gradient-text">explicado fácil.</span>',
         'hero.p':'Reunimos guias e apps para entender processos e aprender japonês sem se perder. Escolha por onde começar.',
         'choice.learn.h3':'Aprender japonês','choice.learn.p':'Vocabulário, kanji e japonês contextual, organizado por nível JLPT, no seu ritmo.',
         'choice.license.h3':'Troca de habilitação','choice.license.p':'Guia e simulador gratuito para o exame de conversão da habilitação japonesa (外免切替).',
+        'choice.cost.h3':'Custo de vida','choice.cost.p':'Calcule quanto custa se mudar e viver no Japão: aluguel, comida, filhos, animais e mais.',
         'choice.cta':'Começar →',
         'hub.note':'Facil Japón cresce com você: hoje habilitação e kanji, amanhã mais guias e módulos para o dia a dia no Japão.',
         'footer.desc':'Processos e japonês explicados passo a passo, em vários idiomas, para viver no Japão sem se perder.',
         'footer.links':'Links','footer.contact':'Contato',
       },
       tl: {
-        'nav.learn':'Matuto ng Japanese','nav.license':'Pagpapalit ng lisensya',
+        'nav.learn':'Matuto ng Japanese','nav.license':'Pagpapalit ng lisensya','nav.cost':'Gastos sa pamumuhay',
         'hero.eyebrow':'Facil Japón · ang iyong panimulang punto sa Japan 🇯🇵',
         'hero.h1':'Lahat ng kailangan mo para mabuhay sa Japan, <span class="gradient-text">ipinaliwanag nang simple.</span>',
         'hero.p':'Pinagsama namin ang mga gabay at app para maunawaan ang mga proseso at matuto ng Japanese nang hindi nalilito. Piliin kung saan magsisimula.',
         'choice.learn.h3':'Matuto ng Japanese','choice.learn.p':'Bokabularyo, kanji, at kontekstwal na Japanese, ayon sa antas ng JLPT, sa sarili mong bilis.',
         'choice.license.h3':'Pagpapalit ng lisensya','choice.license.p':'Libreng gabay at simulator para sa pagsusulit ng pagpapalit ng Japanese na lisensya (外免切替).',
+        'choice.cost.h3':'Gastos sa pamumuhay','choice.cost.p':'Kalkulahin kung magkano ang gastos sa paglipat at pamumuhay sa Japan: upa, pagkain, anak, alagang hayop at iba pa.',
         'choice.cta':'Magsimula →',
         'hub.note':'Lumalaki ang Facil Japón kasama mo: ngayon lisensya at kanji, bukas pa mas maraming gabay para sa araw-araw na buhay sa Japan.',
         'footer.desc':'Mga proseso at Japanese na wika, ipinaliwanag nang hakbang-hakbang, sa iba\'t ibang wika, para mabuhay sa Japan nang hindi nalilito.',
