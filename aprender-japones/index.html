@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Aprender japonés — Facil Japón</title>
+  <meta name="description" content="Aprende japonés a tu ritmo con Facil Japón: tarjetas de kanji por nivel JLPT y categoría, con más módulos en camino. En español, inglés, portugués, japonés y tagalo." />
+  <meta name="keywords" content="aprender japonés, kanji, JLPT, hiragana, vocabulario japonés, Facil Japón" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <script>
+    (function(){var s=localStorage.getItem('fj_theme'),d=window.matchMedia('(prefers-color-scheme: dark)').matches;document.documentElement.dataset.theme=s||(d?'dark':'light');})();
+  </script>
+  <link rel="canonical" href="https://faciljapon.com/aprender-japones/" />
+  <link rel="alternate" hreflang="x-default" href="https://faciljapon.com/aprender-japones/" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Aprender japonés — Facil Japón" />
+  <meta property="og:description" content="Tarjetas de kanji por nivel JLPT y categoría, con más módulos en camino." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://faciljapon.com/aprender-japones/" />
+  <meta property="og:locale" content="es_ES" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-TTXTS7HS');</script>
+  <!-- End Google Tag Manager -->
+
+  <link rel="stylesheet" href="../assets/css/main.css" />
+
+  <style>
+    .lj-hero { padding: 86px 0 40px; text-align: center; }
+    .lj-hero .eyebrow { margin: 0 auto 22px; }
+    .lj-hero h1 { max-width: 820px; margin-inline: auto; }
+    .lj-hero p { max-width: 600px; margin-inline: auto; color: var(--body-text); font-size: 1.1rem; line-height: 1.75; }
+    .lj-choices { padding-bottom: 90px; }
+    .lj-choices .choice-grid { grid-template-columns: repeat(3, 1fr); }
+    @media (max-width: 900px) { .lj-choices .choice-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 640px) { .lj-hero { padding: 54px 0 30px; } .lj-choices .choice-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TTXTS7HS"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="../" aria-label="Facil Japón">
+        <span class="brand-mark"></span>
+        <span>facil<span>japón</span></span>
+      </a>
+      <nav class="nav-links" aria-label="Navegación principal">
+        <a href="../" data-i18n="nav.home">Inicio</a>
+        <a href="../licencia/" data-i18n="nav.license">Cambio de licencia</a>
+      </nav>
+      <div class="nav-actions">
+        <select class="lang-select" id="langSelect" aria-label="Idioma" onchange="setLang(this.value)">
+          <option value="es">🇪🇸 ES</option>
+          <option value="en">🇬🇧 EN</option>
+          <option value="jp">🇯🇵 JP</option>
+          <option value="pt">🇧🇷 PT</option>
+          <option value="tl">🇵🇭 TL</option>
+        </select>
+        <button class="btn secondary theme-toggle" id="themeToggle" aria-label="Cambiar tema" title="Cambiar tema claro/oscuro">☀️</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="lj-hero">
+      <div class="container">
+        <a class="back-link" href="../" data-i18n="back.hub">← Facil Japón</a>
+        <div class="eyebrow" style="margin-top:18px;" data-i18n="hero.eyebrow">Facil Japón · aprende japonés a tu ritmo 🈵</div>
+        <h1 data-i18n-html="hero.h1">Aprende japonés paso a paso, <span class="gradient-text">sin perderte.</span></h1>
+        <p data-i18n="hero.p">Empezamos con kanji: tarjetas para memorizar kanji, hiragana, romaji y significado, organizadas por nivel JLPT y categoría. Pronto sumaremos más módulos.</p>
+      </div>
+    </section>
+
+    <section class="lj-choices">
+      <div class="container choice-grid">
+        <a class="choice-card" href="kanji/">
+          <span class="choice-icon">漢</span>
+          <h3 data-i18n="mod.kanji.h3">Kanji</h3>
+          <p data-i18n="mod.kanji.p">Tarjetas de kanji por nivel JLPT y categoría, con hiragana, romaji, significado y audio.</p>
+          <span class="choice-cta" data-i18n="choice.cta">Empezar →</span>
+        </a>
+        <div class="choice-card soon">
+          <span class="choice-icon">📚</span>
+          <span class="badge-soon" data-i18n="soon">Próximamente</span>
+          <h3 data-i18n="mod.vocab.h3">Vocabulario</h3>
+          <p data-i18n="mod.vocab.p">Palabras y frases de uso diario, organizadas por tema.</p>
+        </div>
+        <div class="choice-card soon">
+          <span class="choice-icon">文</span>
+          <span class="badge-soon" data-i18n="soon">Próximamente</span>
+          <h3 data-i18n="mod.grammar.h3">Gramática</h3>
+          <p data-i18n="mod.grammar.p">Estructuras básicas explicadas de forma simple, con ejemplos.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <a class="brand" href="../"><span class="brand-mark"></span><span>facil<span>japón</span></span></a>
+        <p style="line-height:1.7; max-width:360px;" data-i18n="footer.desc">Japonés explicado paso a paso, en varios idiomas, para aprender sin perderte.</p>
+      </div>
+      <div><h4 data-i18n="footer.links">Enlaces</h4><a href="../" data-i18n="nav.home">Inicio</a><a href="../licencia/" data-i18n="nav.license">Cambio de licencia</a></div>
+      <div><h4 data-i18n="footer.contact">Contacto</h4><a href="mailto:soporte@faciljapon.com">soporte@faciljapon.com</a><a href="#">Instagram</a><a href="#">TikTok</a></div>
+    </div>
+  </footer>
+
+  <script>
+    const I18N = {
+      es: {
+        'nav.home':'Inicio','nav.license':'Cambio de licencia','back.hub':'← Facil Japón',
+        'hero.eyebrow':'Facil Japón · aprende japonés a tu ritmo 🈵',
+        'hero.h1':'Aprende japonés paso a paso, <span class="gradient-text">sin perderte.</span>',
+        'hero.p':'Empezamos con kanji: tarjetas para memorizar kanji, hiragana, romaji y significado, organizadas por nivel JLPT y categoría. Pronto sumaremos más módulos.',
+        'mod.kanji.h3':'Kanji','mod.kanji.p':'Tarjetas de kanji por nivel JLPT y categoría, con hiragana, romaji, significado y audio.',
+        'mod.vocab.h3':'Vocabulario','mod.vocab.p':'Palabras y frases de uso diario, organizadas por tema.',
+        'mod.grammar.h3':'Gramática','mod.grammar.p':'Estructuras básicas explicadas de forma simple, con ejemplos.',
+        'choice.cta':'Empezar →','soon':'Próximamente',
+        'footer.desc':'Japonés explicado paso a paso, en varios idiomas, para aprender sin perderte.',
+        'footer.links':'Enlaces','footer.contact':'Contacto',
+      },
+      en: {
+        'nav.home':'Home','nav.license':'License conversion','back.hub':'← Facil Japón',
+        'hero.eyebrow':'Facil Japón · learn Japanese at your pace 🈵',
+        'hero.h1':'Learn Japanese step by step, <span class="gradient-text">without getting lost.</span>',
+        'hero.p':'We start with kanji: cards to memorize kanji, hiragana, romaji and meaning, organized by JLPT level and category. More modules are coming soon.',
+        'mod.kanji.h3':'Kanji','mod.kanji.p':'Kanji flashcards by JLPT level and category, with hiragana, romaji, meaning and audio.',
+        'mod.vocab.h3':'Vocabulary','mod.vocab.p':'Everyday words and phrases, organized by topic.',
+        'mod.grammar.h3':'Grammar','mod.grammar.p':'Basic structures explained simply, with examples.',
+        'choice.cta':'Start →','soon':'Coming soon',
+        'footer.desc':'Japanese explained step by step, in several languages, so you can learn without getting lost.',
+        'footer.links':'Links','footer.contact':'Contact',
+      },
+      jp: {
+        'nav.home':'ホーム','nav.license':'免許の切替','back.hub':'← Facil Japón',
+        'hero.eyebrow':'Facil Japón · 自分のペースで日本語を学ぼう 🈵',
+        'hero.h1':'一歩ずつ、<span class="gradient-text">迷わず日本語を学ぶ。</span>',
+        'hero.p':'まずは漢字から。漢字・ひらがな・ローマ字・意味を覚えるカードを、JLPTレベルとカテゴリー別にご用意しました。今後さらにモジュールを追加予定です。',
+        'mod.kanji.h3':'漢字','mod.kanji.p':'JLPTレベルとカテゴリー別の漢字カード。ひらがな、ローマ字、意味、音声付き。',
+        'mod.vocab.h3':'語彙','mod.vocab.p':'日常で使う単語やフレーズをテーマ別に学べます。',
+        'mod.grammar.h3':'文法','mod.grammar.p':'基本的な文法をわかりやすく、例文つきで解説します。',
+        'choice.cta':'始める →','soon':'近日公開',
+        'footer.desc':'日本語を複数の言語でステップごとにわかりやすく解説します。',
+        'footer.links':'リンク','footer.contact':'お問い合わせ',
+      },
+      pt: {
+        'nav.home':'Início','nav.license':'Troca de habilitação','back.hub':'← Facil Japón',
+        'hero.eyebrow':'Facil Japón · aprenda japonês no seu ritmo 🈵',
+        'hero.h1':'Aprenda japonês passo a passo, <span class="gradient-text">sem se perder.</span>',
+        'hero.p':'Começamos com kanji: cartões para memorizar kanji, hiragana, romaji e significado, organizados por nível JLPT e categoria. Em breve mais módulos.',
+        'mod.kanji.h3':'Kanji','mod.kanji.p':'Cartões de kanji por nível JLPT e categoria, com hiragana, romaji, significado e áudio.',
+        'mod.vocab.h3':'Vocabulário','mod.vocab.p':'Palavras e frases do dia a dia, organizadas por tema.',
+        'mod.grammar.h3':'Gramática','mod.grammar.p':'Estruturas básicas explicadas de forma simples, com exemplos.',
+        'choice.cta':'Começar →','soon':'Em breve',
+        'footer.desc':'Japonês explicado passo a passo, em vários idiomas, para aprender sem se perder.',
+        'footer.links':'Links','footer.contact':'Contato',
+      },
+      tl: {
+        'nav.home':'Home','nav.license':'Pagpapalit ng lisensya','back.hub':'← Facil Japón',
+        'hero.eyebrow':'Facil Japón · matuto ng Japanese sa sarili mong bilis 🈵',
+        'hero.h1':'Matuto ng Japanese nang hakbang-hakbang, <span class="gradient-text">nang hindi nalilito.</span>',
+        'hero.p':'Nagsisimula kami sa kanji: mga card para maalala ang kanji, hiragana, romaji at kahulugan, ayon sa antas ng JLPT at kategorya. Malapit nang idagdag ang iba pang module.',
+        'mod.kanji.h3':'Kanji','mod.kanji.p':'Mga kanji flashcard ayon sa antas ng JLPT at kategorya, may hiragana, romaji, kahulugan at audio.',
+        'mod.vocab.h3':'Bokabularyo','mod.vocab.p':'Pang-araw-araw na salita at parirala, ayon sa paksa.',
+        'mod.grammar.h3':'Gramatika','mod.grammar.p':'Mga pangunahing istruktura na ipinaliwanag nang simple, may halimbawa.',
+        'choice.cta':'Magsimula →','soon':'Malapit na',
+        'footer.desc':'Japanese na ipinaliwanag nang hakbang-hakbang, sa iba\'t ibang wika, para matuto nang hindi nalilito.',
+        'footer.links':'Mga Link','footer.contact':'Makipag-ugnayan',
+      },
+    };
+
+    function setLang(lang) {
+      if (!I18N[lang]) return;
+      localStorage.setItem('fj_lang', lang);
+      document.documentElement.lang = {es:'es',en:'en',jp:'ja',pt:'pt',tl:'fil'}[lang] || lang;
+      const t = I18N[lang];
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const v = t[el.dataset.i18n]; if (v !== undefined) el.textContent = v;
+      });
+      document.querySelectorAll('[data-i18n-html]').forEach(el => {
+        const v = t[el.dataset.i18nHtml]; if (v !== undefined) el.innerHTML = v;
+      });
+      const sel = document.getElementById('langSelect');
+      if (sel) sel.value = lang;
+    }
+
+    function toggleTheme() {
+      const current = document.documentElement.dataset.theme;
+      const next = current === 'dark' ? 'light' : 'dark';
+      document.documentElement.dataset.theme = next;
+      localStorage.setItem('fj_theme', next);
+      document.getElementById('themeToggle').textContent = next === 'dark' ? '☀️' : '🌙';
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const btn = document.getElementById('themeToggle');
+      const isDark = document.documentElement.dataset.theme === 'dark';
+      btn.textContent = isDark ? '☀️' : '🌙';
+      btn.addEventListener('click', toggleTheme);
+      setLang(localStorage.getItem('fj_lang') || 'es');
+    });
+  </script>
+</body>
+</html>

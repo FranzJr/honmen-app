@@ -1,0 +1,1871 @@
+<!DOCTYPE html>
+<html lang="es" data-size="md" data-gray="off" data-contrast="normal">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="theme-color" content="#007CA2">
+<script>
+  (function(){
+    var mode = localStorage.getItem('fj_theme_mode') || localStorage.getItem('fj_theme') || 'auto';
+    var resolved = mode === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : mode;
+    document.documentElement.dataset.theme = resolved;
+  })();
+</script>
+<title>Kanji · Facil Japón</title>
+<meta name="description" content="Tarjetas de kanji por nivel JLPT y categoría, con hiragana, romaji, significado y audio. En español, inglés, portugués, japonés y tagalo.">
+<link rel="canonical" href="https://faciljapon.com/aprender-japones/kanji/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@300;400;500;700;900&family=Noto+Serif+JP:wght@500;700;900&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════════════
+   FACIL JAPÓN · Kanji flashcards
+═══════════════════════════════════════════════ */
+:root {
+  /* Brand palette */
+  --z-teal:    #007CA2;
+  --z-cyan:    #5FA6C0;
+  --z-soft:    #71AEC4;
+  --z-steel:   #76899E;
+  --z-lightbg: #95C2D3;
+  --z-neutral: #A8B5C2;
+
+  /* Light surfaces */
+  --bg:       #F4F7FA;
+  --bg2:      #FFFFFF;
+  --bg3:      #EBF0F5;
+  --bg4:      #E0E8EE;
+  --border:   #D4DDE6;
+  --border2:  #C2CDD9;
+
+  /* Text */
+  --text:    #0F1720;
+  --text2:   #2E3E52;
+  --muted:   #5A6B7E;
+  --muted2:  #8C9CAC;
+
+  /* Accent */
+  --accent:    var(--z-teal);
+  --accent-l:  var(--z-cyan);
+  --accent-bg: rgba(0,124,162,.08);
+  --accent-bd: rgba(0,124,162,.2);
+
+  /* Feedback */
+  --ok:    #0A7A50;
+  --ok-bg: #EDFBF4;
+  --no:    #B91C3A;
+  --no-bg: #FFF1F3;
+
+  /* Gradients */
+  --grad:      linear-gradient(135deg, var(--z-teal) 0%, var(--z-cyan) 100%);
+  --grad-soft: linear-gradient(135deg, rgba(0,124,162,.10) 0%, rgba(95,166,192,.06) 100%);
+
+  /* Shadows */
+  --s1: 0 1px 3px rgba(15,23,32,.06), 0 4px 12px rgba(15,23,32,.04);
+  --s2: 0 4px 20px rgba(15,23,32,.08), 0 1px 4px rgba(15,23,32,.05);
+  --s3: 0 8px 32px rgba(0,124,162,.15), 0 2px 8px rgba(0,124,162,.08);
+
+  --font: 'Manrope', 'Noto Sans JP', system-ui, sans-serif;
+  --font-jp: 'Noto Sans JP', 'Manrope', sans-serif;
+  --font-jp-serif: 'Noto Serif JP', serif;
+
+  /* Radii */
+  --r:  12px;
+  --r2: 16px;
+  --r3: 20px;
+  --rpill: 100px;
+
+  /* Font scale */
+  --fxs: .72rem;
+  --fsm: .84rem;
+  --fmd: .96rem;
+  --flg: 1.08rem;
+  --fxl: 1.22rem;
+  --f2xl: 1.6rem;
+  --f3xl: 2.4rem;
+}
+
+[data-theme="dark"] {
+  --bg:      #0F1720;
+  --bg2:     #172030;
+  --bg3:     #1E2D40;
+  --bg4:     #243550;
+  --border:  #263346;
+  --border2: #2E3E56;
+  --text:    #EBF0F8;
+  --text2:   #A8BDD0;
+  --muted:   #7A8FA8;
+  --muted2:  #5A7090;
+  --accent:    var(--z-cyan);
+  --accent-l:  var(--z-soft);
+  --accent-bg: rgba(95,166,192,.10);
+  --accent-bd: rgba(95,166,192,.25);
+  --ok:    #2DD47A;
+  --ok-bg: rgba(45,212,122,.08);
+  --no:    #FF6B85;
+  --no-bg: rgba(255,107,133,.08);
+  --grad:  linear-gradient(135deg, var(--z-cyan) 0%, var(--z-soft) 100%);
+  --s1: 0 1px 3px rgba(0,0,0,.3), 0 4px 12px rgba(0,0,0,.2);
+  --s2: 0 4px 20px rgba(0,0,0,.4), 0 1px 4px rgba(0,0,0,.3);
+  --s3: 0 8px 32px rgba(0,0,0,.5), 0 2px 8px rgba(0,0,0,.3);
+}
+
+/* Font size scale */
+[data-size="sm"] { font-size: 14px; }
+[data-size="md"] { font-size: 16px; }
+[data-size="lg"] { font-size: 18px; }
+
+/* Accessibility filters */
+[data-gray="on"] { filter: grayscale(100%); }
+[data-contrast="high"] {
+  --text:   #000;
+  --muted:  #2A2A2A;
+  --border: #555;
+  --bg:     #FFF;
+  --bg2:    #FFF;
+  --accent: #003E51;
+}
+[data-theme="dark"][data-contrast="high"] {
+  --text:   #FFF;
+  --muted:  #DDD;
+  --border: #888;
+  --bg:     #000;
+  --bg2:    #000;
+  --accent: #8FCEE3;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+
+html, body { height: 100%; }
+
+body {
+  font-family: var(--font);
+  font-feature-settings: 'cv11', 'ss01', 'ss03';
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  transition: background .25s ease, color .25s ease;
+  overscroll-behavior: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    transition-duration: .01ms !important;
+  }
+}
+
+.app {
+  max-width: 520px;
+  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 0 20px;
+  position: relative;
+}
+
+/* ─────────── HEADER ─────────── */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 4px 16px;
+  position: sticky;
+  top: 0;
+  background: var(--bg);
+  z-index: 20;
+  gap: 12px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.brand-mark {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: var(--grad);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-jp-serif);
+  font-weight: 900;
+  font-size: 18px;
+  color: white;
+  box-shadow: var(--s2);
+  flex-shrink: 0;
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.brand-title {
+  font-weight: 800;
+  font-size: var(--fmd);
+  color: var(--text);
+  letter-spacing: -.01em;
+  line-height: 1.1;
+}
+
+.brand-sub {
+  font-size: var(--fxs);
+  font-weight: 600;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  line-height: 1;
+  margin-top: 3px;
+}
+
+.header-actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.lang-select-mini {
+  appearance: none;
+  -webkit-appearance: none;
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: var(--rpill);
+  color: var(--text);
+  font-family: inherit;
+  font-weight: 700;
+  font-size: var(--fxs);
+  min-height: 38px;
+  padding: 0 26px 0 14px;
+  cursor: pointer;
+  background-image:
+    linear-gradient(45deg, transparent 50%, var(--muted) 50%),
+    linear-gradient(135deg, var(--muted) 50%, transparent 50%);
+  background-position: right 14px center, right 9px center;
+  background-size: 5px 5px, 5px 5px;
+  background-repeat: no-repeat;
+  transition: border-color .2s ease;
+}
+.lang-select-mini:hover { border-color: var(--accent-bd); }
+
+.icon-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--bg2);
+  color: var(--text);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  transition: all .2s ease;
+}
+
+.icon-btn:hover, .icon-btn:active {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--accent-bg);
+}
+
+/* ─────────── SETUP SCREEN ─────────── */
+.screen { flex: 1; display: none; flex-direction: column; padding-bottom: 24px; }
+.screen.active { display: flex; animation: fadeIn .35s ease; }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--muted);
+  font-size: var(--fxs);
+  font-weight: 700;
+}
+.back-link:hover { color: var(--accent); }
+
+.intro {
+  padding: 16px 0 8px;
+}
+
+.intro-eyebrow {
+  font-size: var(--fxs);
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: .18em;
+  margin: 14px 0 10px;
+}
+
+.intro h1 {
+  font-size: var(--f2xl);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -.02em;
+  margin-bottom: 8px;
+  color: var(--text);
+}
+
+.intro h1 .jp {
+  font-family: var(--font-jp-serif);
+  color: var(--accent);
+  display: block;
+  font-size: var(--fxl);
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.intro p {
+  color: var(--muted);
+  font-size: var(--fmd);
+  max-width: 38ch;
+  line-height: 1.65;
+}
+
+/* Section heading */
+.section-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 28px 0 12px;
+}
+
+.section-head h3 {
+  font-size: var(--fxs);
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: .16em;
+}
+
+.section-head .meta {
+  font-size: var(--fxs);
+  color: var(--muted2);
+  font-weight: 600;
+}
+
+.toggle-row {
+  display: flex;
+  gap: 6px;
+  font-size: var(--fxs);
+}
+
+.toggle-row button {
+  background: none;
+  border: none;
+  color: var(--muted);
+  font-weight: 700;
+  font-family: inherit;
+  font-size: var(--fxs);
+  padding: 4px 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: color .2s;
+}
+
+.toggle-row button:hover { color: var(--accent); background: var(--accent-bg); }
+
+/* JLPT */
+.jlpt-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+}
+
+.jlpt-pill {
+  border: 1.5px solid var(--border);
+  background: var(--bg2);
+  border-radius: var(--r);
+  padding: 14px 4px;
+  cursor: pointer;
+  transition: all .2s ease;
+  text-align: center;
+  font-family: inherit;
+}
+
+.jlpt-pill .level {
+  font-weight: 800;
+  font-size: var(--flg);
+  color: var(--text);
+  letter-spacing: -.02em;
+}
+
+.jlpt-pill .label {
+  font-size: 9px;
+  color: var(--muted2);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  margin-top: 3px;
+}
+
+.jlpt-pill:hover { border-color: var(--accent-bd); }
+
+.jlpt-pill.active {
+  background: var(--grad);
+  border-color: transparent;
+  box-shadow: var(--s3);
+}
+
+.jlpt-pill.active .level,
+.jlpt-pill.active .label { color: white; }
+
+/* Categories */
+.cat-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.cat-card {
+  border: 1.5px solid var(--border);
+  background: var(--bg2);
+  border-radius: var(--r2);
+  padding: 14px;
+  cursor: pointer;
+  transition: all .2s ease;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-align: left;
+  font-family: inherit;
+}
+
+.cat-card:hover { border-color: var(--accent-bd); }
+
+.cat-card .emoji {
+  font-size: 26px;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.cat-card .info { flex: 1; min-width: 0; }
+
+.cat-card .jp {
+  font-family: var(--font-jp);
+  font-size: var(--fxs);
+  color: var(--muted);
+  font-weight: 500;
+  display: block;
+  line-height: 1.2;
+}
+
+.cat-card .es {
+  font-size: var(--fmd);
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.2;
+  margin-top: 2px;
+  letter-spacing: -.01em;
+}
+
+.cat-card.active {
+  background: var(--grad);
+  border-color: transparent;
+  box-shadow: var(--s2);
+}
+
+.cat-card.active .es,
+.cat-card.active .jp { color: white; }
+
+.cat-card.active .jp { opacity: .85; }
+
+.cat-card.disabled { opacity: .35; pointer-events: none; }
+
+/* Start button */
+.start-wrap {
+  position: sticky;
+  bottom: 0;
+  padding: 20px 0 12px;
+  background: linear-gradient(to top, var(--bg) 70%, transparent);
+  margin-top: 28px;
+  z-index: 5;
+}
+
+.start-btn {
+  width: 100%;
+  background: var(--grad);
+  color: white;
+  border: none;
+  border-radius: var(--r2);
+  padding: 18px;
+  font-size: var(--flg);
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  box-shadow: var(--s3);
+  transition: all .2s ease;
+  letter-spacing: -.005em;
+}
+
+.start-btn:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 36px rgba(0,124,162,.25);
+}
+
+.start-btn:disabled {
+  background: var(--bg3);
+  color: var(--muted2);
+  box-shadow: none;
+  cursor: not-allowed;
+}
+
+.start-btn .arrow {
+  display: inline-block;
+  margin-left: 6px;
+  transition: transform .2s;
+}
+
+.start-btn:hover:not(:disabled) .arrow { transform: translateX(4px); }
+
+/* ─────────── CARD SCREEN ─────────── */
+.progress-row {
+  margin: 10px 0 18px;
+}
+
+.progress-bar {
+  height: 4px;
+  background: var(--bg3);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: var(--grad);
+  width: 0%;
+  transition: width .4s ease;
+  border-radius: 999px;
+}
+
+.progress-msg {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  font-size: var(--fsm);
+}
+
+.progress-msg .pos {
+  color: var(--text2);
+  font-weight: 600;
+}
+
+.progress-msg .hint {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.card-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.badge-row { display: flex; gap: 6px; }
+
+.badge {
+  padding: 5px 10px;
+  border-radius: 999px;
+  font-size: var(--fxs);
+  font-weight: 700;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+
+.badge.jlpt {
+  background: var(--accent);
+  color: white;
+}
+
+.badge.cat {
+  background: var(--bg2);
+  color: var(--accent);
+  border: 1px solid var(--accent-bd);
+}
+
+/* ─────────── CARD ─────────── */
+.card-wrap {
+  flex: 1;
+  perspective: 1500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 360px;
+  margin-bottom: 20px;
+}
+
+.card {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  max-height: 58vh;
+  transform-style: preserve-3d;
+  transition: transform .7s cubic-bezier(.4,0,.2,1);
+  cursor: pointer;
+}
+
+.card.flipped { transform: rotateY(180deg); }
+
+.card-face {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  background: var(--bg2);
+  border-radius: var(--r3);
+  box-shadow: var(--s2);
+  border: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 28px 24px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.card-face::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: var(--grad);
+}
+
+.card-front .emoji {
+  font-size: 76px;
+  line-height: 1;
+  margin-bottom: 22px;
+  filter: drop-shadow(0 4px 12px rgba(0,124,162,.12));
+}
+
+.card-front .kanji {
+  font-family: var(--font-jp-serif);
+  font-size: 68px;
+  font-weight: 900;
+  color: var(--text);
+  line-height: 1;
+  margin-bottom: 22px;
+  letter-spacing: -.02em;
+}
+
+.card-front .tap-hint {
+  position: absolute;
+  bottom: 22px;
+  font-size: var(--fxs);
+  color: var(--muted2);
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+  justify-content: space-between;
+  padding: 34px 24px 26px;
+}
+
+.card-back .back-top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 90%;
+}
+
+.card-back .hiragana {
+  font-family: var(--font-jp);
+  font-size: var(--f2xl);
+  font-weight: 500;
+  color: var(--accent);
+  margin-bottom: 6px;
+  line-height: 1.2;
+}
+
+.card-back .romaji {
+  font-family: var(--font);
+  font-size: var(--fsm);
+  font-weight: 700;
+  color: var(--muted);
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+
+.card-back .divider {
+  width: 28px;
+  height: 2px;
+  background: var(--accent-l);
+  border-radius: 2px;
+  margin-bottom: 18px;
+  opacity: .6;
+}
+
+.card-back .meaning {
+  font-size: var(--f3xl);
+  font-weight: 800;
+  color: var(--text);
+  line-height: 1.15;
+  letter-spacing: -.02em;
+  margin-bottom: 10px;
+}
+
+.card-back .note {
+  font-size: var(--fsm);
+  color: var(--muted);
+  line-height: 1.6;
+  max-width: 30ch;
+}
+
+.card-back .back-bottom {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.speak-btn {
+  border: 1.5px solid var(--border);
+  background: var(--bg2);
+  color: var(--accent);
+  border-radius: 999px;
+  padding: 10px 18px;
+  font-size: var(--fsm);
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all .2s;
+}
+
+.speak-btn:hover {
+  background: var(--accent);
+  color: white;
+  border-color: var(--accent);
+}
+
+/* Controls */
+.controls {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 10px;
+  align-items: center;
+}
+
+.nav-btn {
+  background: var(--bg2);
+  border: 1.5px solid var(--border);
+  color: var(--text);
+  border-radius: var(--r);
+  padding: 16px;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: var(--fsm);
+  cursor: pointer;
+  transition: all .2s;
+}
+
+.nav-btn:hover:not(:disabled) {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.nav-btn:disabled {
+  opacity: .35;
+  cursor: not-allowed;
+}
+
+.flip-btn {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--grad);
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  box-shadow: var(--s3);
+  transition: all .25s;
+}
+
+.flip-btn:hover {
+  transform: rotate(180deg) scale(1.05);
+}
+
+/* ─────────── DONE SCREEN ─────────── */
+.done-screen {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.done-screen .big-emoji {
+  font-size: 84px;
+  margin-bottom: 10px;
+  animation: bounce .9s ease;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-16px); }
+}
+
+.done-screen .jp-title {
+  font-family: var(--font-jp-serif);
+  font-size: 38px;
+  font-weight: 900;
+  color: var(--accent);
+  margin-bottom: 4px;
+  letter-spacing: -.02em;
+}
+
+.done-screen h2 {
+  font-size: var(--f2xl);
+  font-weight: 800;
+  margin-bottom: 8px;
+  letter-spacing: -.02em;
+}
+
+.done-screen .sub {
+  color: var(--muted);
+  font-size: var(--fmd);
+  margin-bottom: 28px;
+  max-width: 32ch;
+  line-height: 1.6;
+}
+
+.done-stats {
+  display: flex;
+  gap: 28px;
+  margin-bottom: 32px;
+}
+
+.done-stat .num {
+  font-size: var(--f3xl);
+  font-weight: 800;
+  color: var(--accent);
+  line-height: 1;
+  letter-spacing: -.03em;
+}
+
+.done-stat .label {
+  font-size: var(--fxs);
+  color: var(--muted);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  margin-top: 4px;
+}
+
+.done-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  max-width: 300px;
+}
+
+/* ─────────── BOTTOM SHEET ─────────── */
+.sheet-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(15,23,32,.45);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .25s ease;
+  z-index: 50;
+  backdrop-filter: blur(4px);
+}
+
+.sheet-backdrop.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.sheet {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--bg2);
+  border-radius: 24px 24px 0 0;
+  padding: 12px 22px 32px;
+  box-shadow: 0 -8px 40px rgba(0,0,0,.15);
+  z-index: 51;
+  transform: translateY(100%);
+  transition: transform .35s cubic-bezier(.4,0,.2,1);
+  max-width: 520px;
+  margin: 0 auto;
+  max-height: 85vh;
+  overflow-y: auto;
+}
+
+.sheet.open { transform: translateY(0); }
+
+.sheet-handle {
+  width: 40px;
+  height: 4px;
+  background: var(--border2);
+  border-radius: 2px;
+  margin: 0 auto 18px;
+}
+
+.sheet h3 {
+  font-size: var(--flg);
+  font-weight: 800;
+  margin-bottom: 4px;
+  letter-spacing: -.01em;
+}
+
+.sheet .sheet-sub {
+  font-size: var(--fsm);
+  color: var(--muted);
+  margin-bottom: 22px;
+}
+
+.sheet-group {
+  margin-bottom: 22px;
+}
+
+.sheet-group-label {
+  font-size: var(--fxs);
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  margin-bottom: 10px;
+}
+
+.opt-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.opt-row.two { grid-template-columns: repeat(2, 1fr); }
+
+.opt {
+  border: 1.5px solid var(--border);
+  background: var(--bg);
+  border-radius: var(--r);
+  padding: 12px 6px;
+  font-family: inherit;
+  font-size: var(--fsm);
+  font-weight: 600;
+  color: var(--text);
+  cursor: pointer;
+  transition: all .2s ease;
+  text-align: center;
+}
+
+.opt:hover { border-color: var(--accent-bd); }
+
+.opt.active {
+  background: var(--accent);
+  color: white;
+  border-color: var(--accent);
+}
+
+.sheet-close {
+  width: 100%;
+  background: var(--bg3);
+  color: var(--text);
+  border: none;
+  border-radius: var(--r);
+  padding: 14px;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: var(--fmd);
+  cursor: pointer;
+  margin-top: 8px;
+}
+
+.sheet-close:hover { background: var(--bg4); }
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 18px 0 22px;
+  font-size: var(--fxs);
+  color: var(--muted2);
+  letter-spacing: .04em;
+}
+
+.footer .jp {
+  font-family: var(--font-jp);
+  color: var(--muted);
+  margin-right: 6px;
+}
+
+/* Mobile */
+@media (max-width: 380px) {
+  .card-front .emoji { font-size: 64px; }
+  .card-front .kanji { font-size: 56px; }
+  .card-back .meaning { font-size: 1.9rem; }
+  .app { padding: 0 16px; }
+}
+</style>
+</head>
+<body>
+
+<div class="app">
+
+  <!-- Header -->
+  <header class="header">
+    <div class="brand">
+      <div class="brand-mark">単</div>
+      <div class="brand-text">
+        <div class="brand-title" id="brandTitle">Flashcards</div>
+        <div class="brand-sub">Facil Japón · Kanji</div>
+      </div>
+    </div>
+    <div class="header-actions">
+      <select class="lang-select-mini" id="langSelect" aria-label="Idioma" onchange="handleLangChange(this.value)">
+        <option value="es">🇪🇸 ES</option>
+        <option value="en">🇬🇧 EN</option>
+        <option value="pt">🇧🇷 PT</option>
+        <option value="jp">🇯🇵 日</option>
+        <option value="tl">🇵🇭 TL</option>
+      </select>
+      <button class="icon-btn" id="settingsBtn" aria-label="Configuración">⚙</button>
+    </div>
+  </header>
+
+  <!-- Setup -->
+  <main class="screen active" id="setupScreen">
+    <div class="intro">
+      <a class="back-link" href="../" id="backLink">← Aprender japonés</a>
+      <div class="intro-eyebrow" id="introEyebrow">Vocabulario</div>
+      <h1>
+        <span class="jp">単語カード</span>
+        <span id="introTitle">Aprende japonés a tu ritmo</span>
+      </h1>
+      <p id="introDesc">Elige tu nivel JLPT y las categorías que quieres practicar. Sin presión, paso a paso.</p>
+    </div>
+
+    <div class="section-head">
+      <h3 id="lblJlpt">Nivel JLPT</h3>
+      <span class="meta" id="jlptMeta">N5</span>
+    </div>
+    <div class="jlpt-grid" id="jlptGrid"></div>
+
+    <div class="section-head">
+      <h3 id="lblCats">Categorías</h3>
+      <div class="toggle-row">
+        <button id="selAll" data-i18n="all">Todas</button>
+        <button id="selNone" data-i18n="none">Ninguna</button>
+      </div>
+    </div>
+    <div class="cat-grid" id="catGrid"></div>
+
+    <div class="start-wrap">
+      <button class="start-btn" id="startBtn" disabled>
+        <span id="startLabel">Selecciona al menos una categoría</span>
+        <span class="arrow">→</span>
+      </button>
+    </div>
+  </main>
+
+  <!-- Card screen -->
+  <section class="screen" id="cardScreen">
+    <div class="progress-row">
+      <div class="progress-bar"><div class="progress-fill" id="progFill"></div></div>
+      <div class="progress-msg">
+        <span class="pos" id="progPos">Tarjeta 1 de 0</span>
+        <span class="hint" id="progHint">¡Empezamos!</span>
+      </div>
+    </div>
+
+    <div class="card-meta">
+      <div class="badge-row">
+        <span class="badge jlpt" id="bJlpt">N5</span>
+        <span class="badge cat" id="bCat">—</span>
+      </div>
+      <button class="icon-btn" id="restartTopBtn" aria-label="Reiniciar">↺</button>
+    </div>
+
+    <div class="card-wrap">
+      <div class="card" id="card" role="button" tabindex="0" aria-label="Tarjeta">
+        <div class="card-face card-front">
+          <div class="emoji" id="cEm">🐱</div>
+          <div class="kanji" id="cK">猫</div>
+          <div class="tap-hint" id="tapHint">Toca para ver</div>
+        </div>
+        <div class="card-face card-back">
+          <div class="back-top">
+            <div class="hiragana" id="cH">ねこ</div>
+            <div class="romaji" id="cR">neko</div>
+            <div class="divider"></div>
+            <div class="meaning" id="cM">gato</div>
+            <div class="note" id="cN"></div>
+          </div>
+          <div class="back-bottom">
+            <button class="speak-btn" id="speakBtn">🔊 <span id="speakLabel">Escuchar</span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="controls">
+      <button class="nav-btn" id="prevBtn" data-i18n="prev">← Anterior</button>
+      <button class="flip-btn" id="flipBtn" aria-label="Voltear">⇅</button>
+      <button class="nav-btn" id="nextBtn" data-i18n="next">Siguiente →</button>
+    </div>
+  </section>
+
+  <!-- Done -->
+  <section class="screen done-screen" id="doneScreen">
+    <div class="big-emoji">🎉</div>
+    <div class="jp-title">完璧！</div>
+    <h2 id="doneTitle">¡Terminaste el mazo!</h2>
+    <p class="sub" id="doneSub">Buen trabajo. Repasa de nuevo o cambia de categorías para seguir avanzando.</p>
+    <div class="done-stats">
+      <div class="done-stat"><div class="num" id="dTot">0</div><div class="label" id="dTotL">Tarjetas</div></div>
+      <div class="done-stat"><div class="num" id="dCat">0</div><div class="label" id="dCatL">Categorías</div></div>
+    </div>
+    <div class="done-actions">
+      <button class="start-btn" id="restartBtn" data-i18n="restart">Repasar de nuevo ↻</button>
+      <button class="nav-btn" id="backBtn" data-i18n="back">Cambiar categorías</button>
+    </div>
+  </section>
+
+  <div class="footer">
+    <span class="jp">頑張って！</span>· Facil Japón
+  </div>
+</div>
+
+<!-- Bottom Sheet: Settings -->
+<div class="sheet-backdrop" id="backdrop"></div>
+<div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
+  <div class="sheet-handle"></div>
+  <h3 id="sheetTitle">Configuración</h3>
+  <p class="sheet-sub" id="sheetSub">Personaliza la app según tus preferencias.</p>
+
+  <div class="sheet-group">
+    <div class="sheet-group-label" id="lblTheme">Tema</div>
+    <div class="opt-row" id="themeOpts">
+      <button class="opt" data-theme-set="auto" data-i18n="themeAuto">🌗 Auto</button>
+      <button class="opt" data-theme-set="light" data-i18n="themeLight">☀️ Claro</button>
+      <button class="opt" data-theme-set="dark" data-i18n="themeDark">🌙 Oscuro</button>
+    </div>
+  </div>
+
+  <div class="sheet-group">
+    <div class="sheet-group-label" id="lblSize">Tamaño de texto</div>
+    <div class="opt-row" id="sizeOpts">
+      <button class="opt" data-size-set="sm">A−</button>
+      <button class="opt active" data-size-set="md">A</button>
+      <button class="opt" data-size-set="lg">A+</button>
+    </div>
+  </div>
+
+  <div class="sheet-group">
+    <div class="sheet-group-label" id="lblFilters">Filtros de accesibilidad</div>
+    <div class="opt-row two" id="filterOpts">
+      <button class="opt" data-toggle="gray" data-i18n="gray">Escala de grises</button>
+      <button class="opt" data-toggle="contrast" data-i18n="contrast">Alto contraste</button>
+    </div>
+  </div>
+
+  <button class="sheet-close" id="sheetClose" data-i18n="close">Listo</button>
+</div>
+
+<script>
+/* ═══════════════════════════════════════════════
+   I18N
+═══════════════════════════════════════════════ */
+const I18N = {
+  es: {
+    brand: 'Flashcards', eyebrow: 'Vocabulario',
+    title: 'Aprende japonés a tu ritmo',
+    desc: 'Elige tu nivel JLPT y las categorías que quieres practicar. Sin presión, paso a paso.',
+    jlpt: 'Nivel JLPT', cats: 'Categorías',
+    all: 'Todas', none: 'Ninguna',
+    selectCats: 'Selecciona al menos una categoría',
+    study: (n) => `Estudiar ${n} tarjeta${n===1?'':'s'}`,
+    cardOf: (i, n) => `Tarjeta ${i} de ${n}`,
+    tap: 'Toca para ver',
+    speak: 'Escuchar',
+    prev: '← Anterior', next: 'Siguiente →', finish: 'Terminar ✓',
+    doneTitle: '¡Terminaste el mazo!',
+    doneSub: 'Buen trabajo. Repasa de nuevo o cambia de categorías para seguir avanzando.',
+    statCards: 'Tarjetas', statCats: 'Categorías',
+    restart: 'Repasar de nuevo ↻', back: 'Cambiar categorías', backLink: '← Aprender japonés',
+    settings: 'Configuración', sheetSub: 'Personaliza la app según tus preferencias.',
+    theme: 'Tema', themeAuto: '🌗 Auto', themeLight: '☀️ Claro', themeDark: '🌙 Oscuro',
+    size: 'Tamaño de texto', filters: 'Filtros de accesibilidad',
+    gray: 'Escala de grises', contrast: 'Alto contraste', close: 'Listo',
+    hints: {
+      start: '¡Empezamos!',
+      going: '¡Vas muy bien!',
+      half: '¡Pasaste la mitad!',
+      almost: (n) => `Solo te faltan ${n}`,
+      last: '¡Última tarjeta!'
+    },
+  },
+  en: {
+    brand: 'Flashcards', eyebrow: 'Vocabulary',
+    title: 'Learn Japanese at your pace',
+    desc: 'Pick your JLPT level and the categories you want to practice. No pressure, step by step.',
+    jlpt: 'JLPT Level', cats: 'Categories',
+    all: 'All', none: 'None',
+    selectCats: 'Pick at least one category',
+    study: (n) => `Study ${n} card${n===1?'':'s'}`,
+    cardOf: (i, n) => `Card ${i} of ${n}`,
+    tap: 'Tap to reveal',
+    speak: 'Listen',
+    prev: '← Previous', next: 'Next →', finish: 'Finish ✓',
+    doneTitle: 'You finished the deck!',
+    doneSub: 'Great work. Review again or change categories to keep going.',
+    statCards: 'Cards', statCats: 'Categories',
+    restart: 'Review again ↻', back: 'Change categories', backLink: '← Learn Japanese',
+    settings: 'Settings', sheetSub: 'Customize the app to your preferences.',
+    theme: 'Theme', themeAuto: '🌗 Auto', themeLight: '☀️ Light', themeDark: '🌙 Dark',
+    size: 'Text size', filters: 'Accessibility filters',
+    gray: 'Grayscale', contrast: 'High contrast', close: 'Done',
+    hints: {
+      start: "Let's go!",
+      going: 'Doing great!',
+      half: 'Past halfway!',
+      almost: (n) => `Only ${n} left`,
+      last: 'Last card!'
+    },
+  },
+  jp: {
+    brand: '単語カード', eyebrow: '語彙',
+    title: '自分のペースで日本語を学ぼう',
+    desc: 'JLPTレベルとカテゴリーを選んで、自分のペースで学習しましょう。',
+    jlpt: 'JLPTレベル', cats: 'カテゴリー',
+    all: '全部', none: 'なし',
+    selectCats: 'カテゴリーを少なくとも一つ選んでください',
+    study: (n) => `${n}枚のカードを勉強する`,
+    cardOf: (i, n) => `${n}枚中${i}枚目`,
+    tap: 'タップして見る',
+    speak: '聞く',
+    prev: '← 前へ', next: '次へ →', finish: '終了 ✓',
+    doneTitle: 'デッキ完了！',
+    doneSub: 'お疲れさまでした。もう一度復習するか、カテゴリーを変えて続けましょう。',
+    statCards: 'カード', statCats: 'カテゴリー',
+    restart: 'もう一度復習 ↻', back: 'カテゴリーを変える', backLink: '← 日本語を学ぶ',
+    settings: '設定', sheetSub: 'お好みに合わせてカスタマイズ。',
+    theme: 'テーマ', themeAuto: '🌗 自動', themeLight: '☀️ ライト', themeDark: '🌙 ダーク',
+    size: '文字サイズ', filters: 'アクセシビリティ',
+    gray: 'グレースケール', contrast: 'ハイコントラスト', close: '完了',
+    hints: {
+      start: '始めましょう！',
+      going: 'いい感じ！',
+      half: '半分を超えました！',
+      almost: (n) => `あと${n}枚`,
+      last: '最後のカード！'
+    },
+  },
+  pt: {
+    brand: 'Flashcards', eyebrow: 'Vocabulário',
+    title: 'Aprenda japonês no seu ritmo',
+    desc: 'Escolha seu nível JLPT e as categorias que quer praticar. Sem pressão, passo a passo.',
+    jlpt: 'Nível JLPT', cats: 'Categorias',
+    all: 'Todas', none: 'Nenhuma',
+    selectCats: 'Selecione pelo menos uma categoria',
+    study: (n) => `Estudar ${n} carta${n===1?'':'s'}`,
+    cardOf: (i, n) => `Carta ${i} de ${n}`,
+    tap: 'Toque para ver',
+    speak: 'Ouvir',
+    prev: '← Anterior', next: 'Próxima →', finish: 'Terminar ✓',
+    doneTitle: 'Você terminou o baralho!',
+    doneSub: 'Bom trabalho. Revise novamente ou mude de categorias para continuar avançando.',
+    statCards: 'Cartas', statCats: 'Categorias',
+    restart: 'Revisar novamente ↻', back: 'Mudar categorias', backLink: '← Aprender japonês',
+    settings: 'Configurações', sheetSub: 'Personalize o app de acordo com suas preferências.',
+    theme: 'Tema', themeAuto: '🌗 Automático', themeLight: '☀️ Claro', themeDark: '🌙 Escuro',
+    size: 'Tamanho do texto', filters: 'Filtros de acessibilidade',
+    gray: 'Escala de cinza', contrast: 'Alto contraste', close: 'Pronto',
+    hints: {
+      start: 'Vamos começar!',
+      going: 'Você está indo bem!',
+      half: 'Você passou da metade!',
+      almost: (n) => `Faltam apenas ${n}`,
+      last: 'Última carta!'
+    },
+  },
+  tl: {
+    brand: 'Flashcards', eyebrow: 'Bokabularyo',
+    title: 'Matuto ng Japanese sa sarili mong bilis',
+    desc: 'Piliin ang antas ng JLPT at ang mga kategoryang gusto mong isanay. Walang pressure, hakbang-hakbang.',
+    jlpt: 'Antas ng JLPT', cats: 'Mga Kategorya',
+    all: 'Lahat', none: 'Wala',
+    selectCats: 'Pumili ng kahit isang kategorya',
+    study: (n) => `Pag-aralan ang ${n} card${n===1?'':'s'}`,
+    cardOf: (i, n) => `Card ${i} ng ${n}`,
+    tap: 'I-tap para makita',
+    speak: 'Pakinggan',
+    prev: '← Nakaraan', next: 'Susunod →', finish: 'Tapusin ✓',
+    doneTitle: 'Natapos mo ang deck!',
+    doneSub: 'Magaling! Balikan muli o palitan ang mga kategorya para magpatuloy.',
+    statCards: 'Mga Card', statCats: 'Mga Kategorya',
+    restart: 'Balikan muli ↻', back: 'Palitan ang kategorya', backLink: '← Matuto ng Japanese',
+    settings: 'Mga Setting', sheetSub: 'I-customize ang app ayon sa iyong kagustuhan.',
+    theme: 'Tema', themeAuto: '🌗 Awtomatiko', themeLight: '☀️ Maliwanag', themeDark: '🌙 Madilim',
+    size: 'Laki ng teksto', filters: 'Mga filter sa accessibility',
+    gray: 'Grayscale', contrast: 'Mataas na contrast', close: 'Tapos na',
+    hints: {
+      start: 'Simulan na natin!',
+      going: 'Ang galing mo!',
+      half: 'Kalahati na ang natapos mo!',
+      almost: (n) => `${n} na lang ang natitira`,
+      last: 'Huling card!'
+    },
+  },
+};
+
+/* ═══════════════════════════════════════════════
+   DATA
+═══════════════════════════════════════════════ */
+const CATEGORIES = {
+  animales:   { es: 'Animales',    en: 'Animals',     pt: 'Animais',      tl: 'Mga Hayop',       jp: '動物',     emoji: '🐾' },
+  comida:     { es: 'Comida',      en: 'Food',        pt: 'Comida',       tl: 'Pagkain',         jp: '食べ物',   emoji: '🍱' },
+  familia:    { es: 'Familia',     en: 'Family',      pt: 'Família',      tl: 'Pamilya',         jp: '家族',     emoji: '👨‍👩‍👧' },
+  colores:    { es: 'Colores',     en: 'Colors',      pt: 'Cores',        tl: 'Mga Kulay',       jp: '色',       emoji: '🎨' },
+  numeros:    { es: 'Números',     en: 'Numbers',     pt: 'Números',      tl: 'Mga Numero',      jp: '数字',     emoji: '🔢' },
+  naturaleza: { es: 'Naturaleza',  en: 'Nature',      pt: 'Natureza',     tl: 'Kalikasan',       jp: '自然',     emoji: '🌳' },
+  cuerpo:     { es: 'Cuerpo',      en: 'Body',        pt: 'Corpo',        tl: 'Katawan',         jp: '体',       emoji: '👤' },
+  transporte: { es: 'Transporte',  en: 'Transport',   pt: 'Transporte',   tl: 'Transportasyon',  jp: '乗り物',   emoji: '🚆' },
+  lugares:    { es: 'Lugares',     en: 'Places',      pt: 'Lugares',      tl: 'Mga Lugar',       jp: '場所',     emoji: '🏯' },
+  tiempo:     { es: 'Tiempo',      en: 'Time',        pt: 'Tempo',        tl: 'Oras',            jp: '時間',     emoji: '⏰' }
+};
+
+const JLPT_LEVELS = ['N5', 'N4', 'N3', 'N2', 'N1'];
+
+const VOCAB = [
+  // Animales
+  { k:'猫', h:'ねこ', r:'neko', es:'gato', en:'cat', pt:'gato', tl:'pusa', em:'🐱', j:'N5', c:'animales' },
+  { k:'犬', h:'いぬ', r:'inu', es:'perro', en:'dog', pt:'cachorro', tl:'aso', em:'🐶', j:'N5', c:'animales' },
+  { k:'鳥', h:'とり', r:'tori', es:'pájaro', en:'bird', pt:'pássaro', tl:'ibon', em:'🐦', j:'N5', c:'animales' },
+  { k:'魚', h:'さかな', r:'sakana', es:'pez · pescado', en:'fish', pt:'peixe', tl:'isda', em:'🐟', j:'N5', c:'animales' },
+  { k:'馬', h:'うま', r:'uma', es:'caballo', en:'horse', pt:'cavalo', tl:'kabayo', em:'🐴', j:'N4', c:'animales' },
+  { k:'牛', h:'うし', r:'ushi', es:'vaca', en:'cow', pt:'vaca', tl:'baka', em:'🐄', j:'N4', c:'animales' },
+  { k:'豚', h:'ぶた', r:'buta', es:'cerdo', en:'pig', pt:'porco', tl:'baboy', em:'🐷', j:'N4', c:'animales' },
+  { k:'兎', h:'うさぎ', r:'usagi', es:'conejo', en:'rabbit', pt:'coelho', tl:'kuneho', em:'🐰', j:'N3', c:'animales' },
+
+  // Comida
+  { k:'ご飯', h:'ごはん', r:'gohan', es:'arroz · comida', en:'rice · meal', pt:'arroz · refeição', tl:'kanin · pagkain', em:'🍚', j:'N5', c:'comida' },
+  { k:'寿司', h:'すし', r:'sushi', es:'sushi', en:'sushi', pt:'sushi', tl:'sushi', em:'🍣', j:'N5', c:'comida' },
+  { k:'パン', h:'パン', r:'pan', es:'pan', en:'bread', pt:'pão', tl:'tinapay', em:'🍞', j:'N5', c:'comida' },
+  { k:'卵', h:'たまご', r:'tamago', es:'huevo', en:'egg', pt:'ovo', tl:'itlog', em:'🥚', j:'N5', c:'comida' },
+  { k:'肉', h:'にく', r:'niku', es:'carne', en:'meat', pt:'carne', tl:'karne', em:'🥩', j:'N5', c:'comida' },
+  { k:'野菜', h:'やさい', r:'yasai', es:'verduras', en:'vegetables', pt:'vegetais', tl:'gulay', em:'🥬', j:'N5', c:'comida' },
+  { k:'果物', h:'くだもの', r:'kudamono', es:'fruta', en:'fruit', pt:'fruta', tl:'prutas', em:'🍎', j:'N5', c:'comida' },
+  { k:'水', h:'みず', r:'mizu', es:'agua', en:'water', pt:'água', tl:'tubig', em:'💧', j:'N5', c:'comida' },
+  { k:'お茶', h:'おちゃ', r:'ocha', es:'té', en:'tea', pt:'chá', tl:'tsaa', em:'🍵', j:'N5', c:'comida' },
+  { k:'ラーメン', h:'ラーメン', r:'rāmen', es:'ramen · fideos', en:'ramen', pt:'ramen', tl:'ramen', em:'🍜', j:'N5', c:'comida' },
+
+  // Familia
+  { k:'父', h:'ちち', r:'chichi', es:'padre (propio)', en:'father (own)', pt:'pai (próprio)', tl:'tatay (sarili)', em:'👨', j:'N5', c:'familia',
+    n_es:'Para el padre de otra persona: お父さん (otōsan).',
+    n_en:'For someone else\'s father: お父さん (otōsan).',
+    n_pt:'Para o pai de outra pessoa: お父さん (otōsan).',
+    n_tl:'Para sa ama ng ibang tao: お父さん (otōsan).',
+    n_jp:'他人の父親: お父さん。' },
+  { k:'母', h:'はは', r:'haha', es:'madre (propia)', en:'mother (own)', pt:'mãe (própria)', tl:'nanay (sarili)', em:'👩', j:'N5', c:'familia',
+    n_es:'Para la madre de otra persona: お母さん (okāsan).',
+    n_en:'For someone else\'s mother: お母さん (okāsan).',
+    n_pt:'Para a mãe de outra pessoa: お母さん (okāsan).',
+    n_tl:'Para sa ina ng ibang tao: お母さん (okāsan).',
+    n_jp:'他人の母親: お母さん。' },
+  { k:'兄', h:'あに', r:'ani', es:'hermano mayor', en:'older brother', pt:'irmão mais velho', tl:'nakatatandang kapatid na lalaki', em:'🧑', j:'N5', c:'familia' },
+  { k:'姉', h:'あね', r:'ane', es:'hermana mayor', en:'older sister', pt:'irmã mais velha', tl:'nakatatandang kapatid na babae', em:'👩', j:'N5', c:'familia' },
+  { k:'弟', h:'おとうと', r:'otōto', es:'hermano menor', en:'younger brother', pt:'irmão mais novo', tl:'nakababatang kapatid na lalaki', em:'👦', j:'N5', c:'familia' },
+  { k:'妹', h:'いもうと', r:'imōto', es:'hermana menor', en:'younger sister', pt:'irmã mais nova', tl:'nakababatang kapatid na babae', em:'👧', j:'N5', c:'familia' },
+  { k:'家族', h:'かぞく', r:'kazoku', es:'familia', en:'family', pt:'família', tl:'pamilya', em:'👨‍👩‍👧‍👦', j:'N5', c:'familia' },
+  { k:'子供', h:'こども', r:'kodomo', es:'niño · niña', en:'child', pt:'criança', tl:'bata', em:'🧒', j:'N5', c:'familia' },
+
+  // Colores
+  { k:'赤', h:'あか', r:'aka', es:'rojo', en:'red', pt:'vermelho', tl:'pula', em:'🔴', j:'N5', c:'colores' },
+  { k:'青', h:'あお', r:'ao', es:'azul', en:'blue', pt:'azul', tl:'asul', em:'🔵', j:'N5', c:'colores' },
+  { k:'白', h:'しろ', r:'shiro', es:'blanco', en:'white', pt:'branco', tl:'puti', em:'⚪', j:'N5', c:'colores' },
+  { k:'黒', h:'くろ', r:'kuro', es:'negro', en:'black', pt:'preto', tl:'itim', em:'⚫', j:'N5', c:'colores' },
+  { k:'黄色', h:'きいろ', r:'kiiro', es:'amarillo', en:'yellow', pt:'amarelo', tl:'dilaw', em:'🟡', j:'N5', c:'colores' },
+  { k:'緑', h:'みどり', r:'midori', es:'verde', en:'green', pt:'verde', tl:'berde', em:'🟢', j:'N5', c:'colores' },
+  { k:'茶色', h:'ちゃいろ', r:'chairo', es:'marrón · café', en:'brown', pt:'marrom', tl:'kayumanggi', em:'🟤', j:'N4', c:'colores' },
+  { k:'紫', h:'むらさき', r:'murasaki', es:'morado', en:'purple', pt:'roxo', tl:'lila', em:'🟣', j:'N3', c:'colores' },
+
+  // Números
+  { k:'一', h:'いち', r:'ichi', es:'uno', en:'one', pt:'um', tl:'isa', em:'1️⃣', j:'N5', c:'numeros' },
+  { k:'二', h:'に', r:'ni', es:'dos', en:'two', pt:'dois', tl:'dalawa', em:'2️⃣', j:'N5', c:'numeros' },
+  { k:'三', h:'さん', r:'san', es:'tres', en:'three', pt:'três', tl:'tatlo', em:'3️⃣', j:'N5', c:'numeros' },
+  { k:'四', h:'よん · し', r:'yon · shi', es:'cuatro', en:'four', pt:'quatro', tl:'apat', em:'4️⃣', j:'N5', c:'numeros' },
+  { k:'五', h:'ご', r:'go', es:'cinco', en:'five', pt:'cinco', tl:'lima', em:'5️⃣', j:'N5', c:'numeros' },
+  { k:'六', h:'ろく', r:'roku', es:'seis', en:'six', pt:'seis', tl:'anim', em:'6️⃣', j:'N5', c:'numeros' },
+  { k:'七', h:'なな · しち', r:'nana · shichi', es:'siete', en:'seven', pt:'sete', tl:'pito', em:'7️⃣', j:'N5', c:'numeros' },
+  { k:'八', h:'はち', r:'hachi', es:'ocho', en:'eight', pt:'oito', tl:'walo', em:'8️⃣', j:'N5', c:'numeros' },
+  { k:'九', h:'きゅう · く', r:'kyū · ku', es:'nueve', en:'nine', pt:'nove', tl:'siyam', em:'9️⃣', j:'N5', c:'numeros' },
+  { k:'十', h:'じゅう', r:'jū', es:'diez', en:'ten', pt:'dez', tl:'sampu', em:'🔟', j:'N5', c:'numeros' },
+  { k:'百', h:'ひゃく', r:'hyaku', es:'cien', en:'hundred', pt:'cem', tl:'isang daan', em:'💯', j:'N5', c:'numeros' },
+  { k:'千', h:'せん', r:'sen', es:'mil', en:'thousand', pt:'mil', tl:'isang libo', em:'🔢', j:'N5', c:'numeros' },
+
+  // Naturaleza
+  { k:'山', h:'やま', r:'yama', es:'montaña', en:'mountain', pt:'montanha', tl:'bundok', em:'⛰️', j:'N5', c:'naturaleza' },
+  { k:'川', h:'かわ', r:'kawa', es:'río', en:'river', pt:'rio', tl:'ilog', em:'🏞️', j:'N5', c:'naturaleza' },
+  { k:'海', h:'うみ', r:'umi', es:'mar', en:'sea', pt:'mar', tl:'dagat', em:'🌊', j:'N5', c:'naturaleza' },
+  { k:'空', h:'そら', r:'sora', es:'cielo', en:'sky', pt:'céu', tl:'langit', em:'☁️', j:'N5', c:'naturaleza' },
+  { k:'木', h:'き', r:'ki', es:'árbol', en:'tree', pt:'árvore', tl:'puno', em:'🌳', j:'N5', c:'naturaleza' },
+  { k:'花', h:'はな', r:'hana', es:'flor', en:'flower', pt:'flor', tl:'bulaklak', em:'🌸', j:'N5', c:'naturaleza' },
+  { k:'雨', h:'あめ', r:'ame', es:'lluvia', en:'rain', pt:'chuva', tl:'ulan', em:'🌧️', j:'N5', c:'naturaleza' },
+  { k:'雪', h:'ゆき', r:'yuki', es:'nieve', en:'snow', pt:'neve', tl:'niyebe', em:'❄️', j:'N4', c:'naturaleza' },
+  { k:'太陽', h:'たいよう', r:'taiyō', es:'sol', en:'sun', pt:'sol', tl:'araw', em:'☀️', j:'N4', c:'naturaleza' },
+  { k:'月', h:'つき', r:'tsuki', es:'luna · mes', en:'moon · month', pt:'lua · mês', tl:'buwan', em:'🌕', j:'N5', c:'naturaleza' },
+
+  // Cuerpo
+  { k:'目', h:'め', r:'me', es:'ojo', en:'eye', pt:'olho', tl:'mata', em:'👁️', j:'N5', c:'cuerpo' },
+  { k:'口', h:'くち', r:'kuchi', es:'boca', en:'mouth', pt:'boca', tl:'bibig', em:'👄', j:'N5', c:'cuerpo' },
+  { k:'手', h:'て', r:'te', es:'mano', en:'hand', pt:'mão', tl:'kamay', em:'✋', j:'N5', c:'cuerpo' },
+  { k:'足', h:'あし', r:'ashi', es:'pie · pierna', en:'foot · leg', pt:'pé · perna', tl:'paa · binti', em:'🦶', j:'N5', c:'cuerpo' },
+  { k:'耳', h:'みみ', r:'mimi', es:'oreja · oído', en:'ear', pt:'orelha', tl:'tainga', em:'👂', j:'N5', c:'cuerpo' },
+  { k:'鼻', h:'はな', r:'hana', es:'nariz', en:'nose', pt:'nariz', tl:'ilong', em:'👃', j:'N5', c:'cuerpo' },
+  { k:'頭', h:'あたま', r:'atama', es:'cabeza', en:'head', pt:'cabeça', tl:'ulo', em:'🧠', j:'N5', c:'cuerpo' },
+  { k:'心', h:'こころ', r:'kokoro', es:'corazón · mente', en:'heart · mind', pt:'coração · mente', tl:'puso · isip', em:'❤️', j:'N4', c:'cuerpo' },
+
+  // Transporte
+  { k:'車', h:'くるま', r:'kuruma', es:'auto · coche', en:'car', pt:'carro', tl:'kotse', em:'🚗', j:'N5', c:'transporte' },
+  { k:'電車', h:'でんしゃ', r:'densha', es:'tren', en:'train', pt:'trem', tl:'tren', em:'🚆', j:'N5', c:'transporte' },
+  { k:'バス', h:'バス', r:'basu', es:'autobús', en:'bus', pt:'ônibus', tl:'bus', em:'🚌', j:'N5', c:'transporte' },
+  { k:'飛行機', h:'ひこうき', r:'hikōki', es:'avión', en:'airplane', pt:'avião', tl:'eroplano', em:'✈️', j:'N5', c:'transporte' },
+  { k:'自転車', h:'じてんしゃ', r:'jitensha', es:'bicicleta', en:'bicycle', pt:'bicicleta', tl:'bisikleta', em:'🚲', j:'N5', c:'transporte' },
+  { k:'タクシー', h:'タクシー', r:'takushī', es:'taxi', en:'taxi', pt:'táxi', tl:'taxi', em:'🚕', j:'N5', c:'transporte' },
+  { k:'船', h:'ふね', r:'fune', es:'barco', en:'ship', pt:'navio', tl:'barko', em:'🚢', j:'N4', c:'transporte' },
+  { k:'地下鉄', h:'ちかてつ', r:'chikatetsu', es:'metro · subte', en:'subway', pt:'metrô', tl:'subway', em:'🚇', j:'N4', c:'transporte' },
+
+  // Lugares
+  { k:'家', h:'いえ', r:'ie', es:'casa', en:'house', pt:'casa', tl:'bahay', em:'🏠', j:'N5', c:'lugares' },
+  { k:'学校', h:'がっこう', r:'gakkō', es:'escuela', en:'school', pt:'escola', tl:'paaralan', em:'🏫', j:'N5', c:'lugares' },
+  { k:'駅', h:'えき', r:'eki', es:'estación', en:'station', pt:'estação', tl:'istasyon', em:'🚉', j:'N5', c:'lugares' },
+  { k:'店', h:'みせ', r:'mise', es:'tienda', en:'shop', pt:'loja', tl:'tindahan', em:'🏪', j:'N5', c:'lugares' },
+  { k:'病院', h:'びょういん', r:'byōin', es:'hospital', en:'hospital', pt:'hospital', tl:'ospital', em:'🏥', j:'N5', c:'lugares' },
+  { k:'公園', h:'こうえん', r:'kōen', es:'parque', en:'park', pt:'parque', tl:'parke', em:'🏞️', j:'N5', c:'lugares' },
+  { k:'銀行', h:'ぎんこう', r:'ginkō', es:'banco', en:'bank', pt:'banco', tl:'bangko', em:'🏦', j:'N5', c:'lugares' },
+  { k:'図書館', h:'としょかん', r:'toshokan', es:'biblioteca', en:'library', pt:'biblioteca', tl:'aklatan', em:'📚', j:'N5', c:'lugares' },
+  { k:'レストラン', h:'レストラン', r:'resutoran', es:'restaurante', en:'restaurant', pt:'restaurante', tl:'restawran', em:'🍽️', j:'N5', c:'lugares' },
+  { k:'空港', h:'くうこう', r:'kūkō', es:'aeropuerto', en:'airport', pt:'aeroporto', tl:'paliparan', em:'🛫', j:'N4', c:'lugares' },
+
+  // Tiempo
+  { k:'今日', h:'きょう', r:'kyō', es:'hoy', en:'today', pt:'hoje', tl:'ngayong araw', em:'📅', j:'N5', c:'tiempo' },
+  { k:'明日', h:'あした', r:'ashita', es:'mañana (día)', en:'tomorrow', pt:'amanhã', tl:'bukas', em:'🌅', j:'N5', c:'tiempo' },
+  { k:'昨日', h:'きのう', r:'kinō', es:'ayer', en:'yesterday', pt:'ontem', tl:'kahapon', em:'🌆', j:'N5', c:'tiempo' },
+  { k:'朝', h:'あさ', r:'asa', es:'mañana (AM)', en:'morning', pt:'manhã', tl:'umaga', em:'☀️', j:'N5', c:'tiempo' },
+  { k:'昼', h:'ひる', r:'hiru', es:'mediodía', en:'noon · daytime', pt:'meio-dia', tl:'tanghali', em:'🌞', j:'N5', c:'tiempo' },
+  { k:'夜', h:'よる', r:'yoru', es:'noche', en:'night', pt:'noite', tl:'gabi', em:'🌙', j:'N5', c:'tiempo' },
+  { k:'今', h:'いま', r:'ima', es:'ahora', en:'now', pt:'agora', tl:'ngayon', em:'⏰', j:'N5', c:'tiempo' },
+  { k:'週', h:'しゅう', r:'shū', es:'semana', en:'week', pt:'semana', tl:'linggo', em:'📆', j:'N5', c:'tiempo' },
+  { k:'年', h:'とし · ねん', r:'toshi · nen', es:'año', en:'year', pt:'ano', tl:'taon', em:'🎍', j:'N5', c:'tiempo' },
+  { k:'時間', h:'じかん', r:'jikan', es:'tiempo · hora', en:'time · hour', pt:'tempo · hora', tl:'oras', em:'⏳', j:'N5', c:'tiempo' }
+];
+
+/* ═══════════════════════════════════════════════
+   STATE
+═══════════════════════════════════════════════ */
+const state = {
+  lang: localStorage.getItem('fj_lang') || 'es',
+  selectedLevel: 'N5',
+  selectedCategories: new Set(Object.keys(CATEGORIES)),
+  deck: [],
+  index: 0,
+  flipped: false
+};
+
+/* ═══════════════════════════════════════════════
+   PREFERENCES (persisted)
+═══════════════════════════════════════════════ */
+function loadPrefs() {
+  const root = document.documentElement;
+  const themeMode = localStorage.getItem('fj_theme_mode') || localStorage.getItem('fj_theme') || 'auto';
+  const size = localStorage.getItem('kj_size') || 'md';
+  const gray = localStorage.getItem('kj_gray') || 'off';
+  const contrast = localStorage.getItem('kj_contrast') || 'normal';
+
+  applyTheme(themeMode);
+  root.dataset.size = size;
+  root.dataset.gray = gray;
+  root.dataset.contrast = contrast;
+
+  // Highlight active options
+  document.querySelectorAll('[data-theme-set]').forEach(b => b.classList.toggle('active', b.dataset.themeSet === themeMode));
+  document.querySelectorAll('[data-size-set]').forEach(b => b.classList.toggle('active', b.dataset.sizeSet === size));
+  document.querySelector('[data-toggle="gray"]').classList.toggle('active', gray === 'on');
+  document.querySelector('[data-toggle="contrast"]').classList.toggle('active', contrast === 'high');
+}
+
+function applyTheme(mode) {
+  const root = document.documentElement;
+  const resolved = mode === 'auto'
+    ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
+    : mode;
+  root.dataset.theme = resolved;
+  localStorage.setItem('fj_theme_mode', mode);
+  localStorage.setItem('fj_theme', resolved);
+}
+
+// Listen for system theme changes (if auto)
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+  if ((localStorage.getItem('fj_theme_mode') || 'auto') === 'auto') applyTheme('auto');
+});
+
+/* ═══════════════════════════════════════════════
+   I18N APPLY
+═══════════════════════════════════════════════ */
+function t() { return I18N[state.lang]; }
+
+function applyI18n() {
+  const L = t();
+  document.documentElement.lang = {es:'es',en:'en',jp:'ja',pt:'pt',tl:'fil'}[state.lang] || state.lang;
+  document.getElementById('brandTitle').textContent = L.brand;
+  document.getElementById('introEyebrow').textContent = L.eyebrow;
+  document.getElementById('introTitle').textContent = L.title;
+  document.getElementById('introDesc').textContent = L.desc;
+  document.getElementById('lblJlpt').textContent = L.jlpt;
+  document.getElementById('lblCats').textContent = L.cats;
+  document.getElementById('selAll').textContent = L.all;
+  document.getElementById('selNone').textContent = L.none;
+  document.getElementById('tapHint').textContent = L.tap;
+  document.getElementById('speakLabel').textContent = L.speak;
+  document.getElementById('prevBtn').textContent = L.prev;
+  document.getElementById('backLink').textContent = L.backLink;
+  document.getElementById('doneTitle').textContent = L.doneTitle;
+  document.getElementById('doneSub').textContent = L.doneSub;
+  document.getElementById('dTotL').textContent = L.statCards;
+  document.getElementById('dCatL').textContent = L.statCats;
+  document.getElementById('restartBtn').innerHTML = L.restart;
+  document.getElementById('backBtn').textContent = L.back;
+  document.getElementById('sheetTitle').textContent = L.settings;
+  document.getElementById('sheetSub').textContent = L.sheetSub;
+  document.getElementById('lblTheme').textContent = L.theme;
+  document.getElementById('lblSize').textContent = L.size;
+  document.getElementById('lblFilters').textContent = L.filters;
+  document.querySelector('[data-theme-set="auto"]').textContent = L.themeAuto;
+  document.querySelector('[data-theme-set="light"]').textContent = L.themeLight;
+  document.querySelector('[data-theme-set="dark"]').textContent = L.themeDark;
+  document.querySelector('[data-toggle="gray"]').textContent = L.gray;
+  document.querySelector('[data-toggle="contrast"]').textContent = L.contrast;
+  document.getElementById('sheetClose').textContent = L.close;
+
+  renderCats();
+  renderJlpt();
+  updateStartBtn();
+  if (document.getElementById('cardScreen').classList.contains('active')) renderCard();
+}
+
+/* ═══════════════════════════════════════════════
+   RENDER
+═══════════════════════════════════════════════ */
+function renderJlpt() {
+  const grid = document.getElementById('jlptGrid');
+  grid.innerHTML = JLPT_LEVELS.map(lvl => {
+    const count = VOCAB.filter(v => v.j === lvl).length;
+    const active = lvl === state.selectedLevel ? 'active' : '';
+    const labelTxt = state.lang === 'jp' ? `${count}語`
+      : state.lang === 'en' ? `${count} words`
+      : state.lang === 'pt' ? `${count} palavras`
+      : state.lang === 'tl' ? `${count} salita`
+      : `${count} palabras`;
+    return `
+      <button class="jlpt-pill ${active}" data-level="${lvl}" aria-pressed="${active ? 'true' : 'false'}">
+        <div class="level">${lvl}</div>
+        <div class="label">${labelTxt}</div>
+      </button>`;
+  }).join('');
+  document.getElementById('jlptMeta').textContent = state.selectedLevel;
+  grid.querySelectorAll('.jlpt-pill').forEach(b => {
+    b.onclick = () => {
+      state.selectedLevel = b.dataset.level;
+      renderJlpt(); renderCats(); updateStartBtn();
+    };
+  });
+}
+
+function renderCats() {
+  const grid = document.getElementById('catGrid');
+  const lang = state.lang;
+  grid.innerHTML = Object.entries(CATEGORIES).map(([key, cat]) => {
+    const inLvl = VOCAB.filter(v => v.c === key && v.j === state.selectedLevel).length;
+    const active = state.selectedCategories.has(key) ? 'active' : '';
+    const disabled = inLvl === 0 ? 'disabled' : '';
+    const labelTxt = cat[lang] || cat.es;
+    return `
+      <button class="cat-card ${active} ${disabled}" data-cat="${key}" aria-pressed="${active ? 'true' : 'false'}">
+        <div class="emoji">${cat.emoji}</div>
+        <div class="info">
+          <span class="jp">${cat.jp}</span>
+          <div class="es">${labelTxt}</div>
+        </div>
+      </button>`;
+  }).join('');
+  grid.querySelectorAll('.cat-card').forEach(b => {
+    b.onclick = () => {
+      const k = b.dataset.cat;
+      if (state.selectedCategories.has(k)) state.selectedCategories.delete(k);
+      else state.selectedCategories.add(k);
+      renderCats(); updateStartBtn();
+    };
+  });
+}
+
+function updateStartBtn() {
+  const deck = buildDeck();
+  const btn = document.getElementById('startBtn');
+  const lbl = document.getElementById('startLabel');
+  const L = t();
+  btn.disabled = deck.length === 0;
+  if (deck.length === 0) {
+    lbl.textContent = L.selectCats;
+    btn.querySelector('.arrow').style.display = 'none';
+  } else {
+    lbl.textContent = L.study(deck.length);
+    btn.querySelector('.arrow').style.display = '';
+  }
+}
+
+function buildDeck() {
+  return VOCAB.filter(v => v.j === state.selectedLevel && state.selectedCategories.has(v.c));
+}
+
+/* ═══════════════════════════════════════════════
+   STUDY FLOW
+═══════════════════════════════════════════════ */
+function startStudy(keepDeck = false) {
+  if (!keepDeck) {
+    state.deck = buildDeck();
+    shuffleDeck();
+  }
+  state.index = 0;
+  state.flipped = false;
+  showScreen('cardScreen');
+  renderCard();
+}
+
+function shuffleDeck() {
+  for (let i = state.deck.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [state.deck[i], state.deck[j]] = [state.deck[j], state.deck[i]];
+  }
+}
+
+function showScreen(id) {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+}
+
+function getHint(idx, total) {
+  const L = t().hints;
+  const remaining = total - idx - 1;
+  if (idx === 0) return L.start;
+  if (remaining === 0) return L.last;
+  if (remaining <= 3) return L.almost(remaining);
+  if (idx >= total / 2) return L.half;
+  return L.going;
+}
+
+function renderCard() {
+  const card = state.deck[state.index];
+  if (!card) return;
+  const L = t();
+  const lang = state.lang;
+
+  state.flipped = false;
+  document.getElementById('card').classList.remove('flipped');
+
+  document.getElementById('cEm').textContent = card.em;
+  document.getElementById('cK').textContent = card.k;
+  document.getElementById('cH').textContent = card.h;
+  document.getElementById('cR').textContent = card.r;
+  document.getElementById('cM').textContent = card[lang] || card.es;
+  const note = card[`n_${lang}`] || card.n_es || '';
+  const noteEl = document.getElementById('cN');
+  noteEl.textContent = note;
+  noteEl.style.display = note ? 'block' : 'none';
+
+  document.getElementById('bJlpt').textContent = card.j;
+  document.getElementById('bCat').textContent = CATEGORIES[card.c][lang] || CATEGORIES[card.c].es;
+
+  document.getElementById('progPos').textContent = L.cardOf(state.index + 1, state.deck.length);
+  document.getElementById('progHint').textContent = getHint(state.index, state.deck.length);
+  document.getElementById('progFill').style.width = ((state.index + 1) / state.deck.length) * 100 + '%';
+
+  document.getElementById('prevBtn').disabled = state.index === 0;
+  document.getElementById('nextBtn').textContent = state.index === state.deck.length - 1 ? L.finish : L.next;
+}
+
+function flipCard() {
+  state.flipped = !state.flipped;
+  document.getElementById('card').classList.toggle('flipped', state.flipped);
+}
+
+function next() {
+  if (state.index >= state.deck.length - 1) { finish(); return; }
+  state.index++;
+  renderCard();
+}
+
+function prev() {
+  if (state.index === 0) return;
+  state.index--;
+  renderCard();
+}
+
+function finish() {
+  showScreen('doneScreen');
+  document.getElementById('dTot').textContent = state.deck.length;
+  document.getElementById('dCat').textContent = state.selectedCategories.size;
+}
+
+/* ═══════════════════════════════════════════════
+   SPEECH
+═══════════════════════════════════════════════ */
+function speak() {
+  const card = state.deck[state.index];
+  if (!card || !('speechSynthesis' in window)) return;
+  const utter = new SpeechSynthesisUtterance(card.k);
+  utter.lang = 'ja-JP';
+  utter.rate = 0.85;
+  const voices = speechSynthesis.getVoices();
+  const jp = voices.find(v => v.lang.startsWith('ja'));
+  if (jp) utter.voice = jp;
+  speechSynthesis.cancel();
+  speechSynthesis.speak(utter);
+}
+if ('speechSynthesis' in window) {
+  speechSynthesis.getVoices();
+  speechSynthesis.onvoiceschanged = () => speechSynthesis.getVoices();
+}
+
+/* ═══════════════════════════════════════════════
+   BOTTOM SHEET
+═══════════════════════════════════════════════ */
+function openSheet() {
+  document.getElementById('backdrop').classList.add('open');
+  document.getElementById('sheet').classList.add('open');
+}
+function closeSheet() {
+  document.getElementById('backdrop').classList.remove('open');
+  document.getElementById('sheet').classList.remove('open');
+}
+
+/* ═══════════════════════════════════════════════
+   LANGUAGE
+═══════════════════════════════════════════════ */
+function handleLangChange(lang) {
+  if (!I18N[lang]) return;
+  state.lang = lang;
+  localStorage.setItem('fj_lang', lang);
+  applyI18n();
+}
+
+/* ═══════════════════════════════════════════════
+   BINDINGS
+═══════════════════════════════════════════════ */
+function bind() {
+  document.getElementById('langSelect').value = state.lang;
+
+  // Setup screen
+  document.getElementById('selAll').onclick = () => {
+    state.selectedCategories = new Set(Object.keys(CATEGORIES));
+    renderCats(); updateStartBtn();
+  };
+  document.getElementById('selNone').onclick = () => {
+    state.selectedCategories.clear();
+    renderCats(); updateStartBtn();
+  };
+  document.getElementById('startBtn').onclick = () => startStudy();
+
+  // Card screen
+  document.getElementById('card').onclick = flipCard;
+  document.getElementById('card').onkeydown = (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); flipCard(); } };
+  document.getElementById('flipBtn').onclick = (e) => { e.stopPropagation(); flipCard(); };
+  document.getElementById('prevBtn').onclick = prev;
+  document.getElementById('nextBtn').onclick = next;
+  document.getElementById('speakBtn').onclick = (e) => { e.stopPropagation(); speak(); };
+  document.getElementById('restartTopBtn').onclick = () => showScreen('setupScreen');
+
+  // Done
+  document.getElementById('restartBtn').onclick = () => { shuffleDeck(); startStudy(true); };
+  document.getElementById('backBtn').onclick = () => showScreen('setupScreen');
+
+  // Settings
+  document.getElementById('settingsBtn').onclick = openSheet;
+  document.getElementById('backdrop').onclick = closeSheet;
+  document.getElementById('sheetClose').onclick = closeSheet;
+
+  document.querySelectorAll('[data-theme-set]').forEach(b => {
+    b.onclick = () => {
+      applyTheme(b.dataset.themeSet);
+      document.querySelectorAll('[data-theme-set]').forEach(x => x.classList.toggle('active', x === b));
+    };
+  });
+  document.querySelectorAll('[data-size-set]').forEach(b => {
+    b.onclick = () => {
+      document.documentElement.dataset.size = b.dataset.sizeSet;
+      localStorage.setItem('kj_size', b.dataset.sizeSet);
+      document.querySelectorAll('[data-size-set]').forEach(x => x.classList.toggle('active', x === b));
+    };
+  });
+  document.querySelector('[data-toggle="gray"]').onclick = (e) => {
+    const cur = document.documentElement.dataset.gray;
+    const next = cur === 'on' ? 'off' : 'on';
+    document.documentElement.dataset.gray = next;
+    localStorage.setItem('kj_gray', next);
+    e.target.classList.toggle('active', next === 'on');
+  };
+  document.querySelector('[data-toggle="contrast"]').onclick = (e) => {
+    const cur = document.documentElement.dataset.contrast;
+    const next = cur === 'high' ? 'normal' : 'high';
+    document.documentElement.dataset.contrast = next;
+    localStorage.setItem('kj_contrast', next);
+    e.target.classList.toggle('active', next === 'high');
+  };
+
+  // Keyboard
+  document.addEventListener('keydown', (e) => {
+    if (!document.getElementById('cardScreen').classList.contains('active')) return;
+    if (e.target.tagName === 'BUTTON' || e.target.tagName === 'INPUT') return;
+    if (e.key === 'ArrowRight') next();
+    else if (e.key === 'ArrowLeft') prev();
+    else if (e.key === ' ') { e.preventDefault(); flipCard(); }
+  });
+
+  // Swipe
+  let touchX = 0;
+  const cardEl = document.getElementById('card');
+  cardEl.addEventListener('touchstart', (e) => { touchX = e.touches[0].clientX; }, { passive: true });
+  cardEl.addEventListener('touchend', (e) => {
+    const diff = e.changedTouches[0].clientX - touchX;
+    if (Math.abs(diff) > 60) { diff > 0 ? prev() : next(); }
+  }, { passive: true });
+}
+
+/* ═══════════════════════════════════════════════
+   INIT
+═══════════════════════════════════════════════ */
+function init() {
+  bind();
+  loadPrefs();
+  applyI18n();
+}
+init();
+</script>
+</body>
+</html>
