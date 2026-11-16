@@ -75,6 +75,29 @@
     ]
   }
   </script>
+  <style>
+    /* Panel de usuario ya registrado (reemplaza al formulario) */
+    .member-card[hidden], #leadCaptureForm[hidden], #leadList[hidden] { display: none; }
+    .member-top { display: flex; align-items: center; gap: 14px; margin-bottom: 18px; }
+    .member-avatar { width: 48px; height: 48px; border-radius: 50%; display: grid; place-items: center; font-weight: 800; font-size: 1.2rem; color: #fff; background: linear-gradient(135deg, var(--primary), var(--cyan)); flex: none; }
+    .member-name { font-weight: 800; font-size: 1.1rem; overflow-wrap: anywhere; }
+    .member-sub { color: var(--muted); font-size: .88rem; }
+    .member-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+    .member-cell { background: var(--surface-1); border: 1px solid var(--border-mid); border-radius: 16px; padding: 14px 8px; text-align: center; min-width: 0; }
+    .member-cell b { display: block; font-size: 1.35rem; font-weight: 800; }
+    .member-cell span { display: block; margin-top: 4px; color: var(--muted); font-size: .76rem; font-weight: 700; overflow-wrap: anywhere; }
+    .member-rank { display: flex; justify-content: space-between; align-items: center; margin-top: 12px; padding: 14px 18px; border-radius: 16px; background: rgba(95,166,192,.12); border: 1px solid var(--border-mid); font-weight: 700; }
+    .member-rank b { font-size: 1.5rem; color: var(--cyan); }
+    .member-goal { margin: 18px 0 20px; }
+    .member-goal-top { display: flex; justify-content: space-between; gap: 10px; color: var(--muted); font-size: .86rem; font-weight: 700; margin-bottom: 8px; }
+    .member-track { height: 10px; border-radius: 99px; background: var(--surface-2); overflow: hidden; }
+    .member-fill { height: 100%; width: 0; border-radius: 99px; background: linear-gradient(90deg, var(--primary), var(--success)); transition: width .6s cubic-bezier(.2,.8,.2,1); }
+    .member-msg { margin-top: 8px; color: var(--body-text); font-size: .9rem; }
+    .member-actions { display: grid; gap: 12px; justify-items: center; }
+    .member-actions .btn { width: 100%; text-align: center; }
+    .member-reset { background: none; border: none; color: var(--muted); font: inherit; font-size: .86rem; text-decoration: underline; cursor: pointer; padding: 6px; }
+    @media (max-width: 480px) { .member-grid { grid-template-columns: repeat(2, 1fr); } }
+  </style>
 </head>
 <body>
 
@@ -308,15 +331,41 @@
     <section class="lead-section" id="lead-form">
       <div class="container lead-grid">
         <div>
-          <div class="eyebrow" data-i18n="lead.eyebrow">Acceso gratis al simulador</div>
-          <h2 data-i18n="lead.h2">Déjanos tus datos y empieza a estudiar</h2>
-          <p style="color:var(--muted); line-height:1.7; font-size:1.05rem;" data-i18n="lead.p">Con estos datos podremos avisarte cuando agreguemos más guías de Facil Japón.</p>
-          <ul class="check-list" style="margin-top:24px;">
+          <div class="eyebrow" id="leadEyebrow" data-i18n="lead.eyebrow">Acceso gratis al simulador</div>
+          <h2 id="leadH2" data-i18n="lead.h2">Déjanos tus datos y empieza a estudiar</h2>
+          <p id="leadP" style="color:var(--muted); line-height:1.7; font-size:1.05rem;" data-i18n="lead.p">Con estos datos podremos avisarte cuando agreguemos más guías de Facil Japón.</p>
+          <ul class="check-list" id="leadList" style="margin-top:24px;">
             <li><span class="check">✓</span> <span data-i18n="lead.li1">Acceso inmediato al quiz gratis.</span></li>
             <li><span class="check">✓</span> <span data-i18n="lead.li2">Te contactaremos solo con contenido útil relacionado con Japón.</span></li>
             <li><span class="check">✓</span> <span data-i18n="lead.li3">Puedes empezar aunque todavía no tengas cita en el centro de licencias.</span></li>
           </ul>
         </div>
+
+        <aside class="lead-card member-card" id="memberCard" hidden>
+          <div class="member-top">
+            <div class="member-avatar" id="memberAvatar" aria-hidden="true">?</div>
+            <div>
+              <div class="member-name" id="memberName"></div>
+              <div class="member-sub" data-i18n="member.sub">Tu progreso en el simulador</div>
+            </div>
+          </div>
+          <div class="member-grid">
+            <div class="member-cell"><b id="mAttempts">0</b><span data-i18n="member.attempts">Intentos</span></div>
+            <div class="member-cell"><b id="mBest">—</b><span data-i18n="member.best">Mejor nota</span></div>
+            <div class="member-cell"><b id="mAvg">—</b><span data-i18n="member.avg">Promedio</span></div>
+            <div class="member-cell"><b id="mTime">—</b><span data-i18n="member.time">Tiempo invertido</span></div>
+          </div>
+          <div class="member-rank"><span data-i18n="member.rank">Ranking Top 100</span><b id="mRank">—</b></div>
+          <div class="member-goal">
+            <div class="member-goal-top"><span data-i18n="member.goal">Meta para aprobar: 45/50</span><span id="mPct"></span></div>
+            <div class="member-track" role="progressbar" aria-valuemin="0" aria-valuemax="45" aria-valuenow="0" id="mTrack"><div class="member-fill" id="mFill"></div></div>
+            <div class="member-msg" id="mMsg"></div>
+          </div>
+          <div class="member-actions">
+            <a class="btn" id="memberCta" href="../quiz/index.html" data-i18n="cta.continue">Continuar quiz →</a>
+            <button class="member-reset" type="button" id="memberReset" data-i18n="member.reset">No soy yo · Registrar otro correo</button>
+          </div>
+        </aside>
 
         <form class="lead-card" id="leadCaptureForm">
           <div class="form-grid">
@@ -398,6 +447,7 @@
     </div>
   </footer>
 
+  <script src="../assets/js/fj-progress.js"></script>
   <script>
     // ── I18N ───────────────────────────────────────────────────
     const I18N = {
@@ -458,6 +508,7 @@
         'form.need':'¿Qué otro proceso de Japón te gustaría que Facil Japón explique?','form.need.ph':'Ej: banco, seguro de salud, guardería, vivienda, visa, impuestos...',
         'form.consent':'Acepto que Facil Japón guarde mis datos para darme acceso al simulador y enviarme información útil sobre procesos en Japón.','form.submit':'Entrar al quiz gratis →',
         'cta.h2':'Facil Japón empieza con tu licencia japonesa','cta.p':'Hoy estudias para el examen. Mañana podrás entender otros procesos de Japón sin perderte.','cta.btn':'Quiero estudiar gratis 🚀',
+        'member.eyebrow':'Tu progreso','member.h2':'¡Hola de nuevo, {name}!','member.p':'Tus intentos, notas y tiempo ya están guardados. No tienes que escribir tus datos otra vez.','member.sub':'Tu progreso en el simulador','member.attempts':'Intentos','member.best':'Mejor nota','member.avg':'Promedio','member.time':'Tiempo invertido','member.rank':'Ranking Top 100','member.goal':'Meta para aprobar: 45/50','member.toGo':'Te faltan {n} correctas en tu mejor intento','member.passed':'¡Ya superaste los 45/50! Mantén el nivel.','member.none':'Haz tu primer intento para ver tu progreso.','member.reset':'No soy yo · Registrar otro correo','member.resetConfirm':'¿Quitar el registro de este dispositivo? Se borrarán los intentos guardados aquí.','cta.continue':'Continuar quiz →',
         'form.message':'Datos guardados. Te llevamos al simulador...',
         'footer.desc':'Procesos japoneses explicados en español, paso a paso. Empezamos con el cambio de licencia de conducir en Japón.',
         'footer.links':'Enlaces','footer.link1':'Proceso','footer.link2':'Funciones','footer.link3':'Preguntas frecuentes',
@@ -535,6 +586,7 @@
         'form.need':'What other Japan process would you like Facil Japón to explain?','form.need.ph':'E.g: banking, health insurance, childcare, housing, visa, taxes...',
         'form.consent':'I agree to receive useful information about processes in Japan. No spam.','form.submit':'Access the free simulator →',
         'cta.h2':'Facil Japón starts with your Japanese license','cta.p':'Today you study for the exam. Tomorrow you can tackle any Japan process without getting lost.','cta.btn':'I want to study for free 🚀',
+        'member.eyebrow':'Your progress','member.h2':'Welcome back, {name}!','member.p':'Your attempts, scores and time are already saved. No need to enter your details again.','member.sub':'Your simulator progress','member.attempts':'Attempts','member.best':'Best score','member.avg':'Average','member.time':'Time spent','member.rank':'Top 100 ranking','member.goal':'Goal to pass: 45/50','member.toGo':'{n} more correct answers needed in your best attempt','member.passed':'You already beat 45/50! Keep it up.','member.none':'Take your first attempt to see your progress.','member.reset':'Not me · Register another email','member.resetConfirm':'Remove the registration from this device? Attempts saved here will be deleted.','cta.continue':'Continue quiz →',
         'form.message':'Data saved. Taking you to the simulator...',
         'footer.desc':'Japanese processes explained step by step. We started with the driver\'s license conversion.',
         'footer.links':'Links','footer.link1':'Process','footer.link2':'Features','footer.link3':'FAQ',
@@ -612,6 +664,7 @@
         'form.need':'Facil Japónに解説してほしい他の手続きは？','form.need.ph':'例：銀行、健康保険、保育園、住居、ビザ、税金...',
         'form.consent':'日本の手続きに関する有用な情報の受信に同意します。スパムなし。','form.submit':'無料シミュレーターにアクセス →',
         'cta.h2':'Facil Japónは免許から始まります','cta.p':'今日は学科試験の準備。明日は日本の他の手続きも迷わず進めます。','cta.btn':'無料で学習したい 🚀',
+        'member.eyebrow':'あなたの進捗','member.h2':'おかえりなさい、{name}さん！','member.p':'受験回数・得点・学習時間はすでに保存されています。情報を再入力する必要はありません。','member.sub':'シミュレーターの進捗','member.attempts':'受験回数','member.best':'最高点','member.avg':'平均点','member.time':'学習時間','member.rank':'トップ100ランキング','member.goal':'合格ライン：45/50','member.toGo':'ベストスコアまであと{n}問の正解が必要です','member.passed':'45/50を超えました！この調子で。','member.none':'最初の挑戦で進捗が表示されます。','member.reset':'私ではありません · 別のメールで登録','member.resetConfirm':'この端末の登録を解除しますか？保存された受験記録は削除されます。','cta.continue':'クイズを続ける →',
         'form.message':'データを保存しました。シミュレーターへ移動します...',
         'footer.desc':'日本の手続きをわかりやすく、ステップごとに説明します。まず外免切替から始めます。',
         'footer.links':'リンク','footer.link1':'プロセス','footer.link2':'機能','footer.link3':'よくある質問',
@@ -689,6 +742,7 @@
         'form.need':'Que outro processo do Japão você gostaria que a Facil Japón explicasse?','form.need.ph':'Ex: banco, seguro saúde, creche, moradia, visto, impostos...',
         'form.consent':'Aceito receber informações úteis sobre processos no Japão. Sem spam.','form.submit':'Acessar o simulador gratuito →',
         'cta.h2':'Facil Japón começa com sua habilitação japonesa','cta.p':'Hoje você estuda para o exame. Amanhã poderá entender outros processos do Japão.','cta.btn':'Quero estudar de graça 🚀',
+        'member.eyebrow':'Seu progresso','member.h2':'Bem-vindo de volta, {name}!','member.p':'Suas tentativas, notas e tempo já estão salvos. Você não precisa digitar seus dados de novo.','member.sub':'Seu progresso no simulador','member.attempts':'Tentativas','member.best':'Melhor nota','member.avg':'Média','member.time':'Tempo investido','member.rank':'Ranking Top 100','member.goal':'Meta para passar: 45/50','member.toGo':'Faltam {n} acertos na sua melhor tentativa','member.passed':'Você já passou de 45/50! Mantenha o nível.','member.none':'Faça sua primeira tentativa para ver seu progresso.','member.reset':'Não sou eu · Cadastrar outro e-mail','member.resetConfirm':'Remover o cadastro deste dispositivo? As tentativas salvas aqui serão apagadas.','cta.continue':'Continuar quiz →',
         'form.message':'Dados salvos. Levando você ao simulador...',
         'footer.desc':'Processos japoneses explicados passo a passo. Começamos com a conversão da habilitação.',
         'footer.links':'Links','footer.link1':'Processo','footer.link2':'Funcionalidades','footer.link3':'Perguntas frequentes',
@@ -766,6 +820,7 @@
         'form.need':'Anong iba pang proseso sa Japan ang gusto mong ipaliwanag ng Facil Japón?','form.need.ph':'Hal: bangko, insurance sa kalusugan, paaralan, pabahay, visa, buwis...',
         'form.consent':'Sumasang-ayon ako na makatanggap ng kapaki-pakinabang na impormasyon tungkol sa Japan. Walang spam.','form.submit':'I-access ang libreng simulator →',
         'cta.h2':'Nagsisimula ang Facil Japón sa iyong Japanese na lisensya','cta.p':'Ngayon nag-aaral ka para sa pagsusulit. Bukas mahaharap mo ang anumang proseso sa Japan.','cta.btn':'Gusto kong mag-aral nang libre 🚀',
+        'member.eyebrow':'Ang iyong progreso','member.h2':'Welcome back, {name}!','member.p':'Naka-save na ang iyong mga pagtatangka, marka at oras. Hindi mo na kailangang ilagay ulit ang iyong detalye.','member.sub':'Ang iyong progreso sa simulator','member.attempts':'Mga pagtatangka','member.best':'Pinakamataas na marka','member.avg':'Average','member.time':'Oras na ginugol','member.rank':'Top 100 na ranggo','member.goal':'Target para pumasa: 45/50','member.toGo':'{n} pang tamang sagot ang kailangan sa iyong pinakamahusay na pagtatangka','member.passed':'Lampas ka na sa 45/50! Ituloy mo.','member.none':'Gawin ang unang pagtatangka para makita ang progreso.','member.reset':'Hindi ako ito · Mag-register ng ibang email','member.resetConfirm':'Alisin ang rehistro sa device na ito? Mabubura ang mga na-save na pagtatangka.','cta.continue':'Ituloy ang quiz →',
         'form.message':'Nai-save ang data. Dinadala ka sa simulator...',
         'footer.desc':'Mga proseso sa Japan na ipinaliwanag nang hakbang-hakbang. Nagsimula kami sa pagpapalit ng lisensya.',
         'footer.links':'Mga Link','footer.link1':'Proseso','footer.link2':'Mga Feature','footer.link3':'FAQ',
@@ -820,7 +875,61 @@
           if (nameSpan) nameSpan.innerHTML = r.name + '<br/>' + r.city;
         });
       }
+      renderMember(lang);
     }
+
+    // ── USUARIO YA REGISTRADO ──────────────────────────────────
+    const QUIZ_URL = "../quiz/index.html";
+    const $id = id => document.getElementById(id);
+
+    function renderMember(lang) {
+      const profile = FJ.getProfile();
+      const card = $id('memberCard'), form = $id('leadCaptureForm'), list = $id('leadList');
+      if (!profile) { card.hidden = true; form.hidden = false; list.hidden = false; return; }
+
+      const t = I18N[lang] || I18N.es;
+      const sm = FJ.summary();
+      const label = (profile.name || profile.email).trim();
+      const first = label.split(/\s+/)[0];
+
+      form.hidden = true; list.hidden = true; card.hidden = false;
+
+      const swap = (id, key, text) => { const el = $id(id); el.dataset.i18n = key; el.textContent = text; };
+      swap('leadEyebrow', 'member.eyebrow', t['member.eyebrow']);
+      swap('leadH2', 'member.h2', t['member.h2'].replace('{name}', first));
+      swap('leadP', 'member.p', t['member.p']);
+
+      $id('memberAvatar').textContent = first.charAt(0).toUpperCase();
+      $id('memberName').textContent = label;
+      $id('mAttempts').textContent = sm.attempts;
+      $id('mBest').textContent = sm.attempts ? sm.best + '/50' : '—';
+      $id('mAvg').textContent = sm.attempts ? sm.avg.toFixed(1) : '—';
+      $id('mTime').textContent = sm.attempts ? FJ.fmtTime(sm.totalSec) : '—';
+      $id('mRank').textContent = sm.rank ? '#' + sm.rank : '—';
+
+      const pct = Math.min(100, Math.round(sm.best / FJ.PASS * 100));
+      $id('mFill').style.width = pct + '%';
+      $id('mPct').textContent = sm.attempts ? pct + '%' : '';
+      $id('mTrack').setAttribute('aria-valuenow', Math.min(sm.best, FJ.PASS));
+      $id('mMsg').textContent = !sm.attempts ? t['member.none']
+        : sm.passed ? t['member.passed']
+        : t['member.toGo'].replace('{n}', FJ.PASS - sm.best);
+
+      // Todos los botones "Estudiar gratis" pasan a "Continuar quiz"
+      document.querySelectorAll('.js-cta').forEach(a => {
+        a.dataset.i18n = 'cta.continue';
+        a.href = QUIZ_URL + '?source=facil-japon&product=licencia';
+        a.textContent = t['cta.continue'];
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      FJ.flushPending();
+      $id('memberReset').addEventListener('click', () => {
+        const t = I18N[localStorage.getItem('fj_lang')] || I18N.es;
+        if (confirm(t['member.resetConfirm'])) { FJ.clearAll(); location.reload(); }
+      });
+    });
 
     // ── THEME ──────────────────────────────────────────────────
     function toggleTheme() {
@@ -840,8 +949,6 @@
     });
 
     // ── LEAD / QUIZ ────────────────────────────────────────────
-    const LEAD_ENDPOINT = "https://script.google.com/macros/s/AKfycbyKebbb6peIQMHAo8zoUZYfvRqaTad70bq81Rd3e2aNZUzdLZVh8xNnYPRFkp5aWiXl/exec"; // Ej: "https://tu-endpoint.com/api/leads"
-    const QUIZ_URL = "../quiz/index.html";
 
     const menuButton = document.querySelector('.mobile-menu');
     const navLinks = document.querySelector('.nav-links');
@@ -909,17 +1016,11 @@
         previousLeads.push(lead);
         localStorage.setItem('facilJaponLeads', JSON.stringify(previousLeads));
 
-        if (LEAD_ENDPOINT) {
-          try {
-            await fetch(LEAD_ENDPOINT, {
-              method: 'POST',
-              mode: "no-cors",
-              body: JSON.stringify(lead)
-            });
-          } catch (error) {
-            console.warn('Lead endpoint failed. Lead preserved locally.', error);
-          }
-        }
+        FJ.saveProfile({
+          name: lead.name, email: lead.email, country: lead.country,
+          prefecture: lead.prefecture, stage: lead.stage, createdAt: lead.createdAt
+        });
+        await FJ.sendLead(lead);
 
         formMessage.style.display = 'block';
         const query = new URLSearchParams({ source: 'facil-japon', product: 'licencia' });

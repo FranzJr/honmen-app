@@ -556,6 +556,27 @@ body {
 }
 .btn-restart:hover { transform: translateY(-2px); }
 
+/* Progress panel + capture form */
+.sc-prog { margin: 0 auto 22px; max-width: 480px; text-align: left; }
+.sc-prog-title, .cap-title { font-size: var(--fxs); font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: var(--tx3); margin-bottom: 10px; text-align: center; }
+.sc-prog-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+.pcell { background: var(--bg3); border: 1px solid var(--bdr); border-radius: var(--r); padding: 12px 6px; text-align: center; min-width: 0; }
+.pcell b { display: block; font-size: var(--flg); font-weight: 800; color: var(--tx); }
+.pcell span { display: block; margin-top: 4px; font-size: var(--fxs); color: var(--tx3); font-weight: 700; letter-spacing: .04em; overflow-wrap: anywhere; }
+.prank { display: flex; justify-content: space-between; align-items: center; margin-top: 8px; padding: 12px 16px; background: var(--grad-soft); border: 1px solid var(--bdr2); border-radius: var(--r); font-size: var(--fsm); font-weight: 700; color: var(--tx2); }
+.prank b { font-size: var(--fxl); font-weight: 800; background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+
+.sc-capture { display: grid; gap: 10px; margin: 0 auto 24px; max-width: 480px; padding: 18px; text-align: left; background: var(--bg3); border: 1px solid var(--bdr2); border-radius: var(--r); }
+.sc-capture[hidden], .cap-done[hidden] { display: none; }
+.cap-sub { font-size: var(--fsm); color: var(--tx2); line-height: 1.55; text-align: center; }
+.cap-field { display: grid; gap: 6px; font-size: var(--fsm); font-weight: 700; color: var(--tx2); }
+.cap-field input { height: 46px; padding: 0 12px; background: var(--bg2); color: var(--tx); border: 1px solid var(--bdr2); border-radius: 10px; font: inherit; font-weight: 500; }
+.cap-field input:focus { outline: 2px solid var(--z0, #007CA2); outline-offset: 1px; }
+.cap-consent { display: flex; gap: 10px; align-items: flex-start; font-size: var(--fxs); color: var(--tx2); line-height: 1.5; }
+.cap-consent input { margin-top: 3px; }
+.cap-btn { height: 48px; border: none; border-radius: var(--r); background: var(--grad); color: #fff; font: inherit; font-weight: 800; cursor: pointer; }
+.cap-done { margin: 0 auto 24px; max-width: 480px; padding: 12px 16px; background: var(--ok-b); border: 1px solid var(--ok-d); color: var(--ok); border-radius: var(--r); font-size: var(--fsm); font-weight: 700; }
+
 /* Review list */
 .review { margin-top: 18px; }
 

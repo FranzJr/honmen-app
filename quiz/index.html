@@ -183,6 +183,34 @@
       </div>
 
       <div class="verdict" id="verdict" role="status"></div>
+
+      <!-- Progreso acumulado del usuario (datos reales de este dispositivo) -->
+      <div class="sc-prog" id="scProg" aria-labelledby="progTitle">
+        <div class="sc-prog-title" id="progTitle">Tu progreso</div>
+        <div class="sc-prog-grid">
+          <div class="pcell"><b id="pAttempts">0</b><span id="pAttemptsL">Intentos</span></div>
+          <div class="pcell"><b id="pBest">0/50</b><span id="pBestL">Mejor nota</span></div>
+          <div class="pcell"><b id="pAvg">0</b><span id="pAvgL">Promedio</span></div>
+          <div class="pcell"><b id="pTime">0s</b><span id="pTimeL">Tiempo invertido</span></div>
+        </div>
+        <div class="prank"><span id="pRankL">Ranking Top 100</span><b id="pRank">—</b></div>
+      </div>
+
+      <!-- Solo si el usuario aún no está registrado -->
+      <form class="sc-capture" id="scCapture" hidden>
+        <div class="cap-title" id="capTitle">Guarda tu progreso</div>
+        <div class="cap-sub" id="capSub"></div>
+        <label class="cap-field"><span id="capNameL">Nombre</span>
+          <input name="name" autocomplete="name" required maxlength="80">
+        </label>
+        <label class="cap-field"><span id="capEmailL">Correo</span>
+          <input name="email" type="email" autocomplete="email" required maxlength="120">
+        </label>
+        <label class="cap-consent"><input type="checkbox" name="consent" required><span id="capConsentT"></span></label>
+        <button class="cap-btn" type="submit" id="capBtn">Guardar mi progreso</button>
+      </form>
+      <div class="cap-done" id="capDone" role="status" hidden></div>
+
       <button class="btn-restart" id="btnRestart" onclick="restart()">↺ Nuevo Examen</button>
     </div>
 
@@ -243,6 +271,7 @@
   </div>
 
   <!-- ── SCRIPTS ── -->
+  <script src="../assets/js/fj-progress.js"></script>
   <script src="questions.js"></script>
   <script src="app.js"></script>
 

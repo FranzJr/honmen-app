@@ -24,6 +24,19 @@ const STRINGS = {
     perfect: '✓ ¡PERFECTO! SIN ERRORES.',
     stC: 'Correctas', stW: 'Incorrectas', stP: 'Puntaje',
     scSub: 'de 50 · Apruebas con 45/50 (90%)',
+    progTitle: 'Tu progreso',
+    pAttempts: 'Intentos',
+    pBest: 'Mejor nota',
+    pAvg: 'Promedio',
+    pTime: 'Tiempo invertido',
+    pRank: 'Ranking Top 100',
+    capTitle: 'Guarda tu progreso',
+    capSub: 'Deja tu correo y tus intentos, notas y tiempo quedarán guardados para que no tengas que repetirlo.',
+    capName: 'Nombre',
+    capEmail: 'Correo',
+    capConsent: 'Acepto que Facil Japón guarde mis datos y mi progreso.',
+    capBtn: 'Guardar mi progreso',
+    capDone: '✓ Progreso guardado.',
     eyebrow: '外免切替 知識確認 · Examen Completo',
     cultureHd: 'En Japón...', termHd: 'Término clave',
     theme: 'Tema de color', font: 'Tamaño de texto',
@@ -53,6 +66,19 @@ const STRINGS = {
     perfect: '✓ PERFECT SCORE — NO MISTAKES!',
     stC: 'Correct', stW: 'Wrong', stP: 'Score',
     scSub: 'out of 50 · Pass = 45/50 (90%)',
+    progTitle: 'Your progress',
+    pAttempts: 'Attempts',
+    pBest: 'Best score',
+    pAvg: 'Average',
+    pTime: 'Time spent',
+    pRank: 'Top 100 ranking',
+    capTitle: 'Save your progress',
+    capSub: 'Leave your email and your attempts, scores and time will be saved so you never have to enter them again.',
+    capName: 'Name',
+    capEmail: 'Email',
+    capConsent: 'I agree that Facil Japón stores my data and progress.',
+    capBtn: 'Save my progress',
+    capDone: '✓ Progress saved.',
     eyebrow: '外免切替 知識確認 · Exam Complete',
     cultureHd: 'In Japan...', termHd: 'Key term',
     theme: 'Color theme', font: 'Text size',
@@ -82,6 +108,19 @@ const STRINGS = {
     perfect: '✓ 完璧！ミスなし！',
     stC: '正解', stW: '不正解', stP: 'スコア',
     scSub: '50問中 · 合格は45/50（90%）',
+    progTitle: 'あなたの進捗',
+    pAttempts: '受験回数',
+    pBest: '最高点',
+    pAvg: '平均点',
+    pTime: '学習時間',
+    pRank: 'トップ100ランキング',
+    capTitle: '進捗を保存',
+    capSub: 'メールアドレスを入力すると、受験回数・得点・学習時間が保存され、再入力が不要になります。',
+    capName: 'お名前',
+    capEmail: 'メール',
+    capConsent: 'Facil Japónが私のデータと進捗を保存することに同意します。',
+    capBtn: '進捗を保存',
+    capDone: '✓ 進捗を保存しました。',
     eyebrow: '外免切替 知識確認 · 試験完了',
     cultureHd: '日本では...', termHd: '重要な用語',
     theme: 'テーマ', font: '文字サイズ',
@@ -111,6 +150,19 @@ const STRINGS = {
     perfect: '✓ PERFEITO! SEM ERROS.',
     stC: 'Corretas', stW: 'Incorretas', stP: 'Pontuação',
     scSub: 'de 50 · Aprovado com 45/50 (90%)',
+    progTitle: 'Seu progresso',
+    pAttempts: 'Tentativas',
+    pBest: 'Melhor nota',
+    pAvg: 'Média',
+    pTime: 'Tempo investido',
+    pRank: 'Ranking Top 100',
+    capTitle: 'Salve seu progresso',
+    capSub: 'Deixe seu e-mail e suas tentativas, notas e tempo ficarão salvos para você não precisar repetir.',
+    capName: 'Nome',
+    capEmail: 'E-mail',
+    capConsent: 'Aceito que a Facil Japón guarde meus dados e meu progresso.',
+    capBtn: 'Salvar meu progresso',
+    capDone: '✓ Progresso salvo.',
     eyebrow: '外免切替 知識確認 · Exame Completo',
     cultureHd: 'No Japão...', termHd: 'Termo-chave',
     theme: 'Tema de cor', font: 'Tamanho do texto',
@@ -140,6 +192,19 @@ const STRINGS = {
     perfect: '✓ PERPEKTO! WALANG PAGKAKAMALI.',
     stC: 'Tama', stW: 'Mali', stP: 'Puntos',
     scSub: 'sa 50 · Pumasa = 45/50 (90%)',
+    progTitle: 'Ang iyong progreso',
+    pAttempts: 'Mga pagtatangka',
+    pBest: 'Pinakamataas na marka',
+    pAvg: 'Average',
+    pTime: 'Oras na ginugol',
+    pRank: 'Top 100 na ranggo',
+    capTitle: 'I-save ang iyong progreso',
+    capSub: 'Iwan ang iyong email at mase-save ang iyong mga pagtatangka, marka at oras para hindi mo na ulitin.',
+    capName: 'Pangalan',
+    capEmail: 'Email',
+    capConsent: 'Sumasang-ayon akong i-save ng Facil Japón ang aking data at progreso.',
+    capBtn: 'I-save ang aking progreso',
+    capDone: '✓ Na-save ang progreso.',
     eyebrow: '外免切替 知識確認 · Kumpletong Pagsusulit',
     cultureHd: 'Sa Japan...', termHd: 'Pangunahing termino',
     theme: 'Tema ng kulay', font: 'Laki ng teksto',
@@ -168,6 +233,8 @@ const state = {
   history:    [],
   answered:   false,
   examSize:   50,
+  elapsedMs:  0,     // tiempo activo acumulado del examen actual
+  tickStart:  0,     // inicio del tramo activo (0 = en pausa)
 };
 
 // ═══════════════════════════════════════════════════════════════
@@ -401,6 +468,7 @@ function setLang(lang) {
   }
 
   updateProgressLabels();
+  if (DOM.scoreWrap().classList.contains('on')) renderProgress();
 }
 
 // ═══════════════════════════════════════════════════════════════
@@ -436,6 +504,21 @@ function updateProgressLabels() {
 // ═══════════════════════════════════════════════════════════════
 const SESSION_KEY = 'honmen_quiz_session';
 
+// ── Tiempo activo: solo cuenta mientras la pestaña está visible ──
+function currentElapsed() {
+  return state.elapsedMs + (state.tickStart ? Date.now() - state.tickStart : 0);
+}
+function startTimer() { if (!state.tickStart) state.tickStart = Date.now(); }
+function pauseTimer() {
+  if (state.tickStart) { state.elapsedMs += Date.now() - state.tickStart; state.tickStart = 0; }
+}
+document.addEventListener('visibilitychange', () => {
+  const finished = DOM.scoreWrap().classList.contains('on');
+  if (finished) return;
+  if (document.hidden) { pauseTimer(); saveSession(); }
+  else startTimer();
+});
+
 function saveSession() {
   try {
     const data = {
@@ -443,6 +526,7 @@ function saveSession() {
       questions: state.questions,
       current:   state.current,
       score:     state.score,
+      elapsedMs: currentElapsed(),
       history:   state.history.map((h, i) => ({
         qIdx: state.questions.indexOf(h.q),
         val:  h.val,
@@ -466,6 +550,7 @@ function loadSession() {
     state.questions = data.questions;
     state.current   = data.current   || 0;
     state.score     = data.score     || 0;
+    state.elapsedMs = data.elapsedMs || 0;
     state.answered  = false;
     state.history   = (data.history || []).map(h => ({
       q:   state.questions[h.qIdx],
@@ -485,9 +570,12 @@ function init() {
     state.questions = shuffle(QUESTIONS).slice(0, state.examSize);
     state.current   = 0;
     state.score     = 0;
+    state.elapsedMs = 0;
     state.history   = [];
     state.answered  = false;
   }
+  state.tickStart = 0;
+  startTimer();
 
   const wrongCount = state.history.filter(h => !h.ok).length;
   DOM.qTot().textContent  = state.questions.length;
@@ -694,9 +782,59 @@ function showScore() {
   verdict.className   = `verdict ${score >= 45 ? 'v-pass' : 'v-fail'}`;
   verdict.textContent = fmt(tpl, { s: score, p: pct });
 
+  pauseTimer();
+  FJ.addAttempt(score, questions.length, state.elapsedMs / 1000);
+  if (FJ.getProfile()) FJ.syncProgress();
+  renderProgress();
   clearSession();
   buildReview();
   window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// ═══════════════════════════════════════════════════════════════
+// PROGRESS PANEL + CAPTURE FORM (score screen)
+// ═══════════════════════════════════════════════════════════════
+function renderProgress() {
+  const s  = STRINGS[state.lang];
+  const sm = FJ.summary();
+  const set = (id, txt) => { const el = $(id); if (el) el.textContent = txt; };
+
+  set('progTitle', s.progTitle);
+  set('pAttemptsL', s.pAttempts); set('pAttempts', sm.attempts);
+  set('pBestL', s.pBest);         set('pBest', `${sm.best}/50`);
+  set('pAvgL', s.pAvg);           set('pAvg', sm.avg.toFixed(1));
+  set('pTimeL', s.pTime);         set('pTime', FJ.fmtTime(sm.totalSec));
+  set('pRankL', s.pRank);         set('pRank', sm.rank ? `#${sm.rank}` : '—');
+
+  const registered = !!FJ.getProfile();
+  const form = $('scCapture');
+  form.hidden = registered;
+  set('capTitle', s.capTitle);   set('capSub', s.capSub);
+  set('capNameL', s.capName);    set('capEmailL', s.capEmail);
+  set('capConsentT', s.capConsent);
+  set('capBtn', s.capBtn);
+  $('capDone').textContent = s.capDone;
+}
+
+function submitCapture(ev) {
+  ev.preventDefault();
+  const f = ev.target;
+  const profile = FJ.saveProfile({
+    name: f.elements.name.value.trim(),
+    email: f.elements.email.value,
+    source: 'facil-japon-quiz-directo',
+    createdAt: new Date().toISOString(),
+  });
+  if (!profile) return;
+  FJ.sendLead({
+    name: profile.name, email: profile.email,
+    source: profile.source, product: 'licencia-conducir-japon',
+    createdAt: profile.createdAt, page: location.pathname, userAgent: navigator.userAgent,
+    consent: 'on',
+  });
+  f.hidden = true;
+  const done = $('capDone');
+  done.hidden = false;
 }
 
 function buildReview() {
@@ -737,6 +875,7 @@ function buildReview() {
 // ═══════════════════════════════════════════════════════════════
 function restart() {
   clearSession();
+  const done = $('capDone'); if (done) done.hidden = true;
   DOM.rev().innerHTML = '';
   init();
   window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -748,4 +887,6 @@ function restart() {
 document.addEventListener('DOMContentLoaded', () => {
   initPrefs();
   init();
+  FJ.flushPending();
+  $('scCapture').addEventListener('submit', submitCapture);
 });
